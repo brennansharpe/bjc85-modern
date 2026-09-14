@@ -2,6 +2,8 @@
 #include "usb.h"
 #include "protocol.h"
 #include "transfer.h"
+#include "recovery.h"
+#include "runtime.h"
 #include <pappl/pappl.h>
 #include <gutenprint/gutenprint.h>
 #include <errno.h>
@@ -82,6 +84,7 @@ static int transfer(void *context, const unsigned char *data, int length, int *s
     device_state *state = context;
     *sent = 0;
     if (papplJobIsCanceled(state->job)) return LIBUSB_ERROR_INTERRUPTED;
+    if (bjc_usb_begin_operation(&state->usb,"print")) return LIBUSB_ERROR_IO;
     return libusb_bulk_transfer(state->usb.handle, state->usb.bulk_out,
                                (unsigned char *)data, length, sent, 1000);
 }
@@ -146,7 +149,7 @@ static void output_error(void *context, const char *data, size_t length) {
 }
 
 static bool start_job(pappl_job_t *job, pappl_pr_options_t *options, pappl_device_t *device) {
-    if (!access(service.recovery, F_OK)) {
+    if (!access(service.recovery, F_OK) || (!service.dry_run && bjc_recovery_required())) {
         job_log(job, PAPPL_LOGLEVEL_ERROR, "Printer recovery required; see %s.", service.recovery);
         return false;
     }
@@ -301,13 +304,18 @@ static bool end_job(pappl_job_t *job, pappl_pr_options_t *options, pappl_device_
             }
             papplPrinterPause(papplJobGetPrinter(job));
         }
-        if (success || !accepted) unlink(service.recovery);
+        device_state *transport=papplDeviceGetData(device);
+        if (success && bjc_usb_finish_safe(&transport->usb)) success=false;
+        if (success || !transport->usb.operation_started) unlink(service.recovery);
     }
     job_log(job, success ? PAPPL_LOGLEVEL_INFO : PAPPL_LOGLEVEL_ERROR,
                 "%s: %u pages, %d copies, %zu raw bytes, %zu USB bytes accepted. Raw file: %s",
                 service.dry_run ? "Dry run (no USB)" : (success ? "Transfer complete" : "Transfer stopped"),
                 state->pages, state->copies, state->bytes, accepted, state->filename);
     if (fclose(state->stream)) success = false;
+    if (success && !service.dry_run && !bjc_runtime_retain_diagnostics()) {
+        if (unlink(state->filename)) job_log(job,PAPPL_LOGLEVEL_WARN,"Could not remove completed raw print capture.");
+    }
     if (success && state->copies > 1) {
         papplJobSetCopiesCompleted(job, state->copies-1);
         papplJobSetImpressionsCompleted(job, (int)state->pages * (state->copies-1));
@@ -377,6 +385,8 @@ static bool driver(pappl_system_t *system, const char *driver_name, const char *
 }
 
 int main(int argc, char **argv) {
+    extern void bjc_runtime_initialize(void);
+    bjc_runtime_initialize();
     const char *spool = NULL;
     int port = 8631;
     bool cartridge = false;

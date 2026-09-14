@@ -9,6 +9,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include "transfer.h"
+#include "recovery.h"
 
 int bjc_usb_open(bjc_usb *usb) {
     memset(usb, 0, sizeof(*usb));
@@ -30,6 +31,10 @@ int bjc_usb_open(bjc_usb *usb) {
         return saved_errno == EWOULDBLOCK ? LIBUSB_ERROR_BUSY : LIBUSB_ERROR_ACCESS;
     }
     usb->lease_fd_plus_one = fd + 1;
+    if (bjc_recovery_required()) {
+        fputs("BJC-85 recovery required. Inspect the previous operation and physical device before continuing.\n",stderr);
+        bjc_usb_close(usb); usb->recovery_blocked=1; return LIBUSB_ERROR_BUSY;
+    }
     int rc = libusb_init(&usb->context);
     if (rc < 0) { bjc_usb_close(usb); return rc; }
     libusb_device **devices = NULL;
@@ -130,7 +135,19 @@ static uint64_t monotonic_ms(void *context) {
 }
 
 int bjc_usb_write(bjc_usb *usb, const unsigned char *data, size_t length, size_t *sent) {
+    if (bjc_usb_begin_operation(usb,"print")) { *sent=0; return LIBUSB_ERROR_IO; }
     return bjc_transfer_all(data, length, sent, usb, bulk_write, monotonic_ms);
+}
+
+int bjc_usb_begin_operation(bjc_usb *usb,const char *operation) {
+    if (usb->operation_started) return 0;
+    if (!usb->lease_fd_plus_one || !bjc_recovery_begin(operation)) return LIBUSB_ERROR_IO;
+    usb->operation_started=1; return 0;
+}
+int bjc_usb_finish_safe(bjc_usb *usb) {
+    if (!usb->operation_started) return 0;
+    if (!bjc_recovery_finish_safe()) return LIBUSB_ERROR_IO;
+    usb->operation_started=0; return 0;
 }
 
 void bjc_usb_close(bjc_usb *usb) {

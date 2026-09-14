@@ -1,0 +1,69 @@
+{
+  "bundle": "BJC-85 Utility.app",
+  "checks": "architecture, minimum OS, runtime links, signature, Canon asset exclusion, offline helper execution",
+  "binaries": [
+    {
+      "file": "Contents/MacOS/BJC85Scanner",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Helpers/bjc85-ipp",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Helpers/bjc85-is12",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Helpers/bjc85-render",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Helpers/bjc85-usb",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Helpers/is12-escl-bridge",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Frameworks/libcrypto.3.dylib",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Frameworks/libssl.3.dylib",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Frameworks/libusb-1.0.0.dylib",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    }
+  ]
+}

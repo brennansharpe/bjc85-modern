@@ -1,0 +1,7 @@
+Build SDK: macOS 27.0 (xcrun --show-sdk-version)
+Release target: arm64-apple-macos14.0
+C standard: C17
+Swift language mode: 5
+Runtime OS matrix: not performed
+Physical printer operations in this implementation session: none
+Release signatures: ad-hoc app; unsigned installer; notarization not performed

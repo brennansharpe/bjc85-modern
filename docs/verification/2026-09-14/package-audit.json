@@ -1,0 +1,24 @@
+{
+  "package": "BJC85-Utility-unsigned.pkg",
+  "sha256": "aae9fcf534977970d22ff2969e999d0eb9689340b200e678645d74ddfdec51ad",
+  "bytes": 5124451,
+  "payload_files_verified": 345,
+  "payload_signatures_verified": true,
+  "package_info": [
+    {
+      "overwrite-permissions": "true",
+      "relocatable": "false",
+      "identifier": "local.bjc85.utility",
+      "postinstall-action": "none",
+      "version": "0.2.0",
+      "format-version": "2",
+      "generator-version": "InstallCmds-883 (26A428)",
+      "install-location": "/Applications",
+      "auth": "root",
+      "preserve-xattr": "true"
+    }
+  ],
+  "signing": "unsigned",
+  "installed": false,
+  "build_warnings": "productbuild emitted five write: Permission denied messages; expanded payload bytes, file modes and app signatures match the source bundle."
+}

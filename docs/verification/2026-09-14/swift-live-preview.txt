@@ -1,0 +1,1 @@
+Live preview rendering: partial fill, rotation, append, bounds, immutable snapshots passed

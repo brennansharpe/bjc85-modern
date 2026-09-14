@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="930" viewBox="0 0 1180 930" role="img" aria-labelledby="title desc">
+<title id="title">BJC-85 Utility scan workspace — implemented layout wireframe</title>
+<desc id="desc">Photo, Colour, 360 dpi, brightness, contrast, crop, prescan and calibration. This is a wireframe of the implemented AppKit layout, not a hardware-ready screenshot.</desc>
+<defs><style>text{font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;fill:#242832;font-size:15px}.muted{fill:#626975;font-size:13px}.heading{font-size:25px;font-weight:600}.control{fill:white;stroke:#cbd0d7}.button{fill:#fdfdfe;stroke:#b7bfcb}.small{font-size:12px}</style></defs>
+<rect width="1180" height="930" fill="#eef1f5"/>
+<rect x="25" y="24" width="1130" height="848" rx="13" fill="#fafafa" stroke="#b5bdc8"/>
+<path d="M38 24h1104q13 0 13 13v39H25V37q0-13 13-13" fill="#e4e7eb"/>
+<circle cx="46" cy="48" r="6" fill="#b5bdc8"/><circle cx="67" cy="48" r="6" fill="#b5bdc8"/><circle cx="88" cy="48" r="6" fill="#b5bdc8"/>
+<text x="590" y="54" text-anchor="middle" font-weight="600">BJC-85 Utility</text>
+<rect x="400" y="88" width="370" height="32" rx="7" fill="#e8ebef"/>
+<rect x="403" y="91" width="72" height="26" rx="5" fill="white"/>
+<text x="422" y="110">Scan</text><text x="497" y="110">Print</text><text x="568" y="110">Copy</text><text x="640" y="110">Device &amp; Settings</text>
+<text x="51" y="163" class="heading">Canon IS-12</text>
+<text x="51" y="187" class="muted">Native scanning for your BJC-85</text>
+<text x="51" y="215">Disconnected · offline preview</text>
+<rect x="51" y="232" width="313" height="30" rx="6" class="button"/><text x="151" y="252">Connect scanner</text>
+<rect x="51" y="274" width="313" height="31" rx="6" class="control"/><text x="63" y="295">Photo</text><text x="337" y="295">⌄</text>
+<text x="51" y="325" class="muted">Canon colour matching unavailable;</text><text x="51" y="343" class="muted">native white-reference correction available.</text>
+<rect x="51" y="357" width="313" height="31" rx="6" class="control"/><text x="63" y="378">Colour</text><text x="337" y="378">⌄</text>
+<rect x="51" y="399" width="313" height="31" rx="6" class="control"/><text x="63" y="420">360 dpi</text><text x="337" y="420">⌄</text>
+<text x="51" y="457">Brightness</text><path d="M52 477H363" stroke="#b1b9c4" stroke-width="4"/><circle cx="206" cy="477" r="8" fill="white" stroke="#939da9"/>
+<text x="51" y="510">Contrast</text><path d="M52 530H363" stroke="#b1b9c4" stroke-width="4"/><circle cx="206" cy="530" r="8" fill="white" stroke="#939da9"/>
+<text x="51" y="563" class="muted">B&amp;W threshold · available in B&amp;W mode</text>
+<rect x="51" y="578" width="150" height="28" rx="5" class="control"/><text x="63" y="597">None</text><text x="222" y="597">□ Invert</text>
+<text x="51" y="632">☑ Sheet was fed bottom first</text>
+<rect x="51" y="650" width="91" height="30" rx="6" class="button"/><text x="67" y="670">Prescan</text>
+<rect x="149" y="650" width="114" height="30" rx="6" class="button"/><text x="167" y="670">Scan page</text>
+<rect x="271" y="650" width="93" height="30" rx="6" class="button"/><text x="290" y="670">Cancel</text>
+<text x="51" y="704" class="small">Selection 5.33 × 6.43 in · x 1.06, y 1.35</text>
+<rect x="51" y="718" width="313" height="28" rx="6" class="button"/><text x="155" y="737">Clear Selection</text>
+<text x="51" y="772" class="muted">Saved reference · connect to validate</text>
+<rect x="51" y="784" width="313" height="28" rx="6" class="button"/><text x="141" y="803">Calibrate white sheet</text>
+<text x="51" y="844" class="muted">Save image…     Show files</text>
+<rect x="389" y="139" width="740" height="707" rx="7" fill="#e3e7ed"/>
+<rect x="519" y="161" width="480" height="648" fill="white" stroke="#d0d5dd"/>
+<text x="559" y="229" font-size="21" font-weight="600">Sample page preview</text>
+<text x="559" y="258" class="muted">Illustrative content · no Canon artwork</text>
+<g fill="#d9dfe7"><rect x="559" y="288" width="388" height="8"/><rect x="559" y="311" width="364" height="8"/><rect x="559" y="334" width="379" height="8"/>
+<rect x="559" y="588" width="388" height="8"/><rect x="559" y="611" width="343" height="8"/><rect x="559" y="634" width="369" height="8"/><rect x="559" y="657" width="382" height="8"/></g>
+<rect x="559" y="381" width="114" height="155" fill="#c5dce5"/><rect x="686" y="381" width="114" height="155" fill="#d9c8de"/><rect x="813" y="381" width="134" height="155" fill="#e8dfb5"/>
+<path d="M519 161H999V809H519Z M583 242V628H903V242Z" fill="#293342" fill-opacity=".2" fill-rule="evenodd"/>
+<rect x="583" y="242" width="320" height="386" fill="none" stroke="white" stroke-width="5"/>
+<rect x="583" y="242" width="320" height="386" fill="none" stroke="#356da9" stroke-width="2"/>
+<g fill="#356da9"><rect x="579" y="238" width="8" height="8"/><rect x="899" y="238" width="8" height="8"/><rect x="579" y="624" width="8" height="8"/><rect x="899" y="624" width="8" height="8"/></g>
+<text x="759" y="833" text-anchor="middle" class="small">Drag or use arrow keys · numeric crop in View menu</text>
+<text x="25" y="902" class="muted">Implemented AppKit layout wireframe • 2026-09-14 • Physical controls shown for design reference; printer testing deferred.</text>
+</svg>

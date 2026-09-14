@@ -10,21 +10,22 @@ import Darwin
 private let scanNS = "http://schemas.hp.com/imaging/escl/2011/05/03"
 private let pwgNS = "http://www.pwg.org/schemas/2010/12/sm"
 private let uuid = "00000000-0000-4000-8000-000000000009"
-private let port: UInt16 = 8641
-private let root = URL(fileURLWithPath: FileManager.default.currentDirectoryPath, isDirectory: true)
+private let port: UInt16 = UInt16(ProcessInfo.processInfo.environment["BJC85_ESCL_PORT"] ?? "8641") ?? 8641
+private let root = ProcessInfo.processInfo.environment["BJC85_RUNTIME_DIRECTORY"].map { URL(fileURLWithPath:$0,isDirectory:true) }
+    ?? FileManager.default.urls(for:.applicationSupportDirectory,in:.userDomainMask)[0].appendingPathComponent("local.bjc85.utility",isDirectory:true)
 private let arguments = CommandLine.arguments
 guard arguments.count == 4 && arguments[1] == "--scanner-installed" else {
-    fputs("Usage: is12-escl-bridge --scanner-installed NATIVE-DRIVER REFERENCE.bin\nRun from the project after pausing printing. Local clients can request one loaded sheet per job.\n", stderr)
+    fputs("Usage: is12-escl-bridge --scanner-installed NATIVE-DRIVER REFERENCE.bin\nPause printing first. Local clients can request one loaded sheet per job.\n", stderr)
     exit(2)
 }
 private let driver = URL(fileURLWithPath: arguments[2], relativeTo: root).standardizedFileURL
 private let reference = URL(fileURLWithPath: arguments[3], relativeTo: root).standardizedFileURL
 private let jobsRoot = root.appendingPathComponent(".state/escl-jobs", isDirectory: true)
+umask(0o077)
 try FileManager.default.createDirectory(at: jobsRoot, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
 // A restarted server never replays or silently abandons a paper-moving job.
 for directory in try FileManager.default.contentsOfDirectory(at: jobsRoot, includingPropertiesForKeys: nil) {
-    if FileManager.default.fileExists(atPath: directory.appendingPathComponent("acquisition-started.json").path) &&
-       !FileManager.default.fileExists(atPath: directory.appendingPathComponent("acquisition-ended.json").path) {
+    if !DriverOutcome.journalPermitsRestart(directory) {
         fputs("An interrupted scan needs inspection before restarting: \(directory.path)\n", stderr)
         exit(1)
     }
@@ -138,6 +139,7 @@ private final class Job {
     let id=UUID().uuidString, settings: Settings, directory: URL, referenceURL: URL
     let created=Date()
     var stage="Pending", process: Process?, started=false, delivered=false, cancelled=false, sending=false, preflightDone=false
+    var phaseSpawned=false
     var log: FileHandle?, output: Data?
     init(_ settings: Settings) throws {
         self.settings=settings; directory=jobsRoot.appendingPathComponent(id, isDirectory: true)
@@ -153,19 +155,21 @@ private final class Job {
     }
 }
 private final class Bridge {
-    var jobs: [String: Job]=[:], active: Job?, stopping=false
+    var jobs: [String: Job]=[:], active: Job?, stopping=false, recoveryRequired=false
     func handle(_ request: HTTPRequest) {
+        let shared = active?.process == nil ? SharedDeviceState.inspect(root) : .busy
+        if shared == .recoveryRequired { recoveryRequired=true }
         if request.method == "GET" && request.path == "/eSCL/ScannerCapabilities" { request.reply(200,data:capabilities); return }
         if request.method == "GET" && request.path == "/eSCL/ScannerStatus" {
-            let busy=active?.process != nil
+            let busy=active?.process != nil || shared == .busy
             let jobStatus=jobs.values.sorted {$0.created > $1.created}.map {$0.statusXML}.joined()
-            request.reply(200,data:envelope("ScannerStatus","<pwg:Version>2.0</pwg:Version><pwg:State>\(busy ? "Processing" : "Idle")</pwg:State><scan:AdfState>ScannerAdfLoaded</scan:AdfState><scan:Jobs>\(jobStatus)</scan:Jobs>")); return
+            request.reply(200,data:envelope("ScannerStatus","<pwg:Version>2.0</pwg:Version><pwg:State>\(recoveryRequired ? "Stopped" : busy ? "Processing" : "Idle")</pwg:State><scan:AdfState>\(recoveryRequired ? "ScannerAdfJam" : "ScannerAdfLoaded")</scan:AdfState><scan:Jobs>\(jobStatus)</scan:Jobs>")); return
         }
         if request.method == "POST" && request.path == "/eSCL/ScanJobs" {
-            guard !stopping, active?.process == nil, active?.stage != "Pending" else { request.reply(503); return }
+            guard !stopping, !recoveryRequired, shared != .busy, active?.process == nil, active?.stage != "Pending" else { request.reply(503); return }
             guard ["text/xml","application/xml"].contains(request.headers["content-type"]?.split(separator:";").first?.trimmingCharacters(in: .whitespaces) ?? "") else { request.reply(415); return }
             guard let settings=Settings(request.body) else {
-                event(["event":"rejected_scan_settings","xml":String(decoding:request.body,as:UTF8.self)]); request.reply(400); return
+                event(["event":"rejected_scan_settings","bytes":request.body.count]); request.reply(400); return
             }
             do {
                 let job=try Job(settings)
@@ -195,7 +199,18 @@ private final class Bridge {
             job.sending=true
             request.reply(200,data:output,mime:job.settings.mime,sent:{ success in
                 job.sending=false
-                if success { job.delivered=true; job.output=nil }
+                if success {
+                    job.delivered=true; job.output=nil
+                    if !FileManager.default.fileExists(atPath:root.appendingPathComponent("retain-diagnostics").path) {
+                        do {
+                            try PrivacyRetention.removeExportedCapture(job.directory.appendingPathComponent("capture"),retainDiagnostics:false,outcome:.completedSafe)
+                            for name in ["document.jpg","document.png","driver.jsonl"] {
+                                let file=job.directory.appendingPathComponent(name)
+                                if FileManager.default.fileExists(atPath:file.path) { try FileManager.default.removeItem(at:file) }
+                            }
+                        } catch { event(["event":"capture_cleanup_failed","job":job.id]) }
+                    }
+                }
             }); return
         }
         if job.stage == "Aborted" { request.reply(500); return }
@@ -217,28 +232,46 @@ private final class Bridge {
     }
     func runChild(_ job: Job) {
         let process=Process()
+        job.phaseSpawned=false
         do {
             process.executableURL=driver; process.currentDirectoryURL=root
+            var environment=ProcessInfo.processInfo.environment
+            environment["BJC85_STATE_DIRECTORY"]=root.path; process.environment=environment
             process.arguments=job.preflightDone ?
                 ["scan","--scanner-installed","--dpi",String(job.settings.dpi),"--mode",job.settings.mode,"--calibration",job.referenceURL.path,job.directory.appendingPathComponent("capture").path] :
-                ["status","--scanner-installed","--enter-scanner-mode"]
+                ["status","--scanner-installed","--enter-scanner-mode","--reference",job.referenceURL.path]
             process.standardOutput=job.log; process.standardError=job.log
             process.terminationHandler={ process in DispatchQueue.main.async {
-                if !job.preflightDone && process.terminationStatus == 0 && !job.cancelled && !self.stopping {
+                let result=DriverOutcome.read(job.directory.appendingPathComponent("driver.jsonl"))
+                if !job.preflightDone && process.terminationStatus == 0 && result.readiness?.canScan == true &&
+                    result.readiness?.reference_valid == true &&
+                    result.outcome?.permitsNextOperation == true && !job.cancelled && !self.stopping {
                     job.preflightDone=true; self.runChild(job)
                 } else { self.finished(job,code:process.terminationStatus) }
             } }
             job.process=process
             try process.run()
+            job.phaseSpawned=true
             event(["event":job.preflightDone ? "native_scan_started" : "native_probe_started","job":job.id,"dpi":job.settings.dpi,"mode":job.settings.mode])
         } catch { finished(job,code:1) }
     }
     func finished(_ job: Job, code: Int32) {
         job.process=nil; try? job.log?.synchronize(); try? job.log?.close(); job.log=nil
-        if let terminal=try? JSONSerialization.data(withJSONObject:["exit_code":code,"cancelled":job.cancelled,"finished":Date().description],options:.sortedKeys) {
-            try? terminal.write(to:job.directory.appendingPathComponent("acquisition-ended.json"),options:.atomic)
+        let result=DriverOutcome.read(job.directory.appendingPathComponent("driver.jsonl"))
+        var outcome: OperationOutcome = job.phaseSpawned ? (result.outcome ?? .recoveryRequired) : .preflightFailedSafe
+        // A preflight result cannot certify a later acquisition whose helper died.
+        if job.preflightDone && job.phaseSpawned {
+            if let data=try? Data(contentsOf:job.directory.appendingPathComponent("capture/outcome.json")),
+               let receipt=try? JSONSerialization.jsonObject(with:data) as? [String:Any],
+               let name=receipt["outcome"] as? String, let value=OperationOutcome(rawValue:name) { outcome=value }
+            else { outcome = .recoveryRequired }
         }
-        guard code == 0 && !job.cancelled else {
+        do {
+            let terminal=try JSONSerialization.data(withJSONObject:["exit_code":code,"cancelled":job.cancelled,"outcome":outcome.rawValue,"finished":Date().description],options:.sortedKeys)
+            try terminal.write(to:job.directory.appendingPathComponent("acquisition-ended.json"),options:.atomic)
+        } catch { outcome = .recoveryRequired }
+        recoveryRequired = recoveryRequired || !outcome.permitsNextOperation
+        guard code == 0 && !job.cancelled && job.preflightDone && outcome == .completedSafe else {
             job.stage=job.cancelled ? "Canceled" : "Aborted"
             event(["event":"native_scan_stopped","job":job.id,"code":code]); if stopping { exit(0) }; return
         }
@@ -269,13 +302,24 @@ private final class Bridge {
     }
 }
 private let bridge=Bridge()
+// Clients can disappear without downloading. Keep safe completed document data
+// for at most 24 hours by default, including across service restart.
+private let retentionTimer=DispatchSource.makeTimerSource(queue:.main)
+retentionTimer.schedule(deadline:.now(),repeating:3600)
+retentionTimer.setEventHandler {
+    do {
+        let expired=try PrivacyRetention.removeExpiredESCLDocuments(root)
+        for id in expired { bridge.jobs[id]?.output=nil; bridge.jobs[id]?.delivered=true }
+    } catch { event(["event":"expired_capture_cleanup_failed"]) }
+}
+retentionTimer.resume()
 private let parameters=NWParameters.tcp
 parameters.requiredLocalEndpoint = .hostPort(host:.ipv4(.loopback),port:NWEndpoint.Port(rawValue:port)!)
 private let listener=try NWListener(using:parameters)
 listener.newConnectionHandler={ HTTPRequest($0).start() }
 listener.stateUpdateHandler={ state in
     if case .ready=state {
-        guard is12_escl_publish(UInt32(port)) else { fputs("Local AirScan publication failed.\n",stderr); exit(1) }
+        guard ProcessInfo.processInfo.environment["BJC85_ESCL_ADVERTISE"] == "0" || is12_escl_publish(UInt32(port)) else { fputs("Local AirScan publication failed.\n",stderr); exit(1) }
         event(["event":"airscan_ready","address":"127.0.0.1","port":port,"one_page_per_job":true])
     } else if case .failed(let error)=state { fputs("Listener failed: \(error)\n",stderr); exit(1) }
 }

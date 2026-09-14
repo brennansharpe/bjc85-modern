@@ -1,5 +1,35 @@
 # Third-party components and research material
 
+## Utility 0.2.0 release build — 2026-09-14
+
+The new `dist/BJC-85 Utility.app` rebuilds its dependencies for ARM64/macOS 14.
+It bundles libusb 1.0.30 and OpenSSL 3.6.4 dylibs with relative loader paths,
+links Gutenprint 5.3.5 and PAPPL 1.4.12 statically, and copies their license
+notices into `Contents/Resources/Licenses`. Gutenprint XML data is bundled too.
+Apple CUPS, zlib and frameworks are provided by macOS. No Homebrew or repository
+path is a runtime dependency of this staged bundle.
+
+Reproducible source locations and SHA-256 pins are in
+`scripts/build-release-deps.sh`. Additional release archive pins:
+
+* libusb 1.0.30: `fea36f34f9156400209595e300840767ab1a385ede1dc7ee893015aea9c6dbaf`
+* OpenSSL 3.6.4: `9bffaa1ad1e07b354c21bd3324ec02fa15579f45a7d0494b3e74bc449b7333ef`
+
+OpenSSL 3.6.4 was selected from its
+[official release](https://github.com/openssl/openssl/releases/tag/openssl-3.6.4)
+instead of carrying the older Homebrew 3.6.3 into a newly rebuilt distribution.
+The checksum-pinned original scanner/printer libraries remain unchanged.
+
+This is an ad-hoc signed local milestone. Public distribution still requires
+a compatible project license, complete corresponding source/build materials,
+LGPL compliance, Developer ID signatures and notarization. No redistribution
+permission for Canon binaries, resource payloads, artwork or profiles is claimed;
+they are excluded from the bundle and prospective source releases.
+
+The sections below preserve the original development dependency provenance.
+Their Homebrew/workspace descriptions refer to the baseline prototype, not the
+new release build.
+
 ## Gutenprint 5.3.5
 
 Source: https://sourceforge.net/projects/gimp-print/files/gutenprint-5.3/5.3.5/

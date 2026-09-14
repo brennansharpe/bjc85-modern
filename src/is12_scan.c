@@ -4,6 +4,7 @@
 #include "is12_calibration.h"
 #include "protocol.h"
 #include "usb.h"
+#include "is12_status.h"
 #include <errno.h>
 #include <fcntl.h>
 #include <signal.h>
@@ -29,6 +30,7 @@ typedef struct {
     bool matched, status_seen, end, device_error, io_error;
     bool calibration, measured;
     bool correction_applied, stopping;
+    bool motion_started, command_pending, transport_ambiguous, stopped_safe;
     uint8_t measurement[IS12_MEASUREMENT_SIZE];
     uint64_t last_data;
 } scan_session;
@@ -63,7 +65,7 @@ static bool scan_record(const is12_reply *r, void *context) {
         memcpy(s->status, r->payload, 3); s->status_seen = true;
         /* Canon's load/start paths map these to LED, paper, jam, battery,
          * head-change/failure and cover faults. Warm-up bit 08 is not an error. */
-        if ((s->status[0] & 0x44) || (s->status[1] & 0xd4) || (s->status[2] & 3))
+        if (is12_status_has_error(s->status))
             s->device_error = true;
     }
     if (r->family == s->match_family && r->token == s->match_token &&
@@ -91,7 +93,7 @@ static bool scan_record(const is12_reply *r, void *context) {
 static bool scan_pump(scan_session *s) {
     uint8_t buffer[4096]; int count = 0;
     int rc = libusb_bulk_transfer(s->usb.handle, s->usb.bulk_in, buffer, sizeof(buffer), &count, 250);
-    if (count < 0 || (size_t)count > sizeof(buffer)) return false;
+    if (count < 0 || (size_t)count > sizeof(buffer)) { s->transport_ambiguous=true; return false; }
     if (count) {
         s->last_data = scan_now(); s->received += (size_t)count;
         if (s->received > IS12_CAPTURE_LIMIT || fwrite(buffer, 1, (size_t)count, s->raw) != (size_t)count) {
@@ -99,10 +101,11 @@ static bool scan_pump(scan_session *s) {
         }
         bool parsed=is12_stream_feed(&s->stream, buffer, (size_t)count, scan_record, s);
         if (fflush(s->raw) || fflush(s->records)) { s->io_error=true; return false; }
-        if (!parsed) return false;
+        if (!parsed) { s->transport_ambiguous=true; return false; }
         if (!s->calibration && !s->stopping) is12_preview_update(&s->preview,&s->image);
     }
     if (rc < 0 && rc != LIBUSB_ERROR_TIMEOUT) {
+        s->transport_ambiguous=true;
         printf("{\"event\":\"usb_read_error\",\"result\":%d}\n", rc); return false;
     }
     if (!count && !rc) usleep(10000);
@@ -110,26 +113,37 @@ static bool scan_pump(scan_session *s) {
 }
 
 static bool scan_write(scan_session *s, uint8_t token, const uint8_t *parameters, size_t size) {
+    if ((interrupted && !s->stopping) || s->transport_ambiguous) return false;
     uint8_t command[IS12_CORRECTION_SIZE+6];
     if (size > sizeof(command)-6 || (size && !parameters)) return false;
     command[0]=0x1b; command[1]='('; command[2]='s'; command[3]=(uint8_t)(size+1);
     command[4]=(uint8_t)((size+1)>>8); command[5]=token;
     if (size) memcpy(command+6, parameters, size);
+    if (bjc_usb_begin_operation(&s->usb,s->calibration?"calibration":"scan")) return false;
+    /* Last cancellation barrier before a command enters the transport. */
+    if (interrupted && !s->stopping) return false;
+    if (token=='L' || token=='B' || token=='W') s->motion_started=true;
+    s->command_pending=true;
     int accepted=0;
     int rc=libusb_bulk_transfer(s->usb.handle,s->usb.bulk_out,command,(int)size+6,&accepted,1000);
     printf("{\"event\":\"write\",\"stage\":\"%s\",\"requested\":%zu,\"accepted\":%d,\"usb_result\":%d,\"hex\":",
            s->stage,size+6,accepted,rc);
     print_hex(command,size+6); puts("}"); fflush(stdout);
     /* Never replay a paper-moving command after a partial or ambiguous write. */
-    return rc == 0 && accepted == (int)size+6;
+    if (rc || accepted != (int)size+6) { s->transport_ambiguous=true; return false; }
+    return true;
 }
 
 static bool scan_expect(scan_session *s,uint8_t family,uint8_t token,size_t size,unsigned timeout) {
     s->match_family=family; s->match_token=token; s->match_kind='!'; s->match_length=size; s->matched=false;
     uint64_t deadline=scan_now()+timeout;
-    while (!interrupted && scan_now()<deadline) {
-        if (!scan_pump(s) || s->device_error) return false;
-        if (s->matched && is12_stream_complete(&s->stream)) return true;
+    while ((!interrupted || s->stopping) && scan_now()<deadline) {
+        if (!scan_pump(s)) return false;
+        if (s->matched && is12_stream_complete(&s->stream)) {
+            s->command_pending=false;
+            return (!interrupted || s->stopping) && !s->device_error;
+        }
+        if (s->device_error || (interrupted && !s->stopping)) return false;
     }
     printf("{\"event\":\"reply_timeout\",\"stage\":\"%s\"}\n",s->stage);
     return false;
@@ -141,12 +155,14 @@ static bool status_query(scan_session *s) {
 }
 
 int is12_scan_main(const char *directory,bool calibration,const char *reference,unsigned dpi,bool grayscale,bool lineart,bool blackwhite,bool live_preview) {
+    umask(077);
+    interrupted=0;
     scan_session *s=calloc(1,sizeof(*s));
     if (!s) return 1;
     if (!is12_image_init(&s->image,dpi)) { free(s); return 2; }
     s->image.grayscale=grayscale;
     s->image.lineart=lineart;
-    bool success=false, started=false, writable=true;
+    bool success=false;
     s->calibration=calibration;
     uint8_t temperature=0;
     char serial[32]={0};
@@ -238,18 +254,20 @@ int is12_scan_main(const char *directory,bool calibration,const char *reference,
     s->stage="load-page";
     if (!status_query(s)) goto done;
     if (!(s->status[0]&0x10)) {
-        started=true;
-        if (!scan_write(s,'L',NULL,0)) { writable=false; goto cleanup; }
+        if (interrupted) goto cleanup;
+        if (!scan_write(s,'L',NULL,0)) goto cleanup;
         uint64_t load_deadline=scan_now()+30000;
         while (!(s->status[0]&0x10) && !interrupted && scan_now()<load_deadline) {
             if (!scan_pump(s) || s->device_error) goto cleanup;
         }
-        if (!(s->status[0]&0x10)) goto cleanup;
+        if (!(s->status[0]&0x10) || interrupted) goto cleanup;
+        s->command_pending=false;
     }
-    s->stage=calibration?"measure-reference":"acquire"; started=true;
+    if (interrupted) goto cleanup;
+    s->stage=calibration?"measure-reference":"acquire";
     const uint8_t white_parameters[]={1,7,7};
     if (!scan_write(s,calibration?'W':'B',calibration?white_parameters:NULL,calibration?3:0)) {
-        writable=false; goto cleanup;
+        goto cleanup;
     }
     s->last_data=scan_now();
     uint64_t scan_deadline=scan_now()+1800000, report_at=scan_now()+10000;
@@ -262,7 +280,8 @@ int is12_scan_main(const char *directory,bool calibration,const char *reference,
         }
     }
     success=(calibration?s->measured:(s->end && is12_image_complete(&s->image))) &&
-            is12_stream_complete(&s->stream) && !s->device_error;
+            is12_stream_complete(&s->stream) && !s->device_error && !interrupted;
+    if (success) s->command_pending=false;
     if (success && calibration) {
         s->stage="reference-eject-status";
         uint64_t eject_deadline=scan_now()+10000;
@@ -276,15 +295,27 @@ int is12_scan_main(const char *directory,bool calibration,const char *reference,
 cleanup:
     /* Q is the original driver's stop/quiesce command, never a full USB reset.
      * A failed write leaves transport state unknown, so do not append commands. */
-    if (started && writable && !success) {
+    if (s->motion_started && !s->transport_ambiguous && !success) {
         s->stopping=true; /* Drain Q replies even if cancellation leaves an incomplete image. */
         s->stage="stop-acquisition";
+        s->device_error=false;
         if (scan_write(s,'Q',NULL,0)) {
             uint64_t stop_deadline=scan_now()+3000;
-            while (scan_now()<stop_deadline) if (!scan_pump(s)) break;
+            if (scan_expect(s,'s','s',3,3000)) {
+                while ((s->status[0]&0x10) && scan_now()<stop_deadline) {
+                    usleep(100000); if (!status_query(s)) break;
+                }
+                s->stopped_safe=!s->command_pending && !s->device_error &&
+                    !(s->status[0]&0x10) && is12_stream_complete(&s->stream);
+            }
         }
     }
 done:
+    ;
+    /* Device outcome is separate from image/export success and process exit. */
+    bool device_safe=!s->usb.recovery_blocked && !s->transport_ambiguous && !s->command_pending &&
+        (!s->motion_started || success || s->stopped_safe);
+    if (device_safe && bjc_usb_finish_safe(&s->usb)) device_safe=false;
     if (s->raw && (fflush(s->raw) || fsync(fileno(s->raw)))) success=false;
     if (s->records && (fflush(s->records) || fsync(fileno(s->records)))) success=false;
     if (success && calibration) {
@@ -297,6 +328,17 @@ done:
         if (snprintf(filename,sizeof(filename),"%s/scan-upright.png",directory)>=(int)sizeof(filename) ||
             !is12_image_png(&s->image,filename,true,blackwhite)) success=false;
     }
+    const char *outcome=!device_safe?"recoveryRequired":(interrupted || s->stopped_safe)?"cancelledSafe":
+        s->motion_started?"completedSafe":"preflightFailedSafe";
+    if (snprintf(filename,sizeof(filename),"%s/outcome.json",directory)<(int)sizeof(filename)) {
+        FILE *terminal=fopen(filename,"wx");
+        if (terminal) {
+            int wrote=fprintf(terminal,"{\"schema_version\":1,\"outcome\":\"%s\",\"image_complete\":%s}\n",outcome,success?"true":"false");
+            if (wrote<0 || fflush(terminal) || fsync(fileno(terminal))) success=false;
+            if (fclose(terminal)) success=false;
+        } else success=false;
+    } else success=false;
+    printf("{\"event\":\"operation_outcome\",\"outcome\":\"%s\"}\n",outcome);
     printf("{\"event\":\"scan_result\",\"complete_stream\":%s,\"end_record\":%s,\"measurement_received\":%s,\"reference_applied\":%s,\"image_bytes\":%zu,\"usb_bytes\":%zu,\"device_error\":%s,\"canon_reference_validated\":false}\n",
            success?"true":"false",s->end?"true":"false",s->measured?"true":"false",s->correction_applied?"true":"false",s->images,s->received,s->device_error?"true":"false");
     bjc_usb_close(&s->usb);
@@ -305,5 +347,5 @@ done:
     is12_preview_close(&s->preview);
     is12_image_destroy(&s->image);
     free(s);
-    return success?0:1;
+    return !device_safe?7:interrupted?6:success?0:1;
 }

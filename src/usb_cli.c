@@ -85,6 +85,7 @@ static int send_file(bjc_usb *usb, const char *filename) {
     }
     size_t sent = 0;
     rc = bjc_usb_write(usb, data, (size_t)length, &sent);
+    if (!rc && sent==(size_t)length) rc=bjc_usb_finish_safe(usb);
     free(data);
     fprintf(stderr, "USB accepted %zu/%ld bytes: %s. Physical output still requires inspection.\n",
             sent, length, libusb_error_name(rc));

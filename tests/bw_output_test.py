@@ -1,5 +1,6 @@
 """Verify one-bit output from complete grayscale data, including threshold edges."""
 import json
+import os
 from pathlib import Path
 import struct
 import subprocess
@@ -7,7 +8,7 @@ import tempfile
 from PIL import Image
 
 root = Path(__file__).resolve().parents[1]
-helper = root / 'build-asan/bjc85-is12'
+helper = Path(os.environ.get('BJC85_TEST_HELPER',root / 'build-asan/bjc85-is12'))
 def record(family, body):
     return b'\x1b!' + family + struct.pack('<H', len(body)) + body
 

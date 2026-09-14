@@ -2,12 +2,15 @@
 #include "is12_image.h"
 #include "protocol.h"
 #include "usb.h"
+#include "is12_status.h"
+#include "is12_calibration.h"
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
 
 int is12_scan_main(const char *directory,bool calibration,const char *reference,unsigned dpi,bool grayscale,bool lineart,bool blackwhite,bool live_preview);
+static bool diagnostic_transport_ok;
 
 static unsigned parse_dpi(const char *value) {
     return !strcmp(value,"90")?90:!strcmp(value,"180")?180:!strcmp(value,"360")?360:0;
@@ -26,12 +29,14 @@ static void hex(const uint8_t *data, size_t length) {
 }
 
 static bool send_request(bjc_usb *usb, const char *stage, const uint8_t *data, size_t length) {
+    if (bjc_usb_begin_operation(usb,"scanner-status")) { diagnostic_transport_ok=false; return false; }
     int accepted = 0;
     int rc = libusb_bulk_transfer(usb->handle, usb->bulk_out, (uint8_t *)data, (int)length, &accepted, 1000);
     printf("{\"event\":\"write\",\"stage\":\"%s\",\"requested\":%zu,\"accepted\":%d,\"usb_result\":%d,\"hex\":", stage, length, accepted, rc);
     hex(data, length); puts("}"); fflush(stdout);
     /* A diagnostic never retries or resets after a partial/failed write. */
-    return rc == 0 && accepted == (int)length;
+    if (rc || accepted != (int)length) { diagnostic_transport_ok=false; return false; }
+    return true;
 }
 
 typedef struct {
@@ -71,7 +76,7 @@ static bool receive_reply(bjc_usb *usb, const char *stage, uint8_t token, size_t
         uint8_t block[512];
         int count = 0;
         int rc = libusb_bulk_transfer(usb->handle, usb->bulk_in, block, sizeof(block), &count, 250);
-        if (count < 0 || (size_t)count > sizeof(block)) return false;
+        if (count < 0 || (size_t)count > sizeof(block)) { diagnostic_transport_ok=false; return false; }
         if (count) {
             printf("{\"event\":\"read\",\"stage\":\"%s\",\"usb_result\":%d,\"bytes\":%d,\"hex\":", stage, rc, count);
             hex(block, (size_t)count); puts("}"); fflush(stdout);
@@ -84,6 +89,7 @@ static bool receive_reply(bjc_usb *usb, const char *stage, uint8_t token, size_t
             }
         }
         if (rc < 0 && rc != LIBUSB_ERROR_TIMEOUT) {
+            diagnostic_transport_ok=false;
             printf("{\"event\":\"read_error\",\"stage\":\"%s\",\"usb_result\":%d}\n", stage, rc);
             return false;
         }
@@ -167,10 +173,16 @@ int main(int argc, char **argv) {
     if (argc == 3 && !strcmp(argv[1], "decode")) return decode(argv[2]);
     const uint8_t enter[] = {0x1b, '[', 'K', 2, 0, 0, 0x0d};
     bool plan = argc == 2 && !strcmp(argv[1], "plan");
-    bool hardware = (argc == 3 || argc == 4) && !strcmp(argv[1], "status") && !strcmp(argv[2], "--scanner-installed");
-    bool enter_mode = argc == 4 && !strcmp(argv[3], "--enter-scanner-mode");
-    if (!plan && (!hardware || (argc == 4 && !enter_mode))) {
-        fprintf(stderr, "Usage: %s plan\n       %s decode USB-IN-CAPTURE\n       %s status --scanner-installed [--enter-scanner-mode]\n"
+    bool hardware = argc >= 3 && !strcmp(argv[1], "status") && !strcmp(argv[2], "--scanner-installed");
+    bool enter_mode = false;
+    const char *reference_path=NULL;
+    if (hardware) for (int i=3;i<argc;i++) {
+        if (!strcmp(argv[i],"--enter-scanner-mode") && !enter_mode) enter_mode=true;
+        else if (!strcmp(argv[i],"--reference") && !reference_path && i+1<argc) reference_path=argv[++i];
+        else { hardware=false; break; }
+    }
+    if (!plan && !hardware) {
+        fprintf(stderr, "Usage: %s plan\n       %s decode USB-IN-CAPTURE\n       %s status --scanner-installed [--enter-scanner-mode] [--reference FILE]\n"
                 "       %s scan --scanner-installed --uncalibrated [--dpi 90|180|360] [--mode color|gray|bw|lineart] [--live-preview] NEW-OUTPUT-DIRECTORY\n"
                 "       %s image RECORDS OUTPUT.png [--rotate180] [--dpi 90|180|360] [--mode color|gray|bw|lineart]\n"
                 "       %s calibrate --scanner-installed --plain-paper-reference NEW-OUTPUT-DIRECTORY\n"
@@ -187,6 +199,7 @@ int main(int argc, char **argv) {
         return 0;
     }
     bjc_usb usb;
+    diagnostic_transport_ok=true;
     int rc = bjc_usb_open(&usb);
     if (!rc) rc = bjc_usb_claim(&usb);
     uint8_t identity[2048]; char id[2048];
@@ -194,6 +207,8 @@ int main(int argc, char **argv) {
     if (count < 0 || !bjc_device_id(identity, (size_t)count, id, sizeof(id)) ||
         !strstr(id, "MFG:Canon;") || !strstr(id, "MDL:BJC-85;")) {
         fprintf(stderr, "Could not verify and claim the Canon BJC-85. Nothing sent.\n");
+        puts("{\"event\":\"readiness\",\"kind\":\"transportError\",\"transport_ok\":false,\"replies_ok\":false,\"head_matches\":false,\"ready\":false}");
+        printf("{\"event\":\"operation_outcome\",\"outcome\":\"%s\"}\n",usb.recovery_blocked?"recoveryRequired":"preflightFailedSafe");
         bjc_usb_close(&usb); return 1;
     }
     puts("{\"event\":\"start\",\"cartridge\":\"IS-12 asserted by operator\",\"native_arch\":\"arm64\"}");
@@ -220,7 +235,25 @@ int main(int argc, char **argv) {
         printf("{\"event\":\"status_summary\",\"warming_up\":%s,\"temperature_raw\":%u}\n",
                status[1] & 0x08 ? "true" : "false", temperature[0]);
     }
+    is12_status_result readiness=is12_status_evaluate(diagnostic_transport_ok,success,carrier,sizeof(carrier),information,sizeof(information),status);
+    bool reference_valid=false;
+    uint8_t reference_temperature=0;
+    if (reference_path && readiness.ready) {
+        char serial[32]={0};
+        uint8_t measurement[IS12_MEASUREMENT_SIZE], correction[IS12_CORRECTION_SIZE];
+        int size=libusb_get_string_descriptor_ascii(usb.handle,usb.descriptor.iSerialNumber,(uint8_t *)serial,sizeof(serial)-1);
+        reference_valid=size>0 && size<32 &&
+            is12_reference_load(reference_path,measurement,&reference_temperature,serial,carrier) &&
+            is12_correction(measurement,reference_temperature,temperature[0],90,correction);
+        // This validates existing data only; no T download or paper motion.
+    }
+    if (success && bjc_usb_finish_safe(&usb)) { success=false; readiness.ready=false; readiness.kind=IS12_STATUS_TRANSPORT_ERROR; }
+    printf("{\"event\":\"readiness\",\"schema_version\":1,\"kind\":\"%s\",\"transport_ok\":%s,\"replies_ok\":%s,\"head_matches\":%s,\"ready\":%s,\"temperature_raw\":%u,\"reference_valid\":%s,\"reference_temperature_raw\":%u,\"calibration_verified\":false}\n",
+        is12_status_name(readiness.kind),readiness.transport_ok?"true":"false",readiness.replies_ok?"true":"false",
+        readiness.head_matches?"true":"false",readiness.ready?"true":"false",temperature[0],
+        reference_path?(reference_valid?"true":"false"):"null",reference_temperature);
+    printf("{\"event\":\"operation_outcome\",\"outcome\":\"%s\"}\n",success?(readiness.ready?"completedSafe":"preflightFailedSafe"):"recoveryRequired");
     bjc_usb_close(&usb);
     if (!success) fprintf(stderr, "Diagnostic stopped; retain the byte log. No automatic reset or retransmission was performed.\n");
-    return success ? 0 : 1;
+    return readiness.ready ? 0 : (int)readiness.kind;
 }

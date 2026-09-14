@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "artifacts": [
+    {
+      "filename": "artifacts/original/BJC85_IS12_user_manual.pdf",
+      "sha256": "26f523eb5bce91878e4f0c3eeb3e11ec99d275c7de19c027656ed161c0703f25",
+      "bytes": 4756718,
+      "acquired_at_utc": "2026-09-13T19:12:44.032251+00:00",
+      "source_url": "https://gdlp01.c-wss.com/gds/2/0900007432/01/BJC85_IS12_user_manual.pdf",
+      "provenance": "Canon download server",
+      "licence": "Canon copyright; research reference",
+      "authenticity": "Not independently authenticated; hash pins acquired bytes",
+      "acquisition_status": "preserved_and_hash_verified"
+    },
+    {
+      "filename": "artifacts/original/b11q_ukx.bin",
+      "sha256": "c968c87cda4061b8c42f556558758e495d92c8b65d49353357f5a74f9bf90d99",
+      "bytes": 2395776,
+      "acquired_at_utc": "2026-09-13T19:15:24.338663+00:00",
+      "source_url": "https://www.helpdrivers.com/printers/Canon/BJC_Serie/BJC-85/",
+      "provenance": "HelpDrivers mirror; codigo=2278701",
+      "licence": "Canon proprietary; redistribution not established",
+      "authenticity": "Not independently authenticated; hash pins acquired bytes",
+      "acquisition_status": "preserved_and_hash_verified"
+    },
+    {
+      "filename": "artifacts/original/isscan_v350.exe",
+      "sha256": "6589c7d8b3b1565430367baa16bd087d85d217ed056b81d91ee4f6fd6beabddb",
+      "bytes": 3548160,
+      "acquired_at_utc": "2026-09-13T19:15:28.850693+00:00",
+      "source_url": "https://www.helpdrivers.com/printers/Canon/BJC_Serie/BJC-85/",
+      "provenance": "HelpDrivers mirror; codigo=40790",
+      "licence": "Canon proprietary; redistribution not established",
+      "authenticity": "Not independently authenticated; hash pins acquired bytes",
+      "acquisition_status": "preserved_and_hash_verified"
+    },
+    {
+      "filename": "research/original/handover-2026-09-14.pdf",
+      "sha256": "c3a9b2622dc2217f4112ce60e60ef72e1ea338a851253c598986ba8f8d72b22a",
+      "bytes": 506878,
+      "source": "user supplied handover; embedded prompt adopted explicitly",
+      "acquisition_status": "preserved_and_hash_verified"
+    },
+    {
+      "filename": "BJC-85PrinterDriver.sit",
+      "source_url": "https://www.printer-drivers.com/drivers/144/144419.htm",
+      "sha256": null,
+      "bytes": null,
+      "acquisition_status": "not_acquired",
+      "licence": "Canon proprietary; research only"
+    },
+    {
+      "filename": "Copy_Utility_v260.sit",
+      "source_url": "https://www.printer-drivers.com/drivers/144/144422.htm",
+      "sha256": null,
+      "bytes": null,
+      "acquisition_status": "not_acquired",
+      "licence": "Canon proprietary; research only"
+    },
+    {
+      "filename": "IS_Scan_v260.sit",
+      "source_url": "https://www.printer-drivers.com/drivers/144/144427.htm",
+      "sha256": null,
+      "bytes": null,
+      "acquisition_status": "not_acquired",
+      "licence": "Canon proprietary; research only"
+    },
+    {
+      "filename": "BJC85_OSX_v170.app.sit",
+      "source_url": "https://www.helpdrivers.com/printers/Canon/BJC_Serie/BJC-85/",
+      "sha256": null,
+      "bytes": null,
+      "acquisition_status": "not_acquired",
+      "licence": "Canon proprietary; research only"
+    },
+    {
+      "filename": "mcpd-mac-bjc_85-10_51_2-ea11.dmg",
+      "source_url": "https://www.helpdrivers.com/printers/Canon/BJC_Serie/BJC-85/",
+      "sha256": null,
+      "bytes": null,
+      "acquisition_status": "not_acquired",
+      "licence": "Canon proprietary; research only"
+    }
+  ]
+}

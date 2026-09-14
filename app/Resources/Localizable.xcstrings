@@ -1,0 +1,2370 @@
+{
+  "sourceLanguage": "en-CA",
+  "strings": {
+    "\n\nConnect the scanner to validate the saved reference.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CalibrationView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\n\nConnect the scanner to validate the saved reference."
+          }
+        }
+      }
+    },
+    "\n\nNo reference has been saved.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CalibrationView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\n\nNo reference has been saved."
+          }
+        }
+      }
+    },
+    "\n\nSaved reference: %@. Serial, head and temperature are checked by the native helper before paper is fed.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CalibrationView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\n\nSaved reference: %@. Serial, head and temperature are checked by the native helper before paper is fed."
+          }
+        }
+      }
+    },
+    "\n\nSerial, head and temperature validation passed at the last connection.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CalibrationView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\n\nSerial, head and temperature validation passed at the last connection."
+          }
+        }
+      }
+    },
+    "\n\nThe reference did not pass current device/temperature validation. Recalibration is required.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CalibrationView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "\n\nThe reference did not pass current device/temperature validation. Recalibration is required."
+          }
+        }
+      }
+    },
+    "%.2f × %.2f in": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%.2f × %.2f in"
+          }
+        }
+      }
+    },
+    "%@ in inches": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ in inches"
+          }
+        }
+      }
+    },
+    "%d dpi": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d dpi"
+          }
+        }
+      }
+    },
+    "%d dpi is documented by Canon but its device mode has not been qualified.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/ScanSettings.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d dpi is documented by Canon but its device mode has not been qualified."
+          }
+        }
+      }
+    },
+    "A4": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/PrintSettingsView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A4"
+          }
+        }
+      }
+    },
+    "Advanced Canon cartridge, media, colour, halftone and maintenance options are unavailable until mapped and qualified.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Advanced Canon cartridge, media, colour, halftone and maintenance options are unavailable until mapped and qualified."
+          }
+        }
+      }
+    },
+    "Apply": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apply"
+          }
+        }
+      }
+    },
+    "B&W Text Enhanced — unavailable": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/ScanSettings.swift. Historical Canon Macintosh terminology; preserve the distinction between original processing and qualified native modes.",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "B&W Text Enhanced — unavailable"
+          }
+        }
+      }
+    },
+    "B&W threshold": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "B&W threshold"
+          }
+        }
+      }
+    },
+    "BC-11e installed — continue": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CartridgeSwapView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BC-11e installed — continue"
+          }
+        }
+      }
+    },
+    "BC-11e · plain paper · automatic feed · 360 dpi\nLetter colour is physically verified. A4, multiple copies and monochrome still need physical acceptance. The current black ink channel needs attention.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/PrintSettingsView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BC-11e · plain paper · automatic feed · 360 dpi\nLetter colour is physically verified. A4, multiple copies and monochrome still need physical acceptance. The current black ink channel needs attention."
+          }
+        }
+      }
+    },
+    "BJC-85 Help": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BJC-85 Help"
+          }
+        }
+      }
+    },
+    "BJC-85 Utility": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BJC-85 Utility"
+          }
+        }
+      }
+    },
+    "BJC-85 maintenance": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/MaintenanceView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BJC-85 maintenance"
+          }
+        }
+      }
+    },
+    "BJC85_Native belongs to another printer connection. Resolve the queue name before switching services.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/ServiceController.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BJC85_Native belongs to another printer connection. Resolve the queue name before switching services."
+          }
+        }
+      }
+    },
+    "Black and white": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/ScanSettings.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Black and white"
+          }
+        }
+      }
+    },
+    "Black and white threshold": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Black and white threshold"
+          }
+        }
+      }
+    },
+    "Brightness": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brightness"
+          }
+        }
+      }
+    },
+    "Calibrate loaded sheet": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CalibrationView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calibrate loaded sheet"
+          }
+        }
+      }
+    },
+    "Calibrate white sheet": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calibrate white sheet"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift, app/UI/CalibrationView.swift, app/UI/CartridgeSwapView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        }
+      }
+    },
+    "Cancel / Halt": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel / Halt"
+          }
+        }
+      }
+    },
+    "Cancelling print job…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelling print job…"
+          }
+        }
+      }
+    },
+    "Cannot create operation log.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot create operation log."
+          }
+        }
+      }
+    },
+    "Cannot create the scanner's output folder: %@": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot create the scanner's output folder: %@"
+          }
+        }
+      }
+    },
+    "Cannot save operation log; stopping.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot save operation log; stopping."
+          }
+        }
+      }
+    },
+    "Canon BJC-85 Native": {
+      "extractionState": "manual",
+      "comment": "User interface: app/ServiceController.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canon BJC-85 Native"
+          }
+        }
+      }
+    },
+    "Canon IS-12": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canon IS-12"
+          }
+        }
+      }
+    },
+    "Canon scan preset": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canon scan preset"
+          }
+        }
+      }
+    },
+    "Canon's Text Enhanced processing is still under research. Select Black and white for adjustable native thresholding.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/ScanSettings.swift. Historical Canon Macintosh terminology; preserve the distinction between original processing and qualified native modes.",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canon's Text Enhanced processing is still under research. Select Black and white for adjustable native thresholding."
+          }
+        }
+      }
+    },
+    "Checking IS-12…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checking IS-12…"
+          }
+        }
+      }
+    },
+    "Choose Letter or A4 and 1–999 copies.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose Letter or A4 and 1–999 copies."
+          }
+        }
+      }
+    },
+    "Choose a previously saved IS-12 reference.bin. Identity, checksum and temperature must still validate before acquisition.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a previously saved IS-12 reference.bin. Identity, checksum and temperature must still validate before acquisition."
+          }
+        }
+      }
+    },
+    "Clear Selection": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear Selection"
+          }
+        }
+      }
+    },
+    "Colour": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/ScanSettings.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Colour"
+          }
+        }
+      }
+    },
+    "Colour printing": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/PrintSettingsView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Colour printing"
+          }
+        }
+      }
+    },
+    "Completed diagnostic captures deleted.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completed diagnostic captures deleted."
+          }
+        }
+      }
+    },
+    "Connect scanner": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect scanner"
+          }
+        }
+      }
+    },
+    "Connect the BJC-85 with the IS-12 installed.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect the BJC-85 with the IS-12 installed."
+          }
+        }
+      }
+    },
+    "Connected device did not pass the IS-12 check.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected device did not pass the IS-12 check."
+          }
+        }
+      }
+    },
+    "Continue after cartridge swap…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CopyWorkflowView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue after cartridge swap…"
+          }
+        }
+      }
+    },
+    "Contrast": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contrast"
+          }
+        }
+      }
+    },
+    "Copies (1–999)": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/PrintSettingsView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copies (1–999)"
+          }
+        }
+      }
+    },
+    "Copy": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy"
+          }
+        }
+      }
+    },
+    "Copy brightness": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CopyWorkflowView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy brightness"
+          }
+        }
+      }
+    },
+    "Copy loaded original": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CopyWorkflowView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy loaded original"
+          }
+        }
+      }
+    },
+    "Could not save: %@": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Could not save: %@"
+          }
+        }
+      }
+    },
+    "Could not start: %@": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Could not start: %@"
+          }
+        }
+      }
+    },
+    "Crop dimensions in inches": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crop dimensions in inches"
+          }
+        }
+      }
+    },
+    "Crop dimensions…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crop dimensions…"
+          }
+        }
+      }
+    },
+    "Crop: %.2f, %.2f inches; %.2f × %.2f inches": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/ScanWorkspaceView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crop: %.2f, %.2f inches; %.2f × %.2f inches"
+          }
+        }
+      }
+    },
+    "Custom": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom"
+          }
+        }
+      }
+    },
+    "Custom scan settings": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom scan settings"
+          }
+        }
+      }
+    },
+    "DTP Colour": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/CanonPreset.swift. Historical Canon Macintosh terminology; preserve the distinction between original processing and qualified native modes.",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DTP Colour"
+          }
+        }
+      }
+    },
+    "DTP Grayscale / B&W": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/CanonPreset.swift. Historical Canon Macintosh terminology; preserve the distinction between original processing and qualified native modes.",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DTP Grayscale / B&W"
+          }
+        }
+      }
+    },
+    "Delete Diagnostic Data…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete Diagnostic Data…"
+          }
+        }
+      }
+    },
+    "Delete completed captures": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete completed captures"
+          }
+        }
+      }
+    },
+    "Delete completed diagnostic captures?": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete completed diagnostic captures?"
+          }
+        }
+      }
+    },
+    "Despeckle": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Despeckle"
+          }
+        }
+      }
+    },
+    "Device": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Device"
+          }
+        }
+      }
+    },
+    "Device & Settings": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Device & Settings"
+          }
+        }
+      }
+    },
+    "Device unavailable": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Device unavailable"
+          }
+        }
+      }
+    },
+    "Disconnected": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift, app/UI/DeviceStatusView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disconnected"
+          }
+        }
+      }
+    },
+    "Done": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/MaintenanceView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        }
+      }
+    },
+    "Draft": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/PrintSettingsView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draft"
+          }
+        }
+      }
+    },
+    "Drag to select or move a region. Arrow keys move it; Shift moves ten pixels. Clear Selection restores the page.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/ScanWorkspaceView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag to select or move a region. Arrow keys move it; Shift moves ten pixels. Clear Selection restores the page."
+          }
+        }
+      }
+    },
+    "Enter four valid dimensions.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter four valid dimensions."
+          }
+        }
+      }
+    },
+    "Export file format": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export file format"
+          }
+        }
+      }
+    },
+    "FAX": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/CanonPreset.swift. Historical Canon Macintosh terminology; preserve the distinction between original processing and qualified native modes.",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FAX"
+          }
+        }
+      }
+    },
+    "File": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File"
+          }
+        }
+      }
+    },
+    "Finish or cancel the queued BJC-85 print jobs first.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/ServiceController.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish or cancel the queued BJC-85 print jobs first."
+          }
+        }
+      }
+    },
+    "Finish the Image Capture job or inspect its recovery state before switching device use.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/ServiceController.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish the Image Capture job or inspect its recovery state before switching device use."
+          }
+        }
+      }
+    },
+    "Finishing scan…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finishing scan…"
+          }
+        }
+      }
+    },
+    "Grayscale": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/ScanSettings.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grayscale"
+          }
+        }
+      }
+    },
+    "Height": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Height"
+          }
+        }
+      }
+    },
+    "Help": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Help"
+          }
+        }
+      }
+    },
+    "High": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/PrintSettingsView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High"
+          }
+        }
+      }
+    },
+    "IS-12 connected. Ready to scan.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IS-12 connected. Ready to scan."
+          }
+        }
+      }
+    },
+    "IS-12 scan.png": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IS-12 scan.png"
+          }
+        }
+      }
+    },
+    "IS-12 scanner installed; restore BC-11e before printing.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/ServiceController.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IS-12 scanner installed; restore BC-11e before printing."
+          }
+        }
+      }
+    },
+    "Image filter": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Image filter"
+          }
+        }
+      }
+    },
+    "Image retained. Replace the IS-12 with BC-11e, then choose Switch to printing. Reprint uses this same image.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Image retained. Replace the IS-12 with BC-11e, then choose Switch to printing. Reprint uses this same image."
+          }
+        }
+      }
+    },
+    "Import existing white reference…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Import existing white reference…"
+          }
+        }
+      }
+    },
+    "Install the BC-11e": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Install the BC-11e"
+          }
+        }
+      }
+    },
+    "Install the IS-12": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Install the IS-12"
+          }
+        }
+      }
+    },
+    "Install the IS-12 before connecting. Load one sheet for each scan. Connecting pauses the BJC-85 print queue.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Install the IS-12 before connecting. Load one sheet for each scan. Connecting pauses the BJC-85 print queue."
+          }
+        }
+      }
+    },
+    "Install the print cartridge": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CartridgeSwapView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Install the print cartridge"
+          }
+        }
+      }
+    },
+    "Invert": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invert"
+          }
+        }
+      }
+    },
+    "Left": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Left"
+          }
+        }
+      }
+    },
+    "Letter": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/PrintSettingsView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letter"
+          }
+        }
+      }
+    },
+    "Load one clean, blank white sheet. The IS-12 measures it to correct sensor shading. This is an experimental plain-paper reference; it does not establish Canon-reference colour accuracy.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CalibrationView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Load one clean, blank white sheet. The IS-12 measures it to correct sensor shading. This is an experimental plain-paper reference; it does not establish Canon-reference colour accuracy."
+          }
+        }
+      }
+    },
+    "Load one original with the IS-12 installed. Copy will retain its image through the cartridge swap.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Load one original with the IS-12 installed. Copy will retain its image through the cartridge swap."
+          }
+        }
+      }
+    },
+    "Macintosh scan presets": {
+      "extractionState": "manual",
+      "comment": "User interface: app/ClassicResourceReference.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Macintosh scan presets"
+          }
+        }
+      }
+    },
+    "Maintenance information…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maintenance information…"
+          }
+        }
+      }
+    },
+    "Measuring the blank white sheet…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measuring the blank white sheet…"
+          }
+        }
+      }
+    },
+    "Native scanning for your BJC-85": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Native scanning for your BJC-85"
+          }
+        }
+      }
+    },
+    "No Canon executables or artwork are used by this native application.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Canon executables or artwork are used by this native application."
+          }
+        }
+      }
+    },
+    "No white reference saved.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No white reference saved."
+          }
+        }
+      }
+    },
+    "None": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "None"
+          }
+        }
+      }
+    },
+    "Normal": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/PrintSettingsView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normal"
+          }
+        }
+      }
+    },
+    "Number of copies": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/PrintSettingsView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number of copies"
+          }
+        }
+      }
+    },
+    "OCR": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/CanonPreset.swift. Historical Canon Macintosh terminology; preserve the distinction between original processing and qualified native modes.",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OCR"
+          }
+        }
+      }
+    },
+    "Open Image Capture": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Image Capture"
+          }
+        }
+      }
+    },
+    "Open print jobs": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open print jobs"
+          }
+        }
+      }
+    },
+    "Operation stopped. Captured data is retained in Show files. Reconnect before trying again.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Operation stopped. Captured data is retained in Show files. Reconnect before trying again."
+          }
+        }
+      }
+    },
+    "Original preset: colour matching on. Canon colour matching is unavailable; this scan uses the saved white reference.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/CanonPreset.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Original preset: colour matching on. Canon colour matching is unavailable; this scan uses the saved white reference."
+          }
+        }
+      }
+    },
+    "Original preset: edge emphasis on. Canon edge processing is unavailable; native thresholding is used.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/CanonPreset.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Original preset: edge emphasis on. Canon edge processing is unavailable; native thresholding is used."
+          }
+        }
+      }
+    },
+    "Original reloaded — scan": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Original reloaded — scan"
+          }
+        }
+      }
+    },
+    "PDF": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF"
+          }
+        }
+      }
+    },
+    "PNG": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PNG"
+          }
+        }
+      }
+    },
+    "Paper size": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/PrintSettingsView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paper size"
+          }
+        }
+      }
+    },
+    "Photo": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/CanonPreset.swift. Historical Canon Macintosh terminology; preserve the distinction between original processing and qualified native modes.",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo"
+          }
+        }
+      }
+    },
+    "Plain-paper reference · serial, head and temperature passed": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plain-paper reference · serial, head and temperature passed"
+          }
+        }
+      }
+    },
+    "Preparing scanner connection…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparing scanner connection…"
+          }
+        }
+      }
+    },
+    "Prescan": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prescan"
+          }
+        }
+      }
+    },
+    "Prescan ejected the sheet. Reload the same original in the same orientation, then scan at the selected resolution. The saved image will use your selected region.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prescan ejected the sheet. Reload the same original in the same orientation, then scan at the selected resolution. The saved image will use your selected region."
+          }
+        }
+      }
+    },
+    "Print": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Print"
+          }
+        }
+      }
+    },
+    "Print job submitted · %@": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Print job submitted · %@"
+          }
+        }
+      }
+    },
+    "Print outcome needs inspection.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Print outcome needs inspection."
+          }
+        }
+      }
+    },
+    "Print paper size": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/PrintSettingsView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Print paper size"
+          }
+        }
+      }
+    },
+    "Print quality": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/PrintSettingsView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Print quality"
+          }
+        }
+      }
+    },
+    "Print queue finished the job. Inspect the physical output.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Print queue finished the job. Inspect the physical output."
+          }
+        }
+      }
+    },
+    "Print retained scan…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Print retained scan…"
+          }
+        }
+      }
+    },
+    "Print scan…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Print scan…"
+          }
+        }
+      }
+    },
+    "Print service did not become ready. Inspect the service log.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/ServiceController.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Print service did not become ready. Inspect the service log."
+          }
+        }
+      }
+    },
+    "Print settings": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Print settings"
+          }
+        }
+      }
+    },
+    "Printer ready": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Printer ready"
+          }
+        }
+      }
+    },
+    "Printing": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Printing"
+          }
+        }
+      }
+    },
+    "Printing enabled. Choose Canon BJC-85 Native in the Print dialog.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Printing enabled. Choose Canon BJC-85 Native in the Print dialog."
+          }
+        }
+      }
+    },
+    "Privacy and diagnostic data": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy and diagnostic data"
+          }
+        }
+      }
+    },
+    "Privacy and diagnostic data…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy and diagnostic data…"
+          }
+        }
+      }
+    },
+    "Quit BJC-85 Utility": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quit BJC-85 Utility"
+          }
+        }
+      }
+    },
+    "Recovery required": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recovery required"
+          }
+        }
+      }
+    },
+    "Recovery required. Inspect the previous operation and printer. New device operations are blocked.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recovery required. Inspect the previous operation and printer. New device operations are blocked."
+          }
+        }
+      }
+    },
+    "Reference imported. Connect scanner to check readiness.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reference imported. Connect scanner to check readiness."
+          }
+        }
+      }
+    },
+    "Reference invalid for current device or temperature · recalibrate": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reference invalid for current device or temperature · recalibrate"
+          }
+        }
+      }
+    },
+    "Reload the original": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reload the original"
+          }
+        }
+      }
+    },
+    "Remove the IS-12 and install the BC-11e. Load plain paper. Continue only when the cartridge is installed and the printer is idle. Scanner discovery will stop and the native print queue will resume.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CartridgeSwapView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove the IS-12 and install the BC-11e. Load plain paper. Continue only when the cartridge is installed and the printer is idle. Scanner discovery will stop and the native print queue will resume."
+          }
+        }
+      }
+    },
+    "Reprint retained image": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CopyWorkflowView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reprint retained image"
+          }
+        }
+      }
+    },
+    "Reset copy session": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CopyWorkflowView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reset copy session"
+          }
+        }
+      }
+    },
+    "Retain diagnostic captures": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retain diagnostic captures"
+          }
+        }
+      }
+    },
+    "Save": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save"
+          }
+        }
+      }
+    },
+    "Save image…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save image…"
+          }
+        }
+      }
+    },
+    "Save scan…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save scan…"
+          }
+        }
+      }
+    },
+    "Saved %@": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved %@"
+          }
+        }
+      }
+    },
+    "Saved copy image restored. Confirm the print cartridge before printing or reprinting.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved copy image restored. Confirm the print cartridge before printing or reprinting."
+          }
+        }
+      }
+    },
+    "Saved exports, calibration references, active copy sessions and data requiring recovery are preserved.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved exports, calibration references, active copy sessions and data requiring recovery are preserved."
+          }
+        }
+      }
+    },
+    "Saved reference · connect to validate": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved reference · connect to validate"
+          }
+        }
+      }
+    },
+    "Saved scan · %d dpi": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved scan · %d dpi"
+          }
+        }
+      }
+    },
+    "Scan": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan"
+          }
+        }
+      }
+    },
+    "Scan cancelled. The preview is partial; captured data is retained in Show files. Reconnect before scanning.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan cancelled. The preview is partial; captured data is retained in Show files. Reconnect before scanning."
+          }
+        }
+      }
+    },
+    "Scan complete · %d dpi · white-paper correction": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan complete · %d dpi · white-paper correction"
+          }
+        }
+      }
+    },
+    "Scan mode": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan mode"
+          }
+        }
+      }
+    },
+    "Scan page": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan page"
+          }
+        }
+      }
+    },
+    "Scan resolution": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan resolution"
+          }
+        }
+      }
+    },
+    "Scan with IS-12 → retain image → replace cartridge → print. Reprint uses the retained image without another scan.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CopyWorkflowView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan with IS-12 → retain image → replace cartridge → print. Reprint uses the retained image without another scan."
+          }
+        }
+      }
+    },
+    "Scanned page and crop selection": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/ScanWorkspaceView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanned page and crop selection"
+          }
+        }
+      }
+    },
+    "Scanner detected": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanner detected"
+          }
+        }
+      }
+    },
+    "Scanner ready": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanner ready"
+          }
+        }
+      }
+    },
+    "Scanner status and white calibration are available from the Scan workspace.\n\nFor the printer's built-in nozzle check, follow the BJC-85 manual (printed page 55). The last physical check produced CMY with no black.\n\nNative cleaning, deep cleaning, alignment and ink-level commands remain unavailable until their protocol and hardware behaviour are verified.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/MaintenanceView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanner status and white calibration are available from the Scan workspace.\n\nFor the printer's built-in nozzle check, follow the BJC-85 manual (printed page 55). The last physical check produced CMY with no black.\n\nNative cleaning, deep cleaning, alignment and ink-level commands remain unavailable until their protocol and hardware behaviour are verified."
+          }
+        }
+      }
+    },
+    "Scanner warming up": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanner warming up"
+          }
+        }
+      }
+    },
+    "Scanning": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanning"
+          }
+        }
+      }
+    },
+    "Scanning at %d dpi · %d%%": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanning at %d dpi · %d%%"
+          }
+        }
+      }
+    },
+    "Scanning one original. Its completed image will be retained for printing and reprinting.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanning one original. Its completed image will be retained for printing and reprinting."
+          }
+        }
+      }
+    },
+    "Selection %.2f × %.2f in · x %.2f, y %.2f": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selection %.2f × %.2f in · x %.2f, y %.2f"
+          }
+        }
+      }
+    },
+    "Selection must fit within the 8 × 10.8 inch scan area.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selection must fit within the 8 × 10.8 inch scan area."
+          }
+        }
+      }
+    },
+    "Settings from Canon's Macintosh manual, page %d.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/CanonPreset.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings from Canon's Macintosh manual, page %d."
+          }
+        }
+      }
+    },
+    "Settings…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings…"
+          }
+        }
+      }
+    },
+    "Sharpen": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sharpen"
+          }
+        }
+      }
+    },
+    "Sheet was fed bottom first": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sheet was fed bottom first"
+          }
+        }
+      }
+    },
+    "Show files": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show files"
+          }
+        }
+      }
+    },
+    "Soften": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soften"
+          }
+        }
+      }
+    },
+    "Starting scan…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Starting scan…"
+          }
+        }
+      }
+    },
+    "Stopping and retaining the captured data…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stopping and retaining the captured data…"
+          }
+        }
+      }
+    },
+    "Stopping device": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stopping device"
+          }
+        }
+      }
+    },
+    "Successful scan captures are removed after export unless you retain diagnostics. A copy session retains its image until Reset. Incomplete or ambiguous operations remain available for inspection.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Successful scan captures are removed after export unless you retain diagnostics. A copy session retains its image until Reset. Incomplete or ambiguous operations remain available for inspection."
+          }
+        }
+      }
+    },
+    "Switch to printing…": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Switch to printing…"
+          }
+        }
+      }
+    },
+    "TIFF": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TIFF"
+          }
+        }
+      }
+    },
+    "Text": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/CanonPreset.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Text"
+          }
+        }
+      }
+    },
+    "The device is busy or requires recovery. Service switching is blocked.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/ServiceController.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The device is busy or requires recovery. Service switching is blocked."
+          }
+        }
+      }
+    },
+    "The saved image has no usable scan resolution.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/ScanExport.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The saved image has no usable scan resolution."
+          }
+        }
+      }
+    },
+    "Top": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Top"
+          }
+        }
+      }
+    },
+    "Use a clean white sheet for calibration. This corrects uneven shading; colour accuracy with ordinary paper is unverified.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use a clean white sheet for calibration. This corrects uneven shading; colour accuracy with ordinary paper is unverified."
+          }
+        }
+      }
+    },
+    "View": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View"
+          }
+        }
+      }
+    },
+    "White reference needed": {
+      "extractionState": "manual",
+      "comment": "User interface: app/Models/DeviceState.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "White reference needed"
+          }
+        }
+      }
+    },
+    "White reference saved. Load your document, then choose Scan page.": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "White reference saved. Load your document, then choose Scan page."
+          }
+        }
+      }
+    },
+    "White-Level Calibration": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CalibrationView.swift. Historical Canon Macintosh terminology; preserve the distinction between original processing and qualified native modes.",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "White-Level Calibration"
+          }
+        }
+      }
+    },
+    "Width": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Width"
+          }
+        }
+      }
+    },
+    "Your page appears here\nPrescan to select a region": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/ScanWorkspaceView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your page appears here\nPrescan to select a region"
+          }
+        }
+      }
+    },
+    "Zoom in": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoom in"
+          }
+        }
+      }
+    },
+    "Zoom out": {
+      "extractionState": "manual",
+      "comment": "User interface: app/BJC85Scanner.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoom out"
+          }
+        }
+      }
+    },
+    "date unknown": {
+      "extractionState": "manual",
+      "comment": "User interface: app/UI/CalibrationView.swift",
+      "localizations": {
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "date unknown"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

@@ -1,13 +1,14 @@
 """Exercise an idle bridge's HTTP validation. Never submit a valid scan job."""
 import http.client
 import json
+import os
 from pathlib import Path
 
 settings = (Path(__file__).resolve().parent / 'fixtures/escl-scan-settings.xml').read_bytes()
 
 
 def request(method, path, body=None, headers=None):
-    connection = http.client.HTTPConnection('127.0.0.1', 8641, timeout=5)
+    connection = http.client.HTTPConnection('127.0.0.1', int(os.environ.get('BJC85_ESCL_TEST_PORT','8641')), timeout=5)
     connection.request(method, path, body=body, headers=headers or {})
     response = connection.getresponse()
     status, location, data = response.status, response.getheader('Location'), response.read()

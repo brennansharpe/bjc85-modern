@@ -1,0 +1,6 @@
+{"case": "wrongHead", "passed": true, "usb_access": false}
+{"case": "invalidReference", "passed": true, "usb_access": false}
+{"case": "ambiguous", "passed": true, "usb_access": false}
+{"case": "missingReceipt", "passed": true, "usb_access": false}
+{"case": "success", "passed": true, "usb_access": false}
+{"case": "successRetained", "passed": true, "usb_access": false}

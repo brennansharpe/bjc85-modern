@@ -110,6 +110,8 @@ static void capabilities(stp_vars_t *vars) {
 }
 
 int main(int argc, char **argv) {
+    extern void bjc_runtime_initialize(void);
+    bjc_runtime_initialize();
     if (argc < 2) {
         fprintf(stderr, "Usage: %s capabilities\n       %s test-page OUTPUT.bjc [mono|color] [Letter|A4]\n"
                 "       %s pdf INPUT.pdf OUTPUT.bjc [mono|color] [Letter|A4]\n"

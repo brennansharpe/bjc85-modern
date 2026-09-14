@@ -1,5 +1,6 @@
 """Validate native exports with independent image and PDF readers; no USB."""
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -7,7 +8,7 @@ from PIL import Image, ImageChops
 from pypdf import PdfReader
 
 root = Path(__file__).resolve().parents[1]
-exporter = root / 'build/is12-scan-export'
+exporter = Path(os.environ.get('BJC85_TEST_EXPORTER',root / 'build/is12-scan-export'))
 output = root / 'tmp/export-verification'
 output.mkdir(parents=True, exist_ok=True)
 for source_name, dpi in [

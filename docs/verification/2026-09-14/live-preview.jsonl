@@ -1,0 +1,7 @@
+{"capture": ".state/is12-scan-004", "mode": "color", "dpi": 90, "frames": 61, "preview_size": [720, 972], "pixels_match": true}
+{"capture": ".state/is12-scan-006", "mode": "color", "dpi": 180, "frames": 61, "preview_size": [720, 972], "pixels_match": true}
+{"capture": ".state/scanner-app/scan-00000000-0000-4000-8000-00000000000F", "mode": "color", "dpi": 360, "frames": 81, "preview_size": [720, 972], "pixels_match": true}
+{"capture": ".state/is12-scan-008", "mode": "gray", "dpi": 90, "frames": 31, "preview_size": [720, 972], "pixels_match": true}
+{"capture": ".state/is12-scan-010", "mode": "lineart", "dpi": 90, "frames": 31, "preview_size": [720, 972], "pixels_match": true}
+{"capture": ".state/is12-scan-012", "mode": "bw", "dpi": 360, "frames": 81, "preview_size": [720, 972], "pixels_match": true}
+{"incomplete_colour_planes_hidden": true, "partial_capture_retained": true, "short_page_not_marked_complete": true}

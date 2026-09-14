@@ -1,5 +1,6 @@
 """Replay real completed captures under ASAN and compare independent pixels."""
 import json
+import os
 from pathlib import Path
 import runpy
 import subprocess
@@ -29,7 +30,7 @@ with tempfile.TemporaryDirectory(prefix='is12-replay-') as output:
     for index, (path, dpi, mode) in enumerate(cases):
         records = root / path / 'records.bin'
         destination = Path(output) / f'{index}.png'
-        subprocess.run([root / 'build-asan/bjc85-is12', 'image', records, destination,
+        subprocess.run([Path(os.environ.get('BJC85_TEST_HELPER',root / 'build-asan/bjc85-is12')), 'image', records, destination,
                         '--dpi', str(dpi), '--mode', mode], check=True, capture_output=True)
         independent, info = decode(records.read_bytes(), dpi=dpi, mode='gray' if mode == 'bw' else mode)
         if mode == 'bw':

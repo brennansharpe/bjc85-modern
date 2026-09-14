@@ -1,0 +1,12 @@
+{"source": "scans/2026-09-13/chart-paper-reference-90dpi.png", "format": "png", "pixels_identical": true, "size": [720, 972], "dpi": 90, "mode": "RGB"}
+{"source": "scans/2026-09-13/chart-paper-reference-90dpi.png", "format": "tiff", "pixels_identical": true, "size": [720, 972], "dpi": 90, "mode": "RGB"}
+{"source": "scans/2026-09-13/chart-paper-reference-90dpi.png", "format": "pdf", "pixels_identical": true, "size": [720, 972], "dpi": 90, "mode": "RGB"}
+{"source": "scans/2026-09-13/chart-paper-reference-180dpi.png", "format": "png", "pixels_identical": true, "size": [1440, 1944], "dpi": 180, "mode": "RGB"}
+{"source": "scans/2026-09-13/chart-paper-reference-180dpi.png", "format": "tiff", "pixels_identical": true, "size": [1440, 1944], "dpi": 180, "mode": "RGB"}
+{"source": "scans/2026-09-13/chart-paper-reference-180dpi.png", "format": "pdf", "pixels_identical": true, "size": [1440, 1944], "dpi": 180, "mode": "RGB"}
+{"source": ".state/is12-scan-010/scan-bilevel.png", "format": "png", "pixels_identical": true, "size": [720, 972], "dpi": 90, "mode": "1"}
+{"source": ".state/is12-scan-010/scan-bilevel.png", "format": "tiff", "pixels_identical": true, "size": [720, 972], "dpi": 90, "mode": "1"}
+{"source": ".state/is12-scan-010/scan-bilevel.png", "format": "pdf", "pixels_identical": true, "size": [720, 972], "dpi": 90, "mode": "L"}
+{"source": ".state/is12-scan-012/scan-upright.png", "format": "png", "pixels_identical": true, "size": [2880, 3888], "dpi": 360, "mode": "1"}
+{"source": ".state/is12-scan-012/scan-upright.png", "format": "tiff", "pixels_identical": true, "size": [2880, 3888], "dpi": 360, "mode": "1"}
+{"source": ".state/is12-scan-012/scan-upright.png", "format": "pdf", "pixels_identical": true, "size": [2880, 3888], "dpi": 360, "mode": "L"}

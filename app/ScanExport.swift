@@ -11,7 +11,7 @@ enum ScanExport {
               let x = properties[kCGImagePropertyDPIWidth] as? Double,
               let y = properties[kCGImagePropertyDPIHeight] as? Double,
               x.isFinite, y.isFinite, x > 0, abs(x-y) < 0.1 else {
-            throw NSError(domain: "BJC85", code: 2, userInfo: [NSLocalizedDescriptionKey: "The saved image has no usable scan resolution."])
+            throw NSError(domain: "BJC85", code: 2, userInfo: [NSLocalizedDescriptionKey: L("The saved image has no usable scan resolution.")])
         }
         // PNG pixels-per-metre metadata rounds these exact device resolutions.
         if let native = [90.0, 180.0, 360.0].first(where: { abs($0-x) < 0.05 }) { return native }

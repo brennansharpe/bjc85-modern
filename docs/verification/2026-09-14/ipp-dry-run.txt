@@ -1,0 +1,22 @@
+"/Users/REDACTED/bjc85-modern/tests/ipp-acceptance.test":
+    Capabilities are valid and advertise native raster formats           [PASS]
+    Letter colour raster completes                                       [PASS]
+    Four-page A4 grayscale job with two copies completes                 [PASS]
+    Multiple-copy accounting includes all eight impressions              [PASS]
+    Unsupported resolution is rejected without substitution              [PASS]
+    Unsupported media is rejected without substitution                   [PASS]
+
+Summary: 6 tests, 6 passed, 0 failed, 0 skipped
+Score: 100%
+
+"/Users/REDACTED/bjc85-modern/tests/ipp-restart.test":
+    A restart retains the previous job history                           [PASS]
+    The next dry-run job continues the saved job counter                 [PASS]
+
+Summary: 2 tests, 2 passed, 0 failed, 0 skipped
+Score: 100%
+
+"/Users/REDACTED/bjc85-modern/tests/ipp-recovery.test":
+    A recovery marker prevents a new job from rendering or transferring  [PASS]
+
+{"ipp_dry_run": true, "restart": true, "recovery_gate": true, "usb_access": false}
