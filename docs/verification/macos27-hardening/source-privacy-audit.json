@@ -112,5 +112,6 @@
     }
   ],
   "limitations": "Pattern matches require manual review; email hits include upstream credits. Ignored private captures are not audited. No license or publication approval is implied.",
-  "redacted_derivative_count": 7
+  "redacted_derivative_count": 7,
+  "current_publication_note": "Historical audit findings, retained as history. See docs/publication-readiness.md for subsequent cleanup and unresolved GitHub cached-object publication gate."
 }

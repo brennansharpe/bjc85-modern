@@ -54,7 +54,7 @@ print path. Canon packages are local research material only.
 With the IS-12 installed, the native diagnostic entered scanner command mode and
 received carrier, scanner-information, and status replies. The returned bytes
 pass the BJC-85/IS-12 head checks reconstructed from Canon's driver. See the
-[wire reconstruction and hardware log](docs/protocol/is12-wire.md).
+[wire reconstruction and hardware log](protocol/is12-wire.md).
 Both printed test charts were subsequently scanned at 90 dpi: each acquisition
 returned 976 rows in each RGB channel and a valid end-of-page record. Native C
 decoding and Apple's ImageIO produce 720 × 972 PNGs, clipping four extra rows
@@ -64,7 +64,7 @@ sheet then produced the complete 12,337-byte white-reference measurement, and
 the native program downloaded Canon's per-resolution correction. Corrected
 charts at both 90 and 180 dpi have readable text, visible CMY patches, and a
 white background. Native and independent decoding agree on every pixel.
-See [the acquisition record](docs/protocol/is12-acquisition.md).
+See [the acquisition record](protocol/is12-acquisition.md).
 
 The user does not have Canon's white calibration sheet or scanning holder;
 plain-paper reference results do not establish factory colour accuracy.
@@ -86,7 +86,7 @@ Apple's **AirScanScanner** module discovered the local service, opened a session
 requested a real 90 dpi grayscale scan, and saved the downloaded PNG through
 ImageCaptureCore. This is actual acquisition through Apple's framework; the
 Image Capture application's GUI has not been checked because the Mac was locked.
-See [the integration record](docs/protocol/is12-imagecapture.md).
+See [the integration record](protocol/is12-imagecapture.md).
 
 **Current hardware state: IS-12 installed.** The print service is stopped and
 `BJC85_Native` is paused for scanner testing. Restore the BC-11e before resuming
@@ -185,7 +185,7 @@ The page preview now fills in as complete scan bands arrive. Unscanned areas are
 gray, and rotation works during acquisition. The lightweight live view uses
 90 dpi; completed scans and exports retain the selected resolution. Cancelling
 keeps the partial view and capture files without enabling Save. See the
-[live-preview implementation and checks](docs/protocol/is12-live-preview.md).
+[live-preview implementation and checks](protocol/is12-live-preview.md).
 
 The development app, its helpers, and its bundled libusb are ARM64 and locally
 ad-hoc signed. The scanner bundle has no runtime Homebrew-library dependency;
@@ -344,15 +344,15 @@ jobs can be removed from the private spool when no recovery is outstanding.
 
 ## Evidence and next work
 
-- [Bring-up report](docs/bringup-2026-09-13.md): results, hardware limits, and next experiments.
-- [USB baseline](docs/protocol/usb-bc11e-baseline.json): actual descriptors and identity.
-- [Scanner analysis](docs/protocol/is12-analysis.md): extracted components and trace targets.
-- [IS-12 wire protocol](docs/protocol/is12-wire.md): reconstructed requests and actual scanner replies.
-- [Acquisition and calibration](docs/protocol/is12-acquisition.md): real scan evidence, wire records, native commands, and remaining work.
-- [Calibration trace](docs/protocol/is12-calibration-trace.md): original driver addresses and correction-table processing.
-- [Image Capture integration](docs/protocol/is12-imagecapture.md): native Apple-framework acceptance and service operation.
-- [Source provenance](artifacts/manifests/provenance.json): acquired bytes, origins, sizes, hashes.
-- [Third-party components](THIRD_PARTY.md): dependency and research-material boundaries.
+- [Bring-up report](bringup-2026-09-13.md): results, hardware limits, and next experiments.
+- [USB baseline](protocol/usb-bc11e-baseline.json): actual descriptors and identity.
+- [Scanner analysis](protocol/is12-analysis.md): extracted components and trace targets.
+- [IS-12 wire protocol](protocol/is12-wire.md): reconstructed requests and actual scanner replies.
+- [Acquisition and calibration](protocol/is12-acquisition.md): real scan evidence, wire records, native commands, and remaining work.
+- [Calibration trace](protocol/is12-calibration-trace.md): original driver addresses and correction-table processing.
+- [Image Capture integration](protocol/is12-imagecapture.md): native Apple-framework acceptance and service operation.
+- [Source provenance](../artifacts/manifests/provenance.json): acquired bytes, origins, sizes, hashes.
+- [Third-party components](../THIRD_PARTY.md): dependency and research-material boundaries.
 
 Remaining work includes content-bearing higher-resolution/mode acceptance,
 preview selection and image controls beyond the OS tools, additional legacy

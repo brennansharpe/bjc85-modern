@@ -1,6 +1,10 @@
 # BJC-85 Utility
 
-**A native macOS home for the Canon BJC-85 and IS-12.**
+**Early source alpha — a native macOS home for the Canon BJC-85 and IS-12.**
+
+Source for inspection and local development. No downloadable app or installer
+is released. See [publication readiness](docs/publication-readiness.md) for the
+current publication gate and verification scope.
 
 Print, scan and copy with a classic portable printer on an Apple silicon Mac.
 BJC-85 Utility pairs a native AppKit workspace with Gutenprint, PAPPL and a
@@ -82,14 +86,23 @@ make and Python 3. The first build downloads checksum-pinned dependencies.
 
 ```sh
 sh scripts/build-release.sh
-sh scripts/package-pkg.sh
 ```
 
-Outputs: `dist/BJC-85 Utility.app` and the unsigned review package. The app and
+Output: `dist/BJC-85 Utility.app` for local development. The app and
 all bundled libraries target macOS 14 and ARM64. This local build is ad-hoc
 signed; Developer ID signing, notarization and clean-machine acceptance are
 pending. See [release instructions](docs/RELEASE.md). No installation, service
 switching, or device command occurs as part of the build.
+
+Offline checks (no device or private research captures required):
+
+```sh
+sh scripts/test-source-alpha.sh
+```
+
+This suite builds the native C targets and runs C, Swift and privacy regressions.
+The optional Gutenprint capability test runs only when its local static library
+is available. Private scan replays and physical acceptance are separate work.
 
 [User guide](docs/USER-GUIDE.md) · [Canon UI evidence map](docs/legacy-ui-map.md) ·
 [macOS 27 UI/UX audit and real before/after evidence](docs/macos27-ui-ux-audit.md) ·
@@ -171,9 +184,15 @@ extension, proprietary runtime or disabled platform protection is required.
 
 ## Licensing and provenance
 
-No project-wide license has been selected yet. Dependency notices and source
-pins are recorded below; a compatible license and distribution materials are
-still required before a public release. Original Canon software is research
-material only and is excluded from the app bundle.
+No project-wide open-source licence has yet been granted. Public visibility
+does not grant a general licence to reuse the project-owned source. Third-party
+components retain their own terms; this statement does not override them.
+Dependency sources are downloaded locally from pinned upstream releases, not
+vendored here. Original Canon installers, manuals, artwork, profiles, resource
+payloads and full decompilation outputs remain private research material.
+
+A future binary distribution needs an owner-selected compatible licensing route,
+corresponding source, notices and other applicable obligations. These binary
+requirements are separate from this source-alpha publication.
 
 [Third-party notices and distribution obligations](THIRD_PARTY.md)

@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "binary_fixtures": [
+    {
+      "path": "tests/fixtures/is12-correction-180dpi-temp56.bin",
+      "sha256": "3333127452b28e084dd38731c6c724431af67cdec2ef724702db5aec0bce4d13",
+      "bytes": 2057,
+      "reason": "Unchanged bounded IS-12 protocol/calibration fixture; parsed by the offline C tests. ASCII, UTF-16 and exact private-value matching remain enabled. No private document raster or device identity field is part of this fixture."
+    },
+    {
+      "path": "tests/fixtures/is12-correction-90dpi-temp55.bin",
+      "sha256": "26f18ed6d30547765409d5110230307130f18bfe844bd9370f70f8d72853f40e",
+      "bytes": 2057,
+      "reason": "Unchanged bounded IS-12 protocol/calibration fixture; parsed by the offline C tests. ASCII, UTF-16 and exact private-value matching remain enabled. No private document raster or device identity field is part of this fixture."
+    },
+    {
+      "path": "tests/fixtures/is12-extended-status.usb",
+      "sha256": "849eecf733fb62c50db64f378a51b5d2c5b2bfd3058f1653c42758758b7417a8",
+      "bytes": 83,
+      "reason": "Unchanged bounded IS-12 protocol/calibration fixture; parsed by the offline C tests. ASCII, UTF-16 and exact private-value matching remain enabled. No private document raster or device identity field is part of this fixture."
+    },
+    {
+      "path": "tests/fixtures/is12-first-status.usb",
+      "sha256": "ec44040f98e376d2767461ada71113d73d945d212107b7602fb4003eab9d342c",
+      "bytes": 70,
+      "reason": "Unchanged bounded IS-12 protocol/calibration fixture; parsed by the offline C tests. ASCII, UTF-16 and exact private-value matching remain enabled. No private document raster or device identity field is part of this fixture."
+    },
+    {
+      "path": "tests/fixtures/is12-status-after-warmup.usb",
+      "sha256": "d89a71b4ca187a90b102d2bc61e6bc2c8bc30f7371a734d930e86d021db4a252",
+      "bytes": 59,
+      "reason": "Unchanged bounded IS-12 protocol/calibration fixture; parsed by the offline C tests. ASCII, UTF-16 and exact private-value matching remain enabled. No private document raster or device identity field is part of this fixture."
+    },
+    {
+      "path": "tests/fixtures/is12-white-paper-measurement.bin",
+      "sha256": "82a578dbbffe34c1c7bce1967bf76a02d4acb6989f75ff1f1935f70cd0716d0b",
+      "bytes": 12337,
+      "reason": "Unchanged bounded IS-12 protocol/calibration fixture; parsed by the offline C tests. ASCII, UTF-16 and exact private-value matching remain enabled. No private document raster or device identity field is part of this fixture."
+    }
+  ]
+}

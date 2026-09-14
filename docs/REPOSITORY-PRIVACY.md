@@ -1,5 +1,8 @@
 # Repository privacy
 
+> Current publication status and superseding verification: [publication readiness](publication-readiness.md).
+> Reachable-history cleanup does not establish deletion of GitHub cached objects.
+
 ## Cleanup on 2026-09-14
 
 The initial upload to the private GitHub repository included device identifiers
@@ -78,3 +81,56 @@ Hardware replay tests no longer hardcode unique capture directory names. Set
 the complete grayscale capture used in the one-bit output check. Defaults are
 `.state/replay-fixtures/color-360` and `.state/replay-fixtures/gray-360`.
 These local inputs must remain untracked.
+
+## Local prevention and publication audits
+
+Install without replacing an unrelated hook setup:
+
+```sh
+python3 scripts/install-privacy-hook.py
+```
+
+The tracked pre-push hook checks the index plus every actual outgoing commit/tag
+and its ancestry, including new branches and annotated tags. It refuses unusual
+ref namespaces. It requires a LOCAL private matching configuration; missing
+configuration fails with exit 2. Hooks are local prevention, not a server-side
+security boundary. Do not bypass them to publish old recovery history.
+
+Store `privacy-local.json` **outside the checkout**, in a directory owned by you
+with mode 700; the regular file must be owned by you with mode 600. Its JSON
+shape is `{"schema": 1, "known_values": ["replace-with-locally-discovered-values"]}`.
+Populate it privately from actual local findings. Do not paste real values into
+commands, GitHub, tests, CI, reports or this document. Select its absolute path
+with repository-local `git config --local bjc85.privacyConfig /private/path/to/privacy-local.json`
+or `BJC85_PRIVACY_CONFIG`. The installer never changes global Git settings.
+The publication audit used a populated private list retained with the private
+recovery record. Configuration under the repository is rejected even if ignored.
+
+```sh
+python3 scripts/check-repository-privacy.py --history --publication
+python3 tests/repository_privacy_test.py
+```
+
+Without `--publication`, generic CI scans explicitly report `not-configured`;
+they are not the complete owner-specific publication audit. The checker searches
+ASCII/UTF-8, both UTF-16 byte orders/alignments, and known byte/base64/hex/escaped
+variants. PNG/JPEG containers and ZIP/TAR/GZIP/BZIP2/XZ archives receive bounded
+inspection: 16 MiB input/member, 32 MiB expanded budget, 128 archive members,
+two archive layers. Unsupported, encrypted, malformed, truncated or over-limit
+inspection fails explicitly. Compressed image pixels are not treated as text;
+metadata, payloads and trailing data are checked. Visual review is still required.
+
+Exact protocol-fixture hash exceptions are explained in
+`scripts/privacy-reviewed.json`; text and private-value matching still run.
+Synthetic test UUIDs use the reserved `00000000-0000-4000-8000-` prefix; example
+email domains, GitHub noreply attribution, loopback/documentation IP addresses,
+and explicit redaction/test serials are intentional. Upstream source hashes,
+USB vendor/product IDs and resource IDs are useful protocol/provenance constants.
+No directory-wide privacy exception is used. A future upstream attribution
+finding must be reviewed narrowly, preserving its credit rather than erasing it.
+
+The CI workflow uses hosted runners, read-only contents permission, a pinned
+checkout action without persisted credentials, synthetic regression data and a
+checksum-pinned Gitleaks binary. It has no private identifier list, Mac/printer
+access, signing credentials, privileged pull-request trigger or artifact upload.
+Neither scanner is an exhaustive privacy guarantee.

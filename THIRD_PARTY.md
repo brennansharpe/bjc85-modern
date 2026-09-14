@@ -1,5 +1,48 @@
 # Third-party components and research material
 
+## Source-alpha publication boundary — 2026-09-14
+
+No project-wide open-source licence has yet been granted. This concerns the
+project-owned source, documentation and mockups only; third-party components
+retain their own terms and required credits. No new licence is selected here.
+The dated build and review records below are historical, not current clearance.
+[Publication readiness](docs/publication-readiness.md) supersedes their release
+and privacy status. Cached original GitHub objects remain a publication gate.
+
+The source repository contains original interoperability/application code,
+protocol descriptions, metadata-only research provenance and bounded hardware
+status/calibration fixtures. It does not vendor the dependency implementations,
+Canon installers/manuals, extracted artwork/profiles/resource payloads or full
+decompilation outputs. Local research originals remain outside public refs.
+Static analysis informed interoperability work; no independently staffed
+clean-room process or Canon endorsement is claimed.
+
+The actual pinned dependency notices were inspected locally:
+
+| Component | Current pin | Actual notices | Use |
+| --- | --- | --- | --- |
+| Gutenprint | 5.3.5 | `COPYING` (GPL v2) and `src/main/print-canon.c` (GPL v2 or later) | Unmodified, statically linked by local builds |
+| PAPPL | 1.4.12 | `LICENSE` (Apache 2.0), `NOTICE` (optional embedding/GPLv2 exceptions and credits) | Unmodified, statically linked by local builds |
+| libusb | 1.0.30 | `COPYING` (LGPL 2.1), core source notice (2.1 or later) | Unmodified, dynamically linked |
+| OpenSSL | 3.6.4 | `LICENSE.txt` (Apache 2.0) | Unmodified, dynamically linked |
+
+Source pins remain in `scripts/build-release-deps.sh`. The local build copies
+upstream notices; no downloaded dependency tree or binary is committed by this
+publication work. Apple's frameworks/CUPS and system zlib are platform inputs.
+Research-only Canon inputs retain their original ownership; provenance hashes
+and resource IDs do not grant redistribution rights to their payloads.
+
+For a future combined binary, evaluate a GPLv3-compatible licensing route using
+Gutenprint's "or later" option, with an explicit owner decision and a complete
+component review. Apache 2.0 can be combined into GPLv3 works; do not describe
+this linked distribution as GPL-2.0-only. See the
+[Apache compatibility guidance](https://www.apache.org/licenses/GPL-compatibility)
+and [GNU compatibility guide](https://www.gnu.org/licenses/quick-guide-gplv3.pdf).
+Complete corresponding source/build materials, GPL notices, LGPL replacement
+and relinking rights as applicable, Apache notices and modification notices are
+pending binary-distribution work. Signing/notarization and physical acceptance
+are also pending; no binary release is part of this source alpha.
+
 ## Repository privacy cleanup — 2026-09-14
 
 The initial GitHub upload included private identifiers in the evidence and Git

@@ -1,5 +1,11 @@
 # Building and qualifying BJC-85 Utility 0.2.0
 
+> Current source-alpha note (2026-09-14): this document describes future/local
+> binary packaging. No binary is published by the source-alpha task. An optional
+> project-wide licence has not been selected; third-party terms still apply.
+> See [publication readiness](publication-readiness.md) and [THIRD_PARTY](../THIRD_PARTY.md)
+> for the current source/binary boundary and unresolved publication gate.
+
 This is a locally built feature milestone, not a qualified public release.
 Use the [acceptance ledger](release-acceptance.md) for the remaining gates.
 Normal application startup does not start a scan, feed paper or install services.

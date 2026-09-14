@@ -1,0 +1,500 @@
+{
+  "audit_date": "2026-09-14",
+  "raster_images": [
+    {
+      "path": "docs/images/01-scan-workspace.png",
+      "sha256": "0e4783571a4e11cc9a37b91b3aa590bef5bf89dd0147177efde557021feef868",
+      "format": "PNG",
+      "size": [
+        2880,
+        2160
+      ],
+      "decoded_rgb_sha256": "f599e15e02dd00826ef25f013992266e8b7b504b0c7b29af163823d92f126719",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/images/02-print-workspace.png",
+      "sha256": "94684abccce55dc5759e3dec1807a7006ae7cb909b2451d59937d0f60fd026e5",
+      "format": "PNG",
+      "size": [
+        2880,
+        2160
+      ],
+      "decoded_rgb_sha256": "aca270c54cf8c56b805b13578a8245754785f06ad3b38695d743c15e35d737b4",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/images/03-copy-workflow.png",
+      "sha256": "e055de5adc1d9db2186f57b2f50288d28be7828fa82d7bacf781fdfa711c859d",
+      "format": "PNG",
+      "size": [
+        2880,
+        2160
+      ],
+      "decoded_rgb_sha256": "082fe19c20fa5b6f17cbeaf2d1113f73336467feb88fd65a1c2271c56821b8e0",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/images/04-device-workspace.png",
+      "sha256": "d33ba7031c69d44b2420ef265d9fd7d5bbca0cae07e9a814eb16b63a21531381",
+      "format": "PNG",
+      "size": [
+        2880,
+        2160
+      ],
+      "decoded_rgb_sha256": "abd942c482391b8bd3a15d0621074b48352a2fa5d722ef343bb0617fbebcde93",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/images/05-dark-workspace.png",
+      "sha256": "42774627dd718d19506d9fd4a3680e04be863d3e9bc23c3f20450ba7e45ff9a5",
+      "format": "PNG",
+      "size": [
+        2880,
+        2160
+      ],
+      "decoded_rgb_sha256": "b2e06354936560407a016310370ba211c26af457bc4ce3e649123244a220a877",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/images/06-privacy-settings.png",
+      "sha256": "ce2f07dae89248310d834401752cd54a70f627457c16b3a5aee3bb01612becc9",
+      "format": "PNG",
+      "size": [
+        2880,
+        2160
+      ],
+      "decoded_rgb_sha256": "c27049b985428646f1a99b3ddd60db6ba7f094368f5604cd0dd2edfaa2707317",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/images/gallery.png",
+      "sha256": "d7b565dc35aed1a096193f5118e32668f1a8a709249a0f03062a57dc4c55549c",
+      "format": "PNG",
+      "size": [
+        1800,
+        2025
+      ],
+      "decoded_rgb_sha256": "033d3b073422a250e0cd07194f52bab66283cffa354c8cff85a56ceed8de6e1c",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-100-percent.png",
+      "sha256": "2d406a69bc19d25bd747591e6a014001c34fca7d02223cf4c1a449d4e6188104",
+      "format": "JPEG",
+      "size": [
+        1262,
+        768
+      ],
+      "decoded_rgb_sha256": "0a07a3abb97af18ab5182fd002a830c7455fc4cf978d6639adf738cc3db4b93d",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-accent-tinted.png",
+      "sha256": "9633f2e10ea41ac01ca07b13a13d89cb4e6357f523ce6a6a2146126206e0901b",
+      "format": "JPEG",
+      "size": [
+        1123,
+        768
+      ],
+      "decoded_rgb_sha256": "89f416ce8f5a0c52711f33e9bb49dfff59ff5d577fa6976556ee2bda86eea2cd",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-busy.png",
+      "sha256": "2d22dfec70924b895f58f57293e94da2c96d5939431e1c328c94c6795ae109b4",
+      "format": "JPEG",
+      "size": [
+        1123,
+        768
+      ],
+      "decoded_rgb_sha256": "de5f88dc5744f42018d63b42385b02115f082bba1594a711970cb2bb4efafe7c",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-chrome-collapsed.png",
+      "sha256": "e23ba4b88488cd8ca90183f8d45f507f528c6b1d1f0e1c11677e4c69862d3c5b",
+      "format": "JPEG",
+      "size": [
+        1123,
+        768
+      ],
+      "decoded_rgb_sha256": "7be51717860ff6cc80234d5319f5e9f05c4414599dfd970f36f52a6f583bb24b",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-copy-edited.png",
+      "sha256": "f1467907f048ed614837e01551251878ba19779fa553f0c876ab2ba8aabef170",
+      "format": "JPEG",
+      "size": [
+        1123,
+        768
+      ],
+      "decoded_rgb_sha256": "e215bee4c30c99323896f2f3e37d0ad66a371740b854f043405f33854d20c03b",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-copy.png",
+      "sha256": "43c7ae8b13cb2a195ab7611f46a42cec449e4c56d2604551e77c4295171ca724",
+      "format": "JPEG",
+      "size": [
+        1123,
+        768
+      ],
+      "decoded_rgb_sha256": "ce1be7b8eab57c249868f17e0d58defdac7b7be9bf270c1fb81be75e4f7ba414",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-dark-empty.png",
+      "sha256": "70440bd2b7ac510c65e28c14d0d95eec56228a60ec29f27e71724d8426767d77",
+      "format": "JPEG",
+      "size": [
+        760,
+        570
+      ],
+      "decoded_rgb_sha256": "0418ac18cfaa25c8d19483d6ce1db8a36e8c3c048b8564d2cd50ba65b0c3b3de",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-dark-small-contrast.png",
+      "sha256": "f7825317b1ce841b666d6586096c868b268cdd350f46607a3ad894139f9dd46b",
+      "format": "JPEG",
+      "size": [
+        760,
+        570
+      ],
+      "decoded_rgb_sha256": "006dd609b21197f08f2fc972ccd6881bd6621ca3de1963e2edd071f26f4e8e00",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-dark.png",
+      "sha256": "436bd33b2bf8eac6cfc7c39546ca51ea99b3637306b72036ee4f4290a6cb6b28",
+      "format": "JPEG",
+      "size": [
+        801,
+        580
+      ],
+      "decoded_rgb_sha256": "f636ac177f2edddb36008b4736add6ef232574e91bf83299fb25b3a41ae731e7",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-device.png",
+      "sha256": "a16bcb66c25dde5862971099a05dcb9c42fdfe5c28609a30baf6475a83782541",
+      "format": "JPEG",
+      "size": [
+        1123,
+        768
+      ],
+      "decoded_rgb_sha256": "9fffe5486008a9f23f649043e1f353087e5330df20602696b34191f307c2eef5",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-external-display.png",
+      "sha256": "906b3f694279792d49475d69fcd35eb1f227dcd55a49d27933797cc4c8034169",
+      "format": "JPEG",
+      "size": [
+        768,
+        848
+      ],
+      "decoded_rgb_sha256": "543750a5159c473a098ab2e70d781f03173600e7142488a910a74b30941ea635",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-invalid-copies.png",
+      "sha256": "af6d5d0506017ee1237ca0e75d907254ed7f11050ef17b4780a2921ac8156760",
+      "format": "JPEG",
+      "size": [
+        1123,
+        768
+      ],
+      "decoded_rgb_sha256": "4de0bc03ad05fddc143b2e0bef36fad582833c97ee79948e4d0cee9f2f4fffe0",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-keyboard-scroll.png",
+      "sha256": "064b2bfa150cd4edf0f7890b79ea73d6dc272a60639df11510af07f4852c357c",
+      "format": "JPEG",
+      "size": [
+        760,
+        570
+      ],
+      "decoded_rgb_sha256": "6e4e382ee0c0262e10e6c123e733ff2034f04c5e9cd6f1250ff2fad35863ad6c",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-large.png",
+      "sha256": "249e007472e17edb7dc0ab2e95d2f01f3f0f54b15cd3b0340346bddbae6a63ac",
+      "format": "JPEG",
+      "size": [
+        1262,
+        768
+      ],
+      "decoded_rgb_sha256": "a039d3e5209fbb57589db1408e62ae8eda699e2ef3bfe536b5569d83cda90138",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-minimum-dark.png",
+      "sha256": "a9551038eea8b38c920bcc105c5821dc308e5868eaaf673a3b6acf32de31137f",
+      "format": "JPEG",
+      "size": [
+        801,
+        580
+      ],
+      "decoded_rgb_sha256": "8ac719ebabdfc759bc63d58ea62aa365f3f89cfcce2de3c4048ebb82285a46d3",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-multiple-exports.png",
+      "sha256": "550dfaca404e7d2d95441905a85ce58e7f2e9e06f607bf9e7beac6c4bc731b21",
+      "format": "JPEG",
+      "size": [
+        1262,
+        768
+      ],
+      "decoded_rgb_sha256": "b9e9066efbe7617a970b1e6dab95ca47ba3e6b1d6287aa736a2edc68b9ab0406",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-print.png",
+      "sha256": "db4e6e9ddac8b665d087b82d5663693f0d879a7fdbef828502f11da5c94d1319",
+      "format": "JPEG",
+      "size": [
+        1123,
+        768
+      ],
+      "decoded_rgb_sha256": "ec6ce96d9ded0312dfc8691271bf3be75e9003bd7aa0be16e8f0305e2e4b5b50",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-recovery.png",
+      "sha256": "305c210a3b4bad422c35ffa9f86e11ea0c4847c51ac0b5a9b885c2b82f90f392",
+      "format": "JPEG",
+      "size": [
+        1123,
+        768
+      ],
+      "decoded_rgb_sha256": "f73ed6ee64e2c5babb6065211c4749a3171288a25eb273062b8b5c8fbb5f1354",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-scan.png",
+      "sha256": "de960fab2fd83ab25a3495fd27867baa8dd4dd2e6c29f2cf11d5a3da1b2def2b",
+      "format": "JPEG",
+      "size": [
+        1123,
+        768
+      ],
+      "decoded_rgb_sha256": "7ad61bbb8272af426d724ac6e29e9bf5ee4173f705d252bae0dce61e3b2f48cd",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-settings.png",
+      "sha256": "9c37f6b532a3836b47b1f8a493463755e689b5a0e1d99576a97b0b461b64b0ac",
+      "format": "JPEG",
+      "size": [
+        500,
+        372
+      ],
+      "decoded_rgb_sha256": "88114930ed37ee3a029203c2e8b76b540eb4320eeb0ff20fcfcdce8a2940099c",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-tiled.png",
+      "sha256": "89b1fbe304dd9867c783016676e7d563f256c89a94e70f4cfa21796b7ad80fd5",
+      "format": "JPEG",
+      "size": [
+        768,
+        848
+      ],
+      "decoded_rgb_sha256": "bcf6bcdefde7bae2daae58d49640d4cb6741e5871ed9635e4ba9b1bddb017351",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/after-unsafe-export.png",
+      "sha256": "c50e4015bee108a7e98fcb0779f5c58d8995bfa7fb0e2ef9b19e3798089b539a",
+      "format": "JPEG",
+      "size": [
+        1123,
+        768
+      ],
+      "decoded_rgb_sha256": "3d7bee651635f526fb5c64272396886c9be318adb67d12d689829992089420ec",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/before-copy.png",
+      "sha256": "11836bb77c1e52f7dd7d30ac6a1c6e58ecd798c13ecbe4e0ea5ebd8f3e35cea6",
+      "format": "JPEG",
+      "size": [
+        987,
+        768
+      ],
+      "decoded_rgb_sha256": "e9844ec0b4456f25d6c9aaaadf87a429fe65bcf819712307ff5cf740b5ee8a5d",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/before-device.png",
+      "sha256": "441c0634522c80c07810cf178d0fb70037505a3ecbecfbd8b6e5dc850897102b",
+      "format": "JPEG",
+      "size": [
+        987,
+        768
+      ],
+      "decoded_rgb_sha256": "5e33cd2e3e2514a09e9a038348e3be4635ba526aa7cfb99b2537e9601ab7d1b5",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/before-print.png",
+      "sha256": "6146d7a6ae2e70be7138535603f754e693d2b98c2ef2e7e740fed83a88a735f4",
+      "format": "JPEG",
+      "size": [
+        987,
+        768
+      ],
+      "decoded_rgb_sha256": "7e6c7c9fe0db38ff69493b20ac61b754a12caf1802caafe42fad045e544940c9",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/before-scan.png",
+      "sha256": "7d8183337b8376c1321724f284d43f64a9ec01477eb1eb62d5429607e8ba9006",
+      "format": "JPEG",
+      "size": [
+        987,
+        768
+      ],
+      "decoded_rgb_sha256": "e4635cecb91280fa83915333768b8da2fca27e527884023699e0aa04b3c46e8e",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    },
+    {
+      "path": "docs/verification/macos27-hardening/ui/before-settings.png",
+      "sha256": "15812ea72228b2a0d84b6d4133674ebcc68dccd336fa21f90435c8b90866d4e0",
+      "format": "JPEG",
+      "size": [
+        260,
+        318
+      ],
+      "decoded_rgb_sha256": "d619cf6c82eb1333d2c83de277a33512ae98a3b677ff082cb2407100f286fba7",
+      "visual_review": "Synthetic mockup or fixture content; no identifying labels, private documents or notifications observed."
+    }
+  ],
+  "svg_assets": [
+    {
+      "path": "docs/images/01-scan-workspace.svg",
+      "sha256": "8b38ec94204466a97c8ff93b3b0a7181b3a0797871ae258e08a9a2cd7eb03b1a",
+      "findings": [],
+      "tags": [
+        "circle",
+        "clipPath",
+        "desc",
+        "g",
+        "path",
+        "rect",
+        "style",
+        "svg",
+        "text",
+        "title"
+      ]
+    },
+    {
+      "path": "docs/images/02-print-workspace.svg",
+      "sha256": "1b8d169a5ddabb71a9afcfde918d5463d2b8faf256505964cdf055b84e5d1c21",
+      "findings": [],
+      "tags": [
+        "circle",
+        "clipPath",
+        "desc",
+        "g",
+        "path",
+        "rect",
+        "style",
+        "svg",
+        "text",
+        "title"
+      ]
+    },
+    {
+      "path": "docs/images/03-copy-workflow.svg",
+      "sha256": "26c83136f75e5180cc14ce0addf35914fd0728f5bf5f1ce77dfe6dae06363ddf",
+      "findings": [],
+      "tags": [
+        "circle",
+        "clipPath",
+        "desc",
+        "g",
+        "path",
+        "rect",
+        "style",
+        "svg",
+        "text",
+        "title"
+      ]
+    },
+    {
+      "path": "docs/images/04-device-workspace.svg",
+      "sha256": "9f2c4dccbde0b98bd43cace02b40486d6a8e8183934d138624e1464a82acdf0c",
+      "findings": [],
+      "tags": [
+        "circle",
+        "clipPath",
+        "desc",
+        "g",
+        "path",
+        "rect",
+        "style",
+        "svg",
+        "text",
+        "title"
+      ]
+    },
+    {
+      "path": "docs/images/05-dark-workspace.svg",
+      "sha256": "8b66adf4715cd4594c872d9845e5606f71297126c0515e4ec5a7af16f54b010c",
+      "findings": [],
+      "tags": [
+        "circle",
+        "clipPath",
+        "desc",
+        "g",
+        "path",
+        "rect",
+        "style",
+        "svg",
+        "text",
+        "title"
+      ]
+    },
+    {
+      "path": "docs/images/06-privacy-settings.svg",
+      "sha256": "3d8476e96d37bb2c55504cb629a2f9b38b16386a7e82cbf0a7835ca911c66f0f",
+      "findings": [],
+      "tags": [
+        "circle",
+        "clipPath",
+        "desc",
+        "g",
+        "rect",
+        "style",
+        "svg",
+        "text",
+        "title"
+      ]
+    },
+    {
+      "path": "docs/mockups/scan-workspace.svg",
+      "sha256": "af6fe90bd025214222bfc7194956af11c23a841c578de7eb1d8ed00cf22498da",
+      "findings": [],
+      "tags": [
+        "circle",
+        "defs",
+        "desc",
+        "g",
+        "path",
+        "rect",
+        "style",
+        "svg",
+        "text",
+        "title"
+      ]
+    }
+  ],
+  "note": "JPEG metadata was stripped in the prior privacy cleanup without changing decoded pixels. These are privacy derivatives, not untouched originals. No pixels were changed during this publication audit."
+}

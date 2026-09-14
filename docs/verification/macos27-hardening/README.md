@@ -1,5 +1,10 @@
 # Hardening verification records
 
+> This dated record describes the original verification run. Subsequent privacy
+> derivatives/history cleanup and source-alpha checks are recorded in
+> [publication readiness](../../publication-readiness.md). Original private
+> captures are not required by `scripts/test-source-alpha.sh`.
+
 Baseline: `software-milestone-2026-09-14` (clean checkout). Host: macOS 27.0 `26A428`, Xcode 27.0
 `27A5237l`, SDK 27.0, ARM64/macOS 14.0 target, Swift 5. Source files remain
 uncommitted for review; `source-sha256.json` identifies the tested source.

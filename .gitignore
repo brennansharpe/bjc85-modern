@@ -20,6 +20,8 @@
 /dist/
 /output/
 /private-evidence/
+/privacy-local.json
+/*.private-values.json
 *.bundle
 # Original desktop screenshots with local machine labels are local-only.
 /docs/verification/macos27-hardening/ui/accessibility-inspector-audit.png

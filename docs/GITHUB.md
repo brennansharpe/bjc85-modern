@@ -4,12 +4,12 @@
 
 - Name: `bjc85-modern`
 - Owner: `brennansharpe`
-- Visibility: **Private**, as requested.
+- Visibility: **Private pending the publication gates** in [publication readiness](publication-readiness.md).
 - Display name in the README: **BJC-85 Utility**
 
 ## About description
 
-Native Apple silicon macOS utility for the Canon BJC-85 printer and IS-12 scanner: editable scans, PNG/TIFF/PDF export, macOS printing, and guided copy workflows.
+Early source alpha: native Apple silicon macOS utility for the Canon BJC-85 printer and IS-12 scanner: editable scans, PNG/TIFF/PDF export, macOS printing, and guided copy workflows.
 
 ## Suggested topics
 
@@ -26,9 +26,10 @@ in the verification records.
 
 ## Scope
 
-This upload is a private development repository, not a binary release. Build
+This is preparation for public source-alpha publication of this exact repository.
+It contains no app, installer, dependency archive or release package. Build
 outputs, local runtime state, original Canon downloads, extracted resources
 and private scan directories are excluded by the existing `.gitignore`.
 The repository's source, documentation, tests and new presentation assets are
-included. Signing, licensing and physical-acceptance status remain explicit in
+included. Source licensing boundaries and future binary signing/physical acceptance remain explicit in
 the README and release documentation.
