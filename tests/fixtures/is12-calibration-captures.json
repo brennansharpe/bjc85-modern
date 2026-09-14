@@ -1,0 +1,23 @@
+{
+  "measurement": {
+    "source": ".state/is12-calibration-001/reference.bin",
+    "raw_temperature": 53,
+    "sha256": "82a578dbbffe34c1c7bce1967bf76a02d4acb6989f75ff1f1935f70cd0716d0b"
+  },
+  "downloads": [
+    {
+      "fixture": "tests/fixtures/is12-correction-90dpi-temp55.bin",
+      "dpi": 90,
+      "temperature": 55,
+      "sha256": "26f18ed6d30547765409d5110230307130f18bfe844bd9370f70f8d72853f40e",
+      "source": "docs/protocol/is12-scan-004.jsonl"
+    },
+    {
+      "fixture": "tests/fixtures/is12-correction-180dpi-temp56.bin",
+      "dpi": 180,
+      "temperature": 56,
+      "sha256": "3333127452b28e084dd38731c6c724431af67cdec2ef724702db5aec0bce4d13",
+      "source": "docs/protocol/is12-scan-006.jsonl"
+    }
+  ]
+}

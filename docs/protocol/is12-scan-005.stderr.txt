@@ -1,0 +1,2 @@
+Expected one Canon BJC-85 (04a9:1055); found 0.
+Could not verify and claim BJC-85; no commands sent.

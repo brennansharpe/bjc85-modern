@@ -1,0 +1,121 @@
+"/usr/share/cups/ipptool/get-printer-attributes.test":
+    Get-Printer-Attributes:
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        printer-uri (uri) = ipp://localhost:8632/ipp/print
+        requested-attributes (1setOf keyword) = all,media-col-database
+    Get printer attributes using get-printer-attributes                  [PASS]
+        RECEIVED: 7145 bytes in response
+        status-code = successful-ok (successful-ok)
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        charset-configured (charset) = utf-8
+        charset-supported (1setOf charset) = us-ascii,utf-8
+        compression-supported (1setOf keyword) = deflate,gzip,none
+        copies-default (integer) = 1
+        device-uuid (uri) = urn:uuid:00000000-0000-4000-8000-000000000003
+        document-format-default (mimeMediaType) = application/octet-stream
+        generated-natural-language-supported (naturalLanguage) = en
+        ipp-versions-supported (1setOf keyword) = 1.1,2.0
+        job-hold-until-default (keyword) = no-hold
+        job-hold-until-supported (1setOf keyword) = day-time,evening,indefinite,night,no-hold,second-shift,third-shift,weekend
+        job-hold-until-time-supported (boolean) = true
+        job-ids-supported (boolean) = true
+        job-k-octets-supported (rangeOfInteger) = 0-482797652
+        job-priority-default (integer) = 50
+        job-priority-supported (integer) = 1
+        job-sheets-default (nameWithoutLanguage) = none
+        job-sheets-supported (nameWithoutLanguage) = none
+        multiple-document-handling-supported (1setOf keyword) = separate-documents-uncollated-copies,separate-documents-collated-copies
+        multiple-document-jobs-supported (boolean) = false
+        multiple-operation-time-out (integer) = 60
+        multiple-operation-time-out-action (keyword) = abort-job
+        natural-language-configured (naturalLanguage) = en
+        operations-supported (1setOf enum) = Print-Job,Validate-Job,Create-Job,Send-Document,Cancel-Job,Get-Job-Attributes,Get-Jobs,Get-Printer-Attributes,Pause-Printer,Resume-Printer,Set-Printer-Attributes,Get-Printer-Supported-Values,Create-Printer-Subscriptions,Create-Job-Subscriptions,Get-Subscription-Attributes,Get-Subscriptions,Renew-Subscription,Cancel-Subscription,Get-Notifications,Enable-Printer,Disable-Printer,Pause-Printer-After-Current-Job,Cancel-Current-Job,Cancel-Jobs,Cancel-My-Jobs,Close-Job,Identify-Printer,Hold-Job,Release-Job,Hold-New-Jobs,Release-Held-New-Jobs
+        orientation-requested-supported (1setOf enum) = portrait,landscape,reverse-landscape,reverse-portrait,none
+        pdl-override-supported (keyword) = attempted
+        print-content-optimize-supported (1setOf keyword) = auto,graphic,photo,text-and-graphic,text
+        print-quality-supported (1setOf enum) = draft,normal,high
+        print-scaling-supported (1setOf keyword) = auto,auto-fit,fill,fit,none
+        printer-get-attributes-supported (keyword) = document-format
+        printer-info (textWithoutLanguage) = Canon BJC-85 Dry Run
+        printer-name (nameWithoutLanguage) = Canon BJC-85 Dry Run
+        printer-uuid (uri) = urn:uuid:00000000-0000-4000-8000-000000000003
+        requesting-user-uri-supported (boolean) = true
+        uri-security-supported (keyword) = none
+        which-jobs-supported (1setOf keyword) = completed,not-completed,all
+        printer-id (integer) = 1
+        color-supported (boolean) = true
+        document-format-supported (1setOf mimeMediaType) = application/octet-stream,image/pwg-raster,image/urf
+        finishings-supported (enum) = none
+        ipp-features-supported (keyword) = ipp-everywhere
+        job-creation-attributes-supported (1setOf keyword) = copies,document-format,document-name,ipp-attribute-fidelity,job-hold-until,job-hold-until-time,job-name,job-priority,job-retain-until,job-retain-until-interval,job-retain-until-time,media,media-col,multiple-document-handling,orientation-requested,print-color-mode,print-content-optimize,print-quality,printer-resolution
+        landscape-orientation-requested-preferred (enum) = 4
+        media-bottom-margin-supported (integer) = 706
+        media-col-database (1setOf collection) = {media-bottom-margin=706 media-left-margin=353 media-right-margin=353 media-size={x-dimension=21590 y-dimension=27940} media-size-name=na_letter_8.5x11in media-top-margin=706},{media-bottom-margin=706 media-left-margin=353 media-right-margin=353 media-size={x-dimension=21000 y-dimension=29700} media-size-name=iso_a4_210x297mm media-top-margin=706}
+        media-col-supported (1setOf keyword) = media-bottom-margin,media-left-margin,media-right-margin,media-size,media-size-name,media-top-margin,media-source,media-type
+        media-left-margin-supported (integer) = 353
+        media-right-margin-supported (integer) = 353
+        media-size-supported (1setOf collection) = {x-dimension=21590 y-dimension=27940},{x-dimension=21000 y-dimension=29700}
+        media-source-supported (1setOf keyword) = main,auto
+        media-supported (1setOf keyword) = na_letter_8.5x11in,iso_a4_210x297mm
+        media-top-margin-supported (integer) = 706
+        media-type-supported (keyword) = stationery
+        output-bin-supported (keyword) = face-down
+        pages-per-minute (integer) = 1
+        pages-per-minute-color (integer) = 1
+        print-color-mode-supported (1setOf keyword) = color,monochrome
+        printer-device-id (textWithoutLanguage) = MFG:Canon;MDL:BJC-85 Native ARM64;CMD:PWGRaster,URF;
+        printer-kind (keyword) = document
+        printer-make-and-model (textWithoutLanguage) = Canon BJC-85 Native ARM64
+        printer-output-tray (octetString) = type=unRemovableBin;maxcapacity=-2;remaining=-2;status=0;name=face-down;stackingorder=firstToLast;pagedelivery=faceDown;
+        printer-resolution-supported (resolution) = 360dpi
+        pwg-raster-document-resolution-supported (resolution) = 360dpi
+        pwg-raster-document-type-supported (1setOf keyword) = sgray_8,srgb_8
+        sides-supported (keyword) = one-sided
+        urf-supported (1setOf keyword) = V1.5,W8,SRGB24,PQ3-4-5,FN3,IS0-1,MT1,OB10,RS360
+        finishings-default (enum) = none
+        printer-is-accepting-jobs (boolean) = true
+        printer-state (enum) = idle
+        printer-state-message (textWithoutLanguage) = Idle.
+        printer-state-reasons (keyword) = none
+        copies-supported (rangeOfInteger) = 1-999
+        identify-actions-default (keyword) = none
+        job-spooling-supported (keyword) = spool
+        media-col-default (collection) = {media-bottom-margin=706 media-left-margin=353 media-right-margin=353 media-size={x-dimension=21590 y-dimension=27940} media-size-name=na_letter_8.5x11in media-source=main media-top-margin=706 media-type=stationery}
+        media-col-ready (collection) = {media-bottom-margin=706 media-left-margin=353 media-right-margin=353 media-size={x-dimension=21590 y-dimension=27940} media-size-name=na_letter_8.5x11in media-source=main media-top-margin=706 media-type=stationery}
+        media-default (keyword) = na_letter_8.5x11in
+        media-ready (keyword) = na_letter_8.5x11in
+        multiple-document-handling-default (keyword) = separate-documents-collated-copies
+        orientation-requested-default (enum) = none
+        output-bin-default (keyword) = face-down
+        print-color-mode-default (keyword) = color
+        print-content-optimize-default (keyword) = auto
+        print-quality-default (enum) = normal
+        print-scaling-default (keyword) = auto
+        printer-config-change-date-time (dateTime) = 2026-09-13T20:14:15Z
+        printer-config-change-time (integer) = 1
+        printer-contact-col (collection) = {contact-name= contact-uri=data:, contact-vcard=BEGIN:VCARD}
+        printer-current-time (dateTime) = 2026-09-13T20:14:19Z
+        printer-dns-sd-name (nameWithoutLanguage) = 
+        printer-firmware-name (1setOf nameWithoutLanguage) = PAPPL,libcups
+        printer-firmware-patches (1setOf textWithoutLanguage) = ,
+        printer-firmware-string-version (1setOf textWithoutLanguage) = 1.4.12,2.3.4
+        printer-firmware-version (1setOf octetString) = \001\000\004\000\\000\000\000,\002\000\003\000\004\000\000\000
+        printer-geo-location (unknown) = unknown
+        printer-icons (1setOf uri) = http://localhost:8632/icon-sm.png,http://localhost:8632/icon-md.png,http://localhost:8632/icon-lg.png
+        printer-input-tray (1setOf octetString) = type=sheetFeedAutoRemovableTray;mediafeed=27940;mediaxfeed=21590;maxcapacity=-2;level=-2;status=0;name=main;,type=other;mediafeed=0;mediaxfeed=0;maxcapacity=-2;level=-2;status=0;name=auto;
+        printer-location (textWithoutLanguage) = 
+        printer-more-info (uri) = http://localhost:8632/
+        printer-organization (textWithoutLanguage) = 
+        printer-organizational-unit (textWithoutLanguage) = 
+        printer-resolution-default (resolution) = 360dpi
+        printer-state-change-date-time (dateTime) = 2026-09-13T20:14:15Z
+        printer-state-change-time (integer) = 0
+        printer-supply-info-uri (uri) = http://localhost:8632/supplies
+        printer-up-time (integer) = 4
+        printer-uri-supported (uri) = ipp://localhost:8632/ipp/print
+        printer-xri-supported (collection) = {xri-authentication=none xri-security=none xri-uri=ipp://localhost:8632/ipp/print}
+        queued-job-count (integer) = 0
+        sides-default (keyword) = one-sided
+        uri-authentication-supported (keyword) = none

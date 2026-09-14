@@ -1,0 +1,5 @@
+{"event":"scanner_found","module":"\/System\/Library\/Image Capture\/Devices\/AirScanScanner.app","name":"BJC-85 IS-12 Native Discovery Test"}
+{"error":"none","event":"session_open"}
+{"event":"scanner_ready","units":[3]}
+{"error":"none","event":"session_close"}
+{"discovered":true,"event":"probe_result","ready":true}

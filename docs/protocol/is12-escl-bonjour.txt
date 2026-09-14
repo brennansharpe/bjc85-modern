@@ -1,0 +1,1 @@
+{"event":"bonjour_registration","error":0,"name":"BJC-85 IS-12 Native Discovery Test","local_only":true}

@@ -1,0 +1,54 @@
+{"event":"scan_start","plain_paper_calibration":true,"reference_requested":false,"requested_dpi":90,"colour":"RGB","page_limit":1}
+{"event":"write","stage":"verify-carrier","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 00"}
+{"event":"record","stage":"verify-carrier","kind":33,"family":115,"token":99,"length":12,"payload":"b0 08 0c 78 04 00 00 0b 40 00 20 0e"}
+{"event":"write","stage":"verify-information","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 01"}
+{"event":"record","stage":"verify-information","kind":33,"family":115,"token":105,"length":9,"payload":"70 19 11 01 1f 01 68 0b 88"}
+{"event":"write","stage":"initial-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"initial-status","kind":33,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"write","stage":"reference-temperature","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 03"}
+{"event":"record","stage":"reference-temperature","kind":33,"family":115,"token":116,"length":1,"payload":"39"}
+{"event":"write","stage":"quiesce-before-reference","requested":6,"accepted":6,"usb_result":0,"hex":"1b 28 73 01 00 51"}
+{"event":"record","stage":"quiesce-before-reference","kind":33,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"write","stage":"configure-mode","requested":11,"accepted":11,"usb_result":0,"hex":"1b 28 73 06 00 44 10 88 00 80 01"}
+{"event":"record","stage":"configure-mode","kind":33,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"write","stage":"load-page","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"load-page","kind":33,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"write","stage":"load-page","requested":6,"accepted":6,"usb_result":0,"hex":"1b 28 73 01 00 4c"}
+{"event":"record","stage":"load-page","kind":42,"family":115,"token":115,"length":3,"payload":"20 00 00"}
+{"event":"record","stage":"load-page","kind":42,"family":115,"token":115,"length":3,"payload":"10 00 00"}
+{"event":"write","stage":"measure-reference","requested":9,"accepted":9,"usb_result":0,"hex":"1b 28 73 04 00 57 01 07 07"}
+{"event":"record","stage":"measure-reference","kind":42,"family":115,"token":115,"length":3,"payload":"10 02 00"}
+{"event":"scan_progress","image_bytes":0,"usb_bytes":123}
+{"event":"scan_progress","image_bytes":0,"usb_bytes":123}
+{"event":"scan_progress","image_bytes":0,"usb_bytes":123}
+{"event":"scan_progress","image_bytes":0,"usb_bytes":123}
+{"event":"record","stage":"measure-reference","kind":33,"family":83,"token":99,"length":12337}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":42,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"30 00 00"}
+{"event":"write","stage":"reference-eject-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"reference-eject-status","kind":42,"family":115,"token":115,"length":3,"payload":"20 00 00"}
+{"event":"record","stage":"reference-eject-status","kind":33,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"scan_result","complete_stream":true,"end_record":false,"measurement_received":true,"reference_applied":false,"image_bytes":0,"usb_bytes":12633,"device_error":false,"canon_reference_validated":false}

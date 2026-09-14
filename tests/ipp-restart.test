@@ -1,0 +1,27 @@
+# Run after ipp-acceptance.test and a service restart, using the same dry-run spool.
+{
+    NAME "A restart retains the previous job history"
+    OPERATION Get-Job-Attributes
+    GROUP operation-attributes-tag
+    ATTR charset attributes-charset utf-8
+    ATTR language attributes-natural-language en
+    ATTR uri printer-uri $uri
+    ATTR integer job-id 2
+    STATUS successful-ok
+    EXPECT job-state WITH-VALUE 9
+    EXPECT job-impressions-completed WITH-VALUE 8
+}
+{
+    NAME "The next dry-run job continues the saved job counter"
+    OPERATION Print-Job
+    GROUP operation-attributes-tag
+    ATTR charset attributes-charset utf-8
+    ATTR language attributes-natural-language en
+    ATTR uri printer-uri $uri
+    ATTR name requesting-user-name $user
+    ATTR mimeMediaType document-format image/urf
+    FILE $letter
+    STATUS successful-ok
+    EXPECT job-id WITH-VALUE 3
+    EXPECT job-state WITH-VALUE 9
+}

@@ -1,0 +1,11 @@
+listener: ready
+GET /eSCL/ScannerCapabilities HTTP/1.1
+GET /eSCL/ScannerStatus HTTP/1.1
+GET /eSCL/ScannerStatus HTTP/1.1
+GET /eSCL/ScannerStatus HTTP/1.1
+GET /eSCL/ScannerStatus HTTP/1.1
+GET /eSCL/ScannerStatus HTTP/1.1
+GET /eSCL/ScannerStatus HTTP/1.1
+GET /eSCL/ScannerStatus HTTP/1.1
+GET /eSCL/ScannerStatus HTTP/1.1
+GET /eSCL/ScannerStatus HTTP/1.1

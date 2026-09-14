@@ -1,0 +1,27 @@
+{"event":"start","cartridge":"IS-12 asserted by operator","native_arch":"arm64"}
+{"event":"write","stage":"carrier","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 00"}
+{"event":"read","stage":"carrier","usb_result":0,"bytes":11,"hex":"00 0b 1b 2a 73 04 00 73 20 00 00"}
+{"event":"reply","stage":"carrier","kind":42,"family":115,"token":115,"payload_hex":"20 00 00"}
+{"event":"read","stage":"carrier","usb_result":0,"bytes":20,"hex":"00 14 1b 21 73 0d 00 63 b0 08 0c 78 04 00 00 0b 40 00 20 0e"}
+{"event":"reply","stage":"carrier","kind":33,"family":115,"token":99,"payload_hex":"b0 08 0c 78 04 00 00 0b 40 00 20 0e"}
+{"event":"read","stage":"carrier","usb_result":0,"bytes":11,"hex":"00 0b 1b 2a 73 04 00 73 00 00 00"}
+{"event":"reply","stage":"carrier","kind":42,"family":115,"token":115,"payload_hex":"00 00 00"}
+{"event":"expected_reply","stage":"carrier","matched":true}
+{"event":"write","stage":"information","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 01"}
+{"event":"read","stage":"information","usb_result":0,"bytes":17,"hex":"00 11 1b 21 73 0a 00 69 70 19 11 01 1f 01 68 0b 88"}
+{"event":"reply","stage":"information","kind":33,"family":115,"token":105,"payload_hex":"70 19 11 01 1f 01 68 0b 88"}
+{"event":"expected_reply","stage":"information","matched":true}
+{"event":"write","stage":"status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"read","stage":"status","usb_result":0,"bytes":11,"hex":"00 0b 1b 21 73 04 00 73 00 00 00"}
+{"event":"reply","stage":"status","kind":33,"family":115,"token":115,"payload_hex":"00 00 00"}
+{"event":"expected_reply","stage":"status","matched":true}
+{"event":"write","stage":"temperature","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 03"}
+{"event":"read","stage":"temperature","usb_result":0,"bytes":9,"hex":"00 09 1b 21 73 02 00 74 39"}
+{"event":"reply","stage":"temperature","kind":33,"family":115,"token":116,"payload_hex":"39"}
+{"event":"expected_reply","stage":"temperature","matched":true}
+{"event":"write","stage":"extended-information","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 04"}
+{"event":"read","stage":"extended-information","usb_result":0,"bytes":26,"hex":"00 1a 1b 21 73 13 00 65 01 0f 00 81 00 c8 00 b4 82 00 c8 01 68 83 01 2c 01 68"}
+{"event":"reply","stage":"extended-information","kind":33,"family":115,"token":101,"payload_hex":"01 0f 00 81 00 c8 00 b4 82 00 c8 01 68 83 01 2c 01 68"}
+{"event":"expected_reply","stage":"extended-information","matched":true}
+{"event":"head_check","matches_canon_bjc85_is12_checks":true,"calibration_verified":false,"scan_verified":false}
+{"event":"status_summary","warming_up":false,"temperature_raw":57}

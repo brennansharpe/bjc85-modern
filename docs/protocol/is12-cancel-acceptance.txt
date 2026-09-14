@@ -1,0 +1,2 @@
+Sent SIGINT after the first complete grayscale band.
+{"interrupt_sent": true, "stop_command_accepted": true, "automatic_replay": false, "partial_image_not_published": true, "capture": ".state/is12-scan-009", "exit_code": 1}

@@ -1,0 +1,8 @@
+{
+  "scanner_service_running": true,
+  "scanner_state": "Idle",
+  "print_service_loaded": false,
+  "print_queue_paused": true,
+  "app_shortcut_valid": true,
+  "scan_job_active": false
+}

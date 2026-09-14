@@ -1,0 +1,1199 @@
+{
+  "recorded_at_utc": "2026-09-13T23:52:58.370986+00:00",
+  "native_host": "arm64",
+  "acquisition_logs": [
+    {
+      "log": ".state/escl-jobs/00000000-0000-4000-8000-000000000001/driver.jsonl",
+      "sha256": "e625e47c8ba9d74f27499be2093b7565bb5ebaf17ae9c1a8de70b6250083f59c",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 90,
+        "colour": "RGB",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": true,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 2108160,
+        "usb_bytes": 2147997,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 10,
+      "all_writes_accepted": true
+    },
+    {
+      "log": ".state/escl-jobs/00000000-0000-4000-8000-000000000005/driver.jsonl",
+      "sha256": "7befe9178cf228cc080c378db04c968b168b7ce40cdb54b8c867c255ad4c4e70",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 90,
+        "colour": "gray",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": true,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 714240,
+        "usb_bytes": 727549,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 10,
+      "all_writes_accepted": true
+    },
+    {
+      "log": ".state/escl-jobs/00000000-0000-4000-8000-00000000000A/driver.jsonl",
+      "sha256": "a6c663a16bf86070a06d1b6fd1b17abf80810ef90f2b7a60d386f6bf97b44a78",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 360,
+        "colour": "gray",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": true,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 11197440,
+        "usb_bytes": 11249090,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 16,
+      "all_writes_accepted": true
+    },
+    {
+      "log": ".state/escl-jobs/00000000-0000-4000-8000-00000000000B/driver.jsonl",
+      "sha256": "fecd26ccfd41b49de075201cc47ae9a9067e6a7d3fbc185428af46cbad1da210",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 360,
+        "colour": "gray",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": true,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 11197440,
+        "usb_bytes": 11249112,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 16,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-app-scan-360dpi.jsonl",
+      "sha256": "45083bab9127153bb14c9a8064d69c62651fe5dd8ef0957d1093d58739a67c0f",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 360,
+        "colour": "RGB",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": true,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 33592320,
+        "usb_bytes": 33747186,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 10,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-calibration-001.jsonl",
+      "sha256": "17227298bb065751efe32e5c3491319d83616513faac46175c42f6905197611c",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": true,
+        "reference_requested": false,
+        "requested_dpi": 90,
+        "colour": "RGB",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": false,
+        "measurement_received": true,
+        "reference_applied": false,
+        "image_bytes": 0,
+        "usb_bytes": 12664,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 22,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-calibration-002.jsonl",
+      "sha256": "50e86f0787193c5eb557ee270d7aeaa51786634e4999ac5811328c79e6607fa0",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": true,
+        "reference_requested": false,
+        "requested_dpi": 90,
+        "colour": "RGB",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": false,
+        "measurement_received": true,
+        "reference_applied": false,
+        "image_bytes": 0,
+        "usb_bytes": 12633,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 22,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-scan-001.jsonl",
+      "sha256": "e17053bfd33f997bb94a66b3650473bd6bae9929c8cab1020939f73a21406f23",
+      "settings": {
+        "event": "scan_start",
+        "calibrated": false,
+        "requested_dpi": 90,
+        "colour": "RGB",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": true,
+        "image_bytes": 2108160,
+        "usb_bytes": 2147946,
+        "device_error": false,
+        "calibrated": false
+      },
+      "usb_writes": 8,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-scan-002.jsonl",
+      "sha256": "a5f47a16c5c65a756026bab6c978f54c5d15a5766975333b8da9e7a58735f3ac",
+      "settings": {
+        "event": "scan_start",
+        "calibrated": false,
+        "requested_dpi": 90,
+        "colour": "RGB",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": true,
+        "image_bytes": 2108160,
+        "usb_bytes": 2147955,
+        "device_error": false,
+        "calibrated": false
+      },
+      "usb_writes": 8,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-scan-003.jsonl",
+      "sha256": "087ffaf70bed602c248ae0d709b4a8db22781e74ccba74fa8486eb98c78fbb49",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 90,
+        "colour": "RGB",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": false,
+        "end_record": false,
+        "measurement_received": false,
+        "reference_applied": false,
+        "image_bytes": 0,
+        "usb_bytes": 95,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 6,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-scan-004.jsonl",
+      "sha256": "887334a65d11ee8ae63729f4736c7b51e5133d5d3075e1c9f27e7ea2f6129867",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 90,
+        "colour": "RGB",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": true,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 2108160,
+        "usb_bytes": 2147944,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 10,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-scan-005.jsonl",
+      "sha256": "0d09cb18739d0b33a1bef29632cd2b789a1ce336d2c08009ad9578f58c055158",
+      "settings": {},
+      "result": {
+        "event": "scan_result",
+        "complete_stream": false,
+        "end_record": false,
+        "measurement_received": false,
+        "reference_applied": false,
+        "image_bytes": 0,
+        "usb_bytes": 0,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 0,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-scan-006.jsonl",
+      "sha256": "cdd2c7d9ae4fe5bc28ff2863594d8e303c4618a62622475215dbf87833d580da",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 180,
+        "colour": "RGB",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": true,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 8432640,
+        "usb_bytes": 8510488,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 10,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-scan-007.jsonl",
+      "sha256": "3bd695f020be35fc205b2b75bae53496752ecae63c65b529fc590e3dcf5da0b8",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 90,
+        "colour": "gray",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": false,
+        "end_record": false,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 711360,
+        "usb_bytes": 727551,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 11,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-scan-008.jsonl",
+      "sha256": "eb4502ac31e21b5127454d3ad378dea07a6d60436a85c3b3413d83693324f1b4",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 90,
+        "colour": "gray",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": true,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 714240,
+        "usb_bytes": 727518,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 10,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-scan-009.jsonl",
+      "sha256": "e40a4730f415cbe730c65dd213e188535ad748bf09af1eca8b20e54b34a96aa0",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 90,
+        "colour": "gray",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": false,
+        "end_record": false,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 23040,
+        "usb_bytes": 23645,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 11,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-scan-010.jsonl",
+      "sha256": "9eddefea7e4676e3e4c9ea360ecd25fc4bf7b749b71b662dafe373394d540a43",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 90,
+        "colour": "lineart",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": true,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 89280,
+        "usb_bytes": 102569,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 10,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-scan-011.jsonl",
+      "sha256": "0cefdc47f62dd419dc690e8b220fedad6dc6045230aa580458a564220f3c8235",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 360,
+        "colour": "lineart",
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": false,
+        "end_record": true,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 1382400,
+        "usb_bytes": 1432758,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 11,
+      "all_writes_accepted": true
+    },
+    {
+      "log": "docs/protocol/is12-scan-012.jsonl",
+      "sha256": "7958996e46b0a049161ab0640977b6f33279955bdb216eddb187c3262d84f828",
+      "settings": {
+        "event": "scan_start",
+        "plain_paper_calibration": false,
+        "reference_requested": true,
+        "requested_dpi": 360,
+        "colour": "gray",
+        "output_threshold": 128,
+        "page_limit": 1
+      },
+      "result": {
+        "event": "scan_result",
+        "complete_stream": true,
+        "end_record": true,
+        "measurement_received": false,
+        "reference_applied": true,
+        "image_bytes": 11197440,
+        "usb_bytes": 11249090,
+        "device_error": false,
+        "canon_reference_validated": false
+      },
+      "usb_writes": 10,
+      "all_writes_accepted": true
+    }
+  ],
+  "binaries_at_record_time": {
+    "build/bjc85-is12": {
+      "sha256": "103d9d90897ddd15aea70715e520951299b2b146d35c63d93c05440261ffc068",
+      "architecture": "Mach-O 64-bit executable arm64"
+    },
+    "build-asan/bjc85-is12": {
+      "sha256": "85e44dc47decde2462a4d52aab417c9cc3cd4162fbba5452852a312d790e9512",
+      "architecture": "Mach-O 64-bit executable arm64"
+    },
+    "build/BJC-85 Scanner.app/Contents/MacOS/BJC85Scanner": {
+      "sha256": "62c69eb41a0574a716e2fe77e35175aec339a856720ec7fe6c25be53a4e2c903",
+      "architecture": "Mach-O 64-bit executable arm64"
+    },
+    "build/BJC-85 Scanner.app/Contents/Helpers/bjc85-is12": {
+      "sha256": "0786eaa91c26de6621b36766b73a40449ddf33a3d20acd59a0b77edda3e1571c",
+      "architecture": "Mach-O 64-bit executable arm64"
+    },
+    "build/BJC-85 Scanner.app/Contents/Helpers/is12-escl-bridge": {
+      "sha256": "75260770c9049d119071761a16fd9966e93cd4d49380345c5c97c0284dae3180",
+      "architecture": "Mach-O 64-bit executable arm64"
+    },
+    "build/BJC-85 Scanner.app/Contents/Frameworks/libusb-1.0.0.dylib": {
+      "sha256": "c9d02d50130abaa988f143afeb9617536303892604005f9e118c85b7252bf5aa",
+      "architecture": "Mach-O 64-bit dynamically linked shared library arm64"
+    },
+    "build/is12-imagecapture-probe": {
+      "sha256": "6dcad4343cb8903b4319ab4a94fedd3f34fc64be7aec8ba46450f9f0f49dc750",
+      "architecture": "Mach-O 64-bit executable arm64"
+    },
+    "build/is12-scan-export": {
+      "sha256": "48859e0d5fe07ad759b52065d61e6ef7ca7f8303ac9ae744b72789560380e775",
+      "architecture": "Mach-O 64-bit executable arm64"
+    },
+    ".tools/jdk-21.0.12.1+1/Contents/Home/bin/java": {
+      "sha256": "9be1d0a740ff6502df1a762145e62860f5de4b7e17658d9cb9498da3acf9d16c",
+      "architecture": "Mach-O 64-bit executable arm64"
+    },
+    ".tools/ghidra_12.1.3_PUBLIC/Ghidra/Features/Decompiler/build/os/mac_arm_64/decompile": {
+      "sha256": "b728b82cf375c04185c95dd791e7482b20d1cfe440f10425536e361f12d4ba84",
+      "architecture": "Mach-O 64-bit executable arm64"
+    }
+  },
+  "files_at_record_time": {
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000001/acquisition-ended.json": {
+      "bytes": 72,
+      "sha256": "fc7be65b8386152b678639c9412b85203f5afdddb1065b0b8f33fc87d4a9c4e9"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000001/acquisition-started.json": {
+      "bytes": 108,
+      "sha256": "7989529b6c97dcd897a4e5eaa4fc63a6abfde386fc542b58563eb299d44ae6e0"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000001/capture/records.bin": {
+      "bytes": 2147603,
+      "sha256": "f9015b040217c4e9f475c98d94d9edf549bf75e57190878fcd6a1e44e54e2e15"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000001/capture/scan-raw.png": {
+      "bytes": 33180,
+      "sha256": "0eebc6b097a879bba0525dc11d5b3964293b9f2243523188fd78abc1f7c539b8"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000001/capture/scan-upright.png": {
+      "bytes": 33720,
+      "sha256": "61cc94b44ea8fd22b644935e997eb59e7144d55d96ef48528802079525956f1a"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000001/capture/usb-in.bin": {
+      "bytes": 2147997,
+      "sha256": "a4cc1fe1663ac966d609731e2f0966eac9c49a40632dea77e9438e363eb8b3c3"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000001/document.jpg": {
+      "bytes": 22261,
+      "sha256": "ee8d0c92ad353afe86ddab0af443def9fbe327ff793f0b44226a218442d4581d"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000001/driver.jsonl": {
+      "bytes": 561659,
+      "sha256": "e625e47c8ba9d74f27499be2093b7565bb5ebaf17ae9c1a8de70b6250083f59c"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000001/settings.xml": {
+      "bytes": 775,
+      "sha256": "497481cd583c77478bcb01e23319d9a0d24c73f1b4441adffe7ab46c04a498d9"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000004/settings.xml": {
+      "bytes": 721,
+      "sha256": "3e5b7ec6f22d18592e8ca7d944270611f66610512db5083f9509c3da6b38e2bd"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000005/acquisition-ended.json": {
+      "bytes": 72,
+      "sha256": "4bc8b73fb9c7c69b9399843347cd3852e8760e2d53c5f50a80ff8232d8451d07"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000005/acquisition-started.json": {
+      "bytes": 107,
+      "sha256": "f79df7ee704ca5d04618fc1f216ec5d5a6d89b0c80d5aef289d5c21b1d5290ec"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000005/capture/records.bin": {
+      "bytes": 727463,
+      "sha256": "f7d789a723480dac65e8f2c80707a5682b1d7d500a879f8a588ba46aad9184dc"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000005/capture/scan-raw.png": {
+      "bytes": 10868,
+      "sha256": "f0d4a5ea14af2d26075f652ebfbe0aff6f0b194200f7867469f354c0a540408f"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000005/capture/scan-upright.png": {
+      "bytes": 10806,
+      "sha256": "ac933aa2ed2d903704a503e69af525fe9280b0a04832c6c1522c86dd52bdf41c"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000005/capture/usb-in.bin": {
+      "bytes": 727549,
+      "sha256": "bd50f1130f5ee6c3bf58cb7aff688a10e8c68ff1d1d6ab923fd1f8bf63f9c9f6"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000005/document.jpg": {
+      "bytes": 13231,
+      "sha256": "9f4a35aab4edcc2b70f1985acb02c9038b2b9d07f33706ed7a47a6cae783b7a2"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000005/driver.jsonl": {
+      "bytes": 192960,
+      "sha256": "7befe9178cf228cc080c378db04c968b168b7ce40cdb54b8c867c255ad4c4e70"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000005/settings.xml": {
+      "bytes": 780,
+      "sha256": "a776958c61c7cdab24844ed97411062e2b7f138ec5ddc505cbf8f891c53944b9"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-000000000007/settings.xml": {
+      "bytes": 775,
+      "sha256": "497481cd583c77478bcb01e23319d9a0d24c73f1b4441adffe7ab46c04a498d9"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000A/acquisition-ended.json": {
+      "bytes": 72,
+      "sha256": "0cf8fbd78f08cd4466a122c10b804b5715d84f57931dff30f3d0ef069e785ab4"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000A/acquisition-started.json": {
+      "bytes": 204,
+      "sha256": "640c7b93d01e4843f381442c9153a63f1660041eb8eb690136e8b9047ad6506f"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000A/capture/records.bin": {
+      "bytes": 11248584,
+      "sha256": "8e1cb32c19f2d80585246b70df635ad5e2b669832349bcac7d67ece932202f9c"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000A/capture/scan-raw.png": {
+      "bytes": 142442,
+      "sha256": "38990dc7a033511fe01ec06463aaa77432f8bdd24b8be0f85c4d529e8e2da434"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000A/capture/scan-upright.png": {
+      "bytes": 142776,
+      "sha256": "e0332bc36655adec9978d23b4031432da56ea0cb07f882b76b542514d3827d90"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000A/capture/usb-in.bin": {
+      "bytes": 11249090,
+      "sha256": "aa1edde9dd235e930144bee2e15d816a64928869cfb38b9417e5ca71d6487fc3"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000A/document.jpg": {
+      "bytes": 198161,
+      "sha256": "ccf28c45177925dd13cd36ae2f3bcfa5bfd8ddd2e6bcfd2914a5d87a040d5a84"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000A/driver.jsonl": {
+      "bytes": 732101,
+      "sha256": "a6c663a16bf86070a06d1b6fd1b17abf80810ef90f2b7a60d386f6bf97b44a78"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000A/settings.xml": {
+      "bytes": 782,
+      "sha256": "fd197e7e2ed479d45d8064a6f060eb0dbf225a621640a5bfd700fe7a3ae17f59"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000B/acquisition-ended.json": {
+      "bytes": 72,
+      "sha256": "28c188271e28a0a639e2603462477768d04f6141e08c9b6a8a10c4d3542051a6"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000B/acquisition-started.json": {
+      "bytes": 204,
+      "sha256": "21e179c7db1fb4668a94b5475b6d97941930a4ee35ac7e43c5c6a463d982aa27"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000B/capture/records.bin": {
+      "bytes": 11248602,
+      "sha256": "947caaa5a260a0b8939cfd5c88eba4143c9c3d6b98210b034f331690923de4f9"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000B/capture/scan-raw.png": {
+      "bytes": 157774,
+      "sha256": "41bf9a775c6232abe2436a4b7ca61a6345172a3d26611ee942dda86e64bf0bc7"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000B/capture/scan-upright.png": {
+      "bytes": 158308,
+      "sha256": "b1b99472874df7928f077aa7e2d8cd2cc4e8e8a9b33d42c8237719aadd031559"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000B/capture/usb-in.bin": {
+      "bytes": 11249112,
+      "sha256": "ffa30e83bd742f4a6af38b6a50879cf15eb0f4345b90d6908914049f5c8809a4"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000B/document.jpg": {
+      "bytes": 219249,
+      "sha256": "1cfbe97b571c7d1a4ed6ab2522acdad26166c72f81a4c7e00f6ac2f4ec3f0f15"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000B/driver.jsonl": {
+      "bytes": 732507,
+      "sha256": "fecd26ccfd41b49de075201cc47ae9a9067e6a7d3fbc185428af46cbad1da210"
+    },
+    ".state/escl-jobs/00000000-0000-4000-8000-00000000000B/settings.xml": {
+      "bytes": 782,
+      "sha256": "fd197e7e2ed479d45d8064a6f060eb0dbf225a621640a5bfd700fe7a3ae17f59"
+    },
+    ".state/is12-calibration-001/records.bin": {
+      "bytes": 12608,
+      "sha256": "e1ff2eec76d6d6d59317ccf2f30340e43dae0eb41e373eedf1da82b73f335819"
+    },
+    ".state/is12-calibration-001/reference.bin": {
+      "bytes": 12401,
+      "sha256": "1d1c39783ef615a921a9282a6dc3e9a473584d8c411da892fda71c9d3d3aba06"
+    },
+    ".state/is12-calibration-001/usb-in.bin": {
+      "bytes": 12664,
+      "sha256": "9bc84142ea26a3f2e62da2695b7571256a21576cae53f96088ed2ff7ad4f3954"
+    },
+    ".state/is12-calibration-002/records.bin": {
+      "bytes": 12581,
+      "sha256": "7b639f4f581fda9dbacb8176ea70c2a442f767130f588a4c864396cbaa2186d3"
+    },
+    ".state/is12-calibration-002/reference.bin": {
+      "bytes": 12401,
+      "sha256": "e2175c791d6ea07187290541269c16243c18a770586287e54fc76e6a3abd594e"
+    },
+    ".state/is12-calibration-002/usb-in.bin": {
+      "bytes": 12633,
+      "sha256": "7e767f7d6fba3a1c8ed5dd056610f4e370d37f1d1fc2b7318d76f689ac19a53d"
+    },
+    ".state/is12-scan-001/records.bin": {
+      "bytes": 2147560,
+      "sha256": "0abdab776046ae0a576796f43e319a88ddfdcd8be7c7b15436fe0ef33fc02455"
+    },
+    ".state/is12-scan-001/scan-raw.json": {
+      "bytes": 381,
+      "sha256": "05e9934558879562604017608cdfb4d9fd7a35e878aa21ccc73050478a7952c2"
+    },
+    ".state/is12-scan-001/scan-raw.png": {
+      "bytes": 1247583,
+      "sha256": "d1ee07807c7bcee6f1f801bfd189b0f9ee9107e22b2d5b8cb6dabb5596aff666"
+    },
+    ".state/is12-scan-001/scan-upright.json": {
+      "bytes": 383,
+      "sha256": "9ca523824d4e4e52927cda15b572f4199b9a743e784113d10ac4957cae36ab8d"
+    },
+    ".state/is12-scan-001/scan-upright.png": {
+      "bytes": 1249239,
+      "sha256": "26b76119327326314e4fd475d370161021d569bb89cc9a34065ff2d7092231a9"
+    },
+    ".state/is12-scan-001/usb-in.bin": {
+      "bytes": 2147946,
+      "sha256": "1985ad99b29d4c7954636402d913469cf50a37f9e6505e2b7c17f87006979a83"
+    },
+    ".state/is12-scan-002/records.bin": {
+      "bytes": 2147569,
+      "sha256": "9e1a91a6a9c49131eb03315904ace62dacc7cafab545e9c0616a915af430dcf0"
+    },
+    ".state/is12-scan-002/usb-in.bin": {
+      "bytes": 2147955,
+      "sha256": "ea2468745d7eb4e9e415a304c94f0060ce0b43a444d172d02c7674a13e4b3c65"
+    },
+    ".state/is12-scan-003/records.bin": {
+      "bytes": 81,
+      "sha256": "8b0358cf177fa26dc79dcb96f9fceeaeb9a25588d116453b78499f8df03002de"
+    },
+    ".state/is12-scan-003/usb-in.bin": {
+      "bytes": 95,
+      "sha256": "70a4ca301e7851d708ff89cec3ba717d8385ff824b7f3cd4cee36744b08f0da6"
+    },
+    ".state/is12-scan-004/records.bin": {
+      "bytes": 2147558,
+      "sha256": "6975d213d186e600b4d00f0e2096e3a871c834ea8d6f22b963516bde9e296d55"
+    },
+    ".state/is12-scan-004/scan-raw.png": {
+      "bytes": 153722,
+      "sha256": "4962f1ce8a00550eb6ad33d6190d51382ac0d2a05ab4e27993023c3153480f1c"
+    },
+    ".state/is12-scan-004/scan-upright.png": {
+      "bytes": 152953,
+      "sha256": "f5ebba7d0840ce070652cbe4c929d846bcb917370cf72938fa268ecbc89e7193"
+    },
+    ".state/is12-scan-004/usb-in.bin": {
+      "bytes": 2147944,
+      "sha256": "cf341ee1fec870059565f93dd0556802740c17c9099432ed5262d0a4c6592063"
+    },
+    ".state/is12-scan-005/records.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".state/is12-scan-005/usb-in.bin": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".state/is12-scan-006/records.bin": {
+      "bytes": 8510102,
+      "sha256": "4bc736210390aebd1681466d744e5de28bf5193e8013b7e3ba55c7f2bcfa2c72"
+    },
+    ".state/is12-scan-006/scan-raw.png": {
+      "bytes": 548056,
+      "sha256": "d64874435ed561868da7846fdf6de2196741097ba3a6c7c979ef20b6ab9cb556"
+    },
+    ".state/is12-scan-006/scan-upright.png": {
+      "bytes": 549165,
+      "sha256": "146f107c8a9f6010f487fda75a85aeede091eb1e43082702309c5c8a0168254e"
+    },
+    ".state/is12-scan-006/usb-in.bin": {
+      "bytes": 8510488,
+      "sha256": "8d218983ec2cf2190791e994283bbd6435dcc2ab5a456ed2672ebdc7075bd591"
+    },
+    ".state/is12-scan-007/records.bin": {
+      "bytes": 724503,
+      "sha256": "b896d2fc3b5f992c8e086b75801334fdeb3f1211a95e2412049b3db8535480c5"
+    },
+    ".state/is12-scan-007/usb-in.bin": {
+      "bytes": 727551,
+      "sha256": "4ce525f62c18fb594a6482860f7649f578f9ab1159ff0b995145d50a4a570fd0"
+    },
+    ".state/is12-scan-008/records.bin": {
+      "bytes": 727436,
+      "sha256": "9a355bbedd348374f88a5650b8c03b2186fd8e4660578c9b9b5c007ffb38c1ee"
+    },
+    ".state/is12-scan-008/scan-raw.png": {
+      "bytes": 19596,
+      "sha256": "eb14a3d06f3569edb69b118dc2e7416cb5e447c2e08a603d44de10fa86dcb665"
+    },
+    ".state/is12-scan-008/scan-upright.png": {
+      "bytes": 19455,
+      "sha256": "88366e94bdc833f6fca0fa3c28a7114c55ef1f0ca0594ff39d883b861854f32a"
+    },
+    ".state/is12-scan-008/usb-in.bin": {
+      "bytes": 727518,
+      "sha256": "e70c6f32807d58f7c4d5fea985d58fc1d934f5dc960e4665966440161af6a714"
+    },
+    ".state/is12-scan-008/validation.json": {
+      "bytes": 503,
+      "sha256": "7f5f1324521c44bebf9a24a7ddb3784f07abc8693f43a20aa4a9e807023582a3"
+    },
+    ".state/is12-scan-009/records.bin": {
+      "bytes": 23615,
+      "sha256": "a62a8acb51d2d0d1877d978db6cc3839bef3b93ee8a91a1ab67dc56aec1b2442"
+    },
+    ".state/is12-scan-009/usb-in.bin": {
+      "bytes": 23645,
+      "sha256": "cd015f043e2be714e0d89ebe534f4410164d75a008b1fee8936316de3fac76e4"
+    },
+    ".state/is12-scan-010/records.bin": {
+      "bytes": 102485,
+      "sha256": "9e7a86abd67b5c84ed52a4c2a4ec0f5400eb37d13f482b03e22891b5342fb81d"
+    },
+    ".state/is12-scan-010/scan-bilevel.png": {
+      "bytes": 1037,
+      "sha256": "85c6daf03b50c04e27497141ecd09afe833aae5f81c1b7cc69f178e140e17f7d"
+    },
+    ".state/is12-scan-010/scan-raw.png": {
+      "bytes": 11448,
+      "sha256": "0e9f19a054ce5ed3daddc08ff31aa5bb2e0662ea76c06411e1d4cc0cae874f8b"
+    },
+    ".state/is12-scan-010/scan-upright.png": {
+      "bytes": 12415,
+      "sha256": "35967627c3abba7bc84082007b022ad7d5f995ac2c7927e9dcfc0ed394131aca"
+    },
+    ".state/is12-scan-010/usb-in.bin": {
+      "bytes": 102569,
+      "sha256": "f046660e4310d35cdf3b5c80ad95f0169275008d36bf5beea4428589fefc2941"
+    },
+    ".state/is12-scan-010/validation.json": {
+      "bytes": 532,
+      "sha256": "f526c0fa61ac3f604dd8e06e60fdf9addd6db3a3e252f7210e4efe2455b1d040"
+    },
+    ".state/is12-scan-011/records.bin": {
+      "bytes": 1432668,
+      "sha256": "cebc77706d0cc171095448eb464b16b4ab1071bb0de6429acc1a936a614b2413"
+    },
+    ".state/is12-scan-011/usb-in.bin": {
+      "bytes": 1432758,
+      "sha256": "95989ce6ba4d525beb19a1408a812ceb62d250783ce9b84cb73d61f0263eb1a7"
+    },
+    ".state/is12-scan-012/driver-tested.bin": {
+      "bytes": 78864,
+      "sha256": "0786eaa91c26de6621b36766b73a40449ddf33a3d20acd59a0b77edda3e1571c"
+    },
+    ".state/is12-scan-012/records.bin": {
+      "bytes": 11248584,
+      "sha256": "45a8e22dea8e8c98838d3d7ffa1810fd6d248df188c774ecf98e45e78deb47eb"
+    },
+    ".state/is12-scan-012/scan-raw.png": {
+      "bytes": 12201,
+      "sha256": "e573b70dd1f4c0b7cda2ab093e7055e9d7bf7e2544e9adb89dd46fb2ea536fdd"
+    },
+    ".state/is12-scan-012/scan-upright.png": {
+      "bytes": 17284,
+      "sha256": "94af4eda6c2a86f2c4afe3d86f846bc531ecbdd3b61653be30cce5670d854be6"
+    },
+    ".state/is12-scan-012/usb-in.bin": {
+      "bytes": 11249090,
+      "sha256": "17b130453c986e239e79d168890ce4a359bca05abe1b8eb312effebaa3fd010b"
+    },
+    ".state/local.bjc85.native-scan.plist": {
+      "bytes": 1074,
+      "sha256": "6ed7ce36cc8a3bb15aeb967924be3f1afc2d6fe894313d3667d537e1dbfc9b00"
+    },
+    ".state/scanner-app/scan-00000000-0000-4000-8000-00000000000F/driver-tested.bin": {
+      "bytes": 78416,
+      "sha256": "2702cadfdb3266ecb61518a30d04241d52ddedd8e802c861150d72496adf7110"
+    },
+    ".state/scanner-app/scan-00000000-0000-4000-8000-00000000000F/records.bin": {
+      "bytes": 33745704,
+      "sha256": "573ef143604702101f3f5de0ee919b915e46f777346f4812b27bd5b4b35bddf4"
+    },
+    ".state/scanner-app/scan-00000000-0000-4000-8000-00000000000F/scan-raw.png": {
+      "bytes": 799056,
+      "sha256": "d9c66c2ac05c8081b33eb28a58e934908682e5f1bc040417f70af78b0db49640"
+    },
+    ".state/scanner-app/scan-00000000-0000-4000-8000-00000000000F/scan-upright.png": {
+      "bytes": 796184,
+      "sha256": "c3cfba1d62e426c4c2df0a94218305e48652ee46672d9f1493b242a17ead0854"
+    },
+    ".state/scanner-app/scan-00000000-0000-4000-8000-00000000000F/usb-in.bin": {
+      "bytes": 33747186,
+      "sha256": "5150d86efe44738ae7d139f2e9cc6cd7879202429358a998dabdfc723e4869dd"
+    },
+    ".state/scanner-app/scan-00000000-0000-4000-8000-00000000000F/validation.json": {
+      "bytes": 637,
+      "sha256": "26bb4cdeec4f7af81d731af9855e2ce8cb58e9848a8a7ce63cb39b491a175b9b"
+    },
+    ".state/scanner-app/settings.json": {
+      "bytes": 97,
+      "sha256": "4bd6b9775bfc0d910f40ea17c02f0748abac601867e37d19094b510b32a3e837"
+    },
+    "CMakeLists.txt": {
+      "bytes": 4751,
+      "sha256": "582f8cf0cd2e79779f0e29937063a7ad6c7ea2fdcdee0658a2f10e23979e5a6a"
+    },
+    "app/BJC85Scanner.swift": {
+      "bytes": 23013,
+      "sha256": "efb1f43964ea78bd8550326e5793891ca13c6e9ef303e083e098caf0c7022b10"
+    },
+    "app/ScanExport.swift": {
+      "bytes": 2853,
+      "sha256": "5ef1f095890a75870437cc54a55b3143f063487b933ad11546e7227254276bfe"
+    },
+    "docs/protocol/is12-bw-hardware-acceptance.jsonl": {
+      "bytes": 160,
+      "sha256": "2c2e951b1ea369c04d4ed715c0aaec6956cfd4a6041e2e94f34c722d385cc9f2"
+    },
+    "docs/protocol/is12-bw-output-acceptance.jsonl": {
+      "bytes": 216,
+      "sha256": "ed082a4c9b88ed8296e136aa90bd44a2b5950c90dd13c80a18a682d621cf26d9"
+    },
+    "docs/protocol/is12-cancel-acceptance.txt": {
+      "bytes": 224,
+      "sha256": "79da34d99eb44a4072814a26e7b6485f69d103fbfebaa07b49c2f99c616fb111"
+    },
+    "docs/protocol/is12-escl-http-acceptance-final.jsonl": {
+      "bytes": 281,
+      "sha256": "639083e7c4cb7341d37362e55891b128c8286a450b96c1ffa5d11c8f71016d27"
+    },
+    "docs/protocol/is12-escl-http-acceptance.jsonl": {
+      "bytes": 349,
+      "sha256": "ff27861a90acb001b1c2909310abde4eab574cd1067b01918c62b69ba66de8d5"
+    },
+    "docs/protocol/is12-escl-recovery-acceptance.jsonl": {
+      "bytes": 129,
+      "sha256": "de17c60ce32ecb888f13fee458dd9454466f66bb9769f2871555495cadb4a7de"
+    },
+    "docs/protocol/is12-export-acceptance.jsonl": {
+      "bytes": 1771,
+      "sha256": "69c0377ce11648c1597e35a70aefb130909cacab18e6d17173d43abbcd8f7e42"
+    },
+    "docs/protocol/is12-final-service-check.json": {
+      "bytes": 186,
+      "sha256": "a3773fa38419b553fe268aa1099c0640a9c639059d89768ef82e5605460a4c65"
+    },
+    "docs/protocol/is12-replay-acceptance.jsonl": {
+      "bytes": 2563,
+      "sha256": "82fa864e083d3495ebbed022d2f05084b76e852eac1e5d8a5acb98a16b99c4a2"
+    },
+    "docs/protocol/is12-usb-lease-acceptance.jsonl": {
+      "bytes": 149,
+      "sha256": "717f6e969f4744a73b3d360048e9676ffd3a075195b09fc7c77b94089b9e5179"
+    },
+    "scans/2026-09-13/app-export-90dpi.pdf": {
+      "bytes": 155853,
+      "sha256": "77f7bce1acbd2b97c77b0a001520ce7abd25f03e95a6ea6cdccd174505c935c9"
+    },
+    "scans/2026-09-13/chart-paper-reference-180dpi.json": {
+      "bytes": 702,
+      "sha256": "4b40ca4c4ede0bc658328d3a96c7c4c89d8b54ee8e1d17a60e9be93b11921531"
+    },
+    "scans/2026-09-13/chart-paper-reference-180dpi.png": {
+      "bytes": 549165,
+      "sha256": "146f107c8a9f6010f487fda75a85aeede091eb1e43082702309c5c8a0168254e"
+    },
+    "scans/2026-09-13/chart-paper-reference-90dpi.json": {
+      "bytes": 639,
+      "sha256": "b3c72d013d1b89882d0c529f45b7b4d245c4d86973fd64e2da6e9c66a0c964c0"
+    },
+    "scans/2026-09-13/chart-paper-reference-90dpi.png": {
+      "bytes": 152953,
+      "sha256": "f5ebba7d0840ce070652cbe4c929d846bcb917370cf72938fa268ecbc89e7193"
+    },
+    "scans/2026-09-13/imagecapture-native-gray-360dpi.png": {
+      "bytes": 165219,
+      "sha256": "2c2fbf01c2aeeb18fa92b43760a500783095da66b394845b424cd7a4cfa0850a"
+    },
+    "scans/2026-09-13/imagecapture-native-gray-90dpi.png": {
+      "bytes": 9134,
+      "sha256": "0957737598ab89cb2a693065457c264399f443feb38a65e23b09fd188e1fa530"
+    },
+    "scans/2026-09-13/imagecapture-native-lineart-360dpi.png": {
+      "bytes": 52717,
+      "sha256": "5cf6c7074dfb6db1aecdb70f20ef621815a1295d37dd0d34ead04c2b004ce266"
+    },
+    "scans/2026-09-13/page-1-uncalibrated.png": {
+      "bytes": 1096196,
+      "sha256": "c162f79824cbb889714b003dbb7ccd3466e406f76c9f4f583092bb0763029343"
+    },
+    "scans/2026-09-13/page-2-uncalibrated.png": {
+      "bytes": 1096099,
+      "sha256": "acb8cfbebfbda2d9387b5fd0030430bc870fc1b00dc1e93223af7c8bf6c84c74"
+    },
+    "scripts/build-gutenprint.sh": {
+      "bytes": 1434,
+      "sha256": "d10f48206838ef04f1e82b04ca5f6a252986275d9e7e7ebb57ce7bdf7f999466"
+    },
+    "scripts/build-pappl.sh": {
+      "bytes": 1440,
+      "sha256": "928db9564a6a8ab9f45a31967e70fd999a9e6f67fed21b37549434063d116ae0"
+    },
+    "scripts/build-scanner-app.sh": {
+      "bytes": 3905,
+      "sha256": "931113e630c726e6c57b277daf113be6cf2ec7d9871f0eeb331fb33299836a81"
+    },
+    "scripts/decode-is12-scan.py": {
+      "bytes": 8787,
+      "sha256": "b46611a717123789a7d969e5ddc4648a1ed3aee323f5e04bc081cc238efb78ee"
+    },
+    "scripts/inspect-pe.py": {
+      "bytes": 5699,
+      "sha256": "43e42fb7450ad1344d58f0f65bc7d305f5c1582dd783e7af236b1581a7d7cbee"
+    },
+    "scripts/install-print-service.sh": {
+      "bytes": 3427,
+      "sha256": "b4a7df0c2e1766e4863f6353822949f461e7fead8eab507a261d24f7ab64acea"
+    },
+    "scripts/install-scanner-service.sh": {
+      "bytes": 4074,
+      "sha256": "961374c9e25e8394c8252092dd7ba685934788f9b9d7ada0cf959ea2afd7abe1"
+    },
+    "scripts/record-scanner-milestone.py": {
+      "bytes": 5229,
+      "sha256": "d628480c37c438495b44150cb781bc81600dad805ca6535b4426a0285b204799"
+    },
+    "scripts/resume-printing.sh": {
+      "bytes": 1292,
+      "sha256": "6463022cd960fe021ea81296a4b8022887736398f1bde07b09dcf7e87541d50a"
+    },
+    "scripts/test-bw-scan.py": {
+      "bytes": 2020,
+      "sha256": "65e47c252b7c1e10c0d107898a7248d9c732479b2dc0ef57ed6257d165d1ae56"
+    },
+    "scripts/test-scanner-cancel.py": {
+      "bytes": 2189,
+      "sha256": "ffa4901ff976ecf357147f81a9190a257e7fd01c93070c338d26615f672e629a"
+    },
+    "src/escl_bonjour.c": {
+      "bytes": 1997,
+      "sha256": "5978fd6f3f3d5bee0b69cb865994a0c330bfd7553fb6e17d5eac3d59974c4b9f"
+    },
+    "src/escl_bridge.swift": {
+      "bytes": 20986,
+      "sha256": "9a398a848631aef87956b813b9b13e9b343260c2f270dda0c56b049bd567c9b5"
+    },
+    "src/escl_discovery.swift": {
+      "bytes": 4794,
+      "sha256": "8fd3ec0abc68a39b2ab006cd60ecffb9def71cab0813fa023c8ca20e28d8fa99"
+    },
+    "src/escl_publish.c": {
+      "bytes": 1657,
+      "sha256": "e97463cc8c6b2875ea90baffdfffec8ba77f2dfc6b55013cc2b74c9dc5fb63aa"
+    },
+    "src/escl_publish.h": {
+      "bytes": 92,
+      "sha256": "6551ccb235ebad68525abbf3420d6a45635ba41d1f522b898a26e0a839047b3c"
+    },
+    "src/imagecapture_probe.swift": {
+      "bytes": 5304,
+      "sha256": "e92745e99aedeef8615cbb1302ead9416ec8e01a7200d31c3bdb760621c15586"
+    },
+    "src/is12_calibration.c": {
+      "bytes": 4878,
+      "sha256": "ee9c2f4960f9f88fb6e0c3d26fe0a242a250f607297218e88f91c29038046efd"
+    },
+    "src/is12_calibration.h": {
+      "bytes": 877,
+      "sha256": "5283fc26d78d2d5d35b591259149bde2a68706d7151fec852eb306f50bed0d6b"
+    },
+    "src/is12_cli.c": {
+      "bytes": 12107,
+      "sha256": "24d85b0eb184813fde6ad3f8db0d1de0c08bf455e5dde62199499c1b28f52a6f"
+    },
+    "src/is12_image.c": {
+      "bytes": 5583,
+      "sha256": "30e350c4406f61cdcea4eb0f90aa15e005df07a270bcd364e249ed29c44ad41e"
+    },
+    "src/is12_image.h": {
+      "bytes": 1150,
+      "sha256": "376603a9c70d2fe448992cc25e779c22bfcf26a7717ebd35856c1dfba35c9c7a"
+    },
+    "src/is12_png.c": {
+      "bytes": 4695,
+      "sha256": "517bbba9e6359230c4f06a7d97b5235d459d97e6df67d56cce213a5782335b28"
+    },
+    "src/is12_protocol.c": {
+      "bytes": 4351,
+      "sha256": "249759c845bbdcaecc91055e73b39b94258eaf5370b3e227b4e955992ec74056"
+    },
+    "src/is12_protocol.h": {
+      "bytes": 1497,
+      "sha256": "b1f2fb3de9dde3df5cc9879ba37b9fe7e5b92a48b7a2cd8e8f76d09229e39dca"
+    },
+    "src/is12_scan.c": {
+      "bytes": 15090,
+      "sha256": "c519a80a6ffc9f5bf8b9dc1b821ed788703cfe5a723fe3c00989752074af10e4"
+    },
+    "src/usb.c": {
+      "bytes": 6154,
+      "sha256": "df3885855e8ecb993f5d97695829cc85fc93893c9cb1643ad72faf017eae7ba7"
+    },
+    "src/usb.h": {
+      "bytes": 825,
+      "sha256": "d932c2e4980a357d11115fb08a050a101a55ed6cc464dfa96c124fea87662a64"
+    },
+    "tests/bw_output_test.py": {
+      "bytes": 2515,
+      "sha256": "5d523329f1266382a89714cb539eb36338ab582ac9c2d753c4151f3cdf3e2395"
+    },
+    "tests/escl_http_test.py": {
+      "bytes": 1711,
+      "sha256": "28cc39843ec18063e5f23ba78dfad6f327a03a6e29c79613234cb813f69a8af0"
+    },
+    "tests/escl_recovery_test.py": {
+      "bytes": 1184,
+      "sha256": "71bd28b4b50dd034fb66cebdb43c5031c168610ed2fedb61f1048967927926a3"
+    },
+    "tests/export_formats_test.py": {
+      "bytes": 1869,
+      "sha256": "1d6f7de0bdf262931c5d66646f26aa5c36fc0f1b7b07431f422fa380b7da59f5"
+    },
+    "tests/fixtures/is12-calibration-captures.json": {
+      "bytes": 735,
+      "sha256": "6cec641357d838cf394a1da11089f4def0a8c30903c15fa9c4e1ed60d07e8edf"
+    },
+    "tests/fixtures/is12-captures.json": {
+      "bytes": 887,
+      "sha256": "b0c1e4751a1b91effb040e48e2539240d2ca7f07a48cc06cec20cb4463e269c7"
+    },
+    "tests/fixtures/is12-correction-180dpi-temp56.bin": {
+      "bytes": 2057,
+      "sha256": "3333127452b28e084dd38731c6c724431af67cdec2ef724702db5aec0bce4d13"
+    },
+    "tests/fixtures/is12-correction-90dpi-temp55.bin": {
+      "bytes": 2057,
+      "sha256": "26f18ed6d30547765409d5110230307130f18bfe844bd9370f70f8d72853f40e"
+    },
+    "tests/fixtures/is12-extended-status.usb": {
+      "bytes": 83,
+      "sha256": "849eecf733fb62c50db64f378a51b5d2c5b2bfd3058f1653c42758758b7417a8"
+    },
+    "tests/fixtures/is12-first-status.usb": {
+      "bytes": 70,
+      "sha256": "ec44040f98e376d2767461ada71113d73d945d212107b7602fb4003eab9d342c"
+    },
+    "tests/fixtures/is12-status-after-warmup.usb": {
+      "bytes": 59,
+      "sha256": "d89a71b4ca187a90b102d2bc61e6bc2c8bc30f7371a734d930e86d021db4a252"
+    },
+    "tests/fixtures/is12-white-paper-measurement.bin": {
+      "bytes": 12337,
+      "sha256": "82a578dbbffe34c1c7bce1967bf76a02d4acb6989f75ff1f1935f70cd0716d0b"
+    },
+    "tests/is12_calibration_test.c": {
+      "bytes": 3296,
+      "sha256": "0f460129856ce848436f58869a56b49d2235785f22c2944837ceca04a244c81c"
+    },
+    "tests/is12_image_test.c": {
+      "bytes": 5512,
+      "sha256": "a23f7e8c3327851d5caf27a1d82671f17f65cadec8dbbae2940dda78a4ed7dba"
+    },
+    "tests/is12_image_test.py": {
+      "bytes": 2908,
+      "sha256": "de6966fddc6543395a8d14eb35af24abb0b365129504408980138db77375fee9"
+    },
+    "tests/is12_protocol_test.c": {
+      "bytes": 3769,
+      "sha256": "68d1365ad8f6c66dd4dc72aa3547f0462d08513d3852caac0fa58f73fd081677"
+    },
+    "tests/is12_stream_test.c": {
+      "bytes": 5177,
+      "sha256": "a2d72bb196b63a12ec91d9b71601cd86e132779db3c1ceb879693b4f6a2aee81"
+    },
+    "tests/protocol_test.c": {
+      "bytes": 1164,
+      "sha256": "394379efb3ff75672093189b038c1331ff104b53fcd3c33caf8f850fb8b1ba99"
+    },
+    "tests/replay_scans_test.py": {
+      "bytes": 2475,
+      "sha256": "309d420eee4b54c09d5ace5761489effd513e5faf6afc4589a98e6ade267e9fd"
+    },
+    "tests/transfer_test.c": {
+      "bytes": 1991,
+      "sha256": "0eebece9c04152499ca6c57933507e9e5683bfd4b3df589485baf5df03b2c960"
+    },
+    "tests/usb_lease_test.py": {
+      "bytes": 1417,
+      "sha256": "5f7836c1a05a171a4d6f592a8ca632ae8be218c8d8f272dcf961a315325f7ed0"
+    }
+  },
+  "source_note": "Source hashes describe current development files; historical captures may predate later changes. Preserved driver-tested.bin files identify individual tested executables where available.",
+  "static_analysis_toolchain": [
+    {
+      "name": "Ghidra 12.1.3",
+      "url": "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.3_build",
+      "archive_sha256": "93a5d11a9ad510622acaaf908c556a7b9b764d338e78a7567f3689bf5081fd54",
+      "official_digest_matched": true,
+      "decompiler_built_locally": "mac_arm_64"
+    },
+    {
+      "name": "Temurin JDK 21.0.12.1+1",
+      "url": "https://github.com/adoptium/temurin21-binaries/releases/tag/jdk-21.0.12.1%2B1",
+      "archive_sha256": "3623232f33a9c3baadf304480b2535f9a3cba8a58d42ecbb438ba267315d9998",
+      "official_digest_matched": true,
+      "architecture": "aarch64"
+    }
+  ],
+  "canon_executable_code_run": false,
+  "rosetta_used": false,
+  "canon_reference_colour_accuracy_validated": false,
+  "tests": "Seven CTest checks pass in normal and ASAN/UBSAN builds; six Python image contracts; independent pixel comparison of real captures; native PNG/TIFF/PDF exports; exclusive USB lease, HTTP validation, and interrupted-job startup checks. Detailed acceptance logs are retained alongside this manifest.",
+  "hardware_state": "IS-12 installed; print service stopped and BJC85_Native paused. Do not resume until BC-11e is restored."
+}

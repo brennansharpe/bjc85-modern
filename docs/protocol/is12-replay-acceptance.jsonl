@@ -1,0 +1,12 @@
+{"capture": ".state/is12-scan-001", "dpi": 90, "mode": "color", "native_png_mode": "RGB", "size": [720, 972], "pixels_identical": true, "bands": 61, "band_rows": 16, "rows": {"R": 976, "G": 976, "B": 976}}
+{"capture": ".state/is12-scan-002", "dpi": 90, "mode": "color", "native_png_mode": "RGB", "size": [720, 972], "pixels_identical": true, "bands": 61, "band_rows": 16, "rows": {"R": 976, "G": 976, "B": 976}}
+{"capture": ".state/is12-scan-004", "dpi": 90, "mode": "color", "native_png_mode": "RGB", "size": [720, 972], "pixels_identical": true, "bands": 61, "band_rows": 16, "rows": {"R": 976, "G": 976, "B": 976}}
+{"capture": ".state/is12-scan-006", "dpi": 180, "mode": "color", "native_png_mode": "RGB", "size": [1440, 1944], "pixels_identical": true, "bands": 61, "band_rows": 32, "rows": {"R": 1952, "G": 1952, "B": 1952}}
+{"capture": ".state/scanner-app/scan-00000000-0000-4000-8000-00000000000F", "dpi": 360, "mode": "color", "native_png_mode": "RGB", "size": [2880, 3888], "pixels_identical": true, "bands": 81, "band_rows": 48, "rows": {"R": 3888, "G": 3888, "B": 3888}}
+{"capture": ".state/is12-scan-008", "dpi": 90, "mode": "gray", "native_png_mode": "L", "size": [720, 972], "pixels_identical": true, "bands": 31, "band_rows": 32, "rows": {"K": 992}}
+{"capture": ".state/is12-scan-010", "dpi": 90, "mode": "lineart", "native_png_mode": "1", "size": [720, 972], "pixels_identical": true, "bands": 31, "band_rows": 32, "rows": {"K": 992}}
+{"capture": ".state/is12-scan-012", "dpi": 360, "mode": "bw", "native_png_mode": "1", "size": [2880, 3888], "pixels_identical": true, "bands": 81, "band_rows": 48, "rows": {"K": 3888}}
+{"capture": ".state/escl-jobs/00000000-0000-4000-8000-000000000001/capture", "dpi": 90, "mode": "color", "native_png_mode": "RGB", "size": [720, 972], "pixels_identical": true, "bands": 61, "band_rows": 16, "rows": {"R": 976, "G": 976, "B": 976}}
+{"capture": ".state/escl-jobs/00000000-0000-4000-8000-000000000005/capture", "dpi": 90, "mode": "gray", "native_png_mode": "L", "size": [720, 972], "pixels_identical": true, "bands": 31, "band_rows": 32, "rows": {"K": 992}}
+{"capture": ".state/escl-jobs/00000000-0000-4000-8000-00000000000A/capture", "dpi": 360, "mode": "gray", "native_png_mode": "L", "size": [2880, 3888], "pixels_identical": true, "bands": 81, "band_rows": 48, "rows": {"K": 3888}}
+{"capture": ".state/escl-jobs/00000000-0000-4000-8000-00000000000B/capture", "dpi": 360, "mode": "gray", "native_png_mode": "L", "size": [2880, 3888], "pixels_identical": true, "bands": 81, "band_rows": 48, "rows": {"K": 3888}}

@@ -1,0 +1,48 @@
+"tests/ipp-restart.test":
+    Get-Job-Attributes:
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        printer-uri (uri) = ipp://localhost:8632/ipp/print
+        job-id (integer) = 2
+    A restart retains the previous job history                           [PASS]
+        RECEIVED: 686 bytes in response
+        status-code = successful-ok (successful-ok)
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        job-name (nameWithoutLanguage) = Untitled
+        job-originating-user-name (nameWithoutLanguage) = REDACTED
+        job-id (integer) = 2
+        job-uri (uri) = ipps://localhost:8632/ipp/print/2
+        job-uuid (uri) = urn:uuid:00000000-0000-4000-8000-000000000013
+        job-printer-uri (uri) = ipps://localhost:8632/ipp/print
+        date-time-at-creation (dateTime) = 2026-09-13T20:04:48Z
+        date-time-at-completed (dateTime) = 2026-09-13T20:04:49Z
+        date-time-at-processing (dateTime) = 2026-09-13T20:04:48Z
+        job-impressions (integer) = 4
+        job-impressions-completed (integer) = 8
+        job-printer-up-time (integer) = 84
+        job-state (enum) = completed
+        job-state-message (textWithoutLanguage) = Job completed.
+        job-state-reasons (keyword) = job-completed-successfully
+        time-at-creation (integer) = -312
+        time-at-completed (integer) = -311
+        time-at-processing (integer) = -312
+    Print-Job:
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        printer-uri (uri) = ipp://localhost:8632/ipp/print
+        requesting-user-name (nameWithoutLanguage) = REDACTED
+        document-format (mimeMediaType) = image/urf
+    The next dry-run job continues the saved job counter                 [PASS]
+        RECEIVED: 234 bytes in response
+        status-code = successful-ok (successful-ok)
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        job-id (integer) = 3
+        job-uri (uri) = ipp://localhost:8632/ipp/print/3
+        job-state (enum) = completed
+        job-state-message (textWithoutLanguage) = Job completed.
+        job-state-reasons (keyword) = job-completed-successfully
+
+Summary: 2 tests, 2 passed, 0 failed, 0 skipped
+Score: 100%

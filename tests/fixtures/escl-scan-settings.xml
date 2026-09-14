@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scan:ScanSettings xmlns:scan="http://schemas.hp.com/imaging/escl/2011/05/03" xmlns:pwg="http://www.pwg.org/schemas/2010/12/sm">
+<pwg:Version>2.0</pwg:Version><pwg:ScanRegions><pwg:ScanRegion>
+<pwg:ContentRegionUnits>escl:ThreeHundredthsOfInches</pwg:ContentRegionUnits>
+<pwg:XOffset>0</pwg:XOffset><pwg:YOffset>0</pwg:YOffset><pwg:Width>2400</pwg:Width><pwg:Height>3240</pwg:Height>
+</pwg:ScanRegion></pwg:ScanRegions><pwg:InputSource>Feeder</pwg:InputSource>
+<scan:ColorMode>RGB24</scan:ColorMode><pwg:DocumentFormat>image/png</pwg:DocumentFormat>
+<scan:XResolution>90</scan:XResolution><scan:YResolution>90</scan:YResolution><scan:Duplex>false</scan:Duplex>
+</scan:ScanSettings>

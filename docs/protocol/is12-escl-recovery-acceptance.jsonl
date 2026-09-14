@@ -1,0 +1,1 @@
+{"case": "restart blocked on an unclosed acquisition journal", "passed": true, "usb_commands_sent": 0, "journal_retained": true}

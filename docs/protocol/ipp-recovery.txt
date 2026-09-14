@@ -1,0 +1,17 @@
+"tests/ipp-recovery.test":
+    Print-Job:
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        printer-uri (uri) = ipp://localhost:8632/ipp/print
+        requesting-user-name (nameWithoutLanguage) = REDACTED
+        document-format (mimeMediaType) = image/urf
+    A recovery marker prevents a new job from rendering or transferring  [PASS]
+        RECEIVED: 223 bytes in response
+        status-code = successful-ok (successful-ok)
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        job-id (integer) = 4
+        job-uri (uri) = ipp://localhost:8632/ipp/print/4
+        job-state (enum) = aborted
+        job-state-message (textWithoutLanguage) = Job aborted.
+        job-state-reasons (keyword) = aborted-by-system

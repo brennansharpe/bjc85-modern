@@ -1,0 +1,10 @@
+{"event":"scanner_found","module":"\/System\/Library\/Image Capture\/Devices\/AirScanScanner.app","name":"Canon BJC-85 IS-12 Native"}
+{"error":"none","event":"session_open"}
+{"event":"scanner_ready","units":[3]}
+{"error":"none","event":"unit_selected","resolutions":[],"size":"(0.0, 0.0)","state":0,"type":0}
+{"error":"none","event":"unit_selected","resolutions":[90,180,360],"size":"(20.32, 27.432000000000002)","state":1,"type":3}
+{"area":"(0.0, 0.0, 8.0, 10.8)","bit_depth":1,"dpi":360,"event":"request_scan","paper_loaded":true,"scan_in_progress":false,"state":1}
+{"event":"scan_saved","path":"\/Users\/REDACTED\/bjc85-modern\/scans\/2026-09-13\/imagecapture-native-lineart-360dpi.png"}
+{"error":"none","event":"scan_complete"}
+{"error":"none","event":"session_close"}
+{"discovered":true,"event":"probe_result","ready":true,"saved_files":1,"scan_finished":true}

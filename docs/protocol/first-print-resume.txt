@@ -1,0 +1,4 @@
+Original SHA256: e875fecdb7e660f28f6b174b39bca8e1cb32c012017742fab6376fd649a1b38b
+Resume offset: 25728
+Remaining bytes: 85863
+User reports the printer is still printing; no reset or replug has been requested.

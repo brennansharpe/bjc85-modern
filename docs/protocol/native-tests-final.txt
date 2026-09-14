@@ -1,0 +1,90 @@
+Start testing: Sep 13 16:46 EDT
+----------------------------------------------------------
+1/5 Testing: protocol
+1/5 Test: protocol
+Command: "/Users/REDACTED/bjc85-modern/build-asan/protocol-tests"
+Directory: /Users/REDACTED/bjc85-modern/build-asan
+"protocol" start time: Sep 13 16:46 EDT
+Output:
+----------------------------------------------------------
+USB identity framing and readiness tests passed.
+<end of output>
+Test time =   0.12 sec
+----------------------------------------------------------
+Test Passed.
+"protocol" end time: Sep 13 16:46 EDT
+"protocol" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/5 Testing: transfer
+2/5 Test: transfer
+Command: "/Users/REDACTED/bjc85-modern/build-asan/transfer-tests"
+Directory: /Users/REDACTED/bjc85-modern/build-asan
+"transfer" start time: Sep 13 16:46 EDT
+Output:
+----------------------------------------------------------
+Partial writes, timed pauses, disconnects, and stalled transfers passed.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"transfer" end time: Sep 13 16:46 EDT
+"transfer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/5 Testing: is12-protocol
+3/5 Test: is12-protocol
+Command: "/Users/REDACTED/bjc85-modern/build-asan/is12-protocol-tests"
+Directory: /Users/REDACTED/bjc85-modern/build-asan
+"is12-protocol" start time: Sep 13 16:46 EDT
+Output:
+----------------------------------------------------------
+IS-12 information requests, framing and cartridge checks passed (synthetic and captured fixtures).
+<end of output>
+Test time =   0.39 sec
+----------------------------------------------------------
+Test Passed.
+"is12-protocol" end time: Sep 13 16:46 EDT
+"is12-protocol" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/5 Testing: is12-stream
+4/5 Test: is12-stream
+Command: "/Users/REDACTED/bjc85-modern/build-asan/is12-stream-tests" "/Users/REDACTED/bjc85-modern/tests/fixtures/is12-first-status.usb" "/Users/REDACTED/bjc85-modern/tests/fixtures/is12-status-after-warmup.usb" "/Users/REDACTED/bjc85-modern/tests/fixtures/is12-extended-status.usb"
+Directory: /Users/REDACTED/bjc85-modern/build-asan
+"is12-stream" start time: Sep 13 16:46 EDT
+Output:
+----------------------------------------------------------
+Captured replies and calibration-sized records survive USB/outer-frame fragmentation; malformed, partial and rejected streams stop.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Passed.
+"is12-stream" end time: Sep 13 16:46 EDT
+"is12-stream" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/5 Testing: gutenprint-bjc85
+5/5 Test: gutenprint-bjc85
+Command: "/Users/REDACTED/bjc85-modern/build-asan/bjc85-render" "capabilities"
+Directory: /Users/REDACTED/bjc85-modern/build-asan
+"gutenprint-bjc85" start time: Sep 13 16:46 EDT
+Output:
+----------------------------------------------------------
+Canon BJC-85 (bjc-85), Gutenprint 5.3.5
+PageSize (active=1): Letter Legal Executive Postcard CD5Inch CD3Inch CDCustom w216h360 w252h360 w252h360J w144h432 w288h432 w288h432J w324h495 w297h421 w288h576 w360h504 w360h504J w360h576 w432h576 w432h648 c8x10 c8x10J Statement w360h360 w576h864 A4 A5 A6 A7 A8 A9 A10 w609h864 w637h907 ISOB5 ISOB6 ISOB7 ISOB8 ISOB9 ISOB10 B5 B6 B7 B8 B9 B10 C4 C5 C5_l w354h918 C6 C6_l DL DL_l w229h459 w229h459_l C7 C7_l C8 C8_l C9 C9_l C10 C10_l EA5 EA5_l ARCHA w612h936 w648h936 w535h697 w569h731 w620h782 w671h884 w348h527 w365h561 w391h612 w442h663 w314h504 w314h513 cw365h561 w283h425 w283h420 w420h567 w340h666 w340h666_l w255h581 w255h581_l w297h666 w297h666_l w277h538 w277h538_l w680h941 COM10 COM10_l w315h414 Monarch Monarch_l w288h387 w288h504 w288h512 w155h244 w155h257 w283h566 w612h935 LegalIndia Oficio B-Oficio M-Oficio Custom w252 w288 w360 w595
+MediaType (active=1): Plain Transparency BackPrint Fabric Envelope Coated TShirt GlossyFilm GlossyPaper GlossyCard GlossyPro Other
+InputSlot (active=1): Auto Manual
+Resolution (active=1): 360x360dmt_high 360x360dmt 360x360dpi_high 360x360dpi 720x360dpi_high 720x360dpi 720x360dpi_draft 360x360dpi_draft 180x180dpi_high 180x180dpi 180x180dpi_draft
+InkType (active=1): CMYK Gray
+InkSet (active=1): None
+PrintingMode (active=1): Color BW
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"gutenprint-bjc85" end time: Sep 13 16:46 EDT
+"gutenprint-bjc85" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 13 16:46 EDT

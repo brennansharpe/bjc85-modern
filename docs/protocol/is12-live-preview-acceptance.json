@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-14",
+  "capture": ".state/scanner-app/scan-00000000-0000-4000-8000-00000000000E",
+  "log": ".state/scanner-app/scan-00000000-0000-4000-8000-000000000011.jsonl",
+  "hardware_scan_complete": true,
+  "preview_frames": 61,
+  "first_preview_rows": 16,
+  "final_preview_rows": 972,
+  "preview_matches_final_png": true,
+  "live_rotation_observed": true,
+  "scan_result": {
+    "event": "scan_result",
+    "complete_stream": true,
+    "end_record": true,
+    "measurement_received": false,
+    "reference_applied": true,
+    "image_bytes": 2108160,
+    "usb_bytes": 2147966,
+    "device_error": false,
+    "canon_reference_validated": false
+  },
+  "cancellation": {
+    "log": ".state/scanner-app/scan-00000000-0000-4000-8000-000000000010.jsonl",
+    "capture": ".state/scanner-app/scan-00000000-0000-4000-8000-000000000008",
+    "preview_frames": 11,
+    "partial_rows": 176,
+    "one_stop_command": true,
+    "no_final_png": true,
+    "scan_result": {
+      "event": "scan_result",
+      "complete_stream": false,
+      "end_record": false,
+      "measurement_received": false,
+      "reference_applied": true,
+      "image_bytes": 414720,
+      "usb_bytes": 422670,
+      "device_error": false,
+      "canon_reference_validated": false
+    }
+  },
+  "fitted_window_and_live_rotation_verified": true,
+  "sha256": {
+    "app/BJC85Scanner.swift": "121c2f4c4280c98becebe3aeff3a5a2f8ea235d55babcaa03074873062ade6ea",
+    "app/LiveScanPreview.swift": "3c56ec3dd27a8e0a78354c1fc0f6b0f2458ce1f6ffa38c75477dc81821455598",
+    "src/is12_preview.c": "f980c124218a961348ea1d0f92cd9682ca72b7320a0db443634d70b96f7fc8e6",
+    "src/is12_preview.h": "a932d17caf6c55dccd447f8f812296c9d47ad7422fab330a7b134368d97da91a",
+    "src/is12_scan.c": "5e9665108be76f7c020c1ad12b8bf5e21fe0c5d0abe8ff7b1a1e9961f40d3aab",
+    "src/is12_cli.c": "1c91d23fbf6929920b8ba923d104021912009dc9955a2374b95e03cf80226ed0",
+    "build/BJC-85 Scanner.app/Contents/MacOS/BJC85Scanner": "e875199220e5ba996e38d0ef70d0e87579d690a1fb414b86812d437502ec8078",
+    "build/BJC-85 Scanner.app/Contents/Helpers/bjc85-is12": "6c89cdba6ea225a882464d5bc37ed246fdd0dcbdef03217c5c2b1d48aa9c116d"
+  }
+}

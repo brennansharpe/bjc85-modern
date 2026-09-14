@@ -1,0 +1,1 @@
+Reference failed identity, checksum or temperature validation.

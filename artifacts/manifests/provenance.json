@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "artifacts": [
+    {
+      "filename": "artifacts/original/gutenprint-5.3.5.tar.xz",
+      "sha256": "f5a9f47de28530b1ae2069cfbc647a9a641baeeabe809bb0ef2b3ec5b9668d70",
+      "bytes": 5667532,
+      "acquired_at_utc": "2026-09-13T19:03:55.261955+00:00",
+      "source_url": "https://downloads.sourceforge.net/project/gimp-print/gutenprint-5.3/5.3.5/gutenprint-5.3.5.tar.xz",
+      "provenance": "Gutenprint upstream release",
+      "licence": "GPL-2.0-or-later; see source COPYING",
+      "authenticity": "Not independently authenticated; hash pins acquired bytes"
+    },
+    {
+      "filename": "artifacts/original/BJC85_IS12_user_manual.pdf",
+      "sha256": "26f523eb5bce91878e4f0c3eeb3e11ec99d275c7de19c027656ed161c0703f25",
+      "bytes": 4756718,
+      "acquired_at_utc": "2026-09-13T19:12:44.032251+00:00",
+      "source_url": "https://gdlp01.c-wss.com/gds/2/0900007432/01/BJC85_IS12_user_manual.pdf",
+      "provenance": "Canon download server",
+      "licence": "Canon copyright; research reference",
+      "authenticity": "Not independently authenticated; hash pins acquired bytes"
+    },
+    {
+      "filename": "artifacts/original/b11q_ukx.bin",
+      "sha256": "c968c87cda4061b8c42f556558758e495d92c8b65d49353357f5a74f9bf90d99",
+      "bytes": 2395776,
+      "acquired_at_utc": "2026-09-13T19:15:24.338663+00:00",
+      "source_url": "https://www.helpdrivers.com/printers/Canon/BJC_Serie/BJC-85/",
+      "provenance": "HelpDrivers mirror; codigo=2278701",
+      "licence": "Canon proprietary; redistribution not established",
+      "authenticity": "Not independently authenticated; hash pins acquired bytes"
+    },
+    {
+      "filename": "artifacts/original/isscan_v350.exe",
+      "sha256": "6589c7d8b3b1565430367baa16bd087d85d217ed056b81d91ee4f6fd6beabddb",
+      "bytes": 3548160,
+      "acquired_at_utc": "2026-09-13T19:15:28.850693+00:00",
+      "source_url": "https://www.helpdrivers.com/printers/Canon/BJC_Serie/BJC-85/",
+      "provenance": "HelpDrivers mirror; codigo=40790",
+      "licence": "Canon proprietary; redistribution not established",
+      "authenticity": "Not independently authenticated; hash pins acquired bytes"
+    },
+    {
+      "filename": "artifacts/original/onboard-nozzle-check-2026-09-13.jpg",
+      "sha256": "7e8f9f61e4cefad13b4f56fdd89aef060cc91dd885e2a331c2d30b0c016c9349",
+      "bytes": 1373995,
+      "acquired_at_utc": "2026-09-13T19:28:58.047780+00:00",
+      "source_url": null,
+      "provenance": "User-provided photo of built-in BJC-85 nozzle check",
+      "licence": "User attachment; local hardware evidence",
+      "authenticity": "User-reported printer-generated nozzle test; original attached bytes preserved"
+    },
+    {
+      "filename": "artifacts/original/native-color-print-2026-09-13.jpg",
+      "sha256": "947d447a26fb586cc78ffbf23c8c74c86a9a51d1d6e1f7299135da4284e77e35",
+      "bytes": 1699461,
+      "acquired_at_utc": "2026-09-13T19:38:48.216057+00:00",
+      "source_url": null,
+      "provenance": "User-provided photograph of native ARM64 colour test print with ruler",
+      "licence": "User attachment; local hardware evidence",
+      "authenticity": "Matches submitted blue-text colour fixture; original attached bytes preserved"
+    },
+    {
+      "filename": "artifacts/original/pappl-1.4.12.tar.gz",
+      "sha256": "1684c4e06446e9f7d93a39729fa0ba56f07a4007560080fdad7d0e2076a3615f",
+      "bytes": 2602085,
+      "acquired_at_utc": "2026-09-13T19:39:47.950967+00:00",
+      "source_url": "https://github.com/michaelrsweet/pappl/releases/download/v1.4.12/pappl-1.4.12.tar.gz",
+      "provenance": "PAPPL upstream release on GitHub",
+      "licence": "Apache-2.0 with optional exceptions; see source LICENSE and NOTICE",
+      "authenticity": "Not independently authenticated; hash pins acquired bytes"
+    }
+  ]
+}

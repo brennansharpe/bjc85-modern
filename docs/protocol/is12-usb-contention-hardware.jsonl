@@ -1,0 +1,1 @@
+{"case": "native USB probe during actual acquisition", "blocked_before_usb": true, "exit_code": 1, "message": "Another native BJC-85 operation owns USB. Finish or cancel it first.\nCannot open BJC-85: LIBUSB_ERROR_BUSY."}

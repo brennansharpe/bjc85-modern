@@ -1,0 +1,38 @@
+{
+  "recorded_at_utc": "2026-09-13T20:55:13.735876+00:00",
+  "cartridge": "IS-12",
+  "print_queue": "BJC85_Native",
+  "print_queue_state": "disabled; no active jobs",
+  "print_service": "local.bjc85.native-print",
+  "print_service_state": "not loaded in launchd gui/501; plist retained",
+  "native_architecture": "arm64",
+  "verified": [
+    "scanner mode entry",
+    "head matches Canon BJC-85 IS-12 checks",
+    "information selectors 0 through 4",
+    "warm-up bit cleared",
+    "stream parser hardware readback",
+    "five ASAN/UBSAN CTest checks"
+  ],
+  "unverified": [
+    "white calibration",
+    "image acquisition",
+    "image decoding",
+    "automatic print-path cartridge discrimination"
+  ],
+  "hardware_accessories": {
+    "white_reference_available": false,
+    "scanner_holder_available": false,
+    "two_printed_test_targets_available": true
+  },
+  "files": {
+    "src/is12_cli.c": "2eb4568d78478d103c74dc963e57c88500b66658596a51c078adcd84ac268221",
+    "src/is12_protocol.c": "249759c845bbdcaecc91055e73b39b94258eaf5370b3e227b4e955992ec74056",
+    "src/is12_protocol.h": "b1f2fb3de9dde3df5cc9879ba37b9fe7e5b92a48b7a2cd8e8f76d09229e39dca",
+    "build/bjc85-is12": "2ce316173604784c56d75d17dbebc854df0157f0f8f526a4db223f6ce46670fa",
+    "docs/protocol/is12-first-status.jsonl": "c17b6e46c049f7ae5e63a3866e6b6768fe61b616e99cb96fcd01cdeb8d3665be",
+    "docs/protocol/is12-status-after-warmup.jsonl": "8117755b2131eeb0801e073c260a9aa7d070f6a08db5cd1cea4856d5915cf4a0",
+    "docs/protocol/is12-extended-status.jsonl": "40844b4c92787f53a8f8744fdbbee59fe381e7b6ce985415e3fabdb90b1dbb6d",
+    "docs/protocol/is12-stream-status.jsonl": "40844b4c92787f53a8f8744fdbbee59fe381e7b6ce985415e3fabdb90b1dbb6d"
+  }
+}

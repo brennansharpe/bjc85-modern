@@ -1,0 +1,14 @@
+# Run only against a dry-run service with usb-recovery-required.txt present.
+{
+    NAME "A recovery marker prevents a new job from rendering or transferring"
+    OPERATION Print-Job
+    GROUP operation-attributes-tag
+    ATTR charset attributes-charset utf-8
+    ATTR language attributes-natural-language en
+    ATTR uri printer-uri $uri
+    ATTR name requesting-user-name $user
+    ATTR mimeMediaType document-format image/urf
+    FILE $letter
+    STATUS successful-ok
+    EXPECT job-state WITH-VALUE 8
+}

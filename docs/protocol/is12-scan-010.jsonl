@@ -1,0 +1,2042 @@
+{"event":"scan_start","plain_paper_calibration":false,"reference_requested":true,"requested_dpi":90,"colour":"lineart","page_limit":1}
+{"event":"write","stage":"verify-carrier","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 00"}
+{"event":"record","stage":"verify-carrier","kind":42,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"record","stage":"verify-carrier","kind":33,"family":115,"token":99,"length":12,"payload":"b0 88 00 80 01 00 00 0b 40 00 30 0e"}
+{"event":"write","stage":"verify-information","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 01"}
+{"event":"record","stage":"verify-information","kind":33,"family":115,"token":105,"length":9,"payload":"70 19 11 01 1f 01 68 0b 88"}
+{"event":"write","stage":"initial-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"initial-status","kind":33,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"write","stage":"reference-temperature","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 03"}
+{"event":"record","stage":"reference-temperature","kind":33,"family":115,"token":116,"length":1,"payload":"39"}
+{"event":"write","stage":"configure-mode","requested":11,"accepted":11,"usb_result":0,"hex":"1b 28 73 06 00 44 10 01 0c 78 04"}
+{"event":"record","stage":"configure-mode","kind":33,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"write","stage":"configure-area","requested":14,"accepted":14,"usb_result":0,"hex":"1b 28 73 09 00 43 00 00 00 2b 0b 40 0f 30"}
+{"event":"record","stage":"configure-area","kind":33,"family":115,"token":67,"length":8,"payload":"00 00 00 2b 0b 40 0f 30"}
+{"event":"accepted_area_be","hex":"00 00 00 2b 0b 40 0f 30"}
+{"event":"write","stage":"download-reference-correction","requested":2063,"accepted":2063,"usb_result":0,"hex":"1b 28 73 0a 08 54 01 01 d8 01 f1 01 ea 01 ee 01 e2 01 ff 01 f5 02 14 02 07 01 f7 02 14 02 20 02 28 02 34 02 28 02 4a 02 5f 02 51 02 58 02 51 02 6a 02 52 02 58 02 61 02 84 02 7a 02 7b 02 87 02 6f 02 74 02 8b 02 96 02 7a 02 6c 02 77 02 68 02 67 02 70 02 8b 02 99 02 af 02 92 02 94 02 99 02 a3 02 a2 02 a6 02 b4 02 af 02 b4 02 b0 02 b6 02 ca 02 c9 02 ba 02 bd 02 d5 02 d1 02 e5 02 ef 02 de 02 d2 02 d4 02 cf 02 eb 03 01 02 e6 02 dd 02 de 02 e4 02 e3 02 dd 02 e4 02 e9 02 f1 02 df 03 01 02 d5 02 f4 02 c6 02 ed 02 cb 02 cb 02 b4 02 c2 02 b3 02 92 02 b9 02 bd 02 b6 02 a7 02 ab 02 a6 02 9e 02 a6 02 97 02 c2 02 86 02 76 02 77 02 6f 02 6d 02 7d 02 67 02 55 02 5d 02 5c 02 57 02 66 02 62 02 4f 02 4f 02 39 02 51 02 44 02 34 02 3d 02 34 02 1f 02 15 02 05 02 0b 02 06 01 f0 01 e4 01 e3 01 de 01 e9 00 73 f3 52 00 53 00 53 00 54 00 54 00 54 00 53 00 53 00 53 00 52 00 51 00 52 00 54 00 52 00 52 00 52 00 54 00 54 00 52 00 54 00 52 00 53 00 53 00 53 00 52 00 53 00 54 00 54 00 53 00 53 00 52 00 52 00 53 00 54 00 52 00 53 00 52 00 55 00 54 00 52 00 53 00 55 00 52 00 53 00 53 00 54 00 54 00 54 00 53 00 54 00 53 00 53 00 53 00 55 00 54 00 53 00 54 00 55 00 53 00 53 00 52 00 53 00 53 00 54 00 53 00 53 00 53 00 54 00 53 00 53 00 53 00 54 00 53 00 55 00 53 00 53 00 53 00 53 00 53 00 54 00 53 00 54 00 53 00 54 00 54 00 54 00 52 00 52 00 53 00 54 00 54 00 53 00 53 00 54 00 54 00 54 00 53 00 54 00 54 00 54 00 52 00 54 00 52 00 54 00 52 00 53 00 54 00 53 00 54 00 54 00 53 00 54 00 53 00 54 00 52 00 53 00 54 00 53 00 52 00 53 00 54 00 54 00 53 00 54 00 53 00 54 00 54 00 53 02 43 02 58 02 54 02 4f 02 44 02 4c 02 54 02 56 02 4d 02 40 02 52 02 66 02 76 02 7f 02 7c 02 8f 02 a5 02 a5 02 a8 02 aa 02 bb 02 a7 02 a5 02 b5 02 d0 02 d0 02 cb 02 cc 02 bf 02 c0 02 ae 02 ad 02 ab 02 a1 02 90 02 84 02 8b 02 a1 02 b2 02 b8 02 bf 02 be 02 bb 02 bb 02 b8 02 b1 02 b6 02 c6 02 cc 02 c9 02 bf 02 b2 02 b6 02 c7 02 c3 02 c8 02 d0 02 da 02 ea 02 f4 02 e6 02 d4 02 d9 02 d9 02 c9 02 c9 02 cc 02 c2 02 c3 02 d5 02 cc 02 b0 02 ba 02 d8 02 de 02 e9 02 f4 02 e1 02 dd 02 de 02 e6 02 df 02 e1 02 d1 02 cf 02 c7 02 b6 02 d1 02 e3 02 ed 02 d9 02 b6 02 ae 02 cb 02 c9 02 bb 02 bd 02 ba 02 b3 02 ae 02 a8 02 a6 02 b3 02 ac 02 99 02 92 02 72 02 99 02 aa 02 9d 02 88 02 88 02 76 02 4f 02 3d 02 5c 02 6d 02 72 02 68 02 5b 02 43 02 47 02 44 02 33 02 2a 02 36 02 3c 02 3b 00 60 f3 4c 00 4c 00 4c 00 4d 00 4d 00 4d 00 4c 00 4c 00 4b 00 4c 00 4b 00 4c 00 4d 00 4c 00 4d 00 4c 00 4c 00 4c 00 4c 00 4d 00 4c 00 4d 00 4d 00 4c 00 4c 00 4d 00 4d 00 4d 00 4c 00 4d 00 4c 00 4d 00 4c 00 4d 00 4c 00 4c 00 4c 00 4e 00 4d 00 4c 00 4c 00 4e 00 4d 00 4d 00 4d 00 4c 00 4c 00 4c 00 4c 00 4d 00 4d 00 4d 00 4d 00 4e 00 4d 00 4d 00 4d 00 4e 00 4d 00 4c 00 4c 00 4e 00 4d 00 4e 00 4c 00 4d 00 4d 00 4d 00 4d 00 4d 00 4d 00 4d 00 4c 00 4d 00 4d 00 4d 00 4d 00 4d 00 4d 00 4d 00 4d 00 4d 00 4d 00 4d 00 4d 00 4d 00 4c 00 4c 00 4d 00 4d 00 4d 00 4c 00 4c 00 4c 00 4c 00 4c 00 4d 00 4d 00 4d 00 4d 00 4b 00 4e 00 4c 00 4e 00 4c 00 4c 00 4d 00 4d 00 4c 00 4d 00 4c 00 4d 00 4d 00 4d 00 4d 00 4d 00 4e 00 4d 00 4c 00 4d 00 4d 00 4e 00 4d 00 4c 00 4c 00 4d 00 4c 00 4d 01 d8 01 f1 01 ea 01 ee 01 e2 01 ff 01 f5 02 14 02 07 01 f7 02 14 02 20 02 28 02 34 02 28 02 4a 02 5f 02 51 02 58 02 51 02 6a 02 52 02 58 02 61 02 84 02 7a 02 7b 02 87 02 6f 02 74 02 8b 02 96 02 7a 02 6c 02 77 02 68 02 67 02 70 02 8b 02 99 02 af 02 92 02 94 02 99 02 a3 02 a2 02 a6 02 b4 02 af 02 b4 02 b0 02 b6 02 ca 02 c9 02 ba 02 bd 02 d5 02 d1 02 e5 02 ef 02 de 02 d2 02 d4 02 cf 02 eb 03 01 02 e6 02 dd 02 de 02 e4 02 e3 02 dd 02 e4 02 e9 02 f1 02 df 03 01 02 d5 02 f4 02 c6 02 ed 02 cb 02 cb 02 b4 02 c2 02 b3 02 92 02 b9 02 bd 02 b6 02 a7 02 ab 02 a6 02 9e 02 a6 02 97 02 c2 02 86 02 76 02 77 02 6f 02 6d 02 7d 02 67 02 55 02 5d 02 5c 02 57 02 66 02 62 02 4f 02 4f 02 39 02 51 02 44 02 34 02 3d 02 34 02 1f 02 15 02 05 02 0b 02 06 01 f0 01 e4 01 e3 01 de 01 e9 00 70 f3 52 00 53 00 53 00 54 00 54 00 54 00 53 00 53 00 53 00 52 00 51 00 52 00 54 00 52 00 52 00 52 00 54 00 54 00 52 00 54 00 52 00 53 00 53 00 53 00 52 00 53 00 54 00 54 00 53 00 53 00 52 00 52 00 53 00 54 00 52 00 53 00 52 00 55 00 54 00 52 00 53 00 55 00 52 00 53 00 53 00 54 00 54 00 54 00 53 00 54 00 53 00 53 00 53 00 55 00 54 00 53 00 54 00 55 00 53 00 53 00 52 00 53 00 53 00 54 00 53 00 53 00 53 00 54 00 53 00 53 00 53 00 54 00 53 00 55 00 53 00 53 00 53 00 53 00 53 00 54 00 53 00 54 00 53 00 54 00 54 00 54 00 52 00 52 00 53 00 54 00 54 00 53 00 53 00 54 00 54 00 54 00 53 00 54 00 54 00 54 00 52 00 54 00 52 00 54 00 52 00 53 00 54 00 53 00 54 00 54 00 53 00 54 00 53 00 54 00 52 00 53 00 54 00 53 00 52 00 53 00 54 00 54 00 53 00 54 00 53 00 54 00 54 00 53 01 a3 01 bb 01 c0 01 ba 01 ba 01 d5 01 ca 01 e1 01 d8 01 c8 01 e2 01 f0 01 f8 02 05 02 06 02 2c 02 39 02 1f 02 2a 02 34 02 48 02 33 02 33 02 48 02 6d 02 62 02 62 02 6c 02 4e 02 5c 02 6d 02 7c 02 66 02 56 02 70 02 57 02 54 02 62 02 75 02 92 02 98 02 7f 02 80 02 8b 02 9d 02 99 02 9d 02 b8 02 a1 02 ad 02 a6 02 b0 02 b5 02 c2 02 bd 02 c1 02 e7 02 dd 02 f8 02 eb 02 d8 02 d1 02 d5 02 e8 02 e2 03 0a 02 f9 02 e0 02 e3 02 e5 02 e3 02 dd 02 e2 02 de 02 e9 02 e4 03 06 02 da 03 09 02 e1 02 e2 02 bf 02 bd 02 a9 02 b2 02 a6 02 87 02 a8 02 aa 02 a3 02 a0 02 9f 02 98 02 8b 02 8f 02 8c 02 b9 02 70 02 5f 02 5e 02 59 02 4e 02 57 02 41 02 35 02 39 02 3a 02 30 02 3e 02 3d 02 26 02 26 02 0f 02 22 02 1b 02 06 02 0d 01 f6 01 f0 01 e7 01 d1 01 cd 01 dd 01 b9 01 aa 01 a9 01 ab 01 b5 00 63 f3 4a 00 4b 00 4a 00 4b 00 4c 00 4b 00 4b 00 4a 00 4a 00 4b 00 4a 00 4b 00 4b 00 4b 00 4b 00 4b 00 4b 00 4b 00 4a 00 4b 00 4b 00 4c 00 4b 00 4b 00 4a 00 4c 00 4b 00 4b 00 4b 00 4b 00 4b 00 4b 00 4c 00 4b 00 4a 00 4a 00 4a 00 4c 00 4b 00 4b 00 4a 00 4c 00 4b 00 4c 00 4b 00 4b 00 4c 00 4b 00 4b 00 4c 00 4c 00 4b 00 4b 00 4c 00 4b 00 4b 00 4a 00 4c 00 4b 00 4b 00 4a 00 4c 00 4c 00 4b 00 4b 00 4a 00 4a 00 4b 00 4a 00 4b 00 4b 00 4b 00 4b 00 4c 00 4c 00 4b 00 4b 00 4c 00 4b 00 4c 00 4b 00 4b 00 4b 00 4b 00 4c 00 4b 00 4a 00 4a 00 4b 00 4c 00 4b 00 4b 00 4b 00 4a 00 4b 00 4b 00 4b 00 4c 00 4c 00 4c 00 49 00 4c 00 4a 00 4c 00 4a 00 4a 00 4b 00 4c 00 4c 00 4c 00 4c 00 4b 00 4b 00 4d 00 4a 00 4c 00 4c 00 4b 00 4a 00 4b 00 4b 00 4c 00 4b 00 4b 00 4a 00 4c 00 4b 00 4b"}
+{"event":"record","stage":"download-reference-correction","kind":33,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"write","stage":"load-page","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"load-page","kind":33,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"write","stage":"load-page","requested":6,"accepted":6,"usb_result":0,"hex":"1b 28 73 01 00 4c"}
+{"event":"record","stage":"load-page","kind":42,"family":115,"token":115,"length":3,"payload":"20 00 00"}
+{"event":"record","stage":"load-page","kind":42,"family":115,"token":115,"length":3,"payload":"10 00 00"}
+{"event":"write","stage":"acquire","requested":6,"accepted":6,"usb_result":0,"hex":"1b 28 73 01 00 42"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"scan_progress","image_bytes":28800,"usb_bytes":33179}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"scan_progress","image_bytes":60480,"usb_bytes":69523}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":75,"length":90}
+{"event":"record","stage":"acquire","kind":33,"family":101,"token":0,"length":2,"payload":"00 01"}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":80,"length":0,"payload":""}
+{"event":"record","stage":"acquire","kind":33,"family":83,"token":69,"length":0,"payload":""}
+{"event":"scan_result","complete_stream":true,"end_record":true,"measurement_received":false,"reference_applied":true,"image_bytes":89280,"usb_bytes":102569,"device_error":false,"canon_reference_validated":false}

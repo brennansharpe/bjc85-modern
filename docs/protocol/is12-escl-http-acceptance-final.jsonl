@@ -1,0 +1,7 @@
+{"case": "browser origin", "status": 403}
+{"case": "untrusted host", "status": 403}
+{"case": "form content", "status": 415}
+{"case": "DTD", "status": 400}
+{"case": "unsupported dpi", "status": 400}
+{"case": "oversized area", "status": 400}
+{"case": "duplicate dpi", "status": 400}

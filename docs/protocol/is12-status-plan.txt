@@ -1,0 +1,6 @@
+Optional scanner mode entry: "1b 5b 4b 02 00 00 0d"
+Information selector 0: "1b 28 73 02 00 52 00"
+Information selector 1: "1b 28 73 02 00 52 01"
+Information selector 2: "1b 28 73 02 00 52 02"
+Information selector 3: "1b 28 73 02 00 52 03"
+Information selector 4: "1b 28 73 02 00 52 04"

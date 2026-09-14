@@ -1,0 +1,85 @@
+# Run only against bjc85-ipp --dry-run. Variables letter and a4 name URF files.
+{
+    NAME "Capabilities are valid and advertise native raster formats"
+    OPERATION Get-Printer-Attributes
+    GROUP operation-attributes-tag
+    ATTR charset attributes-charset utf-8
+    ATTR language attributes-natural-language en
+    ATTR uri printer-uri $uri
+    STATUS successful-ok
+    EXPECT document-format-supported WITH-VALUE image/urf
+    EXPECT printer-resolution-supported WITH-VALUE 360dpi
+}
+{
+    NAME "Letter colour raster completes"
+    OPERATION Print-Job
+    GROUP operation-attributes-tag
+    ATTR charset attributes-charset utf-8
+    ATTR language attributes-natural-language en
+    ATTR uri printer-uri $uri
+    ATTR name requesting-user-name $user
+    ATTR mimeMediaType document-format image/urf
+    ATTR boolean ipp-attribute-fidelity true
+    GROUP job-attributes-tag
+    ATTR keyword media na_letter_8.5x11in
+    ATTR keyword print-color-mode color
+    ATTR integer copies 1
+    FILE $letter
+    STATUS successful-ok
+    EXPECT job-state WITH-VALUE 9
+}
+{
+    NAME "Four-page A4 grayscale job with two copies completes"
+    OPERATION Print-Job
+    GROUP operation-attributes-tag
+    ATTR charset attributes-charset utf-8
+    ATTR language attributes-natural-language en
+    ATTR uri printer-uri $uri
+    ATTR name requesting-user-name $user
+    ATTR mimeMediaType document-format image/urf
+    ATTR boolean ipp-attribute-fidelity true
+    GROUP job-attributes-tag
+    ATTR keyword media iso_a4_210x297mm
+    ATTR keyword print-color-mode monochrome
+    ATTR integer copies 2
+    FILE $a4
+    STATUS successful-ok
+    EXPECT job-state WITH-VALUE 9
+}
+{
+    NAME "Multiple-copy accounting includes all eight impressions"
+    OPERATION Get-Job-Attributes
+    GROUP operation-attributes-tag
+    ATTR charset attributes-charset utf-8
+    ATTR language attributes-natural-language en
+    ATTR uri printer-uri $uri
+    ATTR integer job-id $job-id
+    STATUS successful-ok
+    EXPECT job-impressions-completed WITH-VALUE 8
+}
+{
+    NAME "Unsupported resolution is rejected without substitution"
+    OPERATION Validate-Job
+    GROUP operation-attributes-tag
+    ATTR charset attributes-charset utf-8
+    ATTR language attributes-natural-language en
+    ATTR uri printer-uri $uri
+    ATTR boolean ipp-attribute-fidelity true
+    GROUP job-attributes-tag
+    ATTR resolution printer-resolution 180dpi
+    STATUS client-error-attributes-or-values-not-supported
+    EXPECT printer-resolution IN-GROUP unsupported-attributes-tag
+}
+{
+    NAME "Unsupported media is rejected without substitution"
+    OPERATION Validate-Job
+    GROUP operation-attributes-tag
+    ATTR charset attributes-charset utf-8
+    ATTR language attributes-natural-language en
+    ATTR uri printer-uri $uri
+    ATTR boolean ipp-attribute-fidelity true
+    GROUP job-attributes-tag
+    ATTR keyword media na_legal_8.5x14in
+    STATUS client-error-attributes-or-values-not-supported
+    EXPECT media IN-GROUP unsupported-attributes-tag
+}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-13",
+  "cups_job": "BJC85_Native-3",
+  "queue_display_name": "Canon BJC-85 Native",
+  "queue_uri": "ipp://localhost:8631/ipp/print",
+  "input": "build/test-color-visible.bjc.page-001.png",
+  "raw_output": "build/ipp-spool/job-1-kou19x.bjc",
+  "raw_bytes": 220040,
+  "raw_sha256": "a221c5c5538ff169e879a9a8395f22849021084e87939734a80a72c5c75c748b",
+  "usb_bytes_accepted": 220040,
+  "copies": 1,
+  "pages": 1,
+  "media": "Letter",
+  "resolution_dpi": [
+    360,
+    360
+  ],
+  "transfer_completed_at_utc": "2026-09-13T20:01:48.668Z",
+  "cups_status": "completed",
+  "user_question": "Did the second colour page—the one sent through the new macOS queue—come out upright and readable with the same cyan, magenta, and yellow patches?",
+  "user_answer": "Yes, it looks correct",
+  "path": [
+    "macOS CUPS / Apple Raster",
+    "native PAPPL adapter",
+    "native Gutenprint bjc-85",
+    "native libusb",
+    "Canon BJC-85 with BC-11e"
+  ],
+  "limits": [
+    "Black ink-delivery fault persists independently of the driver.",
+    "No inference of hardware A4, multipage, cancellation, or scanner acceptance."
+  ]
+}

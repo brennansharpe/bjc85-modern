@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "vendor_id": "04a9", "product_id": "1055",
+  "bcd_usb": "0110", "bcd_device": "0070", "ep0_max_packet": 8,
+  "bus": 2, "address": 1, "configuration": 1,
+  "interface": 0, "alternate_setting": 0, "class": 7, "subclass": 1, "protocol": 2,
+  "bulk_in": "82", "bulk_out": "01",
+  "endpoints": [{"address": "01", "attributes": 2, "max_packet_size": 64, "interval": 0}, {"address": "82", "attributes": 2, "max_packet_size": 64, "interval": 0}],
+  "serial": "TEST-BJC85-0001",
+  "claim_result": "LIBUSB_SUCCESS / LIBUSB_TRANSFER_COMPLETED",
+  "device_id_transfer_bytes": 93,
+  "device_id": "MFG:Canon;CMD:LQ,BJL,BJRaster,BSCC;MDL:BJC-85;CLS:PRINTER;DES:Canon BJC-85;VER:1.10;STA:10;",
+  "status_result": "LIBUSB_SUCCESS / LIBUSB_TRANSFER_COMPLETED",
+  "port_status": {"raw": 24, "paper_empty": false, "selected": true, "not_error": true, "ready": true},
+  "cartridge": "unknown"
+}

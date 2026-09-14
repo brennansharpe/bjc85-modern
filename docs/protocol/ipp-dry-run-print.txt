@@ -1,0 +1,52 @@
+"/usr/share/cups/ipptool/print-job-and-wait.test":
+    Print-Job:
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        printer-uri (uri) = ipp://localhost:8632/ipp/print
+        requesting-user-name (nameWithoutLanguage) = REDACTED
+        document-format (mimeMediaType) = image/urf
+        copies (integer) = 1
+    Print file using Print-Job                                           [PASS]
+        RECEIVED: 234 bytes in response
+        status-code = successful-ok (successful-ok)
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        job-id (integer) = 1
+        job-uri (uri) = ipp://localhost:8632/ipp/print/1
+        job-state (enum) = completed
+        job-state-message (textWithoutLanguage) = Job completed.
+        job-state-reasons (keyword) = job-completed-successfully
+    Get-Job-Attributes:
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        printer-uri (uri) = ipp://localhost:8632/ipp/print
+        job-id (integer) = 1
+        requesting-user-name (nameWithoutLanguage) = REDACTED
+    Wait for job to complete...                                          [PASS]
+        RECEIVED: 737 bytes in response
+        status-code = successful-ok (successful-ok)
+        attributes-charset (charset) = utf-8
+        attributes-natural-language (naturalLanguage) = en
+        copies (integer) = 1
+        document-format-supplied (mimeMediaType) = image/urf
+        job-name (nameWithoutLanguage) = Untitled
+        job-originating-user-name (nameWithoutLanguage) = REDACTED
+        job-id (integer) = 1
+        job-uri (uri) = ipp://localhost:8632/ipp/print/1
+        job-uuid (uri) = urn:uuid:00000000-0000-4000-8000-000000000012
+        job-printer-uri (uri) = ipp://localhost:8632/ipp/print
+        date-time-at-creation (dateTime) = 2026-09-13T19:54:11Z
+        date-time-at-completed (dateTime) = 2026-09-13T19:54:11Z
+        date-time-at-processing (dateTime) = 2026-09-13T19:54:11Z
+        job-impressions (integer) = 1
+        job-impressions-completed (integer) = 1
+        job-printer-up-time (integer) = 4
+        job-state (enum) = completed
+        job-state-message (textWithoutLanguage) = Job completed.
+        job-state-reasons (keyword) = job-completed-successfully
+        time-at-creation (integer) = 4
+        time-at-completed (integer) = 4
+        time-at-processing (integer) = 4
+
+Summary: 2 tests, 2 passed, 0 failed, 0 skipped
+Score: 100%

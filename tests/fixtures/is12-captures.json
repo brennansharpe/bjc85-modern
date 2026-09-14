@@ -1,0 +1,23 @@
+[
+  {
+    "file": "is12-first-status.usb",
+    "bytes": 70,
+    "sha256": "ec44040f98e376d2767461ada71113d73d945d212107b7602fb4003eab9d342c",
+    "source": "docs/protocol/is12-first-status.jsonl",
+    "source_sha256": "c17b6e46c049f7ae5e63a3866e6b6768fe61b616e99cb96fcd01cdeb8d3665be"
+  },
+  {
+    "file": "is12-status-after-warmup.usb",
+    "bytes": 59,
+    "sha256": "d89a71b4ca187a90b102d2bc61e6bc2c8bc30f7371a734d930e86d021db4a252",
+    "source": "docs/protocol/is12-status-after-warmup.jsonl",
+    "source_sha256": "8117755b2131eeb0801e073c260a9aa7d070f6a08db5cd1cea4856d5915cf4a0"
+  },
+  {
+    "file": "is12-extended-status.usb",
+    "bytes": 83,
+    "sha256": "849eecf733fb62c50db64f378a51b5d2c5b2bfd3058f1653c42758758b7417a8",
+    "source": "docs/protocol/is12-extended-status.jsonl",
+    "source_sha256": "40844b4c92787f53a8f8744fdbbee59fe381e7b6ce985415e3fabdb90b1dbb6d"
+  }
+]

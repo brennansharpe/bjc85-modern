@@ -1,0 +1,16 @@
+{"event":"scan_start","plain_paper_calibration":false,"reference_requested":true,"requested_dpi":90,"colour":"RGB","page_limit":1}
+{"event":"write","stage":"verify-carrier","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 00"}
+{"event":"record","stage":"verify-carrier","kind":42,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"record","stage":"verify-carrier","kind":33,"family":115,"token":99,"length":12,"payload":"b0 88 00 80 01 00 00 0b 40 00 30 0e"}
+{"event":"write","stage":"verify-information","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 01"}
+{"event":"record","stage":"verify-information","kind":33,"family":115,"token":105,"length":9,"payload":"70 19 11 01 1f 01 68 0b 88"}
+{"event":"write","stage":"initial-status","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 02"}
+{"event":"record","stage":"initial-status","kind":33,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"write","stage":"reference-temperature","requested":7,"accepted":7,"usb_result":0,"hex":"1b 28 73 02 00 52 03"}
+{"event":"record","stage":"reference-temperature","kind":33,"family":115,"token":116,"length":1,"payload":"37"}
+{"event":"write","stage":"configure-mode","requested":11,"accepted":11,"usb_result":0,"hex":"1b 28 73 06 00 44 10 88 0c 78 04"}
+{"event":"record","stage":"configure-mode","kind":33,"family":115,"token":115,"length":3,"payload":"00 00 00"}
+{"event":"write","stage":"configure-area","requested":14,"accepted":14,"usb_result":0,"hex":"1b 28 73 09 00 43 00 00 00 2b 0b 40 0f 30"}
+{"event":"record","stage":"configure-area","kind":33,"family":115,"token":67,"length":8,"payload":"00 00 00 2b 0b 40 0f 30"}
+{"event":"accepted_area_be","hex":"00 00 00 2b 0b 40 0f 30"}
+{"event":"scan_result","complete_stream":false,"end_record":false,"measurement_received":false,"reference_applied":false,"image_bytes":0,"usb_bytes":95,"device_error":false,"canon_reference_validated":false}

@@ -1,0 +1,1 @@
+USB accepted 25728/111591 bytes: LIBUSB_ERROR_TIMEOUT. Physical output still requires inspection.

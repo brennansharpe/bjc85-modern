@@ -1,0 +1,14 @@
+/build/
+/build-*/
+/.local/
+/.state/
+/.tools/
+/tmp/
+/artifacts/original/
+/artifacts/source/
+/artifacts/extracted/
+/artifacts/analysis/
+/research/
+/*.pdf
+/*.docx
+*.DS_Store

@@ -1,0 +1,1 @@
+USB accepted 209181/209181 bytes: LIBUSB_SUCCESS / LIBUSB_TRANSFER_COMPLETED. Physical output still requires inspection.
