@@ -1,5 +1,5 @@
 import AppKit
-enum RootView {
+@MainActor enum RootView {
     static func column(_ views: [NSView], spacing: CGFloat = 10) -> NSStackView {
         let stack = NSStackView(views:views); stack.orientation = .vertical; stack.alignment = .leading; stack.spacing = spacing; return stack
     }

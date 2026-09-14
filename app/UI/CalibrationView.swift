@@ -1,5 +1,5 @@
 import AppKit
-enum CalibrationView {
+@MainActor enum CalibrationView {
     static func sheet(reference: URL?,valid: Bool? = nil) -> NSAlert {
         let alert=NSAlert(); alert.messageText=L("White-Level Calibration")
         var information=L("Load one clean, blank white sheet. The IS-12 measures it to correct sensor shading. This is an experimental plain-paper reference; it does not establish Canon-reference colour accuracy.")

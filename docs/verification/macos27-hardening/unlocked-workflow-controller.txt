@@ -1,0 +1,7 @@
+PASS: actual ScanOperationController busy/timeout/quiescence refusal, launch failure, canceled preflight, stale and duplicate completion, subsequent scan.
+PASS: cartridge cancellation with unchanged/uncertain evidence, retryable Copy after validation correction/rejection, reconnect, no rescanning for reprint, recovery reset block.
+PASS: actual queue query error remains unknown with exact job ID, later reconciliation succeeds without replay; typed refusal before acceptance is retryable rejection.
+PASS: authoritative pending/completed/canceled/aborted/unknown results, restart reconciliation without resubmission, failed submission remains unknown, duplicate terminal queries, no replay.
+PASS: actual acquisition request freezes prescan mode, DPI and edits before mutable settings change; cancellation never launches a helper.
+PASS: actual terminal job projection distinguishes canceled-before-transfer safe retry from canceled-after-transfer recovery; no success wording or recovery reset.
+PASS: actual UtilityWindowController rejects Copy preflight without stale scanning state; inline settings/next action refresh; fixture physical actions remain disabled.

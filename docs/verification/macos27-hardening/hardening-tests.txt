@@ -1,0 +1,13 @@
+PASS: Copy ownership independently blocks exported-document expiry; releasing it permits bounded cleanup without touching external output.
+PASS: completed capture migration is idempotent; one-page PDF import is explicit 360 dpi rasterization.
+PASS: multi-format external exports; managed processed.png, symlink and hard-link collisions; edit/save/print source lifetime; atomic failed/canceled export; unsaved diagnostic protection; Copy/recovery pins; close/relaunch.
+PASS: asymmetric 2D colored corners, lines and gradients; 48 filter/rotation/mode crop-edge pixel comparisons; full-resolution PNG equality; DPI and PDF dimensions.
+PASS: actual ScanOperationController busy/timeout/quiescence refusal, launch failure, canceled preflight, stale and duplicate completion, subsequent scan.
+PASS: cartridge cancellation with unchanged/uncertain evidence, retryable Copy after validation correction/rejection, reconnect, no rescanning for reprint, recovery reset block.
+PASS: actual queue query error remains unknown with exact job ID, later reconciliation succeeds without replay; typed refusal before acceptance is retryable rejection.
+PASS: authoritative pending/completed/canceled/aborted/unknown results, restart reconciliation without resubmission, failed submission remains unknown, duplicate terminal queries, no replay.
+PASS: actual acquisition request freezes prescan mode, DPI and edits before mutable settings change; cancellation never launches a helper.
+PASS: actual terminal job projection distinguishes canceled-before-transfer safe retry from canceled-after-transfer recovery; no success wording or recovery reset.
+PASS: actual UtilityWindowController rejects Copy preflight without stale scanning state; inline settings/next action refresh; fixture physical actions remain disabled.
+PASS: lease contention without/with marker, marker finalization and malformed/symlink fail-closed, permissions, competing job/transition admission and release, stable private per-install identity.
+PASS: actual ServiceTransitionController busy lease, another queued job, active scanner, status timeout, bootstrap failure, successful isolated transition; production adapter rejects offline tests.

@@ -1,4 +1,6 @@
 #include "usb.h"
+#include "admission.h"
+#include <stdlib.h>
 #include <limits.h>
 #include <stdio.h>
 #include <string.h>
@@ -15,19 +17,27 @@ int bjc_usb_open(bjc_usb *usb) {
     memset(usb, 0, sizeof(*usb));
     /* Serialize all native clients before opening USB. The persistent file is
        only an inode for flock; a crash releases ownership without replay. */
-    char lease_path[96];
+    int admission=bjc_admission_acquire();
+    if (admission<0) return LIBUSB_ERROR_BUSY;
+    usb->admission_fd_plus_one=admission+1;
+    char lease_path[4096];
     snprintf(lease_path, sizeof(lease_path), "/tmp/bjc85-usb-%lu.lock", (unsigned long)getuid());
+    const char *test=getenv("BJC85_OFFLINE_TEST"), *override=getenv("BJC85_USB_LEASE_PATH");
+    if (test && !strcmp(test,"1") && override) {
+        if (snprintf(lease_path,sizeof(lease_path),"%s",override)>=(int)sizeof(lease_path)) { bjc_usb_close(usb); return LIBUSB_ERROR_ACCESS; }
+    }
     int fd = open(lease_path, O_CREAT | O_RDWR | O_CLOEXEC | O_NOFOLLOW, 0600);
     struct stat lease_stat;
-    if (fd < 0) return LIBUSB_ERROR_ACCESS;
+    if (fd < 0) { bjc_usb_close(usb); return LIBUSB_ERROR_ACCESS; }
     if (fstat(fd, &lease_stat) || !S_ISREG(lease_stat.st_mode) ||
         lease_stat.st_uid != getuid() || lease_stat.st_nlink != 1 || (lease_stat.st_mode & 077)) {
-        close(fd); return LIBUSB_ERROR_ACCESS;
+        close(fd); bjc_usb_close(usb); return LIBUSB_ERROR_ACCESS;
     }
     if (flock(fd, LOCK_EX | LOCK_NB)) {
         int saved_errno = errno;
         close(fd);
         fprintf(stderr, "Another native BJC-85 operation owns USB. Finish or cancel it first.\n");
+        bjc_usb_close(usb);
         return saved_errno == EWOULDBLOCK ? LIBUSB_ERROR_BUSY : LIBUSB_ERROR_ACCESS;
     }
     usb->lease_fd_plus_one = fd + 1;
@@ -35,6 +45,8 @@ int bjc_usb_open(bjc_usb *usb) {
         fputs("BJC-85 recovery required. Inspect the previous operation and physical device before continuing.\n",stderr);
         bjc_usb_close(usb); usb->recovery_blocked=1; return LIBUSB_ERROR_BUSY;
     }
+    /* Offline tests may exercise locks, but can never enter libusb. */
+    if (test && !strcmp(test,"1")) { bjc_usb_close(usb); return LIBUSB_ERROR_ACCESS; }
     int rc = libusb_init(&usb->context);
     if (rc < 0) { bjc_usb_close(usb); return rc; }
     libusb_device **devices = NULL;
@@ -156,5 +168,6 @@ void bjc_usb_close(bjc_usb *usb) {
     if (usb->configuration) libusb_free_config_descriptor(usb->configuration);
     if (usb->context) libusb_exit(usb->context);
     if (usb->lease_fd_plus_one) close(usb->lease_fd_plus_one - 1);
+    if (usb->admission_fd_plus_one) close(usb->admission_fd_plus_one - 1);
     memset(usb, 0, sizeof(*usb));
 }

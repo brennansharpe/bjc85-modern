@@ -16,6 +16,7 @@ typedef struct {
     uint8_t bus, address, configuration_index;
     int claimed;
     int lease_fd_plus_one;
+    int admission_fd_plus_one;
     int operation_started;
     int recovery_blocked;
 } bjc_usb;

@@ -1,5 +1,5 @@
 import Foundation
-struct PrintSettings: Codable, Equatable {
+struct PrintSettings: Codable, Equatable, Sendable {
     var paper = "Letter", colour = true, copies = 1
     var quality = 4 // IPP enum: draft 3, normal 4, high 5.
     var isValid: Bool { ["Letter", "A4"].contains(paper) && (1...999).contains(copies) && (3...5).contains(quality) }

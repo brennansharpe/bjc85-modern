@@ -6,7 +6,7 @@ enum DeviceState: String, Codable {
     var isBusy: Bool { [.printing, .scanning, .cancelling].contains(self) }
     var label: String {
         switch self {
-        case .disconnected: return L("Disconnected")
+        case .disconnected: return L("Not connected")
         case .printerReady: return L("Printer ready")
         case .scannerDetected: return L("Scanner detected")
         case .scannerWarming: return L("Scanner warming up")

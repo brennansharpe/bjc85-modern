@@ -9,10 +9,10 @@ import Darwin
 // transfers the completed page without ever restarting a physical acquisition.
 private let scanNS = "http://schemas.hp.com/imaging/escl/2011/05/03"
 private let pwgNS = "http://www.pwg.org/schemas/2010/12/sm"
-private let uuid = "00000000-0000-4000-8000-000000000009"
 private let port: UInt16 = UInt16(ProcessInfo.processInfo.environment["BJC85_ESCL_PORT"] ?? "8641") ?? 8641
 private let root = ProcessInfo.processInfo.environment["BJC85_RUNTIME_DIRECTORY"].map { URL(fileURLWithPath:$0,isDirectory:true) }
     ?? FileManager.default.urls(for:.applicationSupportDirectory,in:.userDomainMask)[0].appendingPathComponent("local.bjc85.utility",isDirectory:true)
+private let uuid = try LocalServiceIdentity.load(root: root).uuidString.lowercased()
 private let arguments = CommandLine.arguments
 guard arguments.count == 4 && arguments[1] == "--scanner-installed" else {
     fputs("Usage: is12-escl-bridge --scanner-installed NATIVE-DRIVER REFERENCE.bin\nPause printing first. Local clients can request one loaded sheet per job.\n", stderr)
@@ -40,7 +40,7 @@ private func envelope(_ name: String, _ body: String) -> Data {
     Data("<?xml version=\"1.0\" encoding=\"UTF-8\"?><scan:\(name) xmlns:scan=\"\(scanNS)\" xmlns:pwg=\"\(pwgNS)\">\(body)</scan:\(name)>".utf8)
 }
 private let capabilities = envelope("ScannerCapabilities", """
-<pwg:Version>2.0</pwg:Version><pwg:MakeAndModel>Canon BJC-85 IS-12 Native</pwg:MakeAndModel><pwg:SerialNumber>TEST-BJC85-0001-IS12</pwg:SerialNumber><scan:Manufacturer>Canon</scan:Manufacturer><scan:UUID>\(uuid)</scan:UUID>
+<pwg:Version>2.0</pwg:Version><pwg:MakeAndModel>Canon BJC-85 IS-12 Native</pwg:MakeAndModel><pwg:SerialNumber>local-\(uuid)</pwg:SerialNumber><scan:Manufacturer>Canon</scan:Manufacturer><scan:UUID>\(uuid)</scan:UUID>
 <scan:Adf><scan:AdfSimplexInputCaps><scan:MinWidth>4</scan:MinWidth><scan:MaxWidth>2400</scan:MaxWidth><scan:MinHeight>4</scan:MinHeight><scan:MaxHeight>3240</scan:MaxHeight>
 <scan:SettingProfiles><scan:SettingProfile><scan:ColorModes><scan:ColorMode>RGB24</scan:ColorMode><scan:ColorMode>Grayscale8</scan:ColorMode><scan:ColorMode>BlackAndWhite1</scan:ColorMode></scan:ColorModes><scan:DocumentFormats><pwg:DocumentFormat>image/png</pwg:DocumentFormat><pwg:DocumentFormat>image/jpeg</pwg:DocumentFormat></scan:DocumentFormats>
 <scan:SupportedResolutions><scan:DiscreteResolutions><scan:DiscreteResolution><scan:XResolution>90</scan:XResolution><scan:YResolution>90</scan:YResolution></scan:DiscreteResolution><scan:DiscreteResolution><scan:XResolution>180</scan:XResolution><scan:YResolution>180</scan:YResolution></scan:DiscreteResolution><scan:DiscreteResolution><scan:XResolution>360</scan:XResolution><scan:YResolution>360</scan:YResolution></scan:DiscreteResolution></scan:DiscreteResolutions></scan:SupportedResolutions>
@@ -136,6 +136,7 @@ private final class HTTPRequest {
 }
 
 private final class Job {
+    var admission: DeviceAdmission?
     let id=UUID().uuidString, settings: Settings, directory: URL, referenceURL: URL
     let created=Date()
     var stage="Pending", process: Process?, started=false, delivered=false, cancelled=false, sending=false, preflightDone=false
@@ -157,6 +158,10 @@ private final class Job {
 private final class Bridge {
     var jobs: [String: Job]=[:], active: Job?, stopping=false, recoveryRequired=false
     func handle(_ request: HTTPRequest) {
+        // Read-only local handshake for a caller holding exclusive admission.
+        if request.method == "GET" && request.path == "/utility/idle" {
+            request.reply(active?.admission == nil && active?.process == nil ? 200 : 503, data:Data("idle".utf8), mime:"text/plain"); return
+        }
         let shared = active?.process == nil ? SharedDeviceState.inspect(root) : .busy
         if shared == .recoveryRequired { recoveryRequired=true }
         if request.method == "GET" && request.path == "/eSCL/ScannerCapabilities" { request.reply(200,data:capabilities); return }
@@ -172,7 +177,9 @@ private final class Bridge {
                 event(["event":"rejected_scan_settings","bytes":request.body.count]); request.reply(400); return
             }
             do {
+                let admission=try DeviceAdmission(exclusive:false)
                 let job=try Job(settings)
+                job.admission=admission
                 try request.body.write(to:job.directory.appendingPathComponent("settings.xml"),options:.withoutOverwriting)
                 jobs[job.id]=job; active=job
                 // Keep only a bounded recent index; raw captures stay on disk.
@@ -256,6 +263,7 @@ private final class Bridge {
         } catch { finished(job,code:1) }
     }
     func finished(_ job: Job, code: Int32) {
+        defer { job.admission=nil }
         job.process=nil; try? job.log?.synchronize(); try? job.log?.close(); job.log=nil
         let result=DriverOutcome.read(job.directory.appendingPathComponent("driver.jsonl"))
         var outcome: OperationOutcome = job.phaseSpawned ? (result.outcome ?? .recoveryRequired) : .preflightFailedSafe
@@ -319,7 +327,7 @@ private let listener=try NWListener(using:parameters)
 listener.newConnectionHandler={ HTTPRequest($0).start() }
 listener.stateUpdateHandler={ state in
     if case .ready=state {
-        guard ProcessInfo.processInfo.environment["BJC85_ESCL_ADVERTISE"] == "0" || is12_escl_publish(UInt32(port)) else { fputs("Local AirScan publication failed.\n",stderr); exit(1) }
+        guard ProcessInfo.processInfo.environment["BJC85_ESCL_ADVERTISE"] == "0" || is12_escl_publish(UInt32(port), uuid) else { fputs("Local AirScan publication failed.\n",stderr); exit(1) }
         event(["event":"airscan_ready","address":"127.0.0.1","port":port,"one_page_per_job":true])
     } else if case .failed(let error)=state { fputs("Listener failed: \(error)\n",stderr); exit(1) }
 }

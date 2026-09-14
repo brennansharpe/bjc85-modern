@@ -1,6 +1,6 @@
 import Foundation
 import CoreGraphics
-enum ScanImageType: String, CaseIterable, Codable {
+enum ScanImageType: String, CaseIterable, Codable, Sendable {
     case colour, grayscale, blackAndWhite, textEnhancedBW
     var label: String {
         switch self {
@@ -12,7 +12,7 @@ enum ScanImageType: String, CaseIterable, Codable {
     }
     var helperMode: String { self == .colour ? "color" : "gray" }
 }
-struct ScanSettings: Codable, Equatable {
+struct ScanSettings: Codable, Equatable, Sendable {
     var imageType: ScanImageType = .colour
     var dpi = 360
     var threshold = 128
@@ -24,7 +24,7 @@ struct ScanSettings: Codable, Equatable {
         return nil
     }
 }
-struct ScanRegion: Codable, Equatable {
+struct ScanRegion: Codable, Equatable, Sendable {
     var x = 0.0, y = 0.0, width = 1.0, height = 1.0
     static let fullPage = ScanRegion()
     var isValid: Bool {
@@ -43,8 +43,8 @@ struct ScanRegion: Codable, Equatable {
         x = min(max(0,x+dx),max(0,1-width)); y = min(max(0,y+dy),max(0,1-height))
     }
 }
-enum ScanFilter: String, CaseIterable, Codable { case none, sharpen, soften, despeckle }
-struct ScanAdjustments: Codable, Equatable {
+enum ScanFilter: String, CaseIterable, Codable, Sendable { case none, sharpen, soften, despeckle }
+struct ScanAdjustments: Codable, Equatable, Sendable {
     var brightness = 0.0, contrast = 1.0
     var invert = false
     var filter: ScanFilter = .none

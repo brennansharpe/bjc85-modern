@@ -9,6 +9,10 @@
 int main(void) {
     char directory[]="/tmp/bjc85-recovery-test-XXXXXX"; assert(mkdtemp(directory));
     assert(setenv("BJC85_STATE_DIRECTORY",directory,1)==0);
+    char lease[4096], admission[4096];
+    snprintf(lease,sizeof(lease),"%s/usb.lock",directory); snprintf(admission,sizeof(admission),"%s/admission.lock",directory);
+    assert(setenv("BJC85_OFFLINE_TEST","1",1)==0);
+    assert(setenv("BJC85_USB_LEASE_PATH",lease,1)==0); assert(setenv("BJC85_ADMISSION_PATH",admission,1)==0);
     assert(!bjc_recovery_required());
     pid_t child=fork(); assert(child>=0);
     if (!child) { assert(bjc_recovery_begin("scan")); _exit(0); }
@@ -22,7 +26,7 @@ int main(void) {
     assert(bjc_recovery_finish_safe()); assert(!bjc_recovery_required());
     assert(symlink("/nonexistent",path)==0);
     assert(bjc_recovery_required()); /* broken/symlinked marker is never absent */
-    assert(unlink(path)==0); assert(rmdir(directory)==0);
+    assert(unlink(path)==0); assert(unlink(lease)==0); assert(unlink(admission)==0); assert(rmdir(directory)==0);
     puts("Recovery survives exit and blocks scan/print before USB initialization.");
     return 0;
 }

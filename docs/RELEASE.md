@@ -4,6 +4,14 @@ This is a locally built feature milestone, not a qualified public release.
 Use the [acceptance ledger](release-acceptance.md) for the remaining gates.
 Normal application startup does not start a scan, feed paper or install services.
 
+The macOS 27 hardening build was compiled using macOS 27.0 (`26A428`), Xcode 27.0
+(`27A5237l`) and SDK 27.0, preserving ARM64/macOS 14.0 and Swift language mode 5.
+Its native job-query helper brings the bundle to ten Mach-O binaries. No new
+package installation, notarization or publication was performed. The current
+[UI audit](macos27-ui-ux-audit.md) records real before/after fixture screenshots,
+keyboard, appearance and adaptive-layout checks, with explicit limits for
+VoiceOver and Accessibility Inspector automation.
+
 ## Build and package
 
 Xcode command-line tools, CMake, pkg-config, make and Python 3 are build tools.
@@ -20,7 +28,7 @@ The output is `dist/BJC-85 Utility.app` and, without release identities,
 artifact, replace the existing prototype or change launchd/CUPS services.
 The package has no scripts that start printer operations.
 
-The bundle contains the app, native scanner/eSCL/IPP/render/USB helpers,
+The bundle contains the app, native scanner/eSCL/IPP/render/USB/job-query helpers,
 libusb 1.0.30, OpenSSL 3.6.4, static PAPPL 1.4.12 and Gutenprint 5.3.5, Gutenprint
 data, the user guide and license notices. `scripts/audit-release.py` verifies
 ARM64, each Mach-O deployment target, system/relative library references,
@@ -67,6 +75,17 @@ eSCL uses `.state/escl-jobs`, and printing uses `.state/print-spool`. The shared
 `recovery-required.json` protects all native clients. Do not delete it as a
 troubleshooting shortcut. An orphaned operation requires inspection and an
 explicit recovery decision before its marker can be archived.
+
+Editable documents are under `Documents/<UUID>` and follow the separate
+[lifecycle policy](document-lifecycle.md). Outstanding print references restore
+without resubmission. Discovery uses a private stable per-installation UUID;
+the physical serial is still used locally for calibration validation but is
+not the eSCL discovery identity. Services remain loopback-only.
+
+Service transition admission prevents new native work during idle checks and
+switching. An old installed eSCL bridge without `/utility/idle` fails quiescence
+closed. Upgrade it only after confirming that the previous service is idle;
+the app does not forcibly stop an unrecognized/active acquisition.
 
 To uninstall when no job is active: quit the app; boot out and disable
 `gui/$(id -u)/local.bjc85.native-scan` and `local.bjc85.native-print` with launchctl;

@@ -1,0 +1,224 @@
+{
+  "capture_method": "Native app capture; JPEG metadata removed for privacy without changing decoded pixels; tools may scale the raster",
+  "date": "2026-09-14",
+  "fixture_only": true,
+  "files": [
+    {
+      "path": "after-100-percent.png",
+      "pixels": [
+        1262,
+        768
+      ],
+      "sha256": "2d406a69bc19d25bd747591e6a014001c34fca7d02223cf4c1a449d4e6188104"
+    },
+    {
+      "path": "after-accent-tinted.png",
+      "pixels": [
+        1123,
+        768
+      ],
+      "sha256": "9633f2e10ea41ac01ca07b13a13d89cb4e6357f523ce6a6a2146126206e0901b"
+    },
+    {
+      "path": "after-busy.png",
+      "pixels": [
+        1123,
+        768
+      ],
+      "sha256": "2d22dfec70924b895f58f57293e94da2c96d5939431e1c328c94c6795ae109b4"
+    },
+    {
+      "path": "after-chrome-collapsed.png",
+      "pixels": [
+        1123,
+        768
+      ],
+      "sha256": "e23ba4b88488cd8ca90183f8d45f507f528c6b1d1f0e1c11677e4c69862d3c5b"
+    },
+    {
+      "path": "after-copy-edited.png",
+      "pixels": [
+        1123,
+        768
+      ],
+      "sha256": "f1467907f048ed614837e01551251878ba19779fa553f0c876ab2ba8aabef170"
+    },
+    {
+      "path": "after-copy.png",
+      "pixels": [
+        1123,
+        768
+      ],
+      "sha256": "43c7ae8b13cb2a195ab7611f46a42cec449e4c56d2604551e77c4295171ca724"
+    },
+    {
+      "path": "after-dark-empty.png",
+      "pixels": [
+        760,
+        570
+      ],
+      "sha256": "70440bd2b7ac510c65e28c14d0d95eec56228a60ec29f27e71724d8426767d77"
+    },
+    {
+      "path": "after-dark-small-contrast.png",
+      "pixels": [
+        760,
+        570
+      ],
+      "sha256": "f7825317b1ce841b666d6586096c868b268cdd350f46607a3ad894139f9dd46b"
+    },
+    {
+      "path": "after-dark.png",
+      "pixels": [
+        801,
+        580
+      ],
+      "sha256": "436bd33b2bf8eac6cfc7c39546ca51ea99b3637306b72036ee4f4290a6cb6b28"
+    },
+    {
+      "path": "after-device.png",
+      "pixels": [
+        1123,
+        768
+      ],
+      "sha256": "a16bcb66c25dde5862971099a05dcb9c42fdfe5c28609a30baf6475a83782541"
+    },
+    {
+      "path": "after-external-display.png",
+      "pixels": [
+        768,
+        848
+      ],
+      "sha256": "906b3f694279792d49475d69fcd35eb1f227dcd55a49d27933797cc4c8034169"
+    },
+    {
+      "path": "after-invalid-copies.png",
+      "pixels": [
+        1123,
+        768
+      ],
+      "sha256": "af6d5d0506017ee1237ca0e75d907254ed7f11050ef17b4780a2921ac8156760"
+    },
+    {
+      "path": "after-keyboard-scroll.png",
+      "pixels": [
+        760,
+        570
+      ],
+      "sha256": "064b2bfa150cd4edf0f7890b79ea73d6dc272a60639df11510af07f4852c357c"
+    },
+    {
+      "path": "after-large.png",
+      "pixels": [
+        1262,
+        768
+      ],
+      "sha256": "249e007472e17edb7dc0ab2e95d2f01f3f0f54b15cd3b0340346bddbae6a63ac"
+    },
+    {
+      "path": "after-minimum-dark.png",
+      "pixels": [
+        801,
+        580
+      ],
+      "sha256": "a9551038eea8b38c920bcc105c5821dc308e5868eaaf673a3b6acf32de31137f"
+    },
+    {
+      "path": "after-multiple-exports.png",
+      "pixels": [
+        1262,
+        768
+      ],
+      "sha256": "550dfaca404e7d2d95441905a85ce58e7f2e9e06f607bf9e7beac6c4bc731b21"
+    },
+    {
+      "path": "after-print.png",
+      "pixels": [
+        1123,
+        768
+      ],
+      "sha256": "db4e6e9ddac8b665d087b82d5663693f0d879a7fdbef828502f11da5c94d1319"
+    },
+    {
+      "path": "after-recovery.png",
+      "pixels": [
+        1123,
+        768
+      ],
+      "sha256": "305c210a3b4bad422c35ffa9f86e11ea0c4847c51ac0b5a9b885c2b82f90f392"
+    },
+    {
+      "path": "after-scan.png",
+      "pixels": [
+        1123,
+        768
+      ],
+      "sha256": "de960fab2fd83ab25a3495fd27867baa8dd4dd2e6c29f2cf11d5a3da1b2def2b"
+    },
+    {
+      "path": "after-settings.png",
+      "pixels": [
+        500,
+        372
+      ],
+      "sha256": "9c37f6b532a3836b47b1f8a493463755e689b5a0e1d99576a97b0b461b64b0ac"
+    },
+    {
+      "path": "after-tiled.png",
+      "pixels": [
+        768,
+        848
+      ],
+      "sha256": "89b1fbe304dd9867c783016676e7d563f256c89a94e70f4cfa21796b7ad80fd5"
+    },
+    {
+      "path": "after-unsafe-export.png",
+      "pixels": [
+        1123,
+        768
+      ],
+      "sha256": "c50e4015bee108a7e98fcb0779f5c58d8995bfa7fb0e2ef9b19e3798089b539a"
+    },
+    {
+      "path": "before-copy.png",
+      "pixels": [
+        987,
+        768
+      ],
+      "sha256": "11836bb77c1e52f7dd7d30ac6a1c6e58ecd798c13ecbe4e0ea5ebd8f3e35cea6"
+    },
+    {
+      "path": "before-device.png",
+      "pixels": [
+        987,
+        768
+      ],
+      "sha256": "441c0634522c80c07810cf178d0fb70037505a3ecbecfbd8b6e5dc850897102b"
+    },
+    {
+      "path": "before-print.png",
+      "pixels": [
+        987,
+        768
+      ],
+      "sha256": "6146d7a6ae2e70be7138535603f754e693d2b98c2ef2e7e740fed83a88a735f4"
+    },
+    {
+      "path": "before-scan.png",
+      "pixels": [
+        987,
+        768
+      ],
+      "sha256": "7d8183337b8376c1321724f284d43f64a9ec01477eb1eb62d5429607e8ba9006"
+    },
+    {
+      "path": "before-settings.png",
+      "pixels": [
+        260,
+        318
+      ],
+      "sha256": "15812ea72228b2a0d84b6d4133674ebcc68dccd336fa21f90435c8b90866d4e0"
+    }
+  ],
+  "privacy_note": "One Inspector screenshot containing a local computer name is excluded. Hashes describe sanitized files."
+}

@@ -2,11 +2,11 @@ import Foundation
 enum PrivacyRetention {
     static let undeliveredESCLLifetime: TimeInterval = 24*60*60
     static let captureFiles = ["usb-in.bin","records.bin","live-preview.rgb","live-preview.json","scan-raw.png","scan-upright.png","processed.png","print.pdf","driver.jsonl"]
-    static func removeExportedCapture(_ directory: URL, retainDiagnostics: Bool, outcome: OperationOutcome?) throws {
+    static func removeExportedCapture(_ directory: URL, retainDiagnostics: Bool, outcome: OperationOutcome?, protected: [URL] = []) throws {
         guard !retainDiagnostics, let outcome, outcome.permitsNextOperation else { return }
         for name in captureFiles {
             let file = directory.appendingPathComponent(name)
-            if FileManager.default.fileExists(atPath:file.path) { try FileManager.default.removeItem(at:file) }
+            if !FileIdentity.isProtected(file, by: protected), FileManager.default.fileExists(atPath:file.path) { try FileManager.default.removeItem(at:file) }
         }
         // Keep the small outcome receipt; never remove a recovery marker here.
     }

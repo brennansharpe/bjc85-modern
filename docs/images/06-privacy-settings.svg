@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title desc">
+<title id="title">BJC-85 Utility — Privacy &amp; storage (illustrative UI mockup)</title><desc id="desc">The separate Settings window with diagnostic retention off and document-storage policy. Not a captured screenshot or a hardware-test result.</desc>
+<style>text{font-family:Helvetica,Arial,sans-serif} .icon{fill:none;stroke-linecap:round;stroke-linejoin:round}</style>
+<rect x="0" y="0" width="1440" height="1080" rx="0" fill="#eef1f5" stroke="none" stroke-width="1"/>
+<rect x="314" y="239" width="812" height="574" rx="13" fill="#fafafa" stroke="#bdc5cf" stroke-width="1"/>
+<clipPath id="settingsClip"><rect x="314" y="239" width="812" height="574" rx="13"/></clipPath><g clip-path="url(#settingsClip)">
+<rect x="314" y="239" width="812" height="60" rx="0" fill="#e4e7eb" stroke="none" stroke-width="1"/>
+<circle cx="342" cy="269" r="6" fill="#bdc5cf"/>
+<circle cx="366" cy="269" r="6" fill="#bdc5cf"/>
+<circle cx="390" cy="269" r="6" fill="#bdc5cf"/>
+<text x="720" y="276" font-size="18" fill="#242832" font-weight="600" text-anchor="middle">Settings</text>
+<text x="354" y="355" font-size="25" fill="#242832" font-weight="600" text-anchor="start">Privacy &amp; storage</text>
+<rect x="354" y="389" width="16" height="16" rx="3" fill="#ffffff" stroke="#bdc5cf" stroke-width="1"/>
+<text x="378" y="402" font-size="14" fill="#242832" font-weight="400" text-anchor="start">Retain diagnostic captures</text>
+<text x="354" y="449" font-size="17" fill="#626975" font-weight="400" text-anchor="start">Completed captures are expendable after their document master is retained.</text>
+<text x="354" y="474" font-size="17" fill="#626975" font-weight="400" text-anchor="start">Unexported documents, Copy images, active workers, and unresolved recovery</text>
+<text x="354" y="499" font-size="17" fill="#626975" font-weight="400" text-anchor="start">evidence are protected.</text>
+<text x="354" y="558" font-size="17" fill="#626975" font-weight="400" text-anchor="start">Closed, exported documents may expire after 7 days. Unexported documents stay</text>
+<text x="354" y="583" font-size="17" fill="#626975" font-weight="400" text-anchor="start">until you discard them. Storage is limited to 100 documents / 2 GB; new imports</text>
+<text x="354" y="608" font-size="17" fill="#626975" font-weight="400" text-anchor="start">stop at the limit.</text>
+<rect x="354" y="673" width="360" height="36" rx="6" fill="#ffffff" stroke="#bdc5cf" stroke-width="1"/>
+<text x="534.0" y="694" font-size="14" fill="#242832" font-weight="400" text-anchor="middle">Delete completed diagnostics…</text>
+<rect x="354" y="729" width="220" height="36" rx="6" fill="#ffffff" stroke="#bdc5cf" stroke-width="1"/>
+<text x="464.0" y="750" font-size="14" fill="#242832" font-weight="400" text-anchor="middle">Show private files</text>
+</g>
+<text x="29" y="1050" font-size="14" fill="#242832" font-weight="600" text-anchor="start">06 / Privacy &amp; storage</text>
+<text x="1411" y="1050" font-size="13" fill="#626975" font-weight="400" text-anchor="end">Illustrative UI mockup · Synthetic content · 14 Sep 2026</text>
+</svg>

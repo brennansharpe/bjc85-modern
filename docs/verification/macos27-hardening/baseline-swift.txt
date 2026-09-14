@@ -1,0 +1,7 @@
+Canon Macintosh preset table (manual pages 70–72) and unavailable-mode gates pass.
+Cartridge transition, exclusivity, calibration and unknown-outcome gates pass.
+Copy retains the same image across confirmed swap and reprint, with recovery preserved.
+Print settings map to supported CUPS/IPP options; unsupported media/copies are rejected.
+Export cleanup removes document captures while retaining references and recovery evidence.
+Crop coordinates, 180° mapping, threshold bits, inversion and filter edge bounds pass.
+Constructed views expose crop values, keyboard focus and labelled controls. VoiceOver acceptance is separate.

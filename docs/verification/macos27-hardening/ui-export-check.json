@@ -1,0 +1,44 @@
+{
+  "synthetic_content_only": true,
+  "document_id": "00000000-0000-4000-8000-000000000002",
+  "restored_revision": 8,
+  "exported_revision": 7,
+  "retained_exports": 3,
+  "master_size": [
+    2880,
+    3888
+  ],
+  "master_sha256": "f2c9667967a7aea671daac6d07bc741e720b292fc2a4a3b2ae2f61fa71841e2a",
+  "png_tiff_pixel_equal": true,
+  "pixel_size": [
+    2160,
+    2880
+  ],
+  "png_dpi": [
+    359.9942,
+    359.9942
+  ],
+  "tiff_dpi": [
+    360.0,
+    360.0
+  ],
+  "pdf_points": [
+    432.0,
+    576.0
+  ],
+  "unsafe_processed_output_absent": true,
+  "appearance_comparison": {
+    "files": [
+      "after-accent-tinted.png",
+      "after-busy.png"
+    ],
+    "roi": [
+      304,
+      170,
+      680,
+      680
+    ],
+    "document_interior_pixel_equal": true,
+    "rgb_sha256": "4eea038312cc19acecbf75d8d9af54be65a72059279a3bc777a2f760049bd52b"
+  }
+}

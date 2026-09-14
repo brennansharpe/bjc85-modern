@@ -11,12 +11,12 @@ static void registered(DNSServiceRef ref,DNSServiceFlags flags,DNSServiceErrorTy
     (void)ref; (void)flags; (void)name; (void)type; (void)domain; (void)context;
     printf("{\"event\":\"airscan_registration\",\"error\":%d,\"local_only\":true}\n",error); fflush(stdout);
 }
-bool is12_escl_publish(unsigned port) {
-    if (service || !port || port>65535) return false;
+bool is12_escl_publish(unsigned port, const char *uuid) {
+    if (service || !port || port>65535 || !uuid || strlen(uuid)!=36) return false;
     TXTRecordRef txt; TXTRecordCreate(&txt,0,NULL);
     const char *keys[]={"txtvers","vers","rs","ty","pdl","cs","is","duplex","UUID"};
     const char *values[]={"1","2.0","eSCL","Canon BJC-85 IS-12 Native",
-        "image/png,image/jpeg","color,grayscale,binary","adf","F","00000000-0000-4000-8000-000000000009"};
+        "image/png,image/jpeg","color,grayscale,binary","adf","F",uuid};
     bool ok=true;
     for (unsigned i=0;i<9;i++)
         if (TXTRecordSetValue(&txt,keys[i],(uint8_t)strlen(values[i]),values[i])) ok=false;

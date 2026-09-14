@@ -1,0 +1,116 @@
+{
+  "baseline": "software-milestone-2026-09-14",
+  "tracked_files": 263,
+  "reachable_commits": 2,
+  "reachable_blobs": 247,
+  "tracked_hits": [
+    {
+      "path": "docs/bringup-2026-09-13.md",
+      "categories": [
+        "test-device-serial"
+      ]
+    },
+    {
+      "path": "docs/protocol/after-partial-print.json",
+      "categories": [
+        "test-device-serial"
+      ]
+    },
+    {
+      "path": "docs/protocol/native-tests-final.txt",
+      "categories": [
+        "user-home-path"
+      ]
+    },
+    {
+      "path": "docs/protocol/usb-bc11e-baseline.json",
+      "categories": [
+        "test-device-serial"
+      ]
+    },
+    {
+      "path": "docs/protocol/usb-is12-baseline.json",
+      "categories": [
+        "test-device-serial"
+      ]
+    },
+    {
+      "path": "docs/verification/2026-09-14/c-sanitizers.txt",
+      "categories": [
+        "user-home-path"
+      ]
+    },
+    {
+      "path": "docs/verification/2026-09-14/ipp-dry-run.txt",
+      "categories": [
+        "user-home-path"
+      ]
+    },
+    {
+      "path": "docs/verification/2026-09-14/package-build.txt",
+      "categories": [
+        "user-home-path"
+      ]
+    }
+  ],
+  "history_hits": [
+    {
+      "object": "removed-during-privacy-cleanup",
+      "path": "docs/bringup-2026-09-13.md",
+      "categories": [
+        "test-device-serial"
+      ]
+    },
+    {
+      "object": "removed-during-privacy-cleanup",
+      "path": "docs/protocol/after-partial-print.json",
+      "categories": [
+        "test-device-serial"
+      ]
+    },
+    {
+      "object": "removed-during-privacy-cleanup",
+      "path": "docs/protocol/native-tests-final.txt",
+      "categories": [
+        "user-home-path"
+      ]
+    },
+    {
+      "object": "removed-during-privacy-cleanup",
+      "path": "docs/verification/2026-09-14/c-sanitizers.txt",
+      "categories": [
+        "user-home-path"
+      ]
+    },
+    {
+      "object": "removed-during-privacy-cleanup",
+      "path": "docs/verification/2026-09-14/ipp-dry-run.txt",
+      "categories": [
+        "user-home-path"
+      ]
+    },
+    {
+      "object": "removed-during-privacy-cleanup",
+      "path": "docs/verification/2026-09-14/package-build.txt",
+      "categories": [
+        "user-home-path"
+      ]
+    },
+    {
+      "object": "removed-during-privacy-cleanup",
+      "path": "src/escl_bridge.swift",
+      "categories": [
+        "test-device-serial"
+      ]
+    },
+    {
+      "object": "removed-during-privacy-cleanup",
+      "path": "src/escl_bridge.swift",
+      "categories": [
+        "test-device-serial"
+      ]
+    }
+  ],
+  "limitations": "Pattern matches require manual review; email hits include upstream credits. Ignored private captures are not audited. No license or publication approval is implied.",
+  "redacted_derivative_count": 7
+}

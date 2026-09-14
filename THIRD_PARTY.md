@@ -1,5 +1,29 @@
 # Third-party components and research material
 
+## Hardening and macOS 27 pass — 2026-09-14
+
+This pass retains the dependency versions and source pins below. The new
+`bjc85-job-query` helper uses Apple's system CUPS; it adds no bundled dependency.
+No repository license was selected, signing credentials changed, or release
+uploaded. Applicable distribution obligations remain an owner/release gate.
+
+A read-only inventory inspected all 263 tracked files and 247 reachable blobs
+across two commits. The known test printer identifier and local user paths are
+present in current and historical evidence. Seven redacted draft evidence files
+were created separately under `tmp/redacted-evidence-macos27/`, with source and
+derivative SHA-256 hashes in `provenance.json`; originals and Git history were
+left untouched. These are review derivatives, not a published/source-release
+approval. `scripts/audit-source-privacy.py` reproduces the bounded pattern audit;
+it is not an exhaustive secret or legal-compliance assessment. See
+`docs/verification/macos27-hardening/source-privacy-audit.json`.
+
+Production eSCL discovery now uses a private, stable random installation UUID
+instead of a hardcoded test serial/shared UUID. Local calibration validation
+still uses the physical identity as required by the existing engine. Historical
+research/discovery experiments are not part of the bundle. Canon installers,
+artwork, decompilation outputs and private captures remain excluded from
+distributable artifacts. Do not publish this repository's history as-is.
+
 ## Utility 0.2.0 release build — 2026-09-14
 
 The new `dist/BJC-85 Utility.app` rebuilds its dependencies for ARM64/macOS 14.

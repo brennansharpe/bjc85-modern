@@ -1,0 +1,129 @@
+ M CMakeLists.txt
+ M README.md
+ M THIRD_PARTY.md
+ M app/BJC85Scanner.swift
+ M app/CopyWorkflow.swift
+ M app/DeviceCoordinator.swift
+ M app/Models/DeviceState.swift
+ M app/Models/PrintSettings.swift
+ M app/Models/ScanSettings.swift
+ M app/PrivacyRetention.swift
+ M app/ScanExport.swift
+ M app/ScanProcessing.swift
+ M app/ServiceController.swift
+ M app/UI/CalibrationView.swift
+ M app/UI/CartridgeSwapView.swift
+ M app/UI/CopyWorkflowView.swift
+ M app/UI/DeviceStatusView.swift
+ M app/UI/JobsView.swift
+ M app/UI/MaintenanceView.swift
+ M app/UI/PrintSettingsView.swift
+ M app/UI/RootView.swift
+ M app/UI/ScanSettingsView.swift
+ M app/UI/ScanWorkspaceView.swift
+ M docs/RELEASE.md
+ M docs/USER-GUIDE.md
+ M docs/legacy-ui-map.md
+ M docs/release-acceptance.md
+ M scripts/build-release.sh
+ M scripts/test-swift.sh
+ M src/SharedDeviceState.swift
+ M src/escl_bridge.swift
+ M src/escl_publish.c
+ M src/escl_publish.h
+ M src/ipp.c
+ M src/usb.c
+ M src/usb.h
+ M tests/accessibility_smoke_test.swift
+ M tests/recovery_guard_test.c
+ M tests/usb_lease_test.py
+?? app/DocumentActions.swift
+?? app/FixturePresentation.swift
+?? app/ImageProcessingService.swift
+?? app/PrintActions.swift
+?? app/PrintJobTracker.swift
+?? app/ScanActions.swift
+?? app/ScanDocument.swift
+?? app/ScanOperationController.swift
+?? app/ServiceTransitionController.swift
+?? app/UI/UtilityControls.swift
+?? app/UI/UtilitySettings.swift
+?? app/UI/WorkspaceLayout.swift
+?? app/UtilityWindowController.swift
+?? docs/document-lifecycle.md
+?? docs/macos27-ui-ux-audit.md
+?? docs/physical-acceptance-plan.md
+?? docs/verification/macos27-hardening/README.md
+?? docs/verification/macos27-hardening/baseline-c.txt
+?? docs/verification/macos27-hardening/baseline-swift.txt
+?? docs/verification/macos27-hardening/bw-output.jsonl
+?? docs/verification/macos27-hardening/changed-files.txt
+?? docs/verification/macos27-hardening/concurrency-audit.txt
+?? docs/verification/macos27-hardening/export-formats.jsonl
+?? docs/verification/macos27-hardening/hardening-tests.txt
+?? docs/verification/macos27-hardening/isolated-services.txt
+?? docs/verification/macos27-hardening/live-preview.jsonl
+?? docs/verification/macos27-hardening/performance.txt
+?? docs/verification/macos27-hardening/release-build.txt
+?? docs/verification/macos27-hardening/relocated-bundle.json
+?? docs/verification/macos27-hardening/sanitizers.txt
+?? docs/verification/macos27-hardening/scan-replay.jsonl
+?? docs/verification/macos27-hardening/source-privacy-audit.json
+?? docs/verification/macos27-hardening/source-sha256.json
+?? docs/verification/macos27-hardening/swift.txt
+?? docs/verification/macos27-hardening/ui-checks.md
+?? docs/verification/macos27-hardening/ui-export-check.json
+?? docs/verification/macos27-hardening/ui/accessibility-inspector-audit.png
+?? docs/verification/macos27-hardening/ui/accessibility-inspector-audit.txt
+?? docs/verification/macos27-hardening/ui/after-100-percent.png
+?? docs/verification/macos27-hardening/ui/after-accent-tinted.png
+?? docs/verification/macos27-hardening/ui/after-busy.png
+?? docs/verification/macos27-hardening/ui/after-chrome-collapsed.png
+?? docs/verification/macos27-hardening/ui/after-copy-edited.png
+?? docs/verification/macos27-hardening/ui/after-copy.png
+?? docs/verification/macos27-hardening/ui/after-dark-empty.png
+?? docs/verification/macos27-hardening/ui/after-dark-small-contrast.png
+?? docs/verification/macos27-hardening/ui/after-dark.png
+?? docs/verification/macos27-hardening/ui/after-device.png
+?? docs/verification/macos27-hardening/ui/after-external-display.png
+?? docs/verification/macos27-hardening/ui/after-invalid-copies.png
+?? docs/verification/macos27-hardening/ui/after-keyboard-scroll.png
+?? docs/verification/macos27-hardening/ui/after-large.png
+?? docs/verification/macos27-hardening/ui/after-minimum-dark.png
+?? docs/verification/macos27-hardening/ui/after-multiple-exports.png
+?? docs/verification/macos27-hardening/ui/after-print.png
+?? docs/verification/macos27-hardening/ui/after-recovery.png
+?? docs/verification/macos27-hardening/ui/after-scan.png
+?? docs/verification/macos27-hardening/ui/after-settings.png
+?? docs/verification/macos27-hardening/ui/after-tiled.png
+?? docs/verification/macos27-hardening/ui/after-unsafe-export.png
+?? docs/verification/macos27-hardening/ui/before-copy.png
+?? docs/verification/macos27-hardening/ui/before-device.png
+?? docs/verification/macos27-hardening/ui/before-print.png
+?? docs/verification/macos27-hardening/ui/before-scan.png
+?? docs/verification/macos27-hardening/ui/before-settings.png
+?? docs/verification/macos27-hardening/ui/manifest.json
+?? docs/verification/macos27-hardening/ui/unsafe-export-ax.txt
+?? docs/verification/macos27-hardening/unlocked-concurrency-audit.txt
+?? docs/verification/macos27-hardening/unlocked-hardening-tests.txt
+?? docs/verification/macos27-hardening/unlocked-release-build.txt
+?? docs/verification/macos27-hardening/unlocked-relocated-bundle.json
+?? docs/verification/macos27-hardening/unlocked-swift.txt
+?? docs/verification/macos27-hardening/unlocked-workflow-controller.txt
+?? docs/verification/macos27-hardening/usb-lease.jsonl
+?? docs/workflow-state-tests.md
+?? scripts/audit-source-privacy.py
+?? scripts/benchmark-processing.sh
+?? scripts/test-hardening.sh
+?? scripts/test-isolated-services.sh
+?? src/FileIdentity.swift
+?? src/LocalServiceIdentity.swift
+?? src/admission.c
+?? src/admission.h
+?? src/print_job_query.c
+?? tests/document_pipeline_test.swift
+?? tests/make_synthetic_fixture.py
+?? tests/processing_worker_test.swift
+?? tests/service_transition_test.swift
+?? tests/shared_device_state_test.swift
+?? tests/workflow_controller_test.swift

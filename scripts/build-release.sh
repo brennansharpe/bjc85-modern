@@ -24,15 +24,15 @@ mkdir -p "$app_dir/Contents/MacOS" "$app_dir/Contents/Helpers" "$app_dir/Content
 /usr/bin/xcrun swiftc -swift-version 5 -parse-as-library -O -target arm64-apple-macos14.0 \
     -module-cache-path "$build_dir/swift-module-cache" -framework AppKit -framework ImageIO -framework UniformTypeIdentifiers \
     "$project_dir"/app/*.swift "$project_dir"/app/Models/*.swift "$project_dir"/app/UI/*.swift \
-    "$project_dir/src/DriverOutcome.swift" "$project_dir/src/SharedDeviceState.swift" -o "$app_dir/Contents/MacOS/BJC85Scanner"
+    "$project_dir/src/DriverOutcome.swift" "$project_dir/src/SharedDeviceState.swift" "$project_dir/src/FileIdentity.swift" "$project_dir/src/LocalServiceIdentity.swift" -o "$app_dir/Contents/MacOS/BJC85Scanner"
 cp "$project_dir/src/escl_bridge.swift" "$build_dir/escl-main/main.swift"
 /usr/bin/xcrun clang -arch arm64 -mmacosx-version-min=14.0 -Wall -Wextra -Werror \
     -c "$project_dir/src/escl_publish.c" -o "$build_dir/escl_publish.o"
 /usr/bin/xcrun swiftc -swift-version 5 -O -target arm64-apple-macos14.0 \
     -module-cache-path "$build_dir/swift-module-cache" -import-objc-header "$project_dir/src/escl_publish.h" \
-    -framework Network -framework ImageIO "$build_dir/escl-main/main.swift" "$project_dir/src/DriverOutcome.swift" "$project_dir/src/SharedDeviceState.swift" \
+    -framework Network -framework ImageIO "$build_dir/escl-main/main.swift" "$project_dir/src/DriverOutcome.swift" "$project_dir/src/SharedDeviceState.swift" "$project_dir/src/FileIdentity.swift" "$project_dir/src/LocalServiceIdentity.swift" \
     "$project_dir/app/PrivacyRetention.swift" "$build_dir/escl_publish.o" -o "$app_dir/Contents/Helpers/is12-escl-bridge"
-for helper in bjc85-is12 bjc85-ipp bjc85-render bjc85-usb; do cp "$build_dir/$helper" "$app_dir/Contents/Helpers/"; done
+for helper in bjc85-job-query bjc85-is12 bjc85-ipp bjc85-render bjc85-usb; do cp "$build_dir/$helper" "$app_dir/Contents/Helpers/"; done
 for library in libusb-1.0.0.dylib libssl.3.dylib libcrypto.3.dylib; do
     cp "$prefix/lib/$library" "$app_dir/Contents/Frameworks/"
     chmod u+w "$app_dir/Contents/Frameworks/$library"
@@ -46,7 +46,9 @@ for binary in "$app_dir/Contents/Helpers/"* "$app_dir/Contents/Frameworks/"*; do
 done
 mkdir -p "$app_dir/Contents/Resources/gutenprint"
 cp -R "$prefix/share/gutenprint/5.3/xml" "$app_dir/Contents/Resources/gutenprint/"
-cp "$project_dir/docs/USER-GUIDE.md" "$app_dir/Contents/Resources/USER-GUIDE.md"
+for guide in USER-GUIDE document-lifecycle physical-acceptance-plan RELEASE release-acceptance macos27-ui-ux-audit workflow-state-tests; do
+    cp "$project_dir/docs/$guide.md" "$app_dir/Contents/Resources/$guide.md"
+done
 cp "$project_dir/THIRD_PARTY.md" "$app_dir/Contents/Resources/Licenses/THIRD_PARTY.md"
 cp "$project_dir/build-release-deps/work/gutenprint-5.3.5/COPYING" "$app_dir/Contents/Resources/Licenses/Gutenprint-COPYING"
 cp "$project_dir/build-release-deps/work/libusb-1.0.30/COPYING" "$app_dir/Contents/Resources/Licenses/libusb-COPYING"

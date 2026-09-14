@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title desc">
+<title id="title">BJC-85 Utility — Print workspace (illustrative UI mockup)</title><desc id="desc">Letter paper, copies, colour, quality and explicit print-job controls. Not a captured screenshot or a hardware-test result.</desc>
+<style>text{font-family:Helvetica,Arial,sans-serif} .icon{fill:none;stroke-linecap:round;stroke-linejoin:round}</style>
+<rect x="0" y="0" width="1440" height="1080" rx="0" fill="#eef1f5" stroke="none" stroke-width="1"/>
+<rect x="28" y="28" width="1384" height="988" rx="14" fill="#fafafa" stroke="#bdc5cf" stroke-width="1"/>
+<clipPath id="windowClip"><rect x="28" y="28" width="1384" height="988" rx="14"/></clipPath><g clip-path="url(#windowClip)">
+<rect x="28" y="28" width="172" height="988" rx="0" fill="#ebedf0" stroke="none" stroke-width="1"/>
+<rect x="200" y="28" width="1212" height="72" rx="0" fill="#e4e7eb" stroke="none" stroke-width="1"/>
+<rect x="1054" y="100" width="358" height="916" rx="0" fill="#f2f3f5" stroke="none" stroke-width="1"/>
+<path d="M200 100H1412" fill="none" stroke="#d5dae1" stroke-width="1"/>
+<path d="M200 100L200 1016" fill="none" stroke="#d5dae1" stroke-width="1"/>
+<path d="M1054 100L1054 1016" fill="none" stroke="#d5dae1" stroke-width="1"/>
+<circle cx="53" cy="60" r="6" fill="#bdc5cf"/>
+<circle cx="77" cy="60" r="6" fill="#bdc5cf"/>
+<circle cx="101" cy="60" r="6" fill="#bdc5cf"/>
+<text x="223" y="58" font-size="19" fill="#242832" font-weight="600" text-anchor="start">BJC-85 Utility — Fixture</text>
+<text x="223" y="80" font-size="12" fill="#626975" font-weight="400" text-anchor="start">Independent BJC-85 / IS-12 project</text>
+<rect x="870" y="43" width="78" height="38" rx="8" fill="#fafafa" stroke="#bdc5cf" stroke-width="1"/>
+<g class="icon" transform="translate(879 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M9 4v16M5 8h1M5 12h1"/></g>
+<g class="icon" transform="translate(917 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><path d="M2 7V4h7l3 3h10v13H2zM2 9h20"/></g>
+<rect x="960" y="43" width="116" height="38" rx="8" fill="#fafafa" stroke="#bdc5cf" stroke-width="1"/>
+<g class="icon" transform="translate(969 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><path d="M9 9L3 3M3 8V3h5M15 15l6 6M16 21h5v-5"/></g>
+<g class="icon" transform="translate(1007 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M15 15l6 6M9 7l2-1v8M9 14h4"/></g>
+<g class="icon" transform="translate(1045 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><path d="M7 7a7 7 0 0112 3M19 5v5h-5"/><rect x="4" y="11" width="10" height="10" rx="2"/></g>
+<rect x="1088" y="43" width="116" height="38" rx="8" fill="#fafafa" stroke="#bdc5cf" stroke-width="1"/>
+<g class="icon" transform="translate(1097 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><path d="M8 9H4v12h16V9h-4M12 15V2M8 6l4-4 4 4"/></g>
+<g class="icon" transform="translate(1135 51) scale(0.9166666666666666)" stroke="#8a929e" stroke-width="1.6"><path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6zM17 11h1"/></g>
+<g class="icon" transform="translate(1173 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M15 4v16M18 8h1M18 12h1"/></g>
+<g class="icon" transform="translate(53 123) scale(0.9166666666666666)" stroke="#356da9" stroke-width="1.6"><path d="M4 8l15-4M4 11h16l2 6v3H2v-3zM3 16h18M6 18h1"/></g>
+<text x="88" y="140" font-size="17" fill="#242832" font-weight="400" text-anchor="start">Scan</text>
+<rect x="40" y="162" width="148" height="38" rx="7" fill="#d8e4f1" stroke="none" stroke-width="1"/>
+<g class="icon" transform="translate(53 170) scale(0.9166666666666666)" stroke="#356da9" stroke-width="1.6"><path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6zM17 11h1"/></g>
+<text x="88" y="187" font-size="17" fill="#242832" font-weight="600" text-anchor="start">Print</text>
+<g class="icon" transform="translate(53 217) scale(0.9166666666666666)" stroke="#356da9" stroke-width="1.6"><path d="M8 7H3v14h12v-4M8 3h8l5 5v9H8zM16 3v5h5"/></g>
+<text x="88" y="234" font-size="17" fill="#242832" font-weight="400" text-anchor="start">Copy</text>
+<g class="icon" transform="translate(53 264) scale(0.9166666666666666)" stroke="#356da9" stroke-width="1.6"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 12h14M12 17v4M7 21h10M9 14h6"/></g>
+<text x="88" y="281" font-size="17" fill="#242832" font-weight="400" text-anchor="start">Device</text>
+<text x="223" y="134" font-size="16" fill="#242832" font-weight="600" text-anchor="start">Fixture · Not connected</text>
+<text x="223" y="158" font-size="14" fill="#626975" font-weight="400" text-anchor="start">Fixture · Synthetic document retained · No physical jobs</text>
+<rect x="219" y="181" width="816" height="771" rx="7" fill="#e3e7ed" stroke="none" stroke-width="1"/>
+<rect x="367" y="211" width="528" height="712.8" rx="0" fill="#cbd2db" stroke="none" stroke-width="1"/>
+<rect x="363" y="206" width="528" height="712.8" rx="0" fill="white" stroke="#cbd2db" stroke-width="1"/>
+<text x="405" y="269" font-size="12" fill="#768394" font-weight="600" text-anchor="start">PAPER / COLOUR / FORM</text>
+<text x="405" y="317" font-size="32" fill="#242832" font-weight="600" text-anchor="start">A study in colour</text>
+<text x="405" y="346" font-size="15" fill="#626975" font-weight="400" text-anchor="start">A sample page for a new chapter.</text>
+<rect x="405" y="379" width="437" height="6" rx="2" fill="#d9dfe7" stroke="none" stroke-width="1"/>
+<rect x="405" y="398" width="414" height="6" rx="2" fill="#d9dfe7" stroke="none" stroke-width="1"/>
+<rect x="405" y="417" width="429" height="6" rx="2" fill="#d9dfe7" stroke="none" stroke-width="1"/>
+<rect x="405" y="468" width="140" height="220" rx="0" fill="#c5dce5" stroke="none" stroke-width="1"/>
+<rect x="557" y="468" width="140" height="220" rx="0" fill="#d9c8de" stroke="none" stroke-width="1"/>
+<rect x="709" y="468" width="140" height="220" rx="0" fill="#e8dfb5" stroke="none" stroke-width="1"/>
+<text x="405" y="723" font-size="11" fill="#626975" font-weight="400" text-anchor="start">01  /  SKY</text>
+<text x="557" y="723" font-size="11" fill="#626975" font-weight="400" text-anchor="start">02  /  LILAC</text>
+<text x="709" y="723" font-size="11" fill="#626975" font-weight="400" text-anchor="start">03  /  OCHRE</text>
+<rect x="405" y="755" width="433" height="6" rx="2" fill="#d9dfe7" stroke="none" stroke-width="1"/>
+<rect x="405" y="774" width="397" height="6" rx="2" fill="#d9dfe7" stroke="none" stroke-width="1"/>
+<rect x="405" y="793" width="421" height="6" rx="2" fill="#d9dfe7" stroke="none" stroke-width="1"/>
+<path d="M405 844H849" fill="none" stroke="#d9dfe7" stroke-width="1"/>
+<text x="405" y="876" font-size="12" fill="#768394" font-weight="400" text-anchor="start">Illustrative document</text>
+<text x="849" y="876" font-size="12" fill="#768394" font-weight="400" text-anchor="end">01</text>
+<text x="223" y="982" font-size="18" fill="#242832" font-weight="600" text-anchor="start">Imported image · revision 0 · not exported</text>
+<text x="223" y="1005" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Selection 8.00 × 10.80 in · 360 dpi · 0 exports</text>
+</g>
+<text x="1080" y="134" font-size="20" fill="#242832" font-weight="600" text-anchor="start">Print document</text>
+<text x="1080" y="170" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Paper size</text>
+<rect x="1080" y="182" width="172" height="32" rx="6" fill="#ffffff" stroke="#bdc5cf" stroke-width="1"/>
+<text x="1092" y="204" font-size="15" fill="#242832" font-weight="400" text-anchor="start">Letter</text>
+<path d="M1230 195l4-4 4 4m-8 6l4 4 4-4" fill="none" stroke="#626975" stroke-width="1.5"/>
+<text x="1080" y="240" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Copies (1–999)</text>
+<rect x="1080" y="252" width="112" height="32" rx="6" fill="#ffffff" stroke="#bdc5cf" stroke-width="1"/>
+<text x="1092" y="274" font-size="15" fill="#242832" font-weight="400" text-anchor="start">1</text>
+<rect x="1080" y="305" width="16" height="16" rx="3" fill="#356da9" stroke="#356da9" stroke-width="1"/>
+<path d="M1083 313l3 3 7-7" fill="none" stroke="white" stroke-width="2"/>
+<text x="1104" y="318" font-size="14" fill="#242832" font-weight="400" text-anchor="start">Colour printing</text>
+<text x="1080" y="354" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Print quality</text>
+<rect x="1080" y="367" width="172" height="32" rx="6" fill="#ffffff" stroke="#bdc5cf" stroke-width="1"/>
+<text x="1092" y="389" font-size="15" fill="#242832" font-weight="400" text-anchor="start">Normal</text>
+<path d="M1230 380l4-4 4 4m-8 6l4 4 4-4" fill="none" stroke="#626975" stroke-width="1.5"/>
+<text x="1080" y="432" font-size="13" fill="#626975" font-weight="400" text-anchor="start">BC-11e · plain paper · automatic feed · 360</text>
+<text x="1080" y="450" font-size="13" fill="#626975" font-weight="400" text-anchor="start">dpi</text>
+<text x="1080" y="468" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Letter colour is physically verified. A4,</text>
+<text x="1080" y="486" font-size="13" fill="#626975" font-weight="400" text-anchor="start">multiple copies and monochrome still need</text>
+<text x="1080" y="504" font-size="13" fill="#626975" font-weight="400" text-anchor="start">physical acceptance. The current black ink</text>
+<text x="1080" y="522" font-size="13" fill="#626975" font-weight="400" text-anchor="start">channel needs attention.</text>
+<rect x="1080" y="550" width="306" height="31" rx="6" fill="#eaedf1" stroke="#d5dae1" stroke-width="1"/>
+<text x="1233.0" y="571" font-size="14" fill="#8a929e" font-weight="400" text-anchor="middle">Print document…</text>
+<rect x="1080" y="594" width="306" height="31" rx="6" fill="#eaedf1" stroke="#d5dae1" stroke-width="1"/>
+<text x="1233.0" y="615" font-size="14" fill="#8a929e" font-weight="400" text-anchor="middle">Prepare printing…</text>
+<text x="1080" y="664" font-size="14" fill="#626975" font-weight="400" text-anchor="start">No print job submitted</text>
+<rect x="1080" y="684" width="306" height="31" rx="6" fill="#eaedf1" stroke="#d5dae1" stroke-width="1"/>
+<text x="1233.0" y="705" font-size="14" fill="#8a929e" font-weight="400" text-anchor="middle">Recheck job status</text>
+<rect x="1080" y="728" width="306" height="31" rx="6" fill="#eaedf1" stroke="#d5dae1" stroke-width="1"/>
+<text x="1233.0" y="749" font-size="14" fill="#8a929e" font-weight="400" text-anchor="middle">Open queue details</text>
+<text x="1080" y="798" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Settings apply to this document. Other apps</text>
+<text x="1080" y="817" font-size="13" fill="#626975" font-weight="400" text-anchor="start">keep their normal Command-P dialog. Queue</text>
+<text x="1080" y="836" font-size="13" fill="#626975" font-weight="400" text-anchor="start">completion does not verify ink on paper.</text>
+<text x="29" y="1050" font-size="14" fill="#242832" font-weight="600" text-anchor="start">02 / Print workspace</text>
+<text x="1411" y="1050" font-size="13" fill="#626975" font-weight="400" text-anchor="end">Illustrative UI mockup · Synthetic content · 14 Sep 2026</text>
+</svg>

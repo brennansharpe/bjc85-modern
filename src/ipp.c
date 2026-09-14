@@ -1,5 +1,6 @@
 /* Local IPP prototype. PAPPL handles IPP/Apple Raster; Gutenprint emits BJRaster. */
 #include "usb.h"
+#include "admission.h"
 #include "protocol.h"
 #include "transfer.h"
 #include "recovery.h"
@@ -40,6 +41,7 @@ typedef struct {
     unsigned width, height, crop_left, crop_top, full_height, next_y, pages;
     size_t bytes;
     int copies;
+    int admission;
     bool failed, started;
     pappl_job_t *job;
 } job_state;
@@ -156,13 +158,15 @@ static bool start_job(pappl_job_t *job, pappl_pr_options_t *options, pappl_devic
     if (options->copies < 1 || options->copies > 999) return false;
     job_state *state = calloc(1, sizeof(*state));
     if (!state) return false;
+    state->admission=service.dry_run ? -1 : bjc_admission_acquire();
+    if (!service.dry_run && state->admission<0) { free(state); return false; }
     state->job = job;
     state->copies = options->copies;
     int n = snprintf(state->filename, sizeof(state->filename), "%s/job-%d-XXXXXX.bjc", service.spool, papplJobGetID(job));
-    if (n < 0 || n >= (int)sizeof(state->filename)) { free(state); return false; }
+    if (n < 0 || n >= (int)sizeof(state->filename)) { if (state->admission>=0) close(state->admission); free(state); return false; }
     int fd = mkstemps(state->filename, 4);
     state->stream = fd < 0 ? NULL : fdopen(fd, "w+b");
-    if (!state->stream) { if (fd >= 0) close(fd); free(state); return false; }
+    if (!state->stream) { if (fd >= 0) close(fd); if (state->admission>=0) close(state->admission); free(state); return false; }
     state->image = (stp_image_t){image_noop, image_noop, image_width, image_height, image_row, image_app, image_noop, state};
     papplJobSetData(job, state);
     ((device_state *)papplDeviceGetData(device))->job = job;
@@ -321,6 +325,7 @@ static bool end_job(pappl_job_t *job, pappl_pr_options_t *options, pappl_device_
         papplJobSetImpressionsCompleted(job, (int)state->pages * (state->copies-1));
     }
     if (state->vars) stp_vars_destroy(state->vars);
+    if (state->admission>=0) close(state->admission);
     free(state->rgb); free(state);
     papplJobSetData(job, NULL);
     ((device_state *)papplDeviceGetData(device))->job = NULL;
@@ -401,6 +406,7 @@ int main(int argc, char **argv) {
             port = (int)value;
         } else { fprintf(stderr, "Unknown or incomplete option: %s\n", argv[i]); return 2; }
     }
+    if (getenv("BJC85_OFFLINE_TEST") && !service.dry_run) { fputs("Offline test cannot run live printing.\n",stderr); return 2; }
     if (!spool || (!cartridge && !service.dry_run)) {
         fprintf(stderr, "Usage: %s --spool-dir DIRECTORY [--port 8631] (--print-cartridge=bc11e | --dry-run)\n", argv[0]);
         return 2;

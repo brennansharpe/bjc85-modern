@@ -1,4 +1,64 @@
-# Feature parity acceptance ledger — 2026-09-14
+# Release acceptance ledger — hardening / macOS 27 — 2026-09-14
+
+## Current implementation status
+
+**Implemented; release acceptance remains open.** Review baseline and initial
+clean HEAD were `software-milestone-2026-09-14`. No checkout reset, dependency upgrade, history rewrite,
+publication, installation, production service change or physical operation was
+performed. The new `dist/BJC-85 Utility.app` is a separate ad-hoc local build.
+The original ARM64 USB, IS-12, PAPPL/Gutenprint and eSCL architecture is retained.
+
+The app now retains immutable masters and revisioned edits across exports,
+printing and restoration; rejects managed-path/alias exports; separates Copy
+attempts and retryable preflight; serializes native admission across service
+transitions; processes immutable full-resolution snapshots off-main; queries
+specific CUPS jobs without treating disappearance as success; and uses a native
+sidebar/canvas/inspector with shared status and separate Settings.
+
+| Verification actually run | Result and evidence in `verification/macos27-hardening/` |
+|---|---|
+| Baseline before edits | 10 CTest and seven Swift suites passed (`baseline-c.txt`, `baseline-swift.txt`) |
+| Release build and bundle audit | Pass; ARM64, minimum macOS 14, ten Mach-O binaries, system/relative libraries, ad-hoc signatures, asset exclusions and non-USB helper execution (`release-build.txt`) |
+| ASAN/UBSAN native tests | 10/10 pass, including wrong-head readiness, cancellation races and persistent recovery (`sanitizers.txt`) |
+| Existing Swift regression | Seven suites pass, including constructed accessibility checks (`swift.txt`) |
+| New controller/document/service tests | Four executables pass; Copy refusal/retry, canceled swap, corrected settings, stale callbacks, immutable acquisition facts, canceled job versus unsafe device state, restart/no replay, storage collisions and pipeline (`hardening-tests.txt`) |
+| Image contract | 48 asymmetric 2D filter/rotation/mode crop-edge combinations pass; PNG pixels, DPI/PDF size, multiformat retention, failed/canceled export and aliases covered by document tests |
+| Historical scan replay | 12 capture replays pass independent pixel comparison; no new acquisition (`scan-replay.jsonl`) |
+| Live-preview/B&W replay | Six modes plus partial stream and one-bit boundary/short-stream checks pass (`live-preview.jsonl`, `bw-output.jsonl`) |
+| Existing export regression | 12 PNG/TIFF/PDF cases pass independent pixel and physical-size checks; one-bit PNG/TIFF retained (`export-formats.jsonl`) |
+| Isolated services | Fake-child eSCL outcome/HTTP/startup-recovery tests and nine PAPPL dry-run checks pass (`isolated-services.txt`) |
+| Native lease isolation | Three real-helper tests pass using private lock/state paths and an offline libusb guard (`usb-lease.jsonl`) |
+| Swift isolation audit | Swift 5 complete strict-concurrency diagnostics and warnings-as-errors typecheck passes (`concurrency-audit.txt` and command record) |
+| Full-size worker measurement | 2880 × 3888 nonblank fixture: sharpen + TIFF 0.728 s; despeckle 0.668 s; peak RSS 295,321,600 bytes; maximum command-line main-loop heartbeat gap 23.179 ms (`performance.txt`) |
+| Privacy/history inventory | 263 tracked files and 247 reachable blobs across two commits audited by bounded patterns; eight current files/eight historical blobs flagged; seven draft redacted derivatives with hashes/provenance, originals preserved (`source-privacy-audit.json`) |
+| Graphical evidence | Five baseline and real after screenshots: all workspaces, Settings, multiple exports, errors/recovery, keyboard focus, Dark Mode, minimum/default/large/tiled sizes and display switching. Native-panel exports and later edits/restoration passed. See `ui-checks.md`; no generated-image substitute |
+| Accessibility limits | Keyboard and direct AX checks completed. Native Inspector audit invocation was inconclusive; VoiceOver feedback/launch failed. Full spoken accessibility acceptance remains open, not passed |
+
+The one-bit crop encoder and a macOS `/var` versus `/private/var` path-alias
+regression were found and fixed by the new tests. Source renders at full
+resolution; the measured heartbeat is not a full graphical responsiveness test.
+The build is not proof of HIG compliance or working physical output.
+
+Contracts and evidence: [document lifecycle](document-lifecycle.md),
+[controller tests](workflow-state-tests.md), [macOS 27 UI audit](macos27-ui-ux-audit.md),
+[updated guide](USER-GUIDE.md), [feature map](legacy-ui-map.md).
+
+Open conditions: conclusive VoiceOver/Inspector acceptance, actual display removal,
+additional scaling/translation cases; physical content-bearing acquisition,
+calibration, prescan/reload, Copy/swap/
+reprint, Command-P, Image Capture, cancel/disconnect and sleep/wake remain opt-in.
+See [the separate physical plan](physical-acceptance-plan.md). Runtime on macOS
+14–26, installed-service upgrade (older eSCL lacks the new idle handshake),
+clean install/uninstall, signed/notarized distribution and owner's licensing/
+source-release decision are unqualified. Private history must not be published
+as-is. No recovery protection was relaxed to enable a demonstration.
+
+## Historical milestone record at software-milestone-2026-09-14
+
+The sections below preserve the previous acceptance record and its dates. Its
+UI observations, package audit and nine-binary count refer to that earlier
+build, not the current ten-binary hardening build. Current document retention
+and screenshot status are defined above.
 
 **Phase not complete.** This software milestone is ready for review and offline
 use. Physical printer work is explicitly deferred until the user says to resume.

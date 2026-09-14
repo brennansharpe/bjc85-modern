@@ -1,0 +1,3 @@
+{"case": "competing native client blocked before USB", "passed": true}
+{"case": "owner crash releases lease without removing inode", "passed": true}
+{"case": "released lease never bypasses offline USB guard", "passed": true}

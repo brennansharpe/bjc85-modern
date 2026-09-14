@@ -1,0 +1,22 @@
+/Users/REDACTED/bjc85-modern/build-hardening-tests/full-resolution.png 2880 3888
+MEASURED full-resolution sharpen + TIFF export: 0.728 seconds; main-run-loop ticks: 37; maximum heartbeat gap: 23.179 ms
+PASS: off-main processing assertion, immutable committed export revision despite edit/obsolete preview cancellation, source pin retained through completion.
+MEASURED full-resolution decode + despeckle: 0.668 seconds
+        1.97 real         1.71 user         0.06 sys
+           295321600  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               26640  page reclaims
+                   2  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  13  voluntary context switches
+                 815  involuntary context switches
+         31804879757  instructions retired
+          5653383597  cycles elapsed
+           240567136  peak memory footprint

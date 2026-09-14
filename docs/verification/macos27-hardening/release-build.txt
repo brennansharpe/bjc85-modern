@@ -1,0 +1,136 @@
+macOS 14 ARM64 dependencies: /Users/REDACTED/bjc85-modern/build-release-deps/install
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/REDACTED/bjc85-modern/build-release
+[ 10%] Built target is12_protocol
+[ 10%] Built target protocol-tests
+[ 13%] Built target is12_calibration
+[ 18%] Built target transfer-tests
+[ 28%] Built target bjc85_transport
+[ 33%] Built target bjc85-render
+[ 37%] Built target is12-stream-tests
+[ 40%] Built target is12_image
+[ 44%] Built target is12-protocol-tests
+[ 47%] Built target bjc85-job-query
+[ 50%] Built target is12-calibration-tests
+[ 55%] Built target bjc85-ipp
+[ 62%] Built target is12_preview
+[ 62%] Built target bjc85-usb
+[ 66%] Built target is12-image-tests
+[ 69%] Built target recovery-guard-tests
+[ 76%] Built target bjc85-is12
+[ 79%] Built target is12-preview-replay
+[ 96%] Built target is12-readiness-tests
+[100%] Built target is12-cancel_race-tests
+Test project /Users/REDACTED/bjc85-modern/build-release
+      Start  1: recovery-guard
+ 1/10 Test  #1: recovery-guard ...................   Passed    0.01 sec
+      Start  2: protocol
+ 2/10 Test  #2: protocol .........................   Passed    0.00 sec
+      Start  3: transfer
+ 3/10 Test  #3: transfer .........................   Passed    0.00 sec
+      Start  4: is12-protocol
+ 4/10 Test  #4: is12-protocol ....................   Passed    0.00 sec
+      Start  5: is12-stream
+ 5/10 Test  #5: is12-stream ......................   Passed    0.00 sec
+      Start  6: is12-image
+ 6/10 Test  #6: is12-image .......................   Passed    0.00 sec
+      Start  7: is12-calibration
+ 7/10 Test  #7: is12-calibration .................   Passed    0.00 sec
+      Start  8: is12-readiness
+ 8/10 Test  #8: is12-readiness ...................   Passed    3.72 sec
+      Start  9: is12-cancel_race
+ 9/10 Test  #9: is12-cancel_race .................   Passed    0.02 sec
+      Start 10: gutenprint-bjc85
+10/10 Test #10: gutenprint-bjc85 .................   Passed    0.06 sec
+
+100% tests passed out of 10
+
+Total Test time (real) =   3.83 sec
+/Users/REDACTED/bjc85-modern/dist/BJC-85 Utility.app/Contents/Frameworks/libcrypto.3.dylib: replacing existing signature
+/Users/REDACTED/bjc85-modern/dist/BJC-85 Utility.app/Contents/Frameworks/libssl.3.dylib: replacing existing signature
+/Users/REDACTED/bjc85-modern/dist/BJC-85 Utility.app/Contents/Frameworks/libusb-1.0.0.dylib: replacing existing signature
+/Users/REDACTED/bjc85-modern/dist/BJC-85 Utility.app/Contents/Helpers/bjc85-ipp: replacing existing signature
+/Users/REDACTED/bjc85-modern/dist/BJC-85 Utility.app/Contents/Helpers/bjc85-is12: replacing existing signature
+/Users/REDACTED/bjc85-modern/dist/BJC-85 Utility.app/Contents/Helpers/bjc85-job-query: replacing existing signature
+/Users/REDACTED/bjc85-modern/dist/BJC-85 Utility.app/Contents/Helpers/bjc85-render: replacing existing signature
+/Users/REDACTED/bjc85-modern/dist/BJC-85 Utility.app/Contents/Helpers/bjc85-usb: replacing existing signature
+/Users/REDACTED/bjc85-modern/dist/BJC-85 Utility.app/Contents/Helpers/is12-escl-bridge: replacing existing signature
+/Users/REDACTED/bjc85-modern/dist/BJC-85 Utility.app: replacing existing signature
+{
+  "bundle": "BJC-85 Utility.app",
+  "checks": "architecture, minimum OS, runtime links, signature, Canon asset exclusion, offline helper execution",
+  "binaries": [
+    {
+      "file": "Contents/MacOS/BJC85Scanner",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Helpers/bjc85-ipp",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Helpers/bjc85-is12",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Helpers/bjc85-job-query",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Helpers/bjc85-render",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Helpers/bjc85-usb",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Helpers/is12-escl-bridge",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Frameworks/libcrypto.3.dylib",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Frameworks/libssl.3.dylib",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    },
+    {
+      "file": "Contents/Frameworks/libusb-1.0.0.dylib",
+      "architecture": "arm64",
+      "minimum_os": [
+        "14.0"
+      ]
+    }
+  ]
+}
+Built: /Users/REDACTED/bjc85-modern/dist/BJC-85 Utility.app (signing identity: -)

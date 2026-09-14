@@ -6,10 +6,11 @@ final class CopyWorkflowView: NSStackView {
     let swap=NSButton(title:L("Continue after cartridge swap…"),target:nil,action:nil)
     let information=RootView.label(L("Scan with IS-12 → retain image → replace cartridge → print. Reprint uses the retained image without another scan."))
     let settings=PrintSettingsView()
+    let edit=NSButton(title:L("Edit retained image"),target:nil,action:nil)
     let brightness=NSSlider(value:0,minValue:-1,maxValue:1,target:nil,action:nil)
     init() { super.init(frame:.zero); orientation = .vertical; alignment = .leading; spacing=12
         brightness.setAccessibilityLabel(L("Copy brightness"))
-        for view in [information,settings,RootView.label(L("Copy brightness")),brightness,copy,swap,reprint,reset] { addArrangedSubview(view) }
+        for view in [information,edit,copy,swap,reprint,settings,reset] { addArrangedSubview(view) }
     }
     required init?(coder:NSCoder) { fatalError("init(coder:) has not been implemented") }
 }

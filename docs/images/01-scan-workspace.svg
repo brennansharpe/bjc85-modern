@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title desc">
+<title id="title">BJC-85 Utility — Scan workspace (illustrative UI mockup)</title><desc id="desc">Crop and adjust a retained document in the current three-pane AppKit workspace. Not a captured screenshot or a hardware-test result.</desc>
+<style>text{font-family:Helvetica,Arial,sans-serif} .icon{fill:none;stroke-linecap:round;stroke-linejoin:round}</style>
+<rect x="0" y="0" width="1440" height="1080" rx="0" fill="#eef1f5" stroke="none" stroke-width="1"/>
+<rect x="28" y="28" width="1384" height="988" rx="14" fill="#fafafa" stroke="#bdc5cf" stroke-width="1"/>
+<clipPath id="windowClip"><rect x="28" y="28" width="1384" height="988" rx="14"/></clipPath><g clip-path="url(#windowClip)">
+<rect x="28" y="28" width="172" height="988" rx="0" fill="#ebedf0" stroke="none" stroke-width="1"/>
+<rect x="200" y="28" width="1212" height="72" rx="0" fill="#e4e7eb" stroke="none" stroke-width="1"/>
+<rect x="1054" y="100" width="358" height="916" rx="0" fill="#f2f3f5" stroke="none" stroke-width="1"/>
+<path d="M200 100H1412" fill="none" stroke="#d5dae1" stroke-width="1"/>
+<path d="M200 100L200 1016" fill="none" stroke="#d5dae1" stroke-width="1"/>
+<path d="M1054 100L1054 1016" fill="none" stroke="#d5dae1" stroke-width="1"/>
+<circle cx="53" cy="60" r="6" fill="#bdc5cf"/>
+<circle cx="77" cy="60" r="6" fill="#bdc5cf"/>
+<circle cx="101" cy="60" r="6" fill="#bdc5cf"/>
+<text x="223" y="58" font-size="19" fill="#242832" font-weight="600" text-anchor="start">BJC-85 Utility — Fixture</text>
+<text x="223" y="80" font-size="12" fill="#626975" font-weight="400" text-anchor="start">Independent BJC-85 / IS-12 project</text>
+<rect x="870" y="43" width="78" height="38" rx="8" fill="#fafafa" stroke="#bdc5cf" stroke-width="1"/>
+<g class="icon" transform="translate(879 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M9 4v16M5 8h1M5 12h1"/></g>
+<g class="icon" transform="translate(917 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><path d="M2 7V4h7l3 3h10v13H2zM2 9h20"/></g>
+<rect x="960" y="43" width="116" height="38" rx="8" fill="#fafafa" stroke="#bdc5cf" stroke-width="1"/>
+<g class="icon" transform="translate(969 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><path d="M9 9L3 3M3 8V3h5M15 15l6 6M16 21h5v-5"/></g>
+<g class="icon" transform="translate(1007 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><circle cx="10" cy="10" r="7"/><path d="M15 15l6 6M9 7l2-1v8M9 14h4"/></g>
+<g class="icon" transform="translate(1045 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><path d="M7 7a7 7 0 0112 3M19 5v5h-5"/><rect x="4" y="11" width="10" height="10" rx="2"/></g>
+<rect x="1088" y="43" width="116" height="38" rx="8" fill="#fafafa" stroke="#bdc5cf" stroke-width="1"/>
+<g class="icon" transform="translate(1097 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><path d="M8 9H4v12h16V9h-4M12 15V2M8 6l4-4 4 4"/></g>
+<g class="icon" transform="translate(1135 51) scale(0.9166666666666666)" stroke="#8a929e" stroke-width="1.6"><path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6zM17 11h1"/></g>
+<g class="icon" transform="translate(1173 51) scale(0.9166666666666666)" stroke="#242832" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M15 4v16M18 8h1M18 12h1"/></g>
+<rect x="40" y="115" width="148" height="38" rx="7" fill="#d8e4f1" stroke="none" stroke-width="1"/>
+<g class="icon" transform="translate(53 123) scale(0.9166666666666666)" stroke="#356da9" stroke-width="1.6"><path d="M4 8l15-4M4 11h16l2 6v3H2v-3zM3 16h18M6 18h1"/></g>
+<text x="88" y="140" font-size="17" fill="#242832" font-weight="600" text-anchor="start">Scan</text>
+<g class="icon" transform="translate(53 170) scale(0.9166666666666666)" stroke="#356da9" stroke-width="1.6"><path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6zM17 11h1"/></g>
+<text x="88" y="187" font-size="17" fill="#242832" font-weight="400" text-anchor="start">Print</text>
+<g class="icon" transform="translate(53 217) scale(0.9166666666666666)" stroke="#356da9" stroke-width="1.6"><path d="M8 7H3v14h12v-4M8 3h8l5 5v9H8zM16 3v5h5"/></g>
+<text x="88" y="234" font-size="17" fill="#242832" font-weight="400" text-anchor="start">Copy</text>
+<g class="icon" transform="translate(53 264) scale(0.9166666666666666)" stroke="#356da9" stroke-width="1.6"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 12h14M12 17v4M7 21h10M9 14h6"/></g>
+<text x="88" y="281" font-size="17" fill="#242832" font-weight="400" text-anchor="start">Device</text>
+<text x="223" y="134" font-size="16" fill="#242832" font-weight="600" text-anchor="start">Fixture · Not connected</text>
+<text x="223" y="158" font-size="14" fill="#626975" font-weight="400" text-anchor="start">Fixture · Synthetic document retained · No physical jobs</text>
+<rect x="219" y="181" width="816" height="771" rx="7" fill="#e3e7ed" stroke="none" stroke-width="1"/>
+<rect x="367" y="211" width="528" height="712.8" rx="0" fill="#cbd2db" stroke="none" stroke-width="1"/>
+<rect x="363" y="206" width="528" height="712.8" rx="0" fill="white" stroke="#cbd2db" stroke-width="1"/>
+<text x="405" y="269" font-size="12" fill="#768394" font-weight="600" text-anchor="start">PAPER / COLOUR / FORM</text>
+<text x="405" y="317" font-size="32" fill="#242832" font-weight="600" text-anchor="start">A study in colour</text>
+<text x="405" y="346" font-size="15" fill="#626975" font-weight="400" text-anchor="start">A sample page for a new chapter.</text>
+<rect x="405" y="379" width="437" height="6" rx="2" fill="#d9dfe7" stroke="none" stroke-width="1"/>
+<rect x="405" y="398" width="414" height="6" rx="2" fill="#d9dfe7" stroke="none" stroke-width="1"/>
+<rect x="405" y="417" width="429" height="6" rx="2" fill="#d9dfe7" stroke="none" stroke-width="1"/>
+<rect x="405" y="468" width="140" height="220" rx="0" fill="#c5dce5" stroke="none" stroke-width="1"/>
+<rect x="557" y="468" width="140" height="220" rx="0" fill="#d9c8de" stroke="none" stroke-width="1"/>
+<rect x="709" y="468" width="140" height="220" rx="0" fill="#e8dfb5" stroke="none" stroke-width="1"/>
+<text x="405" y="723" font-size="11" fill="#626975" font-weight="400" text-anchor="start">01  /  SKY</text>
+<text x="557" y="723" font-size="11" fill="#626975" font-weight="400" text-anchor="start">02  /  LILAC</text>
+<text x="709" y="723" font-size="11" fill="#626975" font-weight="400" text-anchor="start">03  /  OCHRE</text>
+<rect x="405" y="755" width="433" height="6" rx="2" fill="#d9dfe7" stroke="none" stroke-width="1"/>
+<rect x="405" y="774" width="397" height="6" rx="2" fill="#d9dfe7" stroke="none" stroke-width="1"/>
+<rect x="405" y="793" width="421" height="6" rx="2" fill="#d9dfe7" stroke="none" stroke-width="1"/>
+<path d="M405 844H849" fill="none" stroke="#d9dfe7" stroke-width="1"/>
+<text x="405" y="876" font-size="12" fill="#768394" font-weight="400" text-anchor="start">Illustrative document</text>
+<text x="849" y="876" font-size="12" fill="#768394" font-weight="400" text-anchor="end">01</text>
+<path d="M363 206H891V918.8H363Z M396 255.5V783.5H792V255.5Z" fill="#293342" fill-opacity=".2" fill-rule="evenodd"/>
+<rect x="396" y="255.5" width="396" height="528" rx="0" fill="none" stroke="white" stroke-width="5"/>
+<rect x="396" y="255.5" width="396" height="528" rx="0" fill="none" stroke="#356da9" stroke-width="2"/>
+<rect x="392" y="251.5" width="8" height="8" rx="0" fill="#356da9" stroke="none" stroke-width="1"/>
+<rect x="788" y="251.5" width="8" height="8" rx="0" fill="#356da9" stroke="none" stroke-width="1"/>
+<rect x="392" y="779.5" width="8" height="8" rx="0" fill="#356da9" stroke="none" stroke-width="1"/>
+<rect x="788" y="779.5" width="8" height="8" rx="0" fill="#356da9" stroke="none" stroke-width="1"/>
+<text x="223" y="982" font-size="18" fill="#242832" font-weight="600" text-anchor="start">Imported image · revision 4 · not exported</text>
+<text x="223" y="1005" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Selection 6.00 × 8.00 in · 360 dpi · 2 exports</text>
+</g>
+<path d="M1080 124l4 4 4-4" fill="none" stroke="#626975" stroke-width="1.5"/>
+<text x="1097" y="132" font-size="16" fill="#242832" font-weight="600" text-anchor="start">Acquire</text>
+<text x="1080" y="159" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Preset</text>
+<rect x="1080" y="170" width="306" height="32" rx="6" fill="#ffffff" stroke="#bdc5cf" stroke-width="1"/>
+<text x="1092" y="192" font-size="15" fill="#242832" font-weight="400" text-anchor="start">Photo</text>
+<path d="M1364 183l4-4 4 4m-8 6l4 4 4-4" fill="none" stroke="#626975" stroke-width="1.5"/>
+<text x="1080" y="224" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Original preset: colour matching on. Canon</text>
+<text x="1080" y="241" font-size="13" fill="#626975" font-weight="400" text-anchor="start">colour matching is unavailable; this scan</text>
+<text x="1080" y="258" font-size="13" fill="#626975" font-weight="400" text-anchor="start">uses the saved white reference.</text>
+<text x="1080" y="287" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Output mode</text>
+<rect x="1080" y="298" width="306" height="32" rx="6" fill="#ffffff" stroke="#bdc5cf" stroke-width="1"/>
+<text x="1092" y="320" font-size="15" fill="#242832" font-weight="400" text-anchor="start">Colour</text>
+<path d="M1364 311l4-4 4 4m-8 6l4 4 4-4" fill="none" stroke="#626975" stroke-width="1.5"/>
+<text x="1080" y="355" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Resolution for next scan</text>
+<rect x="1080" y="366" width="146" height="32" rx="6" fill="#ffffff" stroke="#bdc5cf" stroke-width="1"/>
+<text x="1092" y="388" font-size="15" fill="#242832" font-weight="400" text-anchor="start">360 dpi</text>
+<path d="M1204 379l4-4 4 4m-8 6l4 4 4-4" fill="none" stroke="#626975" stroke-width="1.5"/>
+<rect x="1080" y="414" width="16" height="16" rx="3" fill="#356da9" stroke="#356da9" stroke-width="1"/>
+<path d="M1083 422l3 3 7-7" fill="none" stroke="white" stroke-width="2"/>
+<text x="1104" y="427" font-size="14" fill="#242832" font-weight="400" text-anchor="start">Sheet fed bottom first</text>
+<rect x="1080" y="446" width="306" height="31" rx="6" fill="#eaedf1" stroke="#d5dae1" stroke-width="1"/>
+<text x="1233.0" y="467" font-size="14" fill="#8a929e" font-weight="400" text-anchor="middle">Scan loaded page…</text>
+<rect x="1080" y="486" width="306" height="31" rx="6" fill="#eaedf1" stroke="#d5dae1" stroke-width="1"/>
+<text x="1233.0" y="507" font-size="14" fill="#8a929e" font-weight="400" text-anchor="middle">Prescan loaded page…</text>
+<text x="1080" y="540" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Prescan ejects the sheet. Reload the same</text>
+<text x="1080" y="557" font-size="13" fill="#626975" font-weight="400" text-anchor="start">original before a final scan. Live</text>
+<text x="1080" y="574" font-size="13" fill="#626975" font-weight="400" text-anchor="start">acquisition preview omits final host</text>
+<text x="1080" y="591" font-size="13" fill="#626975" font-weight="400" text-anchor="start">adjustments.</text>
+<path d="M1080 605H1386" fill="none" stroke="#d5dae1" stroke-width="1"/>
+<path d="M1080 624l4 4 4-4" fill="none" stroke="#626975" stroke-width="1.5"/>
+<text x="1097" y="632" font-size="16" fill="#242832" font-weight="600" text-anchor="start">Crop &amp; orientation</text>
+<rect x="1080" y="648" width="306" height="31" rx="6" fill="#ffffff" stroke="#bdc5cf" stroke-width="1"/>
+<text x="1233.0" y="669" font-size="14" fill="#242832" font-weight="400" text-anchor="middle">Crop dimensions…</text>
+<rect x="1080" y="688" width="306" height="31" rx="6" fill="#ffffff" stroke="#bdc5cf" stroke-width="1"/>
+<text x="1233.0" y="709" font-size="14" fill="#242832" font-weight="400" text-anchor="middle">Clear selection</text>
+<rect x="1080" y="728" width="306" height="31" rx="6" fill="#ffffff" stroke="#bdc5cf" stroke-width="1"/>
+<text x="1233.0" y="749" font-size="14" fill="#242832" font-weight="400" text-anchor="middle">Rotate clockwise</text>
+<text x="1080" y="782" font-size="13" fill="#626975" font-weight="400" text-anchor="start">Selection is host cropping after full-page</text>
+<text x="1080" y="799" font-size="13" fill="#626975" font-weight="400" text-anchor="start">acquisition. The lossless master stays</text>
+<text x="1080" y="816" font-size="13" fill="#626975" font-weight="400" text-anchor="start">unchanged.</text>
+<path d="M1080 828H1386" fill="none" stroke="#d5dae1" stroke-width="1"/>
+<path d="M1080 847l4 4 4-4" fill="none" stroke="#626975" stroke-width="1.5"/>
+<text x="1097" y="855" font-size="16" fill="#242832" font-weight="600" text-anchor="start">Adjustments</text>
+<text x="1080" y="880" font-size="14" fill="#626975" font-weight="400" text-anchor="start">Brightness</text>
+<path d="M1082 897H1374" fill="none" stroke="#bbc3ce" stroke-width="4"/>
+<path d="M1082 897H1228" fill="none" stroke="#356da9" stroke-width="4"/>
+<circle cx="1228" cy="897" r="8" fill="#ffffff" stroke="#bdc5cf"/>
+<text x="1080" y="926" font-size="14" fill="#626975" font-weight="400" text-anchor="start">Contrast</text>
+<path d="M1082 943H1374" fill="none" stroke="#bbc3ce" stroke-width="4"/>
+<path d="M1082 943H1228" fill="none" stroke="#356da9" stroke-width="4"/>
+<circle cx="1228" cy="943" r="8" fill="#ffffff" stroke="#bdc5cf"/>
+<text x="1080" y="972" font-size="14" fill="#626975" font-weight="400" text-anchor="start">B&amp;W threshold</text>
+<path d="M1082 989H1374" fill="none" stroke="#bbc3ce" stroke-width="4"/>
+<path d="M1082 989H1228" fill="none" stroke="#356da9" stroke-width="4"/>
+<circle cx="1228" cy="989" r="8" fill="#ffffff" stroke="#bdc5cf"/>
+<rect x="1400" y="114" width="4" height="645" rx="2" fill="#bbc3ce" stroke="none" stroke-width="1"/>
+<text x="29" y="1050" font-size="14" fill="#242832" font-weight="600" text-anchor="start">01 / Scan workspace</text>
+<text x="1411" y="1050" font-size="13" fill="#626975" font-weight="400" text-anchor="end">Illustrative UI mockup · Synthetic content · 14 Sep 2026</text>
+</svg>

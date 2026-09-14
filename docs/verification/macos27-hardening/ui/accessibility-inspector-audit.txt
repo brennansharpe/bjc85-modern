@@ -1,0 +1,29 @@
+Window: "", App: Accessibility Inspector.
+0 dialog Secondary Actions: Raise
+	1 button Run Audit
+	2 button Options
+	3 split group
+		4 scroll area
+			5 outline
+				6 column (selectable) Table Column
+		7 splitter (disabled, settable, float) 611
+		8 image screenshot
+	9 button Clear Warnings
+	10 toolbar
+		11 list Description: Device Target, Secondary Actions: Move next, Remove from toolbar
+		12 radio button Description: inspector, Help: Inspection, Value: 0
+		13 radio button Description: audit, Help: Audit, Value: 1
+		14 radio button Description: settings, Help: Settings, Value: 0
+	15 close button
+	16 zoom button
+	17 minimize button
+18 menu bar
+	19 Accessibility Inspector
+	20 File
+	21 Edit
+	22 Inspection
+	23 View
+	24 Window
+	25 Help
+
+The focused UI element is 5 outline

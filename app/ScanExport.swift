@@ -19,30 +19,43 @@ enum ScanExport {
     }
 
     static func write(source: URL, destination: URL) throws {
-        let input = try Data(contentsOf: source)
-        guard let imageSource = CGImageSourceCreateWithData(input as CFData, nil),
-              let image = CGImageSourceCreateImageAtIndex(imageSource, 0, nil) else { throw CocoaError(.fileReadCorruptFile) }
-        let resolution = try dpi(of: source)
-        let output: Data
+        guard let input = CGImageSourceCreateWithURL(source as CFURL, nil),
+              let image = CGImageSourceCreateImageAtIndex(input, 0, nil) else { throw CocoaError(.fileReadCorruptFile) }
+        let resolution=try dpi(of:source), ext=destination.pathExtension.lowercased()
+        if ext == "png", CGImageSourceGetType(input) as String? == "public.png" {
+            // Preserve one-bit PNG representation: ImageIO's decoded CGImage
+            // may expand it to eight bits even though its pixels are unchanged.
+            try Data(contentsOf:source).write(to:destination,options:.atomic)
+        } else if ["tiff","tif"].contains(ext) {
+            let data=NSMutableData()
+            guard let writer=CGImageDestinationCreateWithData(data as CFMutableData,"public.tiff" as CFString,1,nil) else { throw CocoaError(.fileWriteUnknown) }
+            CGImageDestinationAddImageFromSource(writer,input,0,[kCGImagePropertyDPIWidth:resolution,kCGImagePropertyDPIHeight:resolution,kCGImagePropertyTIFFDictionary:[kCGImagePropertyTIFFCompression:5]] as CFDictionary)
+            guard CGImageDestinationFinalize(writer) else { throw CocoaError(.fileWriteUnknown) }
+            try (data as Data).write(to:destination,options:.atomic)
+        } else { try write(image:image,dpi:resolution,destination:destination) }
+        guard FileManager.default.isReadableFile(atPath:destination.path) else { throw CocoaError(.fileReadCorruptFile) }
+    }
+    static func write(image: CGImage, dpi: Double, destination: URL, cancelled: () -> Bool = { false }) throws {
+        guard dpi.isFinite, dpi > 0 else { throw CocoaError(.fileWriteUnknown) }
+        let data = NSMutableData()
         switch destination.pathExtension.lowercased() {
-        case "png": output = input
-        case "tif", "tiff":
-            let data = NSMutableData()
-            guard let writer = CGImageDestinationCreateWithData(data as CFMutableData, "public.tiff" as CFString, 1, nil) else { throw CocoaError(.fileWriteUnknown) }
-            CGImageDestinationAddImageFromSource(writer, imageSource, 0, [kCGImagePropertyDPIWidth: resolution,
-                kCGImagePropertyDPIHeight: resolution,
+        case "png", "tif", "tiff":
+            let uti = destination.pathExtension.lowercased() == "png" ? "public.png" : "public.tiff"
+            guard let writer = CGImageDestinationCreateWithData(data as CFMutableData, uti as CFString, 1, nil) else { throw CocoaError(.fileWriteUnknown) }
+            CGImageDestinationAddImage(writer, image, [kCGImagePropertyDPIWidth: dpi, kCGImagePropertyDPIHeight: dpi,
                 kCGImagePropertyTIFFDictionary: [kCGImagePropertyTIFFCompression: 5]] as CFDictionary)
             guard CGImageDestinationFinalize(writer) else { throw CocoaError(.fileWriteUnknown) }
-            output = data as Data
         case "pdf":
-            let data = NSMutableData()
-            var bounds = CGRect(x: 0, y: 0, width: Double(image.width)*72/resolution, height: Double(image.height)*72/resolution)
+            var bounds = CGRect(x: 0, y: 0, width: Double(image.width)*72/dpi, height: Double(image.height)*72/dpi)
             guard let consumer = CGDataConsumer(data: data as CFMutableData),
                   let context = CGContext(consumer: consumer, mediaBox: &bounds, nil) else { throw CocoaError(.fileWriteUnknown) }
             context.beginPDFPage(nil); context.draw(image, in: bounds); context.endPDFPage(); context.closePDF()
-            output = data as Data
         default: throw CocoaError(.fileWriteInapplicableStringEncoding)
         }
-        try output.write(to: destination, options: .atomic)
+        // Atomic write never exposes partial encoding or truncates a good output on failure.
+        if cancelled() { throw CancellationError() }
+        try (data as Data).write(to: destination, options: .atomic)
+        guard FileManager.default.isReadableFile(atPath: destination.path),
+              (try Data(contentsOf: destination, options: .mappedIfSafe)).count == data.length else { throw CocoaError(.fileReadCorruptFile) }
     }
 }

@@ -1,0 +1,98 @@
+[
+  {
+    "file": "01-scan-workspace.svg",
+    "png": "01-scan-workspace.png",
+    "title": "Scan workspace",
+    "description": "Crop and adjust a retained document in the current three-pane AppKit workspace.",
+    "kind": "illustrative-ui-mockup",
+    "svg_size": [
+      1440,
+      1080
+    ],
+    "png_size": [
+      2880,
+      2160
+    ],
+    "date": "2026-09-14"
+  },
+  {
+    "file": "02-print-workspace.svg",
+    "png": "02-print-workspace.png",
+    "title": "Print workspace",
+    "description": "Letter paper, copies, colour, quality and explicit print-job controls.",
+    "kind": "illustrative-ui-mockup",
+    "svg_size": [
+      1440,
+      1080
+    ],
+    "png_size": [
+      2880,
+      2160
+    ],
+    "date": "2026-09-14"
+  },
+  {
+    "file": "03-copy-workflow.svg",
+    "png": "03-copy-workflow.png",
+    "title": "Copy workflow",
+    "description": "A synthetic retained copy at the ready-to-print stage; physical actions are disabled in fixture mode.",
+    "kind": "illustrative-ui-mockup",
+    "svg_size": [
+      1440,
+      1080
+    ],
+    "png_size": [
+      2880,
+      2160
+    ],
+    "date": "2026-09-14"
+  },
+  {
+    "file": "04-device-workspace.svg",
+    "png": "04-device-workspace.png",
+    "title": "Device workspace",
+    "description": "Connection, calibration guidance and recovery information beside the retained document.",
+    "kind": "illustrative-ui-mockup",
+    "svg_size": [
+      1440,
+      1080
+    ],
+    "png_size": [
+      2880,
+      2160
+    ],
+    "date": "2026-09-14"
+  },
+  {
+    "file": "05-dark-workspace.svg",
+    "png": "05-dark-workspace.png",
+    "title": "Dark Mode",
+    "description": "The same Scan workspace in a dark palette, keeping the document paper white.",
+    "kind": "illustrative-ui-mockup",
+    "svg_size": [
+      1440,
+      1080
+    ],
+    "png_size": [
+      2880,
+      2160
+    ],
+    "date": "2026-09-14"
+  },
+  {
+    "file": "06-privacy-settings.svg",
+    "png": "06-privacy-settings.png",
+    "title": "Privacy & storage",
+    "description": "The separate Settings window with diagnostic retention off and document-storage policy.",
+    "kind": "illustrative-ui-mockup",
+    "svg_size": [
+      1440,
+      1080
+    ],
+    "png_size": [
+      2880,
+      2160
+    ],
+    "date": "2026-09-14"
+  }
+]

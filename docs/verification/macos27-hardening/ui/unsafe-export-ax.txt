@@ -1,0 +1,66 @@
+Window: "BJC-85 Utility — Fixture", App: BJC-85 Utility.
+0 standard window BJC-85 Utility — Fixture – Independent BJC-85 / IS-12 project, Secondary Actions: Raise
+	1 split group
+		2 scroll area Secondary Actions: Scroll Up, Scroll Down
+			3 table Workspaces
+				4 row (selectable)
+					5 cell
+						6 image Document scanner
+						7 text Scan
+				8 row (selectable)
+					9 cell
+						10 image print
+						11 text Print
+				12 row (selectable)
+					13 cell
+						14 image Document overlapping another document
+						15 text Copy
+				16 row (selected)
+					17 cell (selected)
+						18 image External drive connected to a line below
+						19 text Device
+			20 scroll bar (disabled, settable, float) 0
+		21 splitter (disabled, settable, float) 145
+		22 text Fixture · Not connected Choose an export folder outside the utility’s private document, diagnostic and recovery storage.
+		23 image Description: Scanned page and crop selection, Value: Fit Page. Crop: 2.05, 0.50 inches; 8.00 × 6.00 inches, Help: Drag to select or move a region. Arrow keys move it; Shift moves ten pixels. Use Crop Dimensions in the View menu for a numeric selection. Clear Selection restores the page.
+		24 text Imported image · revision 8 · not exported Selection 8.00 × 6.00 in · 360 dpi · 3 exports
+		25 splitter (disabled, settable, float) 706
+		26 scroll area Secondary Actions: Scroll Up, Scroll Down
+			27 text Device
+			28 button (disabled) Connect scanner
+			29 button (disabled) Prepare printing…
+			30 button (disabled) Open Image Capture
+			31 text Scanner readiness is detected by native status replies. A BC-11e print cartridge is operator-confirmed; no automatic cartridge or ink-level detection is claimed.
+			32 button (disabled) Import white reference…
+			33 button Calibration guidance…
+			34 button Show private files
+			35 text Recovery & maintenance If recovery is required, preserve the capture and inspect the printer before any further physical work. Restarting never clears a recovery marker.
+			36 button (disabled) Recheck device availability
+			37 text Cleaning, deep cleaning, alignment and ink levels are unavailable until verified. The historical black-ink delivery fault is separate from driver outcomes. Independent BJC-85 / IS-12 utility. No Canon endorsement, executables, or artwork.
+			38 scroll bar (disabled, settable, float) 0
+	39 toolbar
+		40 button Description: Sidebar, Secondary Actions: Move next, Remove from toolbar
+		41 button Description: Open Image, Secondary Actions: Move previous, Move next, Remove from toolbar
+		42 button Description: Fit Page, Secondary Actions: Move previous, Move next, Remove from toolbar
+		43 button Description: 100%, Secondary Actions: Move previous, Move next, Remove from toolbar
+		44 button Description: Rotate, Secondary Actions: Move previous, Move next, Remove from toolbar
+		45 button Description: Export, Secondary Actions: Move previous, Move next, Remove from toolbar
+		46 button (disabled) Description: Print, Secondary Actions: Move previous, Move next, Remove from toolbar
+		47 button Description: Inspector, Secondary Actions: Move previous, Remove from toolbar
+	48 close button
+	49 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	50 minimize button
+	51 text BJC-85 Utility — Fixture Independent BJC-85 / IS-12 project
+52 menu bar
+	53 BJC-85 Utility
+	54 File
+	55 Edit
+	56 View
+	57 Device
+	58 Window
+	59 Help
+
+Selected:
+	16 row (selected)
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).
