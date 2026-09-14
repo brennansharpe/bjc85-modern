@@ -1,5 +1,14 @@
 # Third-party components and research material
 
+## Repository privacy cleanup — 2026-09-14
+
+The initial GitHub upload included private identifiers in the evidence and Git
+metadata. The source tree and reachable history have since been sanitized; see
+[the cleanup scope and verification](docs/REPOSITORY-PRIVACY.md). Earlier audit
+records below describe the state before this cleanup. Sanitized evidence is a
+derivative, and original local evidence must not be uploaded or merged back.
+Dependency licensing and distribution obligations below still apply.
+
 ## Hardening and macOS 27 pass — 2026-09-14
 
 This pass retains the dependency versions and source pins below. The new
@@ -13,8 +22,9 @@ present in current and historical evidence. Seven redacted draft evidence files
 were created separately under `tmp/redacted-evidence-macos27/`, with source and
 derivative SHA-256 hashes in `provenance.json`; originals and Git history were
 left untouched. These are review derivatives, not a published/source-release
-approval. `scripts/audit-source-privacy.py` reproduces the bounded pattern audit;
-it is not an exhaustive secret or legal-compliance assessment. See
+approval. `scripts/audit-source-privacy.py` now runs the broader repository check;
+it is not an exhaustive secret or legal-compliance assessment. The historical
+bounded audit is recorded in
 `docs/verification/macos27-hardening/source-privacy-audit.json`.
 
 Production eSCL discovery now uses a private, stable random installation UUID
@@ -22,7 +32,8 @@ instead of a hardcoded test serial/shared UUID. Local calibration validation
 still uses the physical identity as required by the existing engine. Historical
 research/discovery experiments are not part of the bundle. Canon installers,
 artwork, decompilation outputs and private captures remain excluded from
-distributable artifacts. Do not publish this repository's history as-is.
+distributable artifacts. That original history required privacy cleanup before
+distribution; never reintroduce it from a backup or an older clone.
 
 ## Utility 0.2.0 release build — 2026-09-14
 

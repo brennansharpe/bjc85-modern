@@ -33,7 +33,7 @@ with tempfile.TemporaryDirectory(prefix='is12-bw-output-') as temporary:
         expected=[255 if value >= 128 else 0 for value in values]
         if rotate: expected.reverse()
         assert output.mode == '1' and list(output.convert('L').tobytes()) == expected
-    source = root / '.state/escl-jobs/00000000-0000-4000-8000-00000000000B/capture'
+    source = Path(os.environ.get('BJC85_BW_CAPTURE', root / '.state/replay-fixtures/gray-360'))
     destination = directory / 'full-page-bw.png'
     subprocess.run([helper,'image',source/'records.bin',destination,'--dpi','360','--mode','bw'],check=True,capture_output=True)
     output=Image.open(destination)

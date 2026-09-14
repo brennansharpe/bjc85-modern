@@ -19,6 +19,18 @@
 /scans/
 /dist/
 /output/
+/private-evidence/
+*.bundle
+# Original desktop screenshots with local machine labels are local-only.
+/docs/verification/macos27-hardening/ui/accessibility-inspector-audit.png
+# Credentials and local environment configuration must never enter source history.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.p8
 /*.pdf
 /*.docx
 *.DS_Store

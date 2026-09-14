@@ -135,11 +135,12 @@ switching, or device command occurs as part of the build.
   delivery (or 24-hour expiry if undelivered, checked hourly); raw print spool after safe completion. Ambiguous captures remain
   available for recovery. Active/unsaved/Copy documents are protected; closed,
   exported documents may expire after seven days. Import quotas are documented.
-  Existing research/baseline captures and Git history are untouched.
+  Runtime retention excludes existing research/baseline captures. Repository
+  evidence was separately sanitized as described in the [privacy record](docs/REPOSITORY-PRIVACY.md).
 
 ## Baseline and verification
 
-Git tag `native-hardware-baseline-2026-09-14` (`native-hardware-baseline-2026-09-14`) freezes the previous
+Git tag `native-hardware-baseline-2026-09-14` freezes the previous
 working source. Its [historical development guide](docs/DEVELOPMENT-BASELINE.md)
 retains the original tool and URF-fixture commands.
 

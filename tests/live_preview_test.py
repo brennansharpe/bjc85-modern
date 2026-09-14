@@ -1,5 +1,6 @@
 """Compare streamed preview bytes with independent decoding of real captures."""
 import json
+import os
 from pathlib import Path
 import runpy
 import struct
@@ -13,7 +14,7 @@ decode = runpy.run_path(str(root / 'scripts/decode-is12-scan.py'))['decode']
 cases = [
     ('.state/is12-scan-004', 90, 'color'),
     ('.state/is12-scan-006', 180, 'color'),
-    ('.state/scanner-app/scan-00000000-0000-4000-8000-00000000000F', 360, 'color'),
+    (os.environ.get('BJC85_COLOR_360_CAPTURE', '.state/replay-fixtures/color-360'), 360, 'color'),
     ('.state/is12-scan-008', 90, 'gray'),
     ('.state/is12-scan-010', 90, 'lineart'),
     ('.state/is12-scan-012', 360, 'bw'),
