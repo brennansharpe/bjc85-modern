@@ -7,7 +7,9 @@ project-owned source, documentation and mockups only; third-party components
 retain their own terms and required credits. No new licence is selected here.
 The dated build and review records below are historical, not current clearance.
 [Publication readiness](docs/publication-readiness.md) supersedes their release
-and privacy status. Cached original GitHub objects remain a publication gate.
+and privacy status. The repository is now public source alpha. Residual historical-object retention
+and an owner/support decision remain unresolved; public visibility is not
+server-side erasure, legal clearance or a binary-release qualification.
 
 The source repository contains original interoperability/application code,
 protocol descriptions, metadata-only research provenance and bounded hardware

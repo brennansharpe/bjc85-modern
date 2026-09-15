@@ -4,7 +4,7 @@
 
 - Name: `bjc85-modern`
 - Owner: `brennansharpe`
-- Visibility: **Private pending the publication gates** in [publication readiness](publication-readiness.md).
+- Visibility: **Public source alpha; residual historical-object follow-up is recorded** in [publication readiness](publication-readiness.md).
 - Display name in the README: **BJC-85 Utility**
 
 ## About description
@@ -26,7 +26,7 @@ in the verification records.
 
 ## Scope
 
-This is preparation for public source-alpha publication of this exact repository.
+This exact repository is public source alpha.
 It contains no app, installer, dependency archive or release package. Build
 outputs, local runtime state, original Canon downloads, extracted resources
 and private scan directories are excluded by the existing `.gitignore`.

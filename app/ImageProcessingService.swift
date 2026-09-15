@@ -24,8 +24,7 @@ final class ImageProcessingService: @unchecked Sendable {
     }
     static func render(_ snapshot: DocumentSnapshot, fullPage: Bool = false, ticket: ProcessingTicket) throws -> CGImage {
         precondition(!Thread.isMainThread, "Full-resolution processing must run off the main thread")
-        guard let input = CGImageSourceCreateWithURL(snapshot.master as CFURL, nil),
-              let original = CGImageSourceCreateImageAtIndex(input, 0, nil) else { throw DocumentError.corrupt }
+        let (original,_)=try RasterImport.decode(snapshot.master)
         let edits = snapshot.document.edits
         return try ScanProcessing.render(source: original, region: fullPage ? .fullPage : edits.region,
             adjustments: edits.adjustments, blackAndWhite: edits.imageType == .blackAndWhite,

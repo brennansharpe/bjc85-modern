@@ -130,7 +130,7 @@ captures without an import receipt remain protected. Existing research/test
 evidence is untouched. eSCL deletes delivered content; undelivered successful
 documents expire after 24 hours. Native print spool is removed after safe transfer.
 
-Closed, exported document revisions can expire after seven days. Unexported,
+Retained masters require explicit confirmed disposal, even after export. Unexported,
 active or Copy-owned documents remain until released/discarded. New imports
 stop at 100 documents or 2 GiB of compressed masters; this limit excludes recovery
 evidence and explicitly retained diagnostics. Private storage is under
@@ -153,3 +153,12 @@ Physical acceptance requires a separate explicit authorization; see
 [the opt-in plan](physical-acceptance-plan.md). This implementation did not scan,
 feed paper, calibrate, clean, change cartridges or submit a real print job.
 For installation, relocation and signing gates, see [RELEASE.md](RELEASE.md).
+
+### Recovering storage failures
+
+Retained Documents lists healthy pages even when another entry is damaged. Files
+from damaged entries and deferred captures remain preserved and count toward
+storage limits. Export and deliberately discard healthy pages to make room, then
+choose File → Retry Recovery. This restores completed documents without starting
+a scan or print. File → Retry Saving retries unsaved work after storage repair;
+Quit also drains queued writes. Restoration warnings alone do not block Quit.

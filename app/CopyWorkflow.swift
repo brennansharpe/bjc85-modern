@@ -49,9 +49,8 @@ struct CopyWorkflow: Sendable {
     private struct Session: Codable { let schema: Int; let image: URL; let documentID: UUID?; let stage: Stage; let attemptID: UUID? }
     func saveSession(to file: URL) throws {
         if let image {
-            try JSONEncoder().encode(Session(schema: 2, image: image, documentID: documentID, stage: stage, attemptID: attemptID)).write(to: file, options: .atomic)
-            try FileManager.default.setAttributes([.posixPermissions: 0o600], ofItemAtPath: file.path)
-        } else if FileManager.default.fileExists(atPath: file.path) { try FileManager.default.removeItem(at: file) }
+            try DiskReceiptStorage().replace(try JSONEncoder().encode(Session(schema: 2, image: image, documentID: documentID, stage: stage, attemptID: attemptID)),at:file)
+        } else if FileManager.default.fileExists(atPath: file.path) { try DiskReceiptStorage().restore(nil,at:file) }
     }
     mutating func restoreSession(from file: URL, within root: URL) throws {
         guard FileManager.default.fileExists(atPath: file.path) else { return }

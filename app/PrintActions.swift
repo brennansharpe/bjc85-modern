@@ -2,7 +2,7 @@ import AppKit
 
 extension UtilityWindowController {
     @objc func preparePrinting() {
-        guard !busy, !fixture, model.coordinator.state != .recoveryRequired, let window else { return }
+        guard runtimeReady, !busy, !fixture, model.coordinator.state != .recoveryRequired, let window else { return }
         if model.coordinator.state == .printerReady { _=model.copy.printerConfirmed(); saveCopySession(); updateControls(); return }
         // Opening or canceling the sheet has no coordinator side effect.
         let alert=CartridgeSwapView.sheet()
@@ -44,7 +44,7 @@ extension UtilityWindowController {
         submitDocument(document,copy:true,settings:copyControls.settings.settings)
     }
     func submitDocument(_ document:ScanDocument, copy:Bool, settings:PrintSettings) {
-        guard settings.isValid, !busy, !documentBusy, !fixture, let store, let tracker, latestJob?.outstanding != true else { updateControls(); return }
+        guard runtimeReady, settings.isValid, !busy, !documentBusy, !fixture, let store, let tracker, (latestJob?.outstanding != true || tracker.mayRetryPreflight) else { updateControls(); return }
         guard model.coordinator.state == .printerReady else { preparePrinting(); return }
         let attempt=UUID(), ticket=ProcessingTicket()
         do {
@@ -62,11 +62,15 @@ extension UtilityWindowController {
                     let pdf=try result.get()
                     guard self.model.coordinator.requestPrint() else { self.updateControls(); return }
                     if copy { guard self.model.copy.beginPrint(id:attempt) != nil else { self.model.coordinator.preflightRefused(); self.updateControls(); return } }
-                    self.serviceBusy=true; self.saveCopySession(); self.updateControls()
-                    self.processing.perform(work: { try tracker.submit(pdf,settings:settings,document:document.id,copy:copy,attempt:attempt,revision:document.revision) }) { [weak self] value in
+                    self.serviceBusy=true; self.updateControls()
+                    let copyState=self.model.copy
+                    self.processing.perform(work: {
+                        if copy { try store.commitCopy(copyState) }
+                        return try tracker.submit(pdf,settings:settings,document:document.id,copy:copy,attempt:attempt,revision:document.revision) }) { [weak self] value in
                         guard let self else { return }; self.serviceBusy=false
                         do { self.latestJob=try value.get(); self.layout.status.stringValue=self.latestJob!.result.label; self.recheckJob() }
                         catch {
+                            self.latestJob=tracker.record
                             self.model.coordinator.preflightRefused()
                             if copy { self.model.copy.printFinished(.rejected,safe:true,attempt:attempt); self.saveCopySession() }
                             self.report(error)
@@ -114,16 +118,16 @@ extension UtilityWindowController {
         updateControls()
     }
     func saveCopySession() {
-        let copy=model.copy, destination=state.appendingPathComponent("copy-session.json")
-        processing.perform(work: { try copy.saveSession(to:destination) }) { [weak self] result in if case .failure(let error)=result { self?.savingError=error.localizedDescription; self?.report(error) } }
+        guard let store else { return }
+        let copy=model.copy
+        persistResource("copy") { try store.commitCopy(copy) }
     }
     @objc func resetCopy() {
         guard copyControls.reset.isEnabled else { return }
         let retained=model.copy.documentID
         guard model.copy.reset() else { return }
         saveCopySession()
-        if document?.id == retained, let retained { document?.retainedCopies.remove(retained); persistDocument() }
-        else if let retained, let store { processing.perform(work: { var value=try store.load(retained); value.retainedCopies.remove(retained); try store.save(value) }) { [weak self] result in if case .failure(let error)=result { self?.report(error) } } }
+        if document?.id == retained, let retained { document?.retainedCopies.remove(retained) }
         layout.status.stringValue="Copy session released. Its editable document remains in Retained Documents."; updateControls()
     }
     @objc func editCopy() {

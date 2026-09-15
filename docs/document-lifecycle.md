@@ -54,9 +54,11 @@ only; the latest persisted edits restore. Corrupt document metadata fails closed
 and preserves files for inspection; there is no automatic destructive repair.
 
 On startup, safe `image_complete` legacy app captures without an import receipt
-are migrated to document masters. The normal import path is idempotent. A crash
-between master import and its receipt can leave a duplicate retained document;
-neither source is discarded. Incomplete or uncertain captures are not imported
+are migrated to document masters. The normal import path is idempotent. A versioned host intent beside the helper-owned capture directory fixes the
+document identity, acquisition facts, edits and Copy association before launch.
+Import/receipt reconciliation uses that identity after interruption, without
+replaying acquisition. Recognized legacy captures retain unknown orientation
+as unknown, and acquire a durable migration identity before import. Incomplete or uncertain captures are not imported
 as successful scans. URL-only legacy Copy PDFs migrate to an explicitly
 rasterized document, preserving the original PDF and requiring fresh cartridge
 confirmation. Recovery markers are never cleared by these migrations.
@@ -93,11 +95,15 @@ captures may then be removed without waiting for export. Diagnostic deletion
 preserves unimported legacy captures, Copy/master data and unresolved recovery.
 eSCL delivery cleanup and its 24-hour undelivered-success expiry remain separate.
 
-Closed documents whose current revision was exported can expire after seven
-days, checked at startup and diagnostic cleanup. Active, unexported, Copy-owned
-and worker-pinned documents never expire automatically. Imports stop at 100
-documents or 2 GiB of compressed masters; users can export/discard old documents
-to make room. This quota does not include unresolved recovery evidence, explicit
+Retained masters never expire automatically. An export receipt, including a
+current-revision receipt for an existing file, is not consent to dispose of a
+master. Only explicit confirmed Discard removes it. Diagnostic cleanup and
+migration never turn on document expiry. Imports stop at 100 UUID entries or
+2 GiB of retained data (including corrupt/partial entries); export and deliberate
+discard free space. Damaged entries remain visible as recovery warnings, and
+healthy documents remain usable. Quota-blocked captures remain pending; Retry
+Recovery imports them after space is freed without duplicating a prior import.
+This quota does not include unresolved recovery evidence, explicit
 diagnostic retention, print staging, legacy research or external exports. Those
 are intentionally not erased to satisfy a quota. No promise of an overall disk
 quota is made. See Settings for the retention choice and File → Retained
@@ -106,3 +112,22 @@ Documents to reopen saved sessions.
 Tests: `tests/document_pipeline_test.swift`, `tests/processing_worker_test.swift`,
 `tests/privacy_retention_test.swift`; results are in
 [the acceptance ledger](release-acceptance.md).
+
+## Raster import budget
+
+Before full decode, raster metadata is checked on the same immutable byte snapshot
+used for decoding: positive integral dimensions up to 20,000 per side, supported
+1/2/4/8/16-bit depth, at most 100 million pixels and 512 MiB estimated working
+memory at 40 bytes/pixel. The memory limit is stricter than the pixel limit.
+Compressed input is separately capped at 128 MiB. Container dimensions (PNG IHDR, JPEG SOF and classic TIFF IFD) are checked
+independently of ImageIO metadata before eager decode; unsupported BigTIFF is
+rejected explicitly. PNG/JPEG/TIFF retain the first
+image/frame; single-page PDF keeps its explicit rasterization policy. Actual
+decoded dimensions/depth are revalidated; imports are never silently downsampled.
+
+Copy session state is authoritative; document ownership markers reconcile only
+after readable job/session state and recovery inspection. Outstanding jobs keep
+their document protected. An uncertain receipt is never converted into an empty
+tracker. Nonfatal restoration warnings are distinct from failed writes of current
+work. Retry Saving retries each unresolved resource; normal Quit drains those
+writes asynchronously and exits only if all required writes succeed.

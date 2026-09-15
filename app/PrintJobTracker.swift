@@ -37,19 +37,35 @@ final class PrintJobTracker: @unchecked Sendable {
     let file: URL
     private let queue: PrintQueueAccess
     private let now: () -> Date
+    private let storage: ReceiptStorage
+    private var rollback: (record: PrintJobRecord?, data: Data?)?
+    var mayRetryPreflight: Bool { rollback != nil }
     private(set) var record: PrintJobRecord?
-    init(file: URL, queue: PrintQueueAccess, now: @escaping () -> Date = Date.init) throws {
-        self.file=file; self.queue=queue; self.now=now
+    init(file: URL, queue: PrintQueueAccess, now: @escaping () -> Date = Date.init, storage: ReceiptStorage = DiskReceiptStorage()) throws {
+        self.file=file; self.queue=queue; self.now=now; self.storage=storage
         if FileManager.default.fileExists(atPath:file.path) { record=try JSONDecoder().decode(PrintJobRecord.self,from:Data(contentsOf:file)) }
     }
     private func persist() throws {
-        try JSONEncoder().encode(record).write(to:file,options:.atomic)
-        try FileManager.default.setAttributes([.posixPermissions:0o600],ofItemAtPath:file.path)
+        try storage.replace(try JSONEncoder().encode(record), at:file)
     }
     @discardableResult func submit(_ image: URL, settings: PrintSettings, document: UUID?, copy: Bool, attempt: UUID, revision: Int? = nil) throws -> PrintJobRecord {
+        // Only this live instance can prove that its failed preflight never
+        // reached the queue. A restart with an unknown receipt stays blocked.
+        if let previous=rollback {
+            try storage.restore(previous.data, at:file)
+            record=previous.record; rollback=nil
+        }
         guard settings.isValid, record?.outstanding != true else { throw CocoaError(.validationMissingMandatoryProperty) }
+        let previous=record
+        let previousData=try storage.read(file)
         record = PrintJobRecord(attempt:attempt,document:document,revision:revision,isCopy:copy,destination:"BJC85_Native",created:now(),jobID:nil,result:.unknown,reasons:["Submission has not been reconciled"])
-        try persist()
+        do { try persist() }
+        catch {
+            rollback=(previous,previousData)
+            do { try storage.restore(previousData,at:file); record=previous; rollback=nil }
+            catch { throw PrintSubmissionFailure.refusedBeforeAcceptance("No job was submitted. Receipt storage could not be restored; repair storage and explicitly retry in this session. A restarted session must preserve the unresolved receipt.") }
+            throw PrintSubmissionFailure.refusedBeforeAcceptance("No job was submitted. Repair receipt storage and explicitly retry.")
+        }
         do {
             let id=try queue.submit(image,settings:settings)
             record?.jobID=id; record?.result = .pending; record?.reasons=[]
@@ -68,7 +84,12 @@ final class PrintJobTracker: @unchecked Sendable {
         do { let status=try queue.query(destination:value.destination,id:id); value.result=status.result; value.reasons=status.reasons }
         catch { value.result = .unknown; value.reasons=[error.localizedDescription] }
         guard record?.attempt == value.attempt else { return record }
-        record=value; try persist(); return value
+        record=value
+        do { try persist() } catch {
+            record?.result = .unknown; record?.reasons.append("Reconciliation could not be saved. Recheck before any new job.")
+            throw error
+        }
+        return value
     }
     func cancel() throws {
         guard let record, record.outstanding, let id=record.jobID else { return }

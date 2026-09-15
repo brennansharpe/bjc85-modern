@@ -19,14 +19,21 @@ final class ServiceTransitionController {
             throw NSError(domain:"BJC85",code:1,userInfo:[NSLocalizedDescriptionKey:L("The device is busy or requires recovery. Service switching is blocked.")])
         }
     }
+    /// Only the canonical localhost URI is owned. No DNS/alias normalization,
+    /// percent decoding, credentials, alternate ports, queries or fragments.
+    static func ownsQueue(_ output: String) -> Bool {
+        guard output.utf8.count <= 4096 else { return false }
+        return output == "device for BJC85_Native: ipp://localhost:8631/ipp/print" ||
+               output == "device for BJC85_Native: ipp://localhost:8631/ipp/print\n"
+    }
     private func checkPrintQueue() throws -> Bool {
         let queue=try command("/usr/bin/lpstat",["-v","BJC85_Native"])
         guard queue.code==0 else {
             let message=queue.output.lowercased()
-            if message.contains("unknown destination") || message.contains("invalid destination name") { return false }
+            if queue.code == 1 && ["lpstat: unknown destination \"bjc85_native\".", "lpstat: invalid destination name in list \"bjc85_native\"."].contains(message.trimmingCharacters(in:.whitespacesAndNewlines)) { return false }
             throw NSError(domain:"BJC85.Service",code:1,userInfo:[NSLocalizedDescriptionKey:"The print queue could not be inspected. Service switching is blocked. "+queue.output])
         }
-        guard queue.output.contains("ipp://localhost:8631/ipp/print") else {
+        guard Self.ownsQueue(queue.output) else {
             throw NSError(domain:"BJC85",code:1,userInfo:[NSLocalizedDescriptionKey:L("BJC85_Native belongs to another printer connection. Resolve the queue name before switching services.")])
         }
         let jobs=try command("/usr/bin/lpstat",["-W","not-completed","-o","BJC85_Native"])
@@ -104,8 +111,7 @@ final class ServiceTransitionController {
             wait(0.25)
         }
         guard ready else { throw NSError(domain:"BJC85",code:1,userInfo:[NSLocalizedDescriptionKey:L("Print service did not become ready. Inspect the service log.")]) }
-        let queue=try command("/usr/bin/lpstat",["-v","BJC85_Native"])
-        if queue.code==0 && !queue.output.contains("ipp://localhost:8631/ipp/print") { throw CocoaError(.validationMissingMandatoryProperty) }
+        _=try checkPrintQueue() // Repeat ownership, inspection errors and idle check at mutation boundary.
         try require("/usr/sbin/lpadmin",["-p","BJC85_Native","-E","-v","ipp://localhost:8631/ipp/print","-m","everywhere","-D",L("Canon BJC-85 Native"),"-o","printer-is-shared=false","-o","printer-error-policy=stop-printer"])
     }
 }

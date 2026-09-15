@@ -8,7 +8,7 @@ import Foundation
                 completion: @escaping @MainActor @Sendable (Int32, Bool) -> Void) throws
     func cancel()
 }
-struct ScanCapture: Sendable {
+struct ScanCapture: Codable, Sendable {
     let acquisition: ScanAcquisition
     let edits: DocumentEdits
     let prescan: Bool
@@ -37,11 +37,12 @@ struct ScanOperationCompletion: Sendable {
 @MainActor final class ScanOperationController {
     private let services: ScannerServices
     private let runner: ScannerProcess
+    private let persistIntent: (ScanOperationRequest) throws -> Void
     private(set) var active: ScanOperationRequest?
     private var stopped = false
     var receive: ((UUID, Data) -> Void)?
     var completed: ((ScanOperationCompletion) -> Void)?
-    init(services: ScannerServices, runner: ScannerProcess) { self.services = services; self.runner = runner }
+    init(services: ScannerServices, runner: ScannerProcess, persistIntent: @escaping (ScanOperationRequest) throws -> Void = CaptureIntent.persist) { self.services = services; self.runner = runner; self.persistIntent=persistIntent }
     @discardableResult func start(_ request: ScanOperationRequest, needsQuiescence: Bool = true) -> Bool {
         precondition(Thread.isMainThread)
         guard active == nil else { return false }
@@ -51,6 +52,7 @@ struct ScanOperationCompletion: Sendable {
             if case .failure(let error) = result { self.finish(request, code: 1, launched: false, failure: error.localizedDescription); return }
             guard !self.stopped else { self.finish(request, code: 6, launched: false, failure: "Canceled before acquisition."); return }
             do {
+                try self.persistIntent(request)
                 try self.runner.launch(arguments: request.arguments, log: request.log, receive: { [weak self] data in
                     guard self?.active?.id == request.id else { return }; self?.receive?(request.id, data)
                 }, completion: { [weak self] code, launched in self?.finish(request, code: code, launched: launched, failure: nil) })

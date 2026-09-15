@@ -9,7 +9,7 @@ extension UtilityWindowController {
         retain.state=model.retainDiagnosticCaptures ? .on : .off
         let content=RootView.column([title("Privacy & storage"),retain,
             RootView.label("Completed captures are expendable after their document master is retained. Unexported documents, Copy images, active workers, and unresolved recovery evidence are protected."),
-            RootView.label("Closed, exported documents may expire after 7 days. Unexported documents stay until you discard them. Storage is limited to 100 documents / 2 GB; new imports stop at the limit."),
+            RootView.label("Retained documents stay until you explicitly discard them, even after export. Storage is limited to 100 documents / 2 GB; new imports stop at the limit."),
             button("Delete completed diagnostics…",#selector(deleteDiagnostics)),button("Show private files",#selector(showFiles))],spacing:16)
         content.translatesAutoresizingMaskIntoConstraints=false; panel.contentView!.addSubview(content)
         NSLayoutConstraint.activate([content.leadingAnchor.constraint(equalTo:panel.contentView!.leadingAnchor,constant:24),content.trailingAnchor.constraint(equalTo:panel.contentView!.trailingAnchor,constant:-24),content.topAnchor.constraint(equalTo:panel.contentView!.topAnchor,constant:24)])
@@ -43,7 +43,7 @@ extension UtilityWindowController {
                           let name=values["outcome"] as? String, let outcome=OperationOutcome(rawValue:name) else { continue }
                     try PrivacyRetention.removeExportedCapture(directory,retainDiagnostics:false,outcome:outcome,protected:[store.directory])
                 }
-                try store.purgeExportedClosed()
+
             }) { [weak self] result in
                 do { try result.get(); self?.layout.status.stringValue="Completed diagnostics deleted. The current document is retained." } catch { self?.report(error) }
             }

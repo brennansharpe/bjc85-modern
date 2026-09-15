@@ -1,5 +1,6 @@
 """Exercise bundled PAPPL/Gutenprint with an isolated dry-run spool; never USB."""
 import json
+import os
 from pathlib import Path
 import socket
 import subprocess
@@ -9,8 +10,9 @@ import time
 
 root = Path(__file__).resolve().parents[1]
 helper = Path(sys.argv[1]).resolve()
-letter, a4 = (root / 'build/queue-test.urf', root / 'build/queue-a4-gray.urf')
-assert letter.exists() and a4.exists(), 'Generate the baseline URF fixtures described in README.md first.'
+fixtures=Path(os.environ['BJC85_TEST_FIXTURE_DIR'])
+letter, a4 = (fixtures/'letter.urf', fixtures/'a4.urf')
+assert letter.exists() and a4.exists(), 'Generate synthetic URF fixtures with test-isolated-services.sh first.'
 with tempfile.TemporaryDirectory(prefix='bjc85-ipp-dry-') as temporary:
     spool = Path(temporary)
     with socket.socket() as sock:

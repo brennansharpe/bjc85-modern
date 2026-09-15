@@ -16,6 +16,14 @@ jobs:
       - name: Generic tree and reachable-history checks
         # No owner's private-value configuration is available on CI.
         run: python3 scripts/check-repository-privacy.py --history
+  gitleaks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3 (Node 24)
+        with:
+          fetch-depth: 0
+          persist-credentials: false
       - name: Verify and run pinned Gitleaks
         shell: bash
         run: |
@@ -29,3 +37,21 @@ jobs:
           "$tool_dir/gitleaks" version
           "$tool_dir/gitleaks" git --log-opts=--all --redact=100 --no-banner --no-color --ignore-gitleaks-allow --timeout 120 .
           "$tool_dir/gitleaks" dir --redact=100 --no-banner --no-color --ignore-gitleaks-allow --max-archive-depth 2 --max-decode-depth 3 --timeout 120 .
+  macos-offline:
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3 (Node 24)
+        with:
+          persist-credentials: false
+      - name: Toolchain and architecture
+        run: |
+          test "$(uname -m)" = arm64
+          xcrun swiftc --version
+          xcodebuild -version
+          cmake --version
+          python3 --version
+      - name: Set up pinned source dependencies (network)
+        run: sh scripts/setup-source-alpha.sh
+      - name: Compile application and run fixture-isolated tests (offline)
+        run: sh scripts/test-source-alpha.sh
