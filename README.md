@@ -2,6 +2,8 @@
 
 **Early source alpha — a native macOS home for the Canon BJC-85 and IS-12.**
 
+My Canon PIXMA MG5720 died. Rather than buy another printer, I decided to bring the Canon BJC-85 my grandad gave me over a decade ago back to life. It was his business printer over 25 years ago; now I’m reverse-engineering its drivers to make it work properly with modern macOS.
+
 Source for inspection and local development. No downloadable app or installer
 is released. See [publication readiness](docs/publication-readiness.md) for the
 current publication gate and verification scope.
