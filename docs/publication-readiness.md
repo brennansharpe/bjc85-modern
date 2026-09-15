@@ -4,8 +4,8 @@ Audit date: **2026-09-14**. Repository: **brennansharpe/bjc85-modern**.
 
 ## Outcome
 
-**STILL PRIVATE.** Source preparation is complete subject to the final remote
-verification recorded below. An original printer-identity capture remains
+**STILL PRIVATE.** Source preparation and independent remote verification are
+recorded below. An original printer-identity capture remains
 viewable through an old GitHub commit after the earlier history rewrite.
 GitHub Support must remove the retained sensitive commit/blob views and any
 server-side references before visibility changes. The private recovery record
@@ -147,9 +147,32 @@ acceptance ledgers; none is concealed by offline test success.
 
 ## Final remote verification
 
-Pending final push and independent fetch. Visibility must remain private until
-Support resolves retained original objects and the remote candidate and any new
-workflow logs are rechecked. The repository must not be recreated or replaced.
+The prepared source was pushed while private using the exact-SHA lease and
+cloned independently from GitHub. Its commit/tree and all 41 raster/vector hashes
+matched the reviewed candidate; the fresh clone passed the populated local
+privacy check and Gitleaks history scan. Only `main` was advertised; no backup,
+stash, original-history or local milestone tags were uploaded.
+
+[CI run 1](https://github.com/brennansharpe/bjc85-modern/actions/runs/34911061230)
+passed all thirteen privacy regressions, the generic tree/history checker and
+Gitleaks tree/history scans. Logs show a masked checkout token, generic hosted
+runner paths and no private matching configuration; no artifacts were uploaded.
+Its Node 20 action warning was addressed by pinning checkout v6.0.3's actual
+commit (Node 24). That small workflow/documentation follow-up is checked again
+on the final remote ref; exact commit and recovery information are retained in
+the private completion record.
+
+The everyday checkout is reconciled to the cleaned lineage, with the local
+privacy hook and private matching configuration installed. Original-history
+recovery copies are backup-only: never push or merge them into development.
+No global Git identity was changed. The temporary repository-only deploy key
+is revoked after the upload/verification.
+
+Visibility remains private. Request GitHub Support's retained-object cleanup
+using the privately prepared request, then repeat the final remote/ref/asset and
+new workflow-log checks before changing visibility. No public transition or
+anonymous public-access verification is claimed. The repository must not be
+recreated or replaced.
 
 References: [GitHub sensitive-data removal](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository),
 [GitHub visibility command](https://cli.github.com/manual/gh_repo_edit),
