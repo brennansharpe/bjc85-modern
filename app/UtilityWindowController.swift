@@ -9,6 +9,7 @@ final class UtilityWindowController: NSObject, NSWindowDelegate, NSMenuItemValid
     let layout = WorkspaceLayout()
     var model = AppModel()
     var document: ScanDocument?
+    var latestDocuments: [UUID:ScanDocument] = [:]
     let processing = ImageProcessingService()
     var store: ScanDocumentStore!
     var scanController: ScanOperationController!
@@ -28,7 +29,12 @@ final class UtilityWindowController: NSObject, NSWindowDelegate, NSMenuItemValid
     var pending = Data()
     var latestJob: PrintJobRecord?
     var jobTimer: Timer?
-    var savingError: String?
+    var windowCloseApproved = false
+    var terminationReply: (Bool) -> Void = { NSApp.reply(toApplicationShouldTerminate:$0) }
+    var persistence = PersistenceStatus()
+    var persistenceRetries: [String: @Sendable () throws -> Void] = [:]
+    var restorationWarnings: [String] = []
+    var runtimeReady = false
     let editUndo = UndoManager()
     let root: URL
     let state: URL
@@ -90,16 +96,13 @@ final class UtilityWindowController: NSObject, NSWindowDelegate, NSMenuItemValid
     required init?(coder:NSCoder) { fatalError() }
     func bootstrap() {
         documentBusy=true; updateControls()
-        processing.perform(work: { [root,state] in
-            try FileManager.default.createDirectory(at:state,withIntermediateDirectories:true,attributes:[.posixPermissions:0o700])
-            let store=try ScanDocumentStore(runtime:root)
-            try store.recoverCompletedCaptures(); try store.purgeExportedClosed()
-            return (store, try store.restore())
+        processing.perform(work: { [root] in
+            try ScanDocumentStore(runtime:root)
         }) { [weak self] result in
             guard let self else { return }
             self.documentBusy=false
             do {
-                let (store,document)=try result.get(); self.store=store; self.document=document
+                self.store=try result.get()
                 let runner=NativeScannerProcess(helper:Bundle.main.bundleURL.appendingPathComponent("Contents/Helpers/bjc85-is12"),runtime:self.root)
                 self.scanController=ScanOperationController(services:NativeScannerServices(runtime:self.root),runner:runner)
                 self.scanController.receive = { [weak self] id,data in self?.receive(id,data) }
@@ -114,30 +117,48 @@ final class UtilityWindowController: NSObject, NSWindowDelegate, NSMenuItemValid
         }
     }
     func loadRuntimeState() {
+        guard let store else { return }
+        runtimeReady=false
         processing.perform(work: { [root,state,fixture] in
-            let retained=FileManager.default.fileExists(atPath:root.appendingPathComponent("retain-diagnostics").path)
-            let values=(try? Data(contentsOf:state.appendingPathComponent("settings.json"))).flatMap { try? JSONDecoder().decode([String:String].self,from:$0) }
-            let reference=values?["reference"].map { URL(fileURLWithPath:$0) }
-            var copy=CopyWorkflow(); try copy.restoreSession(from:state.appendingPathComponent("copy-session.json"),within:root)
-            if let image=copy.image, copy.documentID==nil {
-                let migration=try ScanDocumentStore(runtime:root), active=try migration.restore()?.id
-                var document=try migration.importImage(image); document.retainedCopies.insert(document.id); try migration.save(document)
-                copy.retain(migration.master(document.id),document:document.id)
-                try copy.saveSession(to:state.appendingPathComponent("copy-session.json")); try migration.activate(active)
+            var warnings:[String]=[]
+            do { try FileManager.default.createDirectory(at:state,withIntermediateDirectories:true,attributes:[.posixPermissions:0o700]) }
+            catch { warnings.append("Runtime state is unavailable; physical work is blocked.") }
+            var restored:ScanDocument?
+            do { restored=try store.restore() } catch { warnings.append("The active pointer is damaged. Open a healthy page in Retained Documents.") }
+            do { try store.recoverCompletedCaptures(); warnings += store.recoveryWarnings }
+            catch { warnings.append("Capture recovery is deferred. Retained documents remain available.") }
+            var copy=CopyWorkflow(), tracker:PrintJobTracker?
+            var physicalReady=true
+            do {
+                tracker=try PrintJobTracker(file:state.appendingPathComponent("print-job.json"),queue:NativePrintQueue(queryHelper:Bundle.main.bundleURL.appendingPathComponent("Contents/Helpers/bjc85-job-query")))
+            } catch { physicalReady=false; store.ownershipUncertain=true; warnings.append("Print receipt cannot be read. Physical work and disposal are blocked; evidence is preserved.") }
+            do {
+                try copy.restoreSession(from:state.appendingPathComponent("copy-session.json"),within:root)
+                if physicalReady { copy=try store.migrateLegacyCopy(copy) }
+                if physicalReady { try store.reconcileCopyOwnership(copy) }
+            } catch { physicalReady=false; store.ownershipUncertain=true; warnings.append("Copy state needs recovery. Physical work is blocked; retained documents remain available.") }
+            var reference:URL?
+            let settings=state.appendingPathComponent("settings.json")
+            if FileManager.default.fileExists(atPath:settings.path) {
+                do { let values=try JSONDecoder().decode([String:String].self,from:Data(contentsOf:settings)); reference=values["reference"].map { URL(fileURLWithPath:$0) } }
+                catch { warnings.append("Saved reference settings could not be restored. Import and validate a reference before scanning.") }
             }
-            let tracker=try PrintJobTracker(file:state.appendingPathComponent("print-job.json"),queue:NativePrintQueue(queryHelper:Bundle.main.bundleURL.appendingPathComponent("Contents/Helpers/bjc85-job-query")))
-            return (retained,reference,copy,tracker,fixture ? SharedDeviceState.State.available : SharedDeviceState.inspect(root))
+            _=try store.all()
+            if !store.damagedEntries.isEmpty { warnings.append("Some retained entries are damaged. Healthy pages remain available; damaged files are preserved and count toward quota.") }
+            return (restored,copy,tracker,reference,physicalReady,warnings,fixture ? SharedDeviceState.State.available : SharedDeviceState.inspect(root))
         }) { [weak self] result in
             guard let self else { return }
             do {
-                let (retained,reference,copy,tracker,safety)=try result.get()
-                self.model.retainDiagnosticCaptures=retained; self.reference=reference; self.model.copy=copy; self.tracker=tracker; self.latestJob=tracker.record
-                self.lastAvailability=safety
+                let (restored,copy,tracker,reference,ready,warnings,safety)=try result.get()
+                if self.document == nil { self.document=restored }
+                self.model.copy=copy; self.tracker=tracker; self.latestJob=tracker?.record; self.reference=reference
+                self.restorationWarnings=warnings; self.runtimeReady=ready; self.lastAvailability=safety
+                self.model.retainDiagnosticCaptures=FileManager.default.fileExists(atPath:self.root.appendingPathComponent("retain-diagnostics").path)
                 if safety == .recoveryRequired { self.model.coordinator.requireRecovery() }
-                self.layout.status.stringValue=self.fixture ? "Fixture mode · Synthetic content · USB and production services disabled" : self.document == nil ? "Open an image or connect the IS-12 to begin." : "Document restored. No physical operation resumed."
-                if !self.fixture && safety == .busy { self.layout.status.stringValue="Another client currently owns the device. Documents remain available; retry connection after that job finishes." }
-                if tracker.record?.outstanding == true { self.recheckJob() }
-            } catch { self.savingError=error.localizedDescription; self.report(error) }
+                self.layout.status.stringValue=warnings.isEmpty ? "Documents restored. No physical operation resumed." : warnings.joined(separator:" ")
+                self.syncEdits(); self.refreshPreview()
+                if !self.fixture && tracker?.record?.outstanding == true { self.recheckJob() }
+            } catch { self.restorationWarnings.append(error.localizedDescription); self.report(error) }
             self.updateControls()
         }
     }
@@ -148,7 +169,7 @@ final class UtilityWindowController: NSObject, NSWindowDelegate, NSMenuItemValid
         if row == 2, let id=model.copy.documentID, id != document?.id { reopenDocument(id) }
     }
     func updateControls() {
-        let recovery=model.coordinator.state == .recoveryRequired
+        let recovery=model.coordinator.state == .recoveryRequired || !runtimeReady
         layout.device.show(model.coordinator.state)
         if lastAvailability == .busy && !busy && !recovery { layout.device.stringValue="Last check: device in use by another client" }
         if fixture { layout.device.stringValue="Fixture · \(layout.device.stringValue)" }
@@ -160,11 +181,11 @@ final class UtilityWindowController: NSObject, NSWindowDelegate, NSMenuItemValid
         layout.cancel.isHidden = scanController?.active == nil && latestJob?.result != .pending
         layout.cancel.title = latestJob?.result == .pending ? "Cancel print job" : "Cancel acquisition"
         layout.cancelExport.isHidden = exportTicket == nil
-        printButton.isEnabled = document != nil && !busy && !documentBusy && !recovery && printSettings.settings.isValid && latestJob?.outstanding != true && !fixture
+        printButton.isEnabled = document != nil && !busy && !documentBusy && !recovery && printSettings.settings.isValid && (latestJob?.outstanding != true || tracker?.mayRetryPreflight == true) && !fixture
         swap.isEnabled = !busy && !recovery && !fixture
         copyControls.copy.isEnabled = canScan && model.copy.stage == .empty && copyControls.settings.settings.isValid
         copyControls.reprint.title = model.copy.stage == .reprintReady ? "Reprint retained copy" : "Print retained copy"
-        copyControls.reprint.isEnabled = model.copy.canPrint(settings:copyControls.settings.settings,device:model.coordinator.state,busy:busy || documentBusy) && latestJob?.outstanding != true && !fixture
+        copyControls.reprint.isEnabled = model.copy.canPrint(settings:copyControls.settings.settings,device:model.coordinator.state,busy:busy || documentBusy) && (latestJob?.outstanding != true || tracker?.mayRetryPreflight == true) && !fixture
         copyControls.swap.isEnabled = !busy && !fixture && !recovery && [.awaitingPrintCartridge,.readyToPrint,.reprintReady].contains(model.copy.stage)
         copyControls.reset.isEnabled = !busy && !documentBusy && !recovery && ![.empty,.scanning,.printing,.jobUnknown,.recoveryRequired].contains(model.copy.stage)
         copyControls.brightness.isHidden=true
@@ -174,7 +195,7 @@ final class UtilityWindowController: NSObject, NSWindowDelegate, NSMenuItemValid
         for view in [printSettings,copyControls.settings] { view.validate() }
         referenceLabel.stringValue = reference == nil ? "No saved white reference" : referenceValid == true ? "Plain-paper reference · validated at last connection" : "Saved reference · connect to validate"
         jobLabel.stringValue = latestJob.map { "\($0.destination)\($0.jobID.map { "-\($0)" } ?? "")\n\($0.result.label)\n\($0.reasons.joined(separator:", "))" } ?? "No print job submitted"
-        if recovery { layout.status.stringValue="Recovery required. Keep the previous capture and inspect the printer. New physical jobs are blocked." }
+        if recovery && restorationWarnings.isEmpty { layout.status.stringValue="Recovery required. Keep the previous capture and inspect the printer. New physical jobs are blocked." }
         if busy || documentBusy || exportTicket != nil || processingCount>0 { layout.progress.startAnimation(nil) } else { layout.progress.stopAnimation(nil) }
         if let document {
             layout.documentTitle.stringValue = "\(document.acquisition.source) · revision \(document.revision)\(document.needsExport ? " · not exported" : " · exported")"

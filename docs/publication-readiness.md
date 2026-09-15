@@ -2,13 +2,37 @@
 
 Audit date: **2026-09-14**. Repository: **brennansharpe/bjc85-modern**.
 
-## Outcome
+## Current status — 2026-09-15 (supersedes the dated preparation record)
+
+The exact repository is PUBLIC SOURCE ALPHA; anonymous repository metadata and
+advertised refs confirm public `main`. The authenticated owner connector confirms
+admin access. No visibility, licensing or binary-release change is part of this
+repair. The historical **STILL PRIVATE** outcome below describes preparation
+before the later public transition, and is not the current state.
+
+The supplied review retrieved an original printer-identity capture through
+**authenticated access**. Anonymous retrieval of that old object was not verified
+by that review. This repair separately rechecked the privately mapped original
+capture: both authenticated access and an anonymous HTTPS request returned its
+non-synthetic printer identifier. Sensitive bodies and links remain private. Normal cleaned refs and a fresh clone do not establish server-side
+erasure. A printer serial is low-severity identifying metadata, not an account
+credential. Retention and an owner/support decision remain unresolved: no owner
+acceptance, sent support request or support resolution is claimed. Exact old
+object mappings and identifying values remain outside this repository.
+
+The reviewed story commit also introduced a personal author email. Local noreply
+configuration does not repair historical metadata or account web-edit settings.
+See [the remediation record](review-remediation-2026-09-15.md) for current results
+and external blockers. Earlier successful scans below are historical evidence,
+not a claim that the reviewed failing workflow or this repair passed hosted CI.
+
+## Historical outcome — preparation on 2026-09-14
 
 **STILL PRIVATE.** Source preparation and independent remote verification are
 recorded below. An original printer-identity capture remains
 viewable through an old GitHub commit after the earlier history rewrite.
-GitHub Support must remove the retained sensitive commit/blob views and any
-server-side references before visibility changes. The private recovery record
+The preparation pass treated retained views as a visibility gate. The current
+public status above supersedes that gate; support assistance is conditional. The private recovery record
 contains the exact original object mappings and affected URLs; those links and
 values are deliberately absent here. A fresh clone alone cannot establish
 server-side erasure. No actual credential was identified by the local scans.

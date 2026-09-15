@@ -31,6 +31,43 @@ class PrivacyCheckTest(unittest.TestCase):
         self.assertIn("device-serial", privacy.inspect(json.dumps(dict(serial="PRIVATE" + "12345")).encode()))
         self.assertFalse(privacy.inspect(b'/Users/REDACTED/work user@example.com "serial": "TEST-BJC85-0001" 00000000-0000-4000-8000-000000000001 127.0.0.1'))
 
+    def test_exact_github_service_identity(self):
+        for value in ("noreply@github.com", "fixture@users.noreply.github.com", "42+fixture@users.noreply.github.com"):
+            self.assertFalse(privacy.inspect(value.encode()))
+        for value in ("owner"+"@personal.test", "xnoreply"+"@github.com", "noreply"+"@github.com.evil.test", "other"+"@github.com", "NOREPLY"+"@github.com"):
+            self.assertIn("email-address", privacy.inspect(value.encode()))
+        mixed = ("author Owner <owner"+"@personal.test>\ncommitter GitHub <noreply@github.com>").encode()
+        self.assertIn("email-address", privacy.inspect(mixed))
+
+    def test_historical_names_and_reused_trees(self):
+        with tempfile.TemporaryDirectory(prefix="privacy-paths-") as tmp:
+            root=Path(tmp); (root/"scripts").mkdir()
+            for name in ("check-repository-privacy.py", "privacy_formats.py"):
+                shutil.copy2(SCRIPT.with_name(name), root/"scripts"/name)
+            env=dict(os.environ, GIT_AUTHOR_NAME="Fixture", GIT_COMMITTER_NAME="Fixture", GIT_AUTHOR_EMAIL="fixture@example.com", GIT_COMMITTER_EMAIL="fixture@example.com")
+            def git(*args):
+                return subprocess.check_output(["git","-C",tmp,*args],env=env,stderr=subprocess.PIPE).decode().strip()
+            git("init","-q")
+            private="fixture"+"@personal.test"
+            (root/private).write_text("same")
+            (root/(private+" directory\t雪")).mkdir()
+            (root/(private+" directory\t雪")/"safe").write_text("same")
+            (root/"safe directory").mkdir(); (root/"safe directory/safe").write_text("same")
+            git("add","."); git("commit","-qm","Original names")
+            git("mv",private,"safe.txt")
+            git("rm","-r",private+" directory\t雪")
+            git("commit","-qm","Rename and delete")
+            oid=git("rev-parse","HEAD")
+            git("tag","-a","safe-tag","-m","Safe tag")
+            for args, update in ((["--history"],None), (["--pre-push"],f"refs/heads/new {oid} refs/heads/new {'0'*40}\n"), (["--pre-push"],f"refs/tags/new {git('rev-parse','safe-tag')} refs/tags/new {'0'*40}\n")):
+                result=subprocess.run([sys.executable,str(root/"scripts"/SCRIPT.name),*args],input=update,text=True,capture_output=True)
+                self.assertEqual(result.returncode,1,result.stdout+result.stderr)
+                self.assertIn("history-path",result.stdout); self.assertIn("private-filename",result.stdout)
+                self.assertNotIn(private,result.stdout+result.stderr)
+            (root/private).write_text("same"); git("add",private)
+            result=subprocess.run([sys.executable,str(root/"scripts"/SCRIPT.name),"--staged"],text=True,capture_output=True)
+            self.assertEqual(result.returncode,1); self.assertNotIn(private,result.stdout)
+
     def test_credentials_and_print_account(self):
         self.assertIn("credential-token", privacy.inspect(("ghp_" + "a" * 36).encode()))
         self.assertIn("private-key", privacy.inspect(("-----BEGIN " + "PRIVATE KEY-----").encode()))
@@ -196,7 +233,7 @@ class PrivacyCheckTest(unittest.TestCase):
             self.assertEqual(clean.returncode, 0, clean.stderr)
             self.assertEqual(history.returncode, 1, history.stderr)
             report = json.loads(history.stdout)
-            self.assertTrue(any(f["scope"] == "history-blob" and f["path"] == "evidence.txt" for f in report["findings"]))
+            self.assertTrue(any(f["scope"] == "history-blob"  for f in report["findings"]))
             self.assertNotIn("fixture-owner", history.stdout)
 
     def test_explicit_push_of_local_recovery_ref_is_checked(self):

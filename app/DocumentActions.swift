@@ -3,11 +3,43 @@ import ImageIO
 import UniformTypeIdentifiers
 
 extension UtilityWindowController {
+    func persistResource(_ resource:String, work:@escaping @Sendable () throws -> Void) {
+        let ticket=persistence.begin(resource); persistenceRetries[resource]=work
+        processing.perform(work:work) { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success: self.persistence.finish(ticket,error:nil)
+            case .failure(let error): self.persistence.finish(ticket,error:error); self.report(error)
+            }
+        }
+    }
+    func trackTransition<T: Sendable>(previous:ScanDocument?, active:UUID?, work:@escaping @Sendable () throws -> T, completion:@escaping @MainActor @Sendable (Result<T,Error>)->Void) {
+        guard let store else { return }
+        var tickets:[PersistenceStatus.Ticket]=[]
+        if let previous {
+            latestDocuments[previous.id]=previous
+            let key="document-"+previous.id.uuidString
+            tickets.append(persistence.begin(key)); persistenceRetries[key]={ try store.save(previous) }
+        }
+        tickets.append(persistence.begin("active")); persistenceRetries["active"]={ try store.activate(active) }
+        let pendingTickets=tickets
+        processing.perform(work:work) { [weak self] result in
+            let error:Error?
+            if case .failure(let failure)=result { error=failure } else { error=nil }
+            for ticket in pendingTickets { self?.persistence.finish(ticket,error:error) }
+            completion(result)
+        }
+    }
+    @objc func retryPersistence() {
+        for resource in Array(persistence.failures.keys) {
+            if let work=persistenceRetries[resource] { persistResource(resource,work:work) }
+        }
+    }
+    @objc func retryRecovery() { guard !busy, !documentBusy else { return }; loadRuntimeState() }
     func persistDocument() {
         guard let document, let store else { return }
-        processing.perform(work: { try store.save(document) }) { [weak self] result in
-            if case .failure(let error)=result { self?.savingError=error.localizedDescription; self?.report(error) }
-        }
+        latestDocuments[document.id]=document
+        persistResource("document-"+document.id.uuidString) { try store.save(document) }
     }
     func changeEdits(_ change: (inout DocumentEdits) -> Void) {
         guard var value=document, !documentBusy, scanController?.active == nil else { return }
@@ -103,13 +135,16 @@ extension UtilityWindowController {
         panel.message="Open an image as a retained document. A scanner connection is not required."
         panel.beginSheetModal(for:window) { [weak self] response in if response == .OK, let source=panel.url { self?.importImage(source) } }
     }
-    func importImage(_ source:URL, acquisition:ScanAcquisition? = nil, edits:DocumentEdits = .init(), completion:((ScanDocument) -> Void)? = nil, failure:((Error) -> Void)? = nil) {
+    func importImage(_ source:URL, acquisition:ScanAcquisition? = nil, edits:DocumentEdits = .init(), captureDirectory:URL? = nil, completion:((ScanDocument) -> Void)? = nil, failure:((Error) -> Void)? = nil) {
         guard let store else { return }
         previewTicket?.cancel(); documentBusy=true; updateControls()
         let previous=document
-        processing.perform(work: {
+        trackTransition(previous:previous,active:previous?.id,work: {
             // Close protects even unexported revisions; it does not discard.
-            let value=try store.importImage(source,acquisition:acquisition,edits:edits)
+            let value:ScanDocument
+            if let captureDirectory {
+                guard let imported=try store.importCompletedCapture(captureDirectory) else { throw DocumentError.corrupt }; value=imported
+            } else { value=try store.importImage(source,acquisition:acquisition,edits:edits) }
             if let previous { try store.close(previous) }; try store.activate(value.id)
             return value
         }) { [weak self] result in
@@ -149,7 +184,11 @@ extension UtilityWindowController {
                     let receipt=try result.get()
                     if self.document?.id == document.id { self.document?.exports.append(receipt); self.persistDocument() }
                     else {
-                        self.processing.perform(work: { var saved=try store.load(document.id); saved.exports.append(receipt); try store.save(saved) }) { [weak self] value in if case .failure(let error)=value { self?.report(error) } }
+                        var saved=self.latestDocuments[document.id] ?? document
+                        if !saved.exports.contains(receipt) { saved.exports.append(receipt) }
+                        self.latestDocuments[saved.id]=saved
+                        let value=saved
+                        self.persistResource("document-"+document.id.uuidString) { try store.save(value) }
                     }
                     self.layout.status.stringValue="Exported \(destination.lastPathComponent). The editable document is retained."
                 } catch is CancellationError { self.layout.status.stringValue="Export canceled. The document and previous output are retained." }
@@ -163,7 +202,7 @@ extension UtilityWindowController {
     @objc func closeDocument() {
         guard let document, let store, scanController?.active == nil, !documentBusy else { return }
         previewTicket?.cancel(); documentBusy=true
-        processing.perform(work: { try store.close(document) }) { [weak self] result in
+        trackTransition(previous:document,active:nil,work: { try store.close(document) }) { [weak self] result in
             guard let self else { return }; self.documentBusy=false
             do { try result.get(); self.document=nil; self.layout.canvas.image=nil; self.editUndo.removeAllActions(); self.layout.status.stringValue="Document closed and retained. Use File → Retained Documents to reopen it."; self.window?.makeFirstResponder(self.layout.canvas) }
             catch { self.report(error) }; self.updateControls()
@@ -188,7 +227,7 @@ extension UtilityWindowController {
         processing.perform(work: { try store.all() }) { [weak self] result in
             guard let self else { return }
             do {
-                let documents=try result.get(); let alert=NSAlert(); alert.messageText="Retained documents"
+                let documents=try result.get(); let alert=NSAlert(); alert.messageText="Retained documents"; alert.informativeText="Healthy pages are listed below. Damaged entries and pending captures are preserved. Use Retry Recovery after freeing space."
                 let choices=NSPopUpButton(); choices.addItems(withTitles:documents.map { "\($0.acquisition.acquired.formatted(date:.abbreviated,time:.shortened)) · \($0.acquisition.source)\($0.needsExport ? " · not exported" : "")" })
                 choices.frame=NSRect(x:0,y:0,width:360,height:32); choices.setAccessibilityLabel("Retained document")
                 alert.accessoryView=choices; alert.addButton(withTitle:"Open"); alert.addButton(withTitle:"Cancel"); alert.buttons[0].isEnabled = !documents.isEmpty
@@ -199,7 +238,7 @@ extension UtilityWindowController {
     func reopenDocument(_ id:UUID) {
         guard let store, !documentBusy, scanController?.active == nil else { return }
         let previous=document; documentBusy=true
-        processing.perform(work: { let value=try store.load(id); if let previous { try store.close(previous) }; try store.activate(id); return value }) { [weak self] result in
+        trackTransition(previous:previous,active:id,work: { let value=try store.load(id); if let previous { try store.close(previous) }; try store.activate(id); return value }) { [weak self] result in
             guard let self else { return }; self.documentBusy=false
             do {
                 self.document=try result.get(); self.document?.closedAt=nil; self.editUndo.removeAllActions(); self.syncEdits(); self.refreshPreview(); self.persistDocument()
@@ -209,15 +248,29 @@ extension UtilityWindowController {
         }
     }
     func windowShouldClose(_ sender:NSWindow) -> Bool {
-        if scanController?.active != nil || documentBusy || exportTicket != nil { layout.status.stringValue="Finish or cancel the current operation before closing the window."; return false }
-        return true // Persistent session is restored on next launch.
+        guard scanController?.active == nil, !documentBusy, exportTicket == nil, !serviceBusy else {
+            layout.status.stringValue="Finish or cancel the current operation before closing."; return false
+        }
+        if windowCloseApproved { windowCloseApproved=false; return persistence.isSaved }
+        retryPersistence()
+        processing.perform(work:{}) { [weak self,weak sender] _ in
+            guard let self else { return }
+            if self.persistence.isSaved { self.windowCloseApproved=true; sender?.performClose(nil) }
+            else { self.layout.status.stringValue="State could not be saved. Repair storage and choose Retry Saving." }
+        }
+        return false
     }
     func prepareToQuit() -> NSApplication.TerminateReply {
-        guard savingError == nil else { layout.status.stringValue="The session could not be saved. Export the document before quitting. \(savingError!)"; return .terminateCancel }
-        guard scanController?.active == nil, !documentBusy, exportTicket == nil, !serviceBusy else { layout.status.stringValue="Finish or cancel the current operation before quitting."; return .terminateCancel }
-        // Drain all queued metadata writes without blocking AppKit. Print jobs
-        // remain in their native queue, with references saved for reconciliation.
-        processing.perform(work: {}) { [weak self] _ in NSApp.reply(toApplicationShouldTerminate:self?.savingError == nil) }
+        guard scanController?.active == nil, !documentBusy, exportTicket == nil, !serviceBusy else {
+            layout.status.stringValue="Finish or cancel the current operation before quitting."; return .terminateCancel
+        }
+        retryPersistence()
+        processing.perform(work:{}) { [weak self] _ in
+            guard let self else { NSApp.reply(toApplicationShouldTerminate:false); return }
+            let saved=self.persistence.isSaved
+            if !saved { self.layout.status.stringValue="State could not be saved. Repair storage and choose Retry Saving." }
+            self.terminationReply(saved)
+        }
         return .terminateLater
     }
 }

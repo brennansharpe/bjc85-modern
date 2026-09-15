@@ -8,7 +8,7 @@ settings = (Path(__file__).resolve().parent / 'fixtures/escl-scan-settings.xml')
 
 
 def request(method, path, body=None, headers=None):
-    connection = http.client.HTTPConnection('127.0.0.1', int(os.environ.get('BJC85_ESCL_TEST_PORT','8641')), timeout=5)
+    connection = http.client.HTTPConnection('127.0.0.1', int(os.environ['BJC85_ESCL_TEST_PORT']), timeout=5)
     connection.request(method, path, body=body, headers=headers or {})
     response = connection.getresponse()
     status, location, data = response.status, response.getheader('Location'), response.read()

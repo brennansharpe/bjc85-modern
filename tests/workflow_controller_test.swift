@@ -31,7 +31,7 @@ final class InjectedQueue: PrintQueueAccess {
         let services=InjectedServices(), runner=InjectedRunner(), controller=ScanOperationController(services:services,runner:runner)
         var terminals:[ScanOperationCompletion]=[]
         controller.completed={ terminals.append($0) }
-        func request(_ id:UUID=UUID()) -> ScanOperationRequest { .init(id:id,copyAttempt:id,kind:"scan",arguments:[],directory:directory,log:directory.appendingPathComponent("test.log")) }
+        func request(_ id:UUID=UUID()) -> ScanOperationRequest { .init(id:id,copyAttempt:id,kind:"scan",arguments:[],directory:directory.appendingPathComponent("scan-fixture"),log:directory.appendingPathComponent("test.log"),capture:ScanCapture(acquisition:ScanAcquisition(acquired:Date(),dpi:90,width:1,height:1,source:"Fixture",mode:"Image",whiteReference:nil),edits:.init(),prescan:false)) }
         for message in ["busy service","timeout","quiescence failure"] {
             services.response = .failure(NSError(domain:"fixture",code:1,userInfo:[NSLocalizedDescriptionKey:message]))
             precondition(controller.start(request())); precondition(controller.active==nil && terminals.last?.launched==false && runner.launches==0)

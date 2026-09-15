@@ -109,11 +109,11 @@ extension UtilityWindowController {
                     model.copy.scanStopped(safely:true,attempt:request.copyAttempt); activeCopyAttempt=nil
                     layout.status.stringValue="Acquisition metadata is missing. The completed capture is preserved in private files."; updateControls(); return
                 }
-                importImage(directory.appendingPathComponent("scan-raw.png"),acquisition:capture.acquisition,edits:capture.edits) { [weak self] document in
+                importImage(directory.appendingPathComponent("scan-raw.png"),acquisition:capture.acquisition,edits:capture.edits,captureDirectory:directory) { [weak self] document in
                     guard let self else { return }
                     self.hasPrescan=capture.prescan
                     if let attempt=request.copyAttempt, self.model.copy.retain(self.store.master(document.id),document:document.id,attempt:attempt) {
-                        self.document?.retainedCopies.insert(document.id); self.persistDocument(); self.saveCopySession()
+                        self.saveCopySession()
                         self.layout.navigation.selectRowIndexes(IndexSet(integer:2),byExtendingSelection:false)
                     }
                     self.activeCopyAttempt=nil
@@ -162,7 +162,7 @@ extension UtilityWindowController {
     }
     func saveReference() {
         guard let reference else { return }
-        processing.perform(work: { [state] in try JSONEncoder().encode(["reference":reference.path]).write(to:state.appendingPathComponent("settings.json"),options:.atomic) }) { [weak self] result in if case .failure(let error)=result { self?.report(error) } }
+        persistResource("reference") { [state] in try DiskReceiptStorage().replace(try JSONEncoder().encode(["reference":reference.path]),at:state.appendingPathComponent("settings.json")) }
     }
     @objc func importReference() {
         guard !busy, !fixture, let window else { return }

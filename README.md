@@ -99,10 +99,13 @@ switching, or device command occurs as part of the build.
 Offline checks (no device or private research captures required):
 
 ```sh
-sh scripts/test-source-alpha.sh
+sh scripts/setup-source-alpha.sh  # one-time checksum-pinned libusb download/build
+sh scripts/test-source-alpha.sh   # offline after setup
 ```
 
 This suite builds the native C targets and runs C, Swift and privacy regressions.
+You may instead set `BJC85_DEPENDENCY_PREFIX` to the existing rebuilt dependency
+prefix. Standalone tests require libusb; they do not assume a Homebrew install.
 The optional Gutenprint capability test runs only when its local static library
 is available. Private scan replays and physical acceptance are separate work.
 
@@ -148,8 +151,8 @@ is available. Private scan replays and physical acceptance are separate work.
 * Diagnostic retention defaults off. Successful app captures are removed after
   a document master is durably retained; eSCL captures after
   delivery (or 24-hour expiry if undelivered, checked hourly); raw print spool after safe completion. Ambiguous captures remain
-  available for recovery. Active/unsaved/Copy documents are protected; closed,
-  exported documents may expire after seven days. Import quotas are documented.
+  available for recovery. Retained document masters require explicit confirmed disposal, even after export.
+  Active workers, Copy ownership and unresolved jobs remain protected. Import quotas are documented.
   Runtime retention excludes existing research/baseline captures. Repository
   evidence was separately sanitized as described in the [privacy record](docs/REPOSITORY-PRIVACY.md).
 

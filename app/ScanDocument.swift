@@ -64,11 +64,21 @@ final class ScanDocumentStore: @unchecked Sendable {
     let runtime: URL
     let directory: URL
     private let lock = NSRecursiveLock()
+    var metadataCheckpoint: () throws -> Void = {}
+    var ownershipCheckpoint: (String) throws -> Void = { _ in }
+    var recoveryCheckpoint: (String) throws -> Void = { _ in }
+    var protectedDocuments: Set<UUID> = []
+    var ownershipUncertain = false
     private var pins: [UUID: Int] = [:]
-    static let exportedClosedLifetime: TimeInterval = 7 * 24 * 3600
     static let maximumDocuments = 100
     static let maximumBytes: Int64 = 2 * 1024 * 1024 * 1024
-    init(runtime: URL) throws {
+    let documentLimit: Int
+    let byteLimit: Int64
+    private(set) var damagedEntries: [UUID] = []
+    private(set) var recoveryWarnings: [String] = []
+    var decodeRaster: (URL) throws -> (CGImage,Double) = { try RasterImport.decode($0) }
+    init(runtime: URL, documentLimit: Int = maximumDocuments, byteLimit: Int64 = maximumBytes) throws {
+        self.documentLimit=documentLimit; self.byteLimit=byteLimit
         self.runtime = runtime
         directory = runtime.appendingPathComponent("Documents", isDirectory: true)
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
@@ -79,8 +89,8 @@ final class ScanDocumentStore: @unchecked Sendable {
     private var activeFile: URL { directory.appendingPathComponent("active.json") }
     func save(_ document: ScanDocument) throws {
         try synchronized {
-            try JSONEncoder().encode(document).write(to: folder(document.id).appendingPathComponent("document.json"), options: .atomic)
-            try FileManager.default.setAttributes([.posixPermissions: 0o600], ofItemAtPath: folder(document.id).appendingPathComponent("document.json").path)
+            try metadataCheckpoint()
+            try DiskReceiptStorage().replace(try JSONEncoder().encode(document),at:folder(document.id).appendingPathComponent("document.json"))
         }
     }
     func load(_ id: UUID) throws -> ScanDocument {
@@ -94,13 +104,18 @@ final class ScanDocumentStore: @unchecked Sendable {
     }
     func all() throws -> [ScanDocument] {
         try synchronized {
-            try FileManager.default.contentsOfDirectory(at: directory, includingPropertiesForKeys: nil)
-                .compactMap { UUID(uuidString: $0.lastPathComponent) }.map { try load($0) }
-                .sorted { $0.acquisition.acquired > $1.acquisition.acquired }
+            let ids=try FileManager.default.contentsOfDirectory(at:directory,includingPropertiesForKeys:nil)
+                .compactMap { UUID(uuidString:$0.lastPathComponent) }
+            var healthy:[ScanDocument]=[]; damagedEntries=[]
+            for id in ids {
+                do { healthy.append(try load(id)) }
+                catch { damagedEntries.append(id) }
+            }
+            return healthy.sorted { $0.acquisition.acquired > $1.acquisition.acquired }
         }
     }
     func activate(_ id: UUID?) throws {
-        try synchronized { try JSONEncoder().encode(id).write(to: activeFile, options: .atomic) }
+        try synchronized { try DiskReceiptStorage().replace(try JSONEncoder().encode(id),at:activeFile) }
     }
     func restore() throws -> ScanDocument? {
         try synchronized {
@@ -109,12 +124,26 @@ final class ScanDocumentStore: @unchecked Sendable {
             return try load(id)
         }
     }
-    func importImage(_ source: URL, acquisition: ScanAcquisition? = nil, edits: DocumentEdits = .init()) throws -> ScanDocument {
+    func importImage(_ source: URL, acquisition: ScanAcquisition? = nil, edits: DocumentEdits = .init(), documentID: UUID? = nil) throws -> ScanDocument {
         try synchronized {
-            let documents = try all()
-            var size: Int64 = 0
-            for document in documents { size += (try FileManager.default.attributesOfItem(atPath: master(document.id).path)[.size] as? NSNumber)?.int64Value ?? 0 }
-            guard documents.count < Self.maximumDocuments, size < Self.maximumBytes else { throw DocumentError.quota }
+            // Count every UUID entry and every existing byte, including partial
+            // and corrupt entries. Unreadable accounting fails the import only.
+            let entries=try FileManager.default.contentsOfDirectory(at:directory,includingPropertiesForKeys:nil)
+                .filter { UUID(uuidString:$0.lastPathComponent) != nil }
+            var size:Int64=0
+            func count(_ url:URL) throws {
+                let attrs=try FileManager.default.attributesOfItem(atPath:url.path)
+                guard attrs[.type] as? FileAttributeType != .typeSymbolicLink else { throw DocumentError.corrupt }
+                if attrs[.type] as? FileAttributeType == .typeDirectory {
+                    for child in try FileManager.default.contentsOfDirectory(at:url,includingPropertiesForKeys:nil) { try count(child) }
+                } else {
+                    guard let bytes=(attrs[.size] as? NSNumber)?.int64Value, bytes>=0 else { throw DocumentError.corrupt }
+                    let (sum,overflow)=size.addingReportingOverflow(bytes)
+                    guard !overflow else { throw DocumentError.quota }; size=sum
+                }
+            }
+            for entry in entries { try count(entry) }
+            guard entries.count < documentLimit, size < byteLimit else { throw DocumentError.quota }
             let image: CGImage, importedDPI: Double
             if source.pathExtension.lowercased() == "pdf" {
                 // Explicit import boundary for a one-page PDF (including v1
@@ -123,6 +152,7 @@ final class ScanDocumentStore: @unchecked Sendable {
                 let bounds=page.getBoxRect(.mediaBox); importedDPI=360
                 guard bounds.width.isFinite,bounds.height.isFinite,bounds.width>0,bounds.height>0,bounds.width<=4000,bounds.height<=4000 else { throw DocumentError.corrupt }
                 let w=Int(ceil(bounds.width*5)), h=Int(ceil(bounds.height*5))
+                try RasterImport.validate(width:Double(w),height:Double(h),depth:8)
                 guard w>0,h>0,w<=20000,h<=20000,w*h<=100_000_000,
                       let context=CGContext(data:nil,width:w,height:h,bitsPerComponent:8,bytesPerRow:w*4,space:CGColorSpace(name:CGColorSpace.sRGB)!,bitmapInfo:CGImageAlphaInfo.premultipliedLast.rawValue) else { throw DocumentError.corrupt }
                 context.setFillColor(CGColor(gray:1,alpha:1)); context.fill(CGRect(x:0,y:0,width:w,height:h))
@@ -130,20 +160,20 @@ final class ScanDocumentStore: @unchecked Sendable {
                 context.drawPDFPage(page)
                 guard let raster=context.makeImage() else { throw DocumentError.corrupt }; image=raster
             } else {
-                guard let input=CGImageSourceCreateWithURL(source as CFURL,nil), let decoded=CGImageSourceCreateImageAtIndex(input,0,[kCGImageSourceShouldCacheImmediately:true] as CFDictionary),
-                      decoded.width<=20000,decoded.height<=20000,decoded.width*decoded.height<=100_000_000 else { throw DocumentError.corrupt }
-                image=decoded; importedDPI=(try? ScanExport.dpi(of:source)) ?? 72
+                (image,importedDPI)=try decodeRaster(source)
             }
             let metadata = acquisition ?? ScanAcquisition(acquired: Date(), dpi: importedDPI,
                 width: image.width, height: image.height, source: source.pathExtension.lowercased()=="pdf" ? "Imported PDF (rasterized)" : "Imported image", mode: "Image", whiteReference: nil)
             guard metadata.width == image.width, metadata.height == image.height else { throw DocumentError.corrupt }
-            let document = ScanDocument(id: UUID(), acquisition: metadata, edits: edits)
+            let document = ScanDocument(id: documentID ?? UUID(), acquisition: metadata, edits: edits)
             try FileManager.default.createDirectory(at: folder(document.id), withIntermediateDirectories: false, attributes: [.posixPermissions: 0o700])
             do {
                 try ScanProcessing.writePNG(image: image, dpi: metadata.dpi, destination: master(document.id))
+                let masterHandle=try FileHandle(forWritingTo:master(document.id)); try masterHandle.synchronize(); try masterHandle.close()
                 let importedSize=(try FileManager.default.attributesOfItem(atPath:master(document.id).path)[.size] as? NSNumber)?.int64Value ?? 0
-                guard size+importedSize <= Self.maximumBytes else { throw DocumentError.quota }
-                try save(document); try activate(document.id)
+                let metadataSize=Int64(try JSONEncoder().encode(document).count)
+                guard importedSize <= byteLimit-size, metadataSize <= byteLimit-size-importedSize else { throw DocumentError.quota }
+                try save(document); if documentID == nil { try activate(document.id) }
             } catch {
                 // An incomplete import has no user edits; the original is untouched.
                 try? FileManager.default.removeItem(at: folder(document.id)); throw error
@@ -154,22 +184,62 @@ final class ScanDocumentStore: @unchecked Sendable {
     /// Recover completed captures left by the old app or by a crash before import.
     /// Incomplete/uncertain journals are deliberately untouched; no jobs resume.
     func recoverCompletedCaptures() throws {
-        let previous=try restore()?.id
+        recoveryWarnings=[]
         let captures=runtime.appendingPathComponent(".state/scanner-app")
         guard FileManager.default.fileExists(atPath:captures.path) else { return }
-        var recovered: UUID?
-        for folder in try FileManager.default.contentsOfDirectory(at:captures,includingPropertiesForKeys:nil).sorted(by:{$0.lastPathComponent<$1.lastPathComponent}) where folder.lastPathComponent.hasPrefix("scan-") {
-            let receipt=folder.appendingPathComponent("document-imported")
-            guard FileIdentity.contains(captures,folder), !FileManager.default.fileExists(atPath:receipt.path),
-                  let data=try? Data(contentsOf:folder.appendingPathComponent("outcome.json")),
-                  let value=try? JSONSerialization.jsonObject(with:data) as? [String:Any],
-                  value["outcome"] as? String == "completedSafe", value["image_complete"] as? Bool == true,
-                  FileManager.default.isReadableFile(atPath:folder.appendingPathComponent("scan-raw.png").path) else { continue }
-            let document=try importImage(folder.appendingPathComponent("scan-raw.png"),edits:DocumentEdits(rotation:2))
-            try Data(document.id.uuidString.utf8).write(to:receipt,options:.atomic)
-            recovered=document.id
+        for folder in try FileManager.default.contentsOfDirectory(at:captures,includingPropertiesForKeys:nil).sorted(by:{$0.lastPathComponent<$1.lastPathComponent}) where folder.lastPathComponent.hasPrefix("scan-") && !folder.lastPathComponent.hasSuffix(".intent.json") {
+            do {
+                guard try folder.resourceValues(forKeys:[.isDirectoryKey]).isDirectory == true else { continue }
+                _=try importCompletedCapture(folder)
+            }
+            catch { recoveryWarnings.append("A completed capture is pending: " + error.localizedDescription) }
         }
-        if let id=previous ?? recovered { try activate(id) }
+    }
+    @discardableResult func importCompletedCapture(_ captureFolder: URL) throws -> ScanDocument? {
+        try synchronized {
+            let captures=runtime.appendingPathComponent(".state/scanner-app")
+            guard FileIdentity.contains(captures,captureFolder) else { throw DocumentError.corrupt }
+            let receipt=captureFolder.appendingPathComponent("document-imported")
+            if FileManager.default.fileExists(atPath:receipt.path) { return nil }
+            let outcome=captureFolder.appendingPathComponent("outcome.json")
+            guard FileManager.default.fileExists(atPath:outcome.path) else { return nil }
+            let value=try JSONSerialization.jsonObject(with:Data(contentsOf:outcome)) as? [String:Any]
+            guard value?["schema_version"] as? Int == 1 else { throw DocumentError.corrupt }
+            guard value?["outcome"] as? String == "completedSafe", value?["image_complete"] as? Bool == true,
+                  DriverOutcome.journalPermitsRestart(captureFolder) else { return nil }
+            let intentFile=CaptureIntent.file(for:captureFolder)
+            let intent: CaptureIntent
+            if FileManager.default.fileExists(atPath:intentFile.path) {
+                intent=try JSONDecoder().decode(CaptureIntent.self,from:Data(contentsOf:intentFile))
+                guard intent.schema==1, intent.capture.edits.region.isValid else { throw DocumentError.corrupt }
+            } else {
+                // Recognized v1 native capture; persist a migration identity before
+                // import. Unknown acquisition facts remain explicitly unknown.
+                let (image,dpi)=try decodeRaster(captureFolder.appendingPathComponent("scan-raw.png"))
+                intent=CaptureIntent(schema:1,documentID:UUID(),copyAttempt:nil,capture:ScanCapture(acquisition:ScanAcquisition(acquired:Date(),dpi:dpi,width:image.width,height:image.height,source:"Recovered legacy capture (orientation unknown)",mode:"Unknown",whiteReference:nil),edits:.init(),prescan:false))
+                try DiskReceiptStorage().replace(try JSONEncoder().encode(intent),at:intentFile)
+            }
+            let document:ScanDocument
+            if FileManager.default.fileExists(atPath:folder(intent.documentID).path) {
+                document=try load(intent.documentID)
+                guard document.acquisition==intent.capture.acquisition else { throw DocumentError.corrupt }
+            } else {
+                document=try importImage(captureFolder.appendingPathComponent("scan-raw.png"),acquisition:intent.capture.acquisition,edits:intent.capture.edits,documentID:intent.documentID)
+            }
+            // Copy intent remains durable even if the separate ownership commit
+            // fails. A subsequent recovery retries reconciliation with this ID.
+            if intent.copyAttempt != nil {
+                var copy=CopyWorkflow()
+                let copyFile=captures.appendingPathComponent("copy-session.json")
+                try copy.restoreSession(from:copyFile,within:runtime)
+                guard copy.documentID==document.id || copy.stage == .empty else { throw DocumentError.busy }
+                if copy.stage == .empty { copy.retain(master(document.id),document:document.id) }
+                try commitCopy(copy)
+            }
+            try recoveryCheckpoint("beforeReceipt")
+            try DiskReceiptStorage().replace(Data(document.id.uuidString.utf8),at:receipt)
+            return try load(document.id)
+        }
     }
     func snapshot(_ document: ScanDocument) throws -> DocumentSnapshot {
         try synchronized {
@@ -184,19 +254,28 @@ final class ScanDocumentStore: @unchecked Sendable {
     }
     func discard(_ id: UUID) throws {
         try synchronized {
-            guard pins[id, default: 0] == 0, try load(id).retainedCopies.isEmpty else { throw DocumentError.busy }
-            if try restore()?.id == id { try activate(nil) }
+            // Re-read physical ownership at disposal, including ordinary print
+            // jobs submitted after startup reconciliation. Never rely on a stale
+            // in-memory ownership snapshot to release an unknown job's master.
+            let jobFile=runtime.appendingPathComponent(".state/scanner-app/print-job.json")
+            if FileManager.default.fileExists(atPath:jobFile.path) {
+                let job=try JSONDecoder().decode(PrintJobRecord.self,from:Data(contentsOf:jobFile))
+                if job.outstanding && (job.document==nil || job.document==id) { throw DocumentError.busy }
+            }
+            for name in ["recovery-required.json", ".state/print-spool/usb-recovery-required.txt"] {
+                var info=stat()
+                if lstat(runtime.appendingPathComponent(name).path,&info)==0 || errno != ENOENT { throw DocumentError.busy }
+            }
+            guard !ownershipUncertain, !protectedDocuments.contains(id), pins[id, default: 0] == 0, try load(id).retainedCopies.isEmpty else { throw DocumentError.busy }
+            var active:UUID?
+            do { active=try restore()?.id }
+            catch { /* Preserve corrupt pointer; it cannot make healthy files inaccessible. */ }
+            if active==id { try activate(nil) }
             try FileManager.default.removeItem(at: folder(id))
         }
     }
     func purgeExportedClosed(now: Date = Date()) throws {
-        try synchronized {
-            let active = try restore()?.id
-            for document in try all() where document.id != active && !document.needsExport && document.retainedCopies.isEmpty {
-                if let closed = document.closedAt, now.timeIntervalSince(closed) > Self.exportedClosedLifetime, pins[document.id, default: 0] == 0 {
-                    try FileManager.default.removeItem(at: folder(document.id))
-                }
-            }
-        }
+        // Export receipts are history, never consent to delete a master.
+        // Retained masters require explicit confirmed disposal, regardless of age.
     }
 }

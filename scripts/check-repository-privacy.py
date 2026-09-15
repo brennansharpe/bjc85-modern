@@ -19,6 +19,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import tempfile
 import privacy_formats as formats
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,7 +45,17 @@ PATTERNS = {
 
 
 def git(*args):
-    return subprocess.check_output(["git", "-C", str(ROOT), *args], stderr=subprocess.PIPE)
+    # Bound Git listings independently of per-blob/container budgets. A large
+    # error stream must not deadlock traversal or expose private path names.
+    with tempfile.TemporaryFile() as errors:
+        process = subprocess.Popen(["git", "-C", str(ROOT), *args], stdout=subprocess.PIPE, stderr=errors)
+        data = process.stdout.read(32 * 1024 * 1024 + 1)
+        if len(data) > 32 * 1024 * 1024:
+            process.kill(); process.wait()
+            raise ValueError("git-output-inspection-limit")
+        if process.wait() != 0:
+            raise ValueError("git-inspection-failed")
+        return data
 
 
 def inspect_text(text):
@@ -55,7 +66,7 @@ def inspect_text(text):
             found.add(name)
     if any(m.group(1) not in SAFE_USER for m in HOME.finditer(text)):
         found.add("personal-home-path")
-    if any(not SAFE_EMAIL.search(m.group()) for m in EMAIL.finditer(text)):
+    if any(m.group() != "noreply@github.com" and not SAFE_EMAIL.search(m.group()) for m in EMAIL.finditer(text)):
         found.add("email-address")
     if any(not SYNTHETIC_UUID.fullmatch(m.group()) for m in UUID.finditer(text)):
         found.add("non-synthetic-uuid")
@@ -210,7 +221,7 @@ def main():
         reviewed = hashlib.sha256(data).hexdigest() in reviews
         categories = inspect(data, known, reviewed_binary=reviewed)
         if reviewed: checked["reviewed-protocol-binary"] += 1
-        path_categories = inspect(path.encode(), known)
+        path_categories = inspect(os.fsencode(path), known)
         if path_categories:
             categories |= path_categories | {"private-filename"}
             path = "(filename withheld)"
@@ -224,7 +235,16 @@ def main():
             raise ValueError("git-object-inspection-limit")
         return git("cat-file", "-p", oid)
 
-    for name in git("ls-files", "-z").decode().split("\0"):
+    def check_path(raw, scope):
+        # No decoded/quoted Git paths and no object-id deduplication here.
+        categories = inspect(raw, known)
+        checked[scope] += 1
+        if categories:
+            hits.append({"scope": scope, "path": "(filename withheld)",
+                         "categories": sorted(categories | {"private-filename"})})
+
+    for raw in git("ls-files", "-z").split(b"\0"):
+        name = os.fsdecode(raw)
         if not name:
             continue
         if args.staged:
@@ -238,6 +258,10 @@ def main():
         revisions += ["--branches", "--tags", "--remotes"]
     if args.all_refs:
         revisions += ["--all"]
+    if args.history or args.all_refs:
+        patterns = [] if args.all_refs else ["refs/heads", "refs/tags", "refs/remotes"]
+        for raw in git("for-each-ref", "--format=%(refname)%00", *patterns).split(b"\0\n"):
+            if raw: check_path(raw, "history-ref")
     if args.pre_push:
         for line in sys.stdin:
             fields = line.split()
@@ -252,15 +276,40 @@ def main():
                 parser.error("Invalid pre-push object ID")
             if local_oid.strip("0"):
                 revisions.append(local_oid)
+    if args.staged:
+        # write-tree fails on an unmerged index, which must never pass inspection.
+        revisions.append(git("write-tree").decode().strip())
     if revisions:
-        for line in git("rev-list", "--objects", *revisions).decode().splitlines():
+        trees = set()
+        entries = 0
+        def walk_tree(oid, prefix=b"", depth=0):
+            nonlocal entries
+            if depth > 128: raise ValueError("tree-depth-limit")
+            for entry in git("ls-tree", "-z", oid).split(b"\0"):
+                if not entry: continue
+                header, name = entry.split(b"\t", 1)
+                mode, kind, child = header.split(b" ")
+                entries += 1
+                if entries > 1_000_000: raise ValueError("tree-entry-limit")
+                path = prefix + name
+                check_path(path, "history-path")
+                if kind == b"tree": walk_tree(child.decode(), path+b"/", depth+1)
+                elif kind == b"commit": raise ValueError("unsupported-gitlink-inspection")
+
+        # Names are checked by tree traversal, not rev-list's arbitrary blob name.
+        # --no-object-names keeps arbitrary path bytes out of this line protocol.
+        for line in git("rev-list", "--objects", "--no-object-names", *revisions).decode().splitlines():
             oid, _, name = line.partition(" ")
             if oid in seen:
                 continue
             seen.add(oid)
             kind = git("cat-file", "-t", oid).decode().strip()
+            if kind == "tree": trees.add(oid)
             if kind in ("blob", "commit", "tag"):
                 check(object_data(oid), name or "(metadata)", "history-"+kind, oid)
+        # Visit each tree as a root as well: prefixes are never memoized away.
+        # This includes trees directly targeted by annotated tags/outgoing refs.
+        for oid in trees: walk_tree(oid)
     print(json.dumps({"checked": dict(checked), "findings": hits,
                       "private_matching": config_status, "publication_audit": bool(args.publication),
                       "inspection_limits": {"file_bytes": formats.MAX_BYTES, "expanded_bytes": formats.MAX_EXPANDED, "archive_members": formats.MAX_MEMBERS, "archive_depth": formats.MAX_DEPTH},
@@ -271,6 +320,8 @@ def main():
 if __name__ == "__main__":
     try:
         sys.exit(main())
-    except (OSError, ValueError, subprocess.CalledProcessError):
-        print(json.dumps({"findings": [], "inspection_errors": ["inspection-failed-or-limit-exceeded"], "publication_audit": False}))
+    except (OSError, ValueError, subprocess.CalledProcessError) as error:
+        allowed = {"git-output-inspection-limit", "git-inspection-failed", "tree-depth-limit", "tree-entry-limit", "git-object-inspection-limit", "unsupported-gitlink-inspection", "file-inspection-limit"}
+        reason = str(error) if isinstance(error, ValueError) and str(error) in allowed else "inspection-failed-or-limit-exceeded"
+        print(json.dumps({"findings": [], "inspection_errors": [reason], "publication_audit": False}))
         sys.exit(2)
