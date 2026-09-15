@@ -21,7 +21,10 @@ acceptance, sent support request or support resolution is claimed. Exact old
 object mappings and identifying values remain outside this repository.
 
 The reviewed story commit also introduced a personal author email. Local noreply
-configuration does not repair historical metadata or account web-edit settings.
+configuration alone does not repair historical metadata or account web-edit
+settings. The metadata-only correction has now been pushed using an exact
+expected-SHA lease and verified on GitHub; the owner's web-commit email privacy
+setting was also enabled and verified. No server-side erasure is claimed.
 See [the remediation record](review-remediation-2026-09-15.md) for current results
 and external blockers. Earlier successful scans below are historical evidence,
 not a claim that the reviewed failing workflow or this repair passed hosted CI.

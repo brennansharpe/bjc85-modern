@@ -8,10 +8,10 @@ supported macOS version, VoiceOver, licensing or binary distribution.
 
 | Finding | Disposition and evidence |
 | --- | --- |
-| PUB-01 owner metadata | Confirmed remotely. A verified owner-only backup preserves history, refs and working changes. A local replacement changes only the owner's author email, preserving tree, parent, dates, message and committer; its invalidated GitHub signature is omitted. Remote history repair and publication are externally blocked by missing authenticated Git transport (CLI signed out; verified-host SSH returns public-key rejection). No contaminated branch is pushed. |
+| PUB-01 owner metadata | Confirmed remotely. A verified owner-only backup preserves history, refs and working changes. The metadata-only replacement was pushed with an exact expected-SHA lease and the outgoing privacy hook, then verified on GitHub. Only the owner's author email and invalidated signature changed; tree, parent, dates, message and committer are preserved. Local main refs now match the clean remote. No contaminated ancestry or backup refs were published. |
 | PUB-01 service false positive | Fixed: only exact `noreply@github.com` joins existing public noreply exceptions. Synthetic positive/negative controls retain personal-author detection. |
 | PUB-02 publication claims | Fixed documentation. The original privately mapped capture was retrieved with authentication; a separate anonymous HTTPS request also returned its non-synthetic printer identifier. Advertised cleaned refs do not establish server erasure. This is identifying metadata of low severity, not a credential. No support request, support resolution or owner acceptance is claimed. |
-| PUB-03 CI/protection | Three independent hosted jobs are defined: `privacy`, `gitleaks`, `macos-offline`. macOS compiles the complete production entry point and runs offline suites. Hosted results and protection remain externally blocked pending safe history repair and authenticated push. Existing main has no protection/rulesets; none was weakened. |
+| PUB-03 CI/protection | Three independent hosted jobs are defined: `privacy`, `gitleaks`, `macos-offline`. macOS compiles the complete production entry point and runs offline suites. Hosted results and required-check enforcement are verified separately on the repair PR before merge. At the start, main had no protection/rulesets; none was weakened. |
 | PUB-04 historical names | Fixed: byte-safe historical tree traversal checks directory/full paths and ref names separately from blob deduplication, with explicit bounds/failures. CLI regressions cover rename/deletion, reused blobs/subtrees, Unicode/whitespace, index, new branches and tags. |
 | APP-01 store availability | Source-derived issue repaired and fixture-tested: store attachment precedes maintenance; corrupt entries and deferred imports are reported while healthy pages remain available. Quotas count partial/corrupt entries and retained bytes. Damaged Copy/print state restricts physical work without synthesizing an empty tracker. |
 | APP-02 pre-submission receipt | Reproduced review case repaired against actual tracker. Durable rollback precedes explicit retry; injected failures before write, after replacement, attributes and sync produce zero submissions. Possible queue acceptance retains unknown/no-replay behavior across restart. |
@@ -59,8 +59,9 @@ compiler in Swift 5 mode, targeting macOS 14:
   history scans found no leaks in that candidate. The actual reviewed personal
   author remains detected, while GitHub's service committer is accepted.
 
-These are local fixture/source results. The original reviewed remote history
-still contains the personal-author finding, despite the clean local candidate.
+These are local fixture/source results. The reviewed personal-author finding
+is removed from the corrected advertised main ancestry. The original remains in
+the private recovery evidence; no server-side object erasure is claimed.
 Some fixture AppKit tests emit a sandbox notification-service warning; assertions
 and exit status passed. The benchmark's privileged `time -l` counters were
 unavailable; timing/heartbeat measurements come from the test itself. No peak
@@ -69,16 +70,16 @@ The reviewed failing hosted privacy run remains historical evidence; it is not
 removed or relabelled as passing. Current local checks do not imply hosted checks
 passed.
 
-## External completion steps
+## Publication progress and remaining steps
 
-1. Establish an approved authenticated Git transport for this exact repository.
-   Reinspect all remote refs and compare the expected reviewed main SHA privately.
-   Stop on concurrent advancement. Push only the prepared metadata repair using
-   an explicit expected-SHA lease, after the complete outgoing privacy check.
+1. Completed: authenticated Git transport, reinspection of all advertised refs,
+   verified private original/final bundles, and the metadata-only main correction
+   with an exact expected-SHA lease and passing outgoing privacy hook. The remote
+   commit, author, service committer and unchanged tree were read back and verified.
 2. GitHub Settings → Emails → **Keep my email addresses private** was enabled
    through the signed-in owner browser on 2026-09-15. The resulting UI showed
    both this setting and **Block command line pushes that expose my email**
-   checked. This protects future commits; historical correction remains pending.
+   checked. This protects future commits independently of the historical correction.
    Local noreply configuration alone does not control web-created commits.
 3. Push the clean repair branch and open a PR; inspect its exact remote commit
    and all three hosted checks. After they pass, require a PR and those exact
