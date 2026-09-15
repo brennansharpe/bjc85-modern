@@ -75,9 +75,11 @@ passed.
    Reinspect all remote refs and compare the expected reviewed main SHA privately.
    Stop on concurrent advancement. Push only the prepared metadata repair using
    an explicit expected-SHA lease, after the complete outgoing privacy check.
-2. Verify GitHub Settings → Emails → **Keep my email addresses private**. This
-   account setting was not accessible/verified here. Local noreply configuration
-   does not control web-created commits.
+2. GitHub Settings → Emails → **Keep my email addresses private** was enabled
+   through the signed-in owner browser on 2026-09-15. The resulting UI showed
+   both this setting and **Block command line pushes that expose my email**
+   checked. This protects future commits; historical correction remains pending.
+   Local noreply configuration alone does not control web-created commits.
 3. Push the clean repair branch and open a PR; inspect its exact remote commit
    and all three hosted checks. After they pass, require a PR and those exact
    check names on `main`, with zero mandatory independent reviewers for this solo
