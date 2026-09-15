@@ -26,8 +26,11 @@ settings. The metadata-only correction has now been pushed using an exact
 expected-SHA lease and verified on GitHub; the owner's web-commit email privacy
 setting was also enabled and verified. No server-side erasure is claimed.
 See [the remediation record](review-remediation-2026-09-15.md) for current results
-and external blockers. Earlier successful scans below are historical evidence,
-not a claim that the reviewed failing workflow or this repair passed hosted CI.
+and remaining owner/support decisions. The repair now has a successful hosted
+run and required PR checks on main; final revision checks and merge status are
+recorded on [PR #1](https://github.com/brennansharpe/bjc85-modern/pull/1). Earlier
+scans below remain historical evidence and do not relabel the reviewed failed
+workflow as passing.
 
 ## Historical outcome — preparation on 2026-09-14
 

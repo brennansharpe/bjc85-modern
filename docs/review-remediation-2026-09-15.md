@@ -11,7 +11,7 @@ supported macOS version, VoiceOver, licensing or binary distribution.
 | PUB-01 owner metadata | Confirmed remotely. A verified owner-only backup preserves history, refs and working changes. The metadata-only replacement was pushed with an exact expected-SHA lease and the outgoing privacy hook, then verified on GitHub. Only the owner's author email and invalidated signature changed; tree, parent, dates, message and committer are preserved. Local main refs now match the clean remote. No contaminated ancestry or backup refs were published. |
 | PUB-01 service false positive | Fixed: only exact `noreply@github.com` joins existing public noreply exceptions. Synthetic positive/negative controls retain personal-author detection. |
 | PUB-02 publication claims | Fixed documentation. The original privately mapped capture was retrieved with authentication; a separate anonymous HTTPS request also returned its non-synthetic printer identifier. Advertised cleaned refs do not establish server erasure. This is identifying metadata of low severity, not a credential. No support request, support resolution or owner acceptance is claimed. |
-| PUB-03 CI/protection | Three independent hosted jobs are defined: `privacy`, `gitleaks`, `macos-offline`. macOS compiles the complete production entry point and runs offline suites. Hosted results and required-check enforcement are verified separately on the repair PR before merge. At the start, main had no protection/rulesets; none was weakened. |
+| PUB-03 CI/protection | Three independent hosted jobs are defined: `privacy`, `gitleaks`, `macos-offline`. macOS compiles the complete production entry point and runs offline suites. All three passed in the first hosted run. Main now requires these exact checks from GitHub Actions, an up-to-date PR, zero mandatory independent reviewers, and no admin bypass, force pushes or deletion. Settings were read back after creation; final checks and merge status are on PR #1. At the start, main had no protection/rulesets; none was weakened. |
 | PUB-04 historical names | Fixed: byte-safe historical tree traversal checks directory/full paths and ref names separately from blob deduplication, with explicit bounds/failures. CLI regressions cover rename/deletion, reused blobs/subtrees, Unicode/whitespace, index, new branches and tags. |
 | APP-01 store availability | Source-derived issue repaired and fixture-tested: store attachment precedes maintenance; corrupt entries and deferred imports are reported while healthy pages remain available. Quotas count partial/corrupt entries and retained bytes. Damaged Copy/print state restricts physical work without synthesizing an empty tracker. |
 | APP-02 pre-submission receipt | Reproduced review case repaired against actual tracker. Durable rollback precedes explicit retry; injected failures before write, after replacement, attributes and sync produce zero submissions. Possible queue acceptance retains unknown/no-replay behavior across restart. |
@@ -67,8 +67,15 @@ and exit status passed. The benchmark's privileged `time -l` counters were
 unavailable; timing/heartbeat measurements come from the test itself. No peak
 process-memory measurement is claimed.
 The reviewed failing hosted privacy run remains historical evidence; it is not
-removed or relabelled as passing. Current local checks do not imply hosted checks
-passed.
+removed or relabelled as passing. Separately, the first hosted repair run
+[34957130177](https://github.com/brennansharpe/bjc85-modern/actions/runs/34957130177)
+passed all three jobs on the published repair source: 15 privacy regressions,
+Gitleaks, 9 native tests, the Swift/hardening suites and full application
+compilation on the standard Apple-silicon macOS runner. The optional Gutenprint
+capability test was explicitly skipped because its local static library was
+absent; local sanitizer coverage of that capability is recorded above. Final
+required-check results and merge status are tracked on
+[PR #1](https://github.com/brennansharpe/bjc85-modern/pull/1).
 
 ## Publication progress and remaining steps
 
@@ -81,11 +88,13 @@ passed.
    both this setting and **Block command line pushes that expose my email**
    checked. This protects future commits independently of the historical correction.
    Local noreply configuration alone does not control web-created commits.
-3. Push the clean repair branch and open a PR; inspect its exact remote commit
-   and all three hosted checks. After they pass, require a PR and those exact
-   check names on `main`, with zero mandatory independent reviewers for this solo
-   repository, no routine owner bypass, no force pushes or deletion. Preserve any
-   stronger controls added concurrently. Merge only after required checks pass.
+3. The clean repair branch is published through
+   [PR #1](https://github.com/brennansharpe/bjc85-modern/pull/1). After the first
+   successful hosted run, main protection was created and read back: exact
+   `privacy`, `gitleaks` and `macos-offline` checks from the GitHub Actions app,
+   an up-to-date PR, zero mandatory independent approvals, administrator
+   enforcement, and no force pushes or deletion. Merge is permitted only after
+   the required checks pass for the final PR revision; no bypass is used.
 4. Make an explicit owner decision on the low-severity retained printer identifier
    or request conditional GitHub Support assistance. No server-side erasure or
    owner acceptance is implied by cleanup of advertised refs.
